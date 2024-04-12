@@ -16,5 +16,8 @@
   "[json][jsonc]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "cSpell.words": ["nativewind", "Pressable", "tailwindcss"],
+  "cSpell.enableFiletypes": ["!javascript"],
+  "cSpell.language": "en,en-US"
 }
