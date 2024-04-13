@@ -2,11 +2,12 @@ import { StyleSheet } from 'react-native';
 
 import EditScreenInfo from '@/components/edit-screen-info';
 import { Text, View } from '@/components/themed';
+import { translate } from '@/i18n';
 
 export default function TabOneScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
+      <Text style={styles.title}>{translate('hello')}</Text>
       <View
         style={styles.separator}
         lightColor="#eee"

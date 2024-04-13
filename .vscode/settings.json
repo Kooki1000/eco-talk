@@ -17,7 +17,12 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cSpell.words": ["nativewind", "Pressable", "tailwindcss"],
-  "cSpell.enableFiletypes": ["!javascript"],
-  "cSpell.language": "en,en-US"
+  "cSpell.words": [
+    "classname",
+    "nativewind",
+    "Pressable",
+    "tailwindcss",
+    "zustand"
+  ],
+  "cSpell.language": "en"
 }

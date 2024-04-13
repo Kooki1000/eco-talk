@@ -1,3 +1,5 @@
+// Modified from https://github.com/obytes/react-native-template-obytes/blob/master/.eslintrc.js
+
 const path = require('path');
 
 module.exports = {
@@ -98,7 +100,7 @@ module.exports = {
         'i18n-json/identical-keys': [
           2,
           {
-            filePath: path.resolve('./src/translations/en.json'),
+            filePath: path.resolve('./src/translations/jp.json'),
           },
         ],
         'prettier/prettier': [
