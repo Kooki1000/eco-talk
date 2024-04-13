@@ -43,13 +43,9 @@ export const useSelectedLanguage = () => {
   const [language, setLang] = useState<Language | null>(null);
 
   const setLanguage = useCallback(async (lang: Language) => {
-    try {
-      setLang(lang);
-      await AsyncStorage.setItem(LOCAL, lang);
-      if (lang !== undefined) changeLanguage(lang);
-    } catch (e) {
-      console.error(e);
-    }
+    setLang(lang);
+    await AsyncStorage.setItem(LOCAL, lang);
+    if (lang !== undefined) changeLanguage(lang);
   }, []);
 
   return { language: language as Language, setLanguage: setLanguage };
