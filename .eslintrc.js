@@ -51,6 +51,7 @@ module.exports = {
         'react/react-in-jsx-scope': 'off', // React is always in scope in React Native
         'react/destructuring-assignment': 'off', // Vscode doesn't support automatically destructuring, it's a pain to add a new variable
         'react/require-default-props': 'off', // Allow non-defined react props as undefined
+        'react-native/no-inline-styles': 'off',
         '@typescript-eslint/comma-dangle': 'off', // Avoid conflict rule between Eslint and Prettier
         '@typescript-eslint/consistent-type-imports': 'error', // Ensure `import type` is used when it's necessary
         'import/prefer-default-export': 'off', // Named export is easier to refactor automatically
