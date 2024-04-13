@@ -1,3 +1,5 @@
+// https://github.com/obytes/react-native-template-obytes/blob/master/src/core/utils.ts
+
 import { Linking } from 'react-native';
 import type { StoreApi, UseBoundStore } from 'zustand';
 

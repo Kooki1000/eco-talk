@@ -16,7 +16,10 @@ export type TxKeyPath = RecursiveKeyOf<DefaultLocale>;
 
 export const LOCAL = 'local';
 
-export const getLanguage = async () => await AsyncStorage.getItem(LOCAL);
+export const getLanguage = async (): Promise<Language | null> => {
+  const item = await AsyncStorage.getItem(LOCAL);
+  return item as Language | null;
+};
 
 export const translate = memoize(
   (key: TxKeyPath, options = undefined) =>
