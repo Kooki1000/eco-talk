@@ -1,12 +1,14 @@
 // Modified from https://github.com/obytes/react-native-template-obytes/blob/master/src/core/i18n/utils.tsx
 
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import type TranslateOptions from 'i18next';
 import i18n from 'i18next';
 import memoize from 'lodash.memoize';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback } from 'react';
 import { NativeModules, Platform } from 'react-native';
+import { useMMKVString } from 'react-native-mmkv';
 import RNRestart from 'react-native-restart';
+
+import { storage } from '@/lib/storage';
 
 import type { Language, resources } from './resources';
 import type { RecursiveKeyOf } from './types';
@@ -16,9 +18,9 @@ export type TxKeyPath = RecursiveKeyOf<DefaultLocale>;
 
 export const LOCAL = 'local';
 
-export const getLanguage = async (): Promise<Language | null> => {
-  const item = await AsyncStorage.getItem(LOCAL);
-  return item as Language | null;
+export const getLanguage = (): Language | undefined => {
+  const item = storage.getString(LOCAL);
+  return item as Language | undefined;
 };
 
 export const translate = memoize(
@@ -40,22 +42,15 @@ export const changeLanguage = (lang: Language) => {
 };
 
 export const useSelectedLanguage = () => {
-  const [language, setLanguage] = useState<Language | null>(null);
+  const [language, setLang] = useMMKVString(LOCAL);
 
-  useEffect(() => {
-    const fetchLanguage = async () => {
-      const lang = await getLanguage();
-      setLanguage(lang);
-    };
+  const setLanguage = useCallback(
+    (lang: Language) => {
+      setLang(lang);
+      if (lang !== undefined) changeLanguage(lang as Language);
+    },
+    [setLang]
+  );
 
-    fetchLanguage();
-  }, []);
-
-  const setLanguageAsync = useCallback(async (lang: Language) => {
-    setLanguage(lang);
-    await AsyncStorage.setItem(LOCAL, lang);
-    if (lang !== undefined) changeLanguage(lang);
-  }, []);
-
-  return { language, setLanguage: setLanguageAsync };
+  return { language: language as Language, setLanguage };
 };
