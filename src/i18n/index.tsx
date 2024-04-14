@@ -14,9 +14,6 @@ const initializeI18n = async () => {
     lng: language || getLocales()[0].languageCode || 'jp',
     fallbackLng: 'jp',
     compatibilityJSON: 'v3', // By default React Native projects does not support Intl
-    interpolation: {
-      escapeValue: false, // Escape passed in values to avoid XSS injections
-    },
   });
 };
 

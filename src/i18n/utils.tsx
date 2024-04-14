@@ -4,7 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import type TranslateOptions from 'i18next';
 import i18n from 'i18next';
 import memoize from 'lodash.memoize';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { NativeModules, Platform } from 'react-native';
 import RNRestart from 'react-native-restart';
 
@@ -40,13 +40,22 @@ export const changeLanguage = (lang: Language) => {
 };
 
 export const useSelectedLanguage = () => {
-  const [language, setLang] = useState<Language | null>(null);
+  const [language, setLanguage] = useState<Language | null>(null);
 
-  const setLanguage = useCallback(async (lang: Language) => {
-    setLang(lang);
+  useEffect(() => {
+    const fetchLanguage = async () => {
+      const lang = await getLanguage();
+      setLanguage(lang);
+    };
+
+    fetchLanguage();
+  }, []);
+
+  const setLanguageAsync = useCallback(async (lang: Language) => {
+    setLanguage(lang);
     await AsyncStorage.setItem(LOCAL, lang);
     if (lang !== undefined) changeLanguage(lang);
   }, []);
 
-  return { language: language as Language, setLanguage: setLanguage };
+  return { language, setLanguage: setLanguageAsync };
 };
