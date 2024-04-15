@@ -1,4 +1,4 @@
-// Modified from https://github.com/obytes/react-native-template-obytes/blob/master/src/core/use-theme-config.tsx
+// https://github.com/obytes/react-native-template-obytes/blob/master/src/core/use-theme-config.tsx
 
 import type { Theme } from '@react-navigation/native';
 import {
@@ -34,6 +34,5 @@ export function useThemeConfig() {
   const { colorScheme } = useColorScheme();
 
   if (colorScheme === 'dark') return DarkTheme;
-
   return LightTheme;
 }

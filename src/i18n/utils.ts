@@ -18,7 +18,7 @@ export type TxKeyPath = RecursiveKeyOf<DefaultLocale>;
 
 export const LOCAL = 'local';
 
-export const getLanguage = (): Language | undefined => {
+export const getLanguage = () => {
   const item = storage.getString(LOCAL);
   return item as Language | undefined;
 };
