@@ -1,8 +1,8 @@
 // Modified from https://github.com/obytes/react-native-template-obytes/blob/master/src/ui/text.tsx
 
 import { useMemo } from 'react';
-import type { TextProps } from 'react-native';
-import { Text as NNText } from 'react-native';
+import type { TextProps, TextStyle } from 'react-native';
+import { I18nManager, StyleSheet, Text as NNText } from 'react-native';
 import { twMerge } from 'tailwind-merge';
 
 import type { TxKeyPath } from '@/i18n';
@@ -13,15 +13,32 @@ interface Props extends TextProps {
   tx?: TxKeyPath;
 }
 
-export const Text = ({ className = '', tx, children, ...props }: Props) => {
+export const Text = ({
+  className = '',
+  style,
+  tx,
+  children,
+  ...props
+}: Props) => {
   const textStyle = useMemo(
     () =>
       twMerge('text-base text-black dark:text-white font-normal', className),
     [className]
   );
 
+  const nStyle = useMemo(
+    () =>
+      StyleSheet.flatten([
+        {
+          writingDirection: I18nManager.isRTL ? 'rtl' : 'ltr',
+        },
+        style,
+      ]) as TextStyle,
+    [style]
+  );
+
   return (
-    <NNText className={textStyle} {...props}>
+    <NNText className={textStyle} style={nStyle} {...props}>
       {tx ? translate(tx) : children}
     </NNText>
   );
