@@ -2,9 +2,8 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link, Tabs } from 'expo-router';
 import React from 'react';
-import { Pressable } from 'react-native';
 
-import { TabBarIcon } from '@/components/ui/utils';
+import { Pressable, TabBarIcon } from '@/components/ui';
 import Colors from '@/constants/colors';
 import { useClientOnlyValue } from '@/hooks/use-client-only-value';
 import { useColorScheme } from '@/hooks/use-color-scheme';

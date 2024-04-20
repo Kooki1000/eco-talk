@@ -1,9 +1,9 @@
-import { StatusBar } from 'expo-status-bar';
 import { useCallback } from 'react';
 import { Platform, StyleSheet } from 'react-native';
 
-import { Text, View } from '@/components/themed';
-import { translate, useSelectedLanguage } from '@/i18n';
+import { View } from '@/components/themed';
+import { StatusBar, Text } from '@/components/ui';
+import { useSelectedLanguage } from '@/i18n';
 import type { Language } from '@/i18n/resources';
 
 export default function ModalScreen() {
@@ -15,7 +15,7 @@ export default function ModalScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{translate('language.title')}</Text>
+      <Text style={styles.title} tx="language.title" />
       <View
         style={styles.separator}
         lightColor="#eee"
