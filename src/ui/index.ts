@@ -2,6 +2,8 @@ export * from './button';
 export * from './checkbox';
 export { default as colors } from './colors';
 export * from './image';
+export * from './input';
+export * from './list';
 export * from './text';
 export * from './utils';
 

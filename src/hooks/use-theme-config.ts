@@ -1,4 +1,6 @@
+// This code is taken from the original version found at:
 // https://github.com/obytes/react-native-template-obytes/blob/master/src/core/use-theme-config.tsx
+// Original code by OBytes (https://github.com/obytes), licensed under the MIT License.
 
 import type { Theme } from '@react-navigation/native';
 import {
@@ -7,7 +9,7 @@ import {
 } from '@react-navigation/native';
 import { useColorScheme } from 'nativewind';
 
-import colors from '@/components/ui/colors';
+import { colors } from '@/ui';
 
 const DarkTheme: Theme = {
   ..._DarkTheme,

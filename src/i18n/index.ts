@@ -1,4 +1,6 @@
-// Modified from https://github.com/obytes/react-native-template-obytes/blob/master/src/core/i18n/index.tsx#L24
+// This code is taken from the original version found at:
+// https://github.com/obytes/react-native-template-obytes/blob/master/src/core/i18n/index.tsx#L24
+// Original code by OBytes (https://github.com/obytes), licensed under the MIT License.
 
 import { getLocales } from 'expo-localization';
 import i18n from 'i18next';

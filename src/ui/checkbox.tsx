@@ -1,4 +1,6 @@
-// Modified from https://github.com/obytes/react-native-template-obytes/blob/master/src/ui/checkbox.tsx
+// This code is modified from the original version found at:
+// https://github.com/obytes/react-native-template-obytes/blob/master/src/ui/checkbox.tsx
+// Original code by OBytes (https://github.com/obytes), licensed under the MIT License.
 
 import { MotiView } from 'moti';
 import { useCallback } from 'react';
@@ -226,12 +228,11 @@ const SwitchRoot = ({ checked = false, children, ...props }: RootProps) => {
 
 const SwitchBase = ({
   checked = false,
-  testID,
   label,
   ...props
 }: RootProps & { label?: string }) => {
   return (
-    <SwitchRoot checked={checked} testID={testID} {...props}>
+    <SwitchRoot checked={checked} {...props}>
       <SwitchIcon checked={checked} />
       {label ? <Label text={label} /> : null}
     </SwitchRoot>

@@ -2,9 +2,9 @@ import { useCallback } from 'react';
 import { Platform, StyleSheet } from 'react-native';
 
 import { View } from '@/components/themed';
-import { StatusBar, Text } from '@/components/ui';
 import { useSelectedLanguage } from '@/i18n';
 import type { Language } from '@/i18n/resources';
+import { StatusBar, Text } from '@/ui';
 
 export default function ModalScreen() {
   const { setLanguage } = useSelectedLanguage();

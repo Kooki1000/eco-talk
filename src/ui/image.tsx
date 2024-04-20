@@ -1,9 +1,10 @@
+// This code is modified from the original version found at:
 // https://github.com/obytes/react-native-template-obytes/blob/master/src/ui/image.tsx
+// Original code by OBytes (https://github.com/obytes), licensed under the MIT License.
 
 import type { ImageProps } from 'expo-image';
 import { Image as NImage } from 'expo-image';
 import { cssInterop } from 'nativewind';
-import * as React from 'react';
 
 export type ImgProps = ImageProps & {
   className?: string;

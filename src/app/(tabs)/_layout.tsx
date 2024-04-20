@@ -1,12 +1,11 @@
 /* eslint-disable react/no-unstable-nested-components */
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link, Tabs } from 'expo-router';
-import React from 'react';
 
-import { Pressable, TabBarIcon } from '@/components/ui';
 import Colors from '@/constants/colors';
 import { useClientOnlyValue } from '@/hooks/use-client-only-value';
 import { useColorScheme } from '@/hooks/use-color-scheme';
+import { Pressable, TabBarIcon } from '@/ui';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
