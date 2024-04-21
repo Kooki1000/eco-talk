@@ -108,7 +108,7 @@ export const Input = forwardRef<TextInput, NInputProps>((props, ref) => {
       />
 
       {error && (
-        <Text className="text-danger-400 dark:text-danger-600 text-sm">
+        <Text className="text-sm text-danger-400 dark:text-danger-600">
           {error}
         </Text>
       )}

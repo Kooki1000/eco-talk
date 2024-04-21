@@ -189,6 +189,7 @@ export const Select = (props: SelectProps) => {
     <>
       <View className={styles.container()}>
         {label && <Text className={styles.label()}>{label}</Text>}
+
         <TouchableOpacity
           className={styles.input()}
           disabled={disabled}
@@ -199,12 +200,14 @@ export const Select = (props: SelectProps) => {
           </View>
           <CaretDown />
         </TouchableOpacity>
+
         {error && (
-          <Text className="text-danger-300 dark:text-danger-600 text-sm">
+          <Text className="text-sm text-danger-300 dark:text-danger-600">
             {error}
           </Text>
         )}
       </View>
+
       <Options ref={modal.ref} options={options} onSelect={onSelectOption} />
     </>
   );
