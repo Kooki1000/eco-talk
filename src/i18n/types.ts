@@ -1,5 +1,5 @@
 // This code is taken from the original version found at:
-// https://github.com/obytes/react-native-template-obytes/blob/master/src/core/i18n/utils.tsx
+// https://github.com/infinitered/ignite/blob/master/boilerplate/app/i18n/i18n.ts
 // Original code by Infinite Red, Inc. (https://github.com/infinitered), licensed under the MIT License.
 
 export type RecursiveKeyOf<TObj extends object> = {
