@@ -8,6 +8,7 @@ import { ActivityIndicator, View } from 'react-native';
 import Svg, { Circle, Path } from 'react-native-svg';
 
 import { Text } from './text';
+
 type Props = {
   isLoading: boolean;
 };
