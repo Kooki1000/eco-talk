@@ -1,7 +1,13 @@
 /* eslint-disable react/no-unstable-nested-components */
 import { Tabs } from 'expo-router';
+import {
+  BookOpenCheck,
+  CirclePlus,
+  Home,
+  MessageSquareText,
+  UserRound,
+} from 'lucide-react-native';
 
-import { TabBarIcon } from '@/components/obytes';
 import Colors from '@/constants/colors';
 import { useClientOnlyValue } from '@/hooks/use-client-only-value';
 import { useColorScheme } from '@/hooks/use-color-scheme';
@@ -16,20 +22,37 @@ export default function TabLayout() {
         // Disable the static render of the header on web
         // to prevent a hydration error in React Navigation v6.
         headerShown: useClientOnlyValue(false, true),
+        tabBarShowLabel: false,
       }}
     >
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <Home color={color} />,
         }}
       />
       <Tabs.Screen
-        name="two"
+        name="guides"
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <BookOpenCheck color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="add"
+        options={{
+          tabBarIcon: ({ color }) => <CirclePlus color={color} size={40} />,
+        }}
+      />
+      <Tabs.Screen
+        name="posts"
+        options={{
+          tabBarIcon: ({ color }) => <MessageSquareText color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          tabBarIcon: ({ color }) => <UserRound color={color} />,
         }}
       />
     </Tabs>
