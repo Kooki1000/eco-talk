@@ -9,7 +9,7 @@ import {
 } from '@react-navigation/native';
 import { useColorScheme } from 'nativewind';
 
-import { colors } from '@/ui';
+import { colors } from '@/components/obytes';
 
 const DarkTheme: Theme = {
   ..._DarkTheme,

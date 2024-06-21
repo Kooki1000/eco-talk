@@ -1,4 +1,4 @@
-const colors = require('./src/ui/colors');
+const colors = require('./src/components/obytes/colors');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
