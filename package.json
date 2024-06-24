@@ -32,6 +32,7 @@
     "expo-web-browser": "~12.8.2",
     "i18next": "^23.11.1",
     "lodash.memoize": "^4.1.2",
+    "lucide-react-native": "^0.395.0",
     "moti": "^0.28.1",
     "nativewind": "^4.0.1",
     "react": "18.2.0",

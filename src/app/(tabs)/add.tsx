@@ -1,12 +1,11 @@
 import { StyleSheet } from 'react-native';
 
-import { Text } from '@/components/obytes';
-import { View } from '@/components/themed';
+import { Text, View } from '@/components/themed';
 
-export default function HomeScreen() {
+export default function AddPostScreen() {
   return (
     <View style={styles.container}>
-      <Text className="text-2xl">Home</Text>
+      <Text className="text-2xl">Add</Text>
     </View>
   );
 }
