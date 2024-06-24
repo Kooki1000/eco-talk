@@ -1,15 +1,11 @@
 import '../../global.css';
 
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import { ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
-import { StyleSheet } from 'react-native';
-import FlashMessage from 'react-native-flash-message';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 import { loadSelectedTheme } from '@/hooks/use-selected-theme';
 import { useThemeConfig } from '@/hooks/use-theme-config';
@@ -67,6 +63,12 @@ function RootLayoutNav() {
 function Providers({ children }: { children: React.ReactNode }) {
   const theme = useThemeConfig();
 
+  return <ThemeProvider value={theme}>{children}</ThemeProvider>;
+}
+
+/* function Providers({ children }: { children: React.ReactNode }) {
+  const theme = useThemeConfig();
+
   return (
     <GestureHandlerRootView
       style={styles.container}
@@ -80,10 +82,10 @@ function Providers({ children }: { children: React.ReactNode }) {
       </ThemeProvider>
     </GestureHandlerRootView>
   );
-}
+} */
 
-const styles = StyleSheet.create({
+/* const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-});
+}); */

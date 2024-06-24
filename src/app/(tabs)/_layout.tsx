@@ -8,17 +8,16 @@ import {
   UserRound,
 } from 'lucide-react-native';
 
-import Colors from '@/constants/colors';
 import { useClientOnlyValue } from '@/hooks/use-client-only-value';
-import { useColorScheme } from '@/hooks/use-color-scheme';
+import { useThemeConfig } from '@/hooks/use-theme-config';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
+  const colorScheme = useThemeConfig();
 
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: colorScheme.colors.primary,
         // Disable the static render of the header on web
         // to prevent a hydration error in React Navigation v6.
         headerShown: useClientOnlyValue(false, true),
