@@ -1,7 +1,6 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import { Text } from '@/components/obytes';
-import { View } from '@/components/themed';
 
 export default function HomeScreen() {
   return (

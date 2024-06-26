@@ -1,14 +1,38 @@
-import { Link } from 'expo-router';
+import { AppleButton } from '@invertase/react-native-apple-authentication';
+import { GoogleSigninButton } from '@react-native-google-signin/google-signin';
+import { router } from 'expo-router';
 import { StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { View } from 'react-native';
 
 export default function index() {
+  const GoogleLogin = () => {
+    console.log('Logged in with Google');
+    router.push('/(tabs)');
+  };
+
+  const AppleLogin = () => {
+    console.log('Logged in with Apple');
+    router.push('/(tabs)');
+  };
+
   return (
-    <SafeAreaView style={styles.container}>
-      <Link href={'/(tabs)'} className="border-collapse bg-red-700 p-10">
-        Link to tabs
-      </Link>
-    </SafeAreaView>
+    <View style={styles.container}>
+      <GoogleSigninButton
+        size={GoogleSigninButton.Size.Wide}
+        color={GoogleSigninButton.Color.Light}
+        onPress={() => GoogleLogin()}
+      />
+      <AppleButton
+        buttonStyle={AppleButton.Style.WHITE_OUTLINE}
+        buttonType={AppleButton.Type.DEFAULT}
+        style={{
+          marginTop: 10,
+          width: 306,
+          height: 42,
+        }}
+        onPress={() => AppleLogin()}
+      />
+    </View>
   );
 }
 
