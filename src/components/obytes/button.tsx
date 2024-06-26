@@ -4,9 +4,13 @@
 
 import { forwardRef, useMemo } from 'react';
 import type { PressableProps, View } from 'react-native';
-import { ActivityIndicator, Pressable, Text } from 'react-native';
+import { ActivityIndicator, Pressable } from 'react-native';
 import type { VariantProps } from 'tailwind-variants';
 import { tv } from 'tailwind-variants';
+
+import type { TxKeyPath } from '@/i18n';
+
+import { Text } from './text';
 
 const button = tv({
   slots: {
@@ -94,7 +98,7 @@ const button = tv({
 
 type ButtonVariants = VariantProps<typeof button>;
 interface Props extends ButtonVariants, Omit<PressableProps, 'disabled'> {
-  label?: string;
+  tx?: TxKeyPath;
   loading?: boolean;
   className?: string;
   textClassName?: string;
@@ -103,7 +107,7 @@ interface Props extends ButtonVariants, Omit<PressableProps, 'disabled'> {
 export const Button = forwardRef<View, Props>(
   (
     {
-      label: text,
+      tx,
       loading = false,
       variant = 'default',
       disabled = false,
@@ -133,9 +137,10 @@ export const Button = forwardRef<View, Props>(
             {loading ? (
               <ActivityIndicator size="small" className={styles.indicator()} />
             ) : (
-              <Text className={styles.label({ className: textClassName })}>
-                {text}
-              </Text>
+              <Text
+                tx={tx}
+                className={styles.label({ className: textClassName })}
+              />
             )}
           </>
         )}

@@ -1,4 +1,12 @@
 {
+  "auth": {
+    "apple": "Sign in with Apple",
+    "google": "Sign in with Google"
+  },
+  "profile": {
+    "logout": "Log Out",
+    "delte": "Delete Account"
+  },
   "hello": "Hello, World!",
   "language": {
     "title": "Change language"
