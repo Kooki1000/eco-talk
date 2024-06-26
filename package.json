@@ -10,7 +10,7 @@
     "web": "expo start --web",
     "test": "jest --watchAll",
     "lint": "eslint . --fix --ext .js,.jsx,.ts,.tsx",
-    "lint:translations": "eslint ./src/translations/ --fix --ext .json  "
+    "lint:translations": "eslint ./src/translations/ --fix --ext .json"
   },
   "jest": {
     "preset": "jest-expo"

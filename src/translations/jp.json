@@ -4,11 +4,7 @@
     "google": "Googleでログイン"
   },
   "profile": {
-    "logout": "ログアウト",
-    "delte": "アカウントを削除"
-  },
-  "hello": "こんにちは、世界！",
-  "language": {
-    "title": "言語を変更"
+    "delte": "アカウントを削除",
+    "logout": "ログアウト"
   }
 }

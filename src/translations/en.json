@@ -4,11 +4,7 @@
     "google": "Sign in with Google"
   },
   "profile": {
-    "logout": "Log Out",
-    "delte": "Delete Account"
-  },
-  "hello": "Hello, World!",
-  "language": {
-    "title": "Change language"
+    "delte": "Delete Account",
+    "logout": "Log Out"
   }
 }
