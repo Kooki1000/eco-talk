@@ -10,5 +10,6 @@
     "delte": "Delete Account",
     "logout": "Log Out",
     "title": "General"
-  }
+  },
+  "banner": "Username"
 }

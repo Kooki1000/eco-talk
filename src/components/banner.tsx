@@ -1,31 +1,56 @@
+import { ImageBackground } from 'expo-image';
 import { Camera, CircleUserRound, Pencil } from 'lucide-react-native';
-import React from 'react';
+import React, { useMemo } from 'react';
 import { StyleSheet, View, type ViewProps } from 'react-native';
+import { twMerge } from 'tailwind-merge';
 
 import { Text } from './obytes';
 import { black } from './obytes/colors';
 
-const Banner = ({ style }: ViewProps) => {
-  return (
-    <View
-      style={[styles.bannerStyle, style]}
-      className="w-full flex-row border-b-2 border-[#CBBDBD]"
-    >
-      <View>
-        <CircleUserRound size={96} color={black} strokeWidth={1} />
-        <Camera size={30} color={black} />
-      </View>
+interface Props extends ViewProps {
+  className?: string;
+}
 
-      <View className="flex-row">
-        <Text className="text-2xl font-bold">Username</Text>
-        <Pencil color={black} />
-      </View>
+const Banner = ({ style, className }: Props) => {
+  const ViewStyle = useMemo(() => twMerge('w-full', className), [className]);
+
+  return (
+    <View className={ViewStyle} style={style}>
+      <ImageBackground
+        source={require('../../assets/images/banner.png')}
+        contentFit="cover"
+        style={styles.bannerStyle}
+      >
+        <View className="flex-row border-b-2 border-[#CBBDBD]">
+          <View style={styles.iconContainer} className="mb-4 ml-6">
+            <CircleUserRound size={96} color={black} strokeWidth={1} />
+            <View style={styles.cameraIcon}>
+              <Camera size={30} color={black} strokeWidth={2} />
+            </View>
+          </View>
+
+          <View className="ml-7 flex-row items-center">
+            <Text tx="banner" className="mr-1 text-2xl font-bold" />
+            <Pencil color={black} />
+          </View>
+        </View>
+      </ImageBackground>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  bannerStyle: {},
+  bannerStyle: {
+    opacity: 0.8,
+  },
+  iconContainer: {
+    position: 'relative',
+  },
+  cameraIcon: {
+    position: 'absolute',
+    right: -8,
+    bottom: -8,
+  },
 });
 
 export default Banner;

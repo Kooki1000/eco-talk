@@ -1,5 +1,5 @@
 import { router } from 'expo-router';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import Banner from '@/components/banner';
 import { Button, SafeAreaView, Text } from '@/components/obytes';
@@ -16,32 +16,38 @@ export default function ProfileScreen() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Banner />
+    <SafeAreaView className="flex-1 items-center justify-center">
+      <Banner style={styles.banner} />
 
-      <Text tx="profile.title" className="mb-10 text-2xl font-bold" />
+      <View className="mt-5 w-full">
+        <Text
+          tx="profile.title"
+          className="mb-10 items-center text-center text-2xl font-bold"
+        />
 
-      <Button
-        onPress={logOut}
-        tx="profile.logout"
-        textClassName="text-xl text-black"
-        className="h-10 w-80 rounded-3xl bg-gray-300"
-      />
+        <View className="items-center">
+          <Button
+            onPress={logOut}
+            tx="profile.logout"
+            textClassName="text-xl text-black"
+            className="h-10 w-80 rounded-3xl bg-gray-300"
+          />
 
-      <Button
-        onPress={deleteAccount}
-        tx="profile.delte"
-        textClassName="text-xl text-black"
-        className="h-10 w-80 rounded-3xl bg-red-300"
-      />
+          <Button
+            onPress={deleteAccount}
+            tx="profile.delte"
+            textClassName="text-xl text-black"
+            className="h-10 w-80 rounded-3xl bg-red-300"
+          />
+        </View>
+      </View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+  banner: {
+    position: 'relative',
+    top: 0,
   },
 });
