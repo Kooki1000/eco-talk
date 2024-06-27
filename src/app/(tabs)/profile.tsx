@@ -1,20 +1,25 @@
 import { router } from 'expo-router';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 
-import { Button, Text } from '@/components/obytes';
+import Banner from '@/components/banner';
+import { Button, SafeAreaView, Text } from '@/components/obytes';
 
 export default function ProfileScreen() {
   const logOut = () => {
+    console.log('Log out');
     router.push('/');
   };
 
   const deleteAccount = () => {
+    console.log('Delte account');
     router.push('/');
   };
 
   return (
-    <View style={styles.container}>
-      <Text className="mb-10 text-2xl">Profile</Text>
+    <SafeAreaView style={styles.container}>
+      <Banner />
+
+      <Text tx="profile.title" className="mb-10 text-2xl font-bold" />
 
       <Button
         onPress={logOut}
@@ -29,7 +34,7 @@ export default function ProfileScreen() {
         textClassName="text-xl text-black"
         className="h-10 w-80 rounded-3xl bg-red-300"
       />
-    </View>
+    </SafeAreaView>
   );
 }
 

@@ -1,10 +1,14 @@
 {
   "auth": {
     "apple": "Appleでサインイン",
-    "google": "Googleでログイン"
+    "description": "ゴミ処理をわかりやすく",
+    "google": "Googleでログイン",
+    "title": "EcoTalkへようこそ",
+    "visitor": "ログインせず使用する"
   },
   "profile": {
     "delte": "アカウントを削除",
-    "logout": "ログアウト"
+    "logout": "ログアウト",
+    "title": "設定"
   }
 }

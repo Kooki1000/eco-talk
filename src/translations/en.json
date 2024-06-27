@@ -1,10 +1,14 @@
 {
   "auth": {
     "apple": "Sign in with Apple",
-    "google": "Sign in with Google"
+    "description": "Your tool for navigating Japan's trash rules.",
+    "google": "Sign in with Google",
+    "title": "Welcome to EcoTalk",
+    "visitor": "Explore as visitor"
   },
   "profile": {
     "delte": "Delete Account",
-    "logout": "Log Out"
+    "logout": "Log Out",
+    "title": "General"
   }
 }
