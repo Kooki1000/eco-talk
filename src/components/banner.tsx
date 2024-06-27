@@ -25,12 +25,12 @@ const Banner = ({ style, className }: Props) => {
           <View style={styles.iconContainer} className="mb-4 ml-6">
             <CircleUserRound size={96} color={black} strokeWidth={1} />
             <View style={styles.cameraIcon}>
-              <Camera size={30} color={black} strokeWidth={2} />
+              <Camera size={30} color={black} />
             </View>
           </View>
 
-          <View className="ml-7 flex-row items-center">
-            <Text tx="banner" className="mr-1 text-2xl font-bold" />
+          <View className="ml-8 flex-row items-center">
+            <Text tx="banner" className="mr-2 text-2xl font-bold" />
             <Pencil color={black} />
           </View>
         </View>

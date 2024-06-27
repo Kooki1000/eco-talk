@@ -44,6 +44,12 @@ function Providers({ children }: { children: React.ReactNode }) {
   return <ThemeProvider value={theme}>{children}</ThemeProvider>;
 }
 
+/* const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+}); */
+
 /* function Providers({ children }: { children: React.ReactNode }) {
   const theme = useThemeConfig();
 
@@ -61,9 +67,3 @@ function Providers({ children }: { children: React.ReactNode }) {
     </GestureHandlerRootView>
   );
 } */
-
-/* const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-}); */

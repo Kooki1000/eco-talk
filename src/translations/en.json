@@ -6,10 +6,10 @@
     "title": "Welcome to EcoTalk",
     "visitor": "Explore as visitor"
   },
+  "banner": "Username",
   "profile": {
     "delte": "Delete Account",
     "logout": "Log Out",
     "title": "General"
-  },
-  "banner": "Username"
+  }
 }

@@ -6,10 +6,10 @@
     "title": "EcoTalkへようこそ",
     "visitor": "ログインせず使用する"
   },
+  "banner": "ユーザー名",
   "profile": {
     "delte": "アカウントを削除",
     "logout": "ログアウト",
     "title": "設定"
-  },
-  "banner": "ユーザー名"
+  }
 }
