@@ -1,4 +1,4 @@
-// This code is taken from the original version found at:
+// This code is modified from the original version found at:
 // https://github.com/obytes/react-native-template-obytes/blob/master/src/ui/select.tsx
 // Original code by OBytes (https://github.com/obytes), licensed under the MIT License.
 
@@ -17,9 +17,8 @@ import type { SvgProps } from 'react-native-svg';
 import Svg, { Path } from 'react-native-svg';
 import { tv } from 'tailwind-variants';
 
-import colors from '@/ui/colors';
-import { CaretDown } from '@/ui/icons';
-
+import colors from './colors';
+import { CaretDown } from './icons/caret-down';
 import type { InputControllerType } from './input';
 import { useModal } from './modal';
 import { Modal } from './modal';
@@ -67,7 +66,6 @@ type OptionsProps = {
   options: Option[];
   onSelect: (option: Option) => void;
   value?: string | number;
-  testID?: string;
 };
 
 function keyExtractor(item: Option) {
@@ -75,7 +73,7 @@ function keyExtractor(item: Option) {
 }
 
 export const Options = forwardRef<BottomSheetModal, OptionsProps>(
-  ({ options, onSelect, value, testID }, ref) => {
+  ({ options, onSelect, value }, ref) => {
     const height = options.length * 70 + 100;
     const snapPoints = useMemo(() => [height], [height]);
     const { colorScheme } = useColorScheme();
@@ -88,10 +86,9 @@ export const Options = forwardRef<BottomSheetModal, OptionsProps>(
           label={item.label}
           selected={value === item.value}
           onPress={() => onSelect(item)}
-          testID={testID ? `${testID}-item-${item.value}` : undefined}
         />
       ),
-      [onSelect, value, testID]
+      [onSelect, value]
     );
 
     return (

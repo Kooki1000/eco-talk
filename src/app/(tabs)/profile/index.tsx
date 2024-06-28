@@ -34,13 +34,13 @@ export default function ProfileScreen() {
     <SafeAreaView className="flex-1 items-center justify-center">
       <Banner style={styles.banner} />
 
-      <View className="mt-8 w-full">
+      <View className="mt-10">
         <Text
           tx="profile.title"
           className="mb-8 items-center text-center text-2xl font-bold"
         />
 
-        <View className="ml-12">
+        <View style={styles.settingsContainer}>
           <InfoRow IconComponent={MapPinned} text="Location: Yokohama City" />
           <InfoRow IconComponent={Languages} text="Language: Chinese" />
           <InfoRow IconComponent={ALargeSmall} text="Text Size: 12" />
@@ -51,12 +51,16 @@ export default function ProfileScreen() {
             className="mb-4 flex flex-row items-center"
           >
             <Info color={black} size={28} />
-            <Text className="ml-4 text-lg">About</Text>
+            <Text className="text-lg" style={styles.infoText}>
+              About
+            </Text>
           </Pressable>
 
-          <View className="mb-12 flex flex-row items-center">
+          <View className="mb-6 flex flex-row items-center">
             <UserRound color={black} size={28} />
-            <Text className="ml-4 text-lg">test@example.com</Text>
+            <Text className="text-lg" style={styles.infoText}>
+              test@example.com
+            </Text>
           </View>
         </View>
 
@@ -84,5 +88,12 @@ const styles = StyleSheet.create({
   banner: {
     position: 'relative',
     top: 0,
+  },
+  settingsContainer: {
+    marginLeft: 30,
+    marginBottom: 20,
+  },
+  infoText: {
+    marginLeft: 10,
   },
 });
