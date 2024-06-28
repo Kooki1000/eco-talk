@@ -1,7 +1,6 @@
 import { ChevronDown, CircleUserRound } from 'lucide-react-native';
-import React, { useMemo } from 'react';
+import React from 'react';
 import { StyleSheet, View, type ViewProps } from 'react-native';
-import { twMerge } from 'tailwind-merge';
 
 import { Text } from './obytes';
 import { black } from './obytes/colors';
@@ -11,13 +10,8 @@ interface Props extends ViewProps {
 }
 
 const Header = ({ style, className }: Props) => {
-  const ViewStyle = useMemo(
-    () => twMerge('border-b-2 border-[#CBBDBD] pb-2', className),
-    [className]
-  );
-
   return (
-    <View style={[style, styles.container]} className={ViewStyle}>
+    <View style={[style, styles.container]} className={className}>
       <View style={styles.leftContainer}>
         <CircleUserRound color={black} size={40} strokeWidth={1} />
       </View>
@@ -34,6 +28,9 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    borderBottomWidth: 2,
+    borderColor: '#CBBDBD',
+    paddingBottom: 8,
   },
   leftContainer: {
     alignItems: 'center',

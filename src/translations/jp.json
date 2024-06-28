@@ -7,9 +7,16 @@
     "visitor": "ログインせず使用する"
   },
   "banner": "ユーザー名",
+  "posts": {
+    "title": "あなたの街の投稿"
+  },
   "profile": {
     "delte": "アカウントを削除",
     "logout": "ログアウト",
     "title": "設定"
+  },
+  "locales": {
+    "jp": "日本語",
+    "en": "English"
   }
 }

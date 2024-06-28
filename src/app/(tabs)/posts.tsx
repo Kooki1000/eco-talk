@@ -10,7 +10,7 @@ export default function PostsScreen() {
       <Header style={styles.header} />
 
       <View style={styles.container} className="h-full">
-        <Text className="text-2xl">Posts</Text>
+        <Text tx="posts.title" className="text-2xl font-bold" />
       </View>
     </SafeAreaView>
   );

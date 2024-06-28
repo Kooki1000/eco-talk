@@ -7,9 +7,16 @@
     "visitor": "Explore as visitor"
   },
   "banner": "Username",
+  "posts": {
+    "title": "Posts from Your City"
+  },
   "profile": {
     "delte": "Delete Account",
     "logout": "Log Out",
     "title": "General"
+  },
+  "locales": {
+    "jp": "日本語",
+    "en": "English"
   }
 }

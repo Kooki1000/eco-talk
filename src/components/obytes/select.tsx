@@ -17,6 +17,8 @@ import type { SvgProps } from 'react-native-svg';
 import Svg, { Path } from 'react-native-svg';
 import { tv } from 'tailwind-variants';
 
+import { translate, type TxKeyPath } from '@/i18n';
+
 import colors from './colors';
 import { CaretDown } from './icons/caret-down';
 import type { InputControllerType } from './input';
@@ -60,7 +62,7 @@ const selectTv = tv({
 
 const List = Platform.OS === 'web' ? FlashList : BottomSheetFlatList;
 
-export type Option = { label: string; value: string | number };
+export type Option = { label: TxKeyPath; value: string | number };
 
 type OptionsProps = {
   options: Option[];
@@ -118,14 +120,14 @@ const Option = memo(
     ...props
   }: PressableProps & {
     selected?: boolean;
-    label: string;
+    label: TxKeyPath;
   }) => {
     return (
       <Pressable
         className="flex-row items-center border-b-DEFAULT border-neutral-300 bg-white px-3 py-2 dark:border-neutral-700 dark:bg-neutral-800"
         {...props}
       >
-        <Text className="flex-1 dark:text-neutral-100 ">{label}</Text>
+        <Text tx={label} className="flex-1 dark:text-neutral-100" />
         {selected && <Check />}
       </Pressable>
     );
@@ -134,7 +136,7 @@ const Option = memo(
 
 export interface SelectProps {
   value?: string | number;
-  label?: string;
+  label?: TxKeyPath;
   disabled?: boolean;
   error?: string;
   options?: Option[];
@@ -185,7 +187,7 @@ export const Select = (props: SelectProps) => {
   return (
     <>
       <View className={styles.container()}>
-        {label && <Text className={styles.label()}>{label}</Text>}
+        {label && <Text className={styles.label()}>{translate(label)}</Text>}
 
         <TouchableOpacity
           className={styles.input()}

@@ -1,9 +1,13 @@
 import '../../global.css';
 
+import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import { ThemeProvider } from '@react-navigation/native';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
+import { StyleSheet } from 'react-native';
+import FlashMessage from 'react-native-flash-message';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 import { loadSelectedTheme } from '@/hooks/use-selected-theme';
 import { useThemeConfig } from '@/hooks/use-theme-config';
@@ -41,18 +45,6 @@ export default function RootLayout() {
 function Providers({ children }: { children: React.ReactNode }) {
   const theme = useThemeConfig();
 
-  return <ThemeProvider value={theme}>{children}</ThemeProvider>;
-}
-
-/* const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-}); */
-
-/* function Providers({ children }: { children: React.ReactNode }) {
-  const theme = useThemeConfig();
-
   return (
     <GestureHandlerRootView
       style={styles.container}
@@ -66,4 +58,10 @@ function Providers({ children }: { children: React.ReactNode }) {
       </ThemeProvider>
     </GestureHandlerRootView>
   );
-} */
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
