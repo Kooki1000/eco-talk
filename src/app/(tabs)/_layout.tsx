@@ -27,24 +27,28 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
+          headerShown: false,
           tabBarIcon: ({ color }) => <Home color={color} />,
         }}
       />
       <Tabs.Screen
         name="guides"
         options={{
+          headerShown: false,
           tabBarIcon: ({ color }) => <BookOpenCheck color={color} />,
         }}
       />
       <Tabs.Screen
         name="add"
         options={{
+          headerShown: false,
           tabBarIcon: ({ color }) => <CirclePlus color={color} size={40} />,
         }}
       />
       <Tabs.Screen
         name="posts"
         options={{
+          headerShown: false,
           tabBarIcon: ({ color }) => <MessageSquareText color={color} />,
         }}
       />
