@@ -1,4 +1,7 @@
 {
+  "about": {
+    "title": "About"
+  },
   "auth": {
     "apple": "Sign in with Apple",
     "description": "Your tool for navigating Japan's trash rules.",
@@ -7,6 +10,15 @@
     "visitor": "Explore as visitor"
   },
   "banner": "Username",
+  "locales": {
+    "en": "English",
+    "jp": "日本語"
+  },
+  "notFound": {
+    "description": "This screen doesn't exist.",
+    "home": "Go to home screen!",
+    "title": "Oops!"
+  },
   "posts": {
     "title": "Posts from Your City"
   },
@@ -14,9 +26,5 @@
     "delte": "Delete Account",
     "logout": "Log Out",
     "title": "General"
-  },
-  "locales": {
-    "jp": "日本語",
-    "en": "English"
   }
 }

@@ -1,4 +1,7 @@
 {
+  "about": {
+    "title": "このアプリについて"
+  },
   "auth": {
     "apple": "Appleでサインイン",
     "description": "ゴミ処理をわかりやすく",
@@ -7,6 +10,15 @@
     "visitor": "ログインせず使用する"
   },
   "banner": "ユーザー名",
+  "locales": {
+    "en": "English",
+    "jp": "日本語"
+  },
+  "notFound": {
+    "description": "ページが見つかりません。",
+    "home": "ホーム画面へ戻る",
+    "title": "あれれ？"
+  },
   "posts": {
     "title": "あなたの街の投稿"
   },
@@ -14,9 +26,5 @@
     "delte": "アカウントを削除",
     "logout": "ログアウト",
     "title": "設定"
-  },
-  "locales": {
-    "jp": "日本語",
-    "en": "English"
   }
 }

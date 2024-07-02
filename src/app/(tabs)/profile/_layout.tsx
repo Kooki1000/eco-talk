@@ -2,6 +2,7 @@ import { Link, Stack } from 'expo-router';
 import { MoveLeft } from 'lucide-react-native';
 
 import { black } from '@/components/obytes/colors';
+import { translate } from '@/i18n';
 
 export default function ProfileStack() {
   return (
@@ -16,7 +17,10 @@ export default function ProfileStack() {
       }}
     >
       <Stack.Screen name="index" options={{ headerShown: false }} />
-      <Stack.Screen name="about" options={{ title: 'About' }} />
+      <Stack.Screen
+        name="about"
+        options={{ title: translate('about.title') }}
+      />
     </Stack>
   );
 }
