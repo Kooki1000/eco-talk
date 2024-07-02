@@ -1,24 +1,31 @@
 import { ChevronDown, CircleUserRound } from 'lucide-react-native';
-import React from 'react';
+import { useColorScheme } from 'nativewind';
 import { StyleSheet, View, type ViewProps } from 'react-native';
 
 import { Text } from './obytes';
-import { black } from './obytes/colors';
+import { black, white } from './obytes/colors';
 
 interface Props extends ViewProps {
   className?: string;
 }
 
 const Header = ({ style, className }: Props) => {
+  const { colorScheme } = useColorScheme();
+  const isDark = colorScheme === 'dark';
+
   return (
     <View style={[style, styles.container]} className={className}>
       <View style={styles.leftContainer}>
-        <CircleUserRound color={black} size={40} strokeWidth={1} />
+        <CircleUserRound
+          color={isDark ? white : black}
+          size={40}
+          strokeWidth={1}
+        />
       </View>
 
       <View style={styles.rightContainer}>
         <Text className="text-lg">Yokohama City</Text>
-        <ChevronDown color={black} size={32} />
+        <ChevronDown color={isDark ? white : black} size={32} />
       </View>
     </View>
   );

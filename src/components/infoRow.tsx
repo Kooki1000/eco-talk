@@ -1,30 +1,34 @@
 import { ChevronDown, type LucideIcon } from 'lucide-react-native';
+import { useColorScheme } from 'nativewind';
 import { StyleSheet } from 'react-native';
 
 import { Text, View } from './obytes';
-import { black } from './obytes/colors';
+import { black, white } from './obytes/colors';
 
 type Prop = {
   IconComponent: LucideIcon;
   text: string;
 };
 
-const infoRow: React.FC<Prop> = ({ IconComponent, text }) => {
+const InfoRow: React.FC<Prop> = ({ IconComponent, text }) => {
+  const { colorScheme } = useColorScheme();
+  const isDark = colorScheme === 'dark';
+
   return (
     <View className="mb-4 flex flex-row items-center">
-      <IconComponent color={black} size={28} />
+      <IconComponent color={isDark ? white : black} size={28} />
       <Text className="text-lg" style={styles.text}>
         {text}
       </Text>
-      <ChevronDown color={black} size={28} />
+      <ChevronDown color={isDark ? white : black} size={28} />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   text: {
-    marginLeft: 10,
+    marginLeft: 12,
   },
 });
 
-export default infoRow;
+export default InfoRow;

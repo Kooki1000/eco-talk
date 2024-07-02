@@ -35,8 +35,14 @@
     "delte": "アカウントを削除",
     "logout": "ログアウト",
     "settings": {
-      "language": "言語：{{language}}"
+      "language": "言語：",
+      "theme": "ダークモード："
     },
     "title": "設定"
+  },
+  "theme": {
+    "dark": "ダークモード",
+    "light": "ライトモード",
+    "system": "デフォルト"
   }
 }

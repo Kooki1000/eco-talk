@@ -1,21 +1,20 @@
 /* eslint-disable max-lines-per-function */
 import { router } from 'expo-router';
-import {
-  ALargeSmall,
-  Info,
-  MapPinned,
-  SunMoon,
-  UserRound,
-} from 'lucide-react-native';
+import { ALargeSmall, Info, MapPinned, UserRound } from 'lucide-react-native';
+import { useColorScheme } from 'nativewind';
 import { Pressable, StyleSheet, View } from 'react-native';
 
 import Banner from '@/components/banner';
 import InfoRow from '@/components/infoRow';
 import { Button, SafeAreaView, Text } from '@/components/obytes';
-import { black } from '@/components/obytes/colors';
+import { black, white } from '@/components/obytes/colors';
 import LanguageSelect from '@/components/settings/languageSelect';
+import ThemeSelect from '@/components/settings/themeSelect';
 
 export default function ProfileScreen() {
+  const { colorScheme } = useColorScheme();
+  const isDark = colorScheme === 'dark';
+
   const onAboutPress = () => {
     console.log('About');
     router.push('/profile/about');
@@ -43,24 +42,22 @@ export default function ProfileScreen() {
 
         <View style={styles.settingsContainer}>
           <InfoRow IconComponent={MapPinned} text="Location: Yokohama City" />
-
           <LanguageSelect />
-
           <InfoRow IconComponent={ALargeSmall} text="Text Size: 12" />
-          <InfoRow IconComponent={SunMoon} text="Day/Night/System" />
+          <ThemeSelect />
 
           <Pressable
             onPress={onAboutPress}
             className="mb-4 flex flex-row items-center"
           >
-            <Info color={black} size={28} />
+            <Info color={isDark ? white : black} size={28} />
             <Text className="text-lg" style={styles.infoText}>
               About
             </Text>
           </Pressable>
 
           <View className="mb-6 flex flex-row items-center">
-            <UserRound color={black} size={28} />
+            <UserRound color={isDark ? white : black} size={28} />
             <Text className="text-lg" style={styles.infoText}>
               test@example.com
             </Text>
@@ -97,6 +94,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   infoText: {
-    marginLeft: 10,
+    marginLeft: 12,
   },
 });

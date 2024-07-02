@@ -35,8 +35,14 @@
     "delte": "Delete Account",
     "logout": "Log Out",
     "settings": {
-      "language": "Language: {{language}}"
+      "language": "Language:",
+      "theme": "Dark Mode:"
     },
     "title": "General"
+  },
+  "theme": {
+    "dark": "Dark Mode",
+    "light": "Light Mode",
+    "system": "System"
   }
 }

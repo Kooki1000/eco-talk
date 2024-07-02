@@ -4,14 +4,14 @@
 
 import { type BottomSheetModal } from '@gorhom/bottom-sheet';
 import { FlashList } from '@shopify/flash-list';
-import { ChevronDown } from 'lucide-react-native';
+import { ChevronDown, type LucideIcon } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import React, { forwardRef, memo, useCallback, useMemo } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import { Pressable, type PressableProps } from 'react-native';
 
 import { colors, Modal, Text, useModal } from '@/components/obytes';
-import { black } from '@/components/obytes/colors';
+import { black, white } from '@/components/obytes/colors';
 import { translate, type TxKeyPath } from '@/i18n';
 
 const List = FlashList;
@@ -89,6 +89,7 @@ const Option = memo(
 
 export interface SelectProps {
   value?: string | number;
+  IconComponent: LucideIcon;
   txKey: TxKeyPath;
   txOption?: any;
   disabled?: boolean;
@@ -99,8 +100,18 @@ export interface SelectProps {
 }
 
 export const Select = (props: SelectProps) => {
-  const { txKey, txOption, options = [], disabled = false, onSelect } = props;
+  const {
+    IconComponent,
+    txKey,
+    txOption,
+    options = [],
+    disabled = false,
+    onSelect,
+  } = props;
   const modal = useModal();
+
+  const { colorScheme } = useColorScheme();
+  const isDark = colorScheme === 'dark';
 
   const onSelectOption = useCallback(
     (option: Option) => {
@@ -118,10 +129,14 @@ export const Select = (props: SelectProps) => {
           disabled={disabled}
           onPress={modal.present}
         >
-          <Text className="text-lg dark:text-neutral-100">
-            {translate(txKey, txOption)}
+          <IconComponent color={isDark ? white : black} size={28} />
+          <Text
+            className="text-lg dark:text-neutral-100"
+            style={{ marginLeft: 12 }}
+          >
+            {txOption ? translate(txKey, txOption) : translate(txKey)}
           </Text>
-          <ChevronDown color={black} size={28} />
+          <ChevronDown color={isDark ? white : black} size={28} />
         </TouchableOpacity>
       </View>
 
