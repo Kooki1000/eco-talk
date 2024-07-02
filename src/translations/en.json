@@ -1,14 +1,48 @@
 {
+  "about": {
+    "title": "About"
+  },
+  "add": {
+    "title": "Add Post"
+  },
   "auth": {
     "apple": "Sign in with Apple",
-    "google": "Sign in with Google"
+    "description": "Your tool for navigating Japan's trash rules.",
+    "google": "Sign in with Google",
+    "title": "Welcome to EcoTalk",
+    "visitor": "Explore as visitor"
+  },
+  "banner": "Username",
+  "guides": {
+    "title": "General Information"
+  },
+  "home": {
+    "title": "Welcome to EcoTalk"
+  },
+  "locales": {
+    "en": "English",
+    "jp": "日本語"
+  },
+  "notFound": {
+    "description": "This screen doesn't exist.",
+    "home": "Go to home screen!",
+    "title": "Oops!"
+  },
+  "posts": {
+    "title": "Posts from Your City"
   },
   "profile": {
+    "delte": "Delete Account",
     "logout": "Log Out",
-    "delte": "Delete Account"
+    "settings": {
+      "language": "Language:",
+      "theme": "Dark Mode:"
+    },
+    "title": "General"
   },
-  "hello": "Hello, World!",
-  "language": {
-    "title": "Change language"
+  "theme": {
+    "dark": "Dark Mode",
+    "light": "Light Mode",
+    "system": "System"
   }
 }

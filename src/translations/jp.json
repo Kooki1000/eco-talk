@@ -1,14 +1,48 @@
 {
+  "about": {
+    "title": "このアプリについて"
+  },
+  "add": {
+    "title": "投稿"
+  },
   "auth": {
     "apple": "Appleでサインイン",
-    "google": "Googleでログイン"
+    "description": "ゴミ処理をわかりやすく",
+    "google": "Googleでログイン",
+    "title": "EcoTalkへようこそ",
+    "visitor": "ログインせず使用する"
+  },
+  "banner": "ユーザー名",
+  "guides": {
+    "title": "ゴミ処理のイロハ"
+  },
+  "home": {
+    "title": "EcoTalkへようこそ"
+  },
+  "locales": {
+    "en": "English",
+    "jp": "日本語"
+  },
+  "notFound": {
+    "description": "ページが見つかりません。",
+    "home": "ホーム画面へ戻る",
+    "title": "あれれ？"
+  },
+  "posts": {
+    "title": "あなたの街の投稿"
   },
   "profile": {
+    "delte": "アカウントを削除",
     "logout": "ログアウト",
-    "delte": "アカウントを削除"
+    "settings": {
+      "language": "言語：",
+      "theme": "ダークモード："
+    },
+    "title": "設定"
   },
-  "hello": "こんにちは、世界！",
-  "language": {
-    "title": "言語を変更"
+  "theme": {
+    "dark": "ダークモード",
+    "light": "ライトモード",
+    "system": "デフォルト"
   }
 }

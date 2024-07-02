@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native';
 import { View } from 'react-native';
 
 import { Button, Image, Text } from '@/components/obytes';
+import { translate } from '@/i18n';
 
 export default function index() {
   const GoogleLogin = () => {
@@ -23,13 +24,8 @@ export default function index() {
         contentFit="contain"
       />
 
-      <Text className="my-5 text-center text-5xl font-bold">
-        Welcome to EcoTalk
-      </Text>
-
-      <Text className="mx-8 mb-5 text-center text-2xl">
-        Your tool for navigating Japan's trash rules.
-      </Text>
+      <Text tx="auth.title" className="my-5 text-center text-5xl font-bold" />
+      <Text tx="auth.description" className="mx-8 mb-5 text-center text-2xl" />
 
       <Button
         onPress={GoogleLogin}
@@ -45,8 +41,8 @@ export default function index() {
         className="h-12 w-96 rounded-3xl border border-solid border-black bg-white"
       />
 
-      <Link href="/(tabs)" className="mt-10">
-        Explore as visitor
+      <Link href="/(tabs)" className="mt-10 underline">
+        {translate('auth.visitor')}
       </Link>
     </View>
   );

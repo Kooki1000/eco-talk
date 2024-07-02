@@ -1,4 +1,4 @@
-// This code is taken from the original version found at:
+// This code is modified from the original version found at:
 // https://github.com/obytes/react-native-template-obytes/blob/master/src/ui/select.tsx
 // Original code by OBytes (https://github.com/obytes), licensed under the MIT License.
 
@@ -17,9 +17,10 @@ import type { SvgProps } from 'react-native-svg';
 import Svg, { Path } from 'react-native-svg';
 import { tv } from 'tailwind-variants';
 
-import colors from '@/ui/colors';
-import { CaretDown } from '@/ui/icons';
+import { translate, type TxKeyPath } from '@/i18n';
 
+import colors from './colors';
+import { CaretDown } from './icons/caret-down';
 import type { InputControllerType } from './input';
 import { useModal } from './modal';
 import { Modal } from './modal';
@@ -61,13 +62,12 @@ const selectTv = tv({
 
 const List = Platform.OS === 'web' ? FlashList : BottomSheetFlatList;
 
-export type Option = { label: string; value: string | number };
+export type Option = { label: TxKeyPath; value: string | number };
 
 type OptionsProps = {
   options: Option[];
   onSelect: (option: Option) => void;
   value?: string | number;
-  testID?: string;
 };
 
 function keyExtractor(item: Option) {
@@ -75,7 +75,7 @@ function keyExtractor(item: Option) {
 }
 
 export const Options = forwardRef<BottomSheetModal, OptionsProps>(
-  ({ options, onSelect, value, testID }, ref) => {
+  ({ options, onSelect, value }, ref) => {
     const height = options.length * 70 + 100;
     const snapPoints = useMemo(() => [height], [height]);
     const { colorScheme } = useColorScheme();
@@ -88,10 +88,9 @@ export const Options = forwardRef<BottomSheetModal, OptionsProps>(
           label={item.label}
           selected={value === item.value}
           onPress={() => onSelect(item)}
-          testID={testID ? `${testID}-item-${item.value}` : undefined}
         />
       ),
-      [onSelect, value, testID]
+      [onSelect, value]
     );
 
     return (
@@ -121,14 +120,14 @@ const Option = memo(
     ...props
   }: PressableProps & {
     selected?: boolean;
-    label: string;
+    label: TxKeyPath;
   }) => {
     return (
       <Pressable
         className="flex-row items-center border-b-DEFAULT border-neutral-300 bg-white px-3 py-2 dark:border-neutral-700 dark:bg-neutral-800"
         {...props}
       >
-        <Text className="flex-1 dark:text-neutral-100 ">{label}</Text>
+        <Text tx={label} className="flex-1 dark:text-neutral-100" />
         {selected && <Check />}
       </Pressable>
     );
@@ -137,13 +136,14 @@ const Option = memo(
 
 export interface SelectProps {
   value?: string | number;
-  label?: string;
+  label?: TxKeyPath;
   disabled?: boolean;
   error?: string;
   options?: Option[];
   onSelect?: (value: string | number) => void;
   placeholder?: string;
 }
+
 interface ControlledSelectProps<T extends FieldValues>
   extends SelectProps,
     InputControllerType<T> {}
@@ -188,7 +188,7 @@ export const Select = (props: SelectProps) => {
   return (
     <>
       <View className={styles.container()}>
-        {label && <Text className={styles.label()}>{label}</Text>}
+        {label && <Text className={styles.label()}>{translate(label)}</Text>}
 
         <TouchableOpacity
           className={styles.input()}
