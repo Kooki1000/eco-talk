@@ -1,4 +1,12 @@
 {
+  "auth": {
+    "apple": "Appleでサインイン",
+    "google": "Googleでログイン"
+  },
+  "profile": {
+    "logout": "ログアウト",
+    "delte": "アカウントを削除"
+  },
   "hello": "こんにちは、世界！",
   "language": {
     "title": "言語を変更"

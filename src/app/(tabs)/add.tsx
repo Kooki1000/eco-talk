@@ -1,6 +1,6 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
-import { Text, View } from '@/components/themed';
+import { Text } from '@/components/obytes';
 
 export default function AddPostScreen() {
   return (
