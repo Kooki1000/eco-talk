@@ -10,7 +10,7 @@ export default function HomeScreen() {
       <Header style={styles.header} />
 
       <View style={styles.container} className="h-full">
-        <Text className="text-2xl">Home</Text>
+        <Text tx="home.title" className="text-2xl font-bold" />
       </View>
     </SafeAreaView>
   );

@@ -2,6 +2,9 @@
   "about": {
     "title": "About"
   },
+  "add": {
+    "title": "Add Post"
+  },
   "auth": {
     "apple": "Sign in with Apple",
     "description": "Your tool for navigating Japan's trash rules.",
@@ -10,6 +13,12 @@
     "visitor": "Explore as visitor"
   },
   "banner": "Username",
+  "guides": {
+    "title": "General Information"
+  },
+  "home": {
+    "title": "Welcome to EcoTalk"
+  },
   "locales": {
     "en": "English",
     "jp": "日本語"

@@ -2,6 +2,9 @@
   "about": {
     "title": "このアプリについて"
   },
+  "add": {
+    "title": "投稿"
+  },
   "auth": {
     "apple": "Appleでサインイン",
     "description": "ゴミ処理をわかりやすく",
@@ -10,6 +13,12 @@
     "visitor": "ログインせず使用する"
   },
   "banner": "ユーザー名",
+  "guides": {
+    "title": "ゴミ処理のイロハ"
+  },
+  "home": {
+    "title": "EcoTalkへようこそ"
+  },
   "locales": {
     "en": "English",
     "jp": "日本語"

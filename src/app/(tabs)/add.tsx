@@ -10,7 +10,7 @@ export default function AddPostScreen() {
       <Header style={styles.header} />
 
       <View style={styles.container} className="h-full">
-        <Text className="text-2xl">Guides</Text>
+        <Text tx="add.title" className="text-2xl font-bold" />
       </View>
     </SafeAreaView>
   );
