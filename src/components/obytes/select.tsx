@@ -143,6 +143,7 @@ export interface SelectProps {
   onSelect?: (value: string | number) => void;
   placeholder?: string;
 }
+
 interface ControlledSelectProps<T extends FieldValues>
   extends SelectProps,
     InputControllerType<T> {}

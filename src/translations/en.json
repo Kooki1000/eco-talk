@@ -25,6 +25,9 @@
   "profile": {
     "delte": "Delete Account",
     "logout": "Log Out",
+    "settings": {
+      "language": "Language: {{language}}"
+    },
     "title": "General"
   }
 }

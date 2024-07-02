@@ -25,6 +25,9 @@
   "profile": {
     "delte": "アカウントを削除",
     "logout": "ログアウト",
+    "settings": {
+      "language": "言語：{{language}}"
+    },
     "title": "設定"
   }
 }

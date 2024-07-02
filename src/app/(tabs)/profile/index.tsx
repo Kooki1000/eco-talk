@@ -1,8 +1,8 @@
+/* eslint-disable max-lines-per-function */
 import { router } from 'expo-router';
 import {
   ALargeSmall,
   Info,
-  Languages,
   MapPinned,
   SunMoon,
   UserRound,
@@ -13,6 +13,7 @@ import Banner from '@/components/banner';
 import InfoRow from '@/components/infoRow';
 import { Button, SafeAreaView, Text } from '@/components/obytes';
 import { black } from '@/components/obytes/colors';
+import LanguageSelect from '@/components/settings/languageSelect';
 
 export default function ProfileScreen() {
   const onAboutPress = () => {
@@ -42,7 +43,9 @@ export default function ProfileScreen() {
 
         <View style={styles.settingsContainer}>
           <InfoRow IconComponent={MapPinned} text="Location: Yokohama City" />
-          <InfoRow IconComponent={Languages} text="Language: Chinese" />
+
+          <LanguageSelect />
+
           <InfoRow IconComponent={ALargeSmall} text="Text Size: 12" />
           <InfoRow IconComponent={SunMoon} text="Day/Night/System" />
 
