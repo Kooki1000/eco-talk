@@ -8,6 +8,7 @@ import { Select } from '@/components/customSelect';
 import Header from '@/components/header';
 import { Text } from '@/components/obytes';
 import { black, white } from '@/components/obytes/colors';
+import Post from '@/components/post';
 import { sortOptions } from '@/constants/options';
 import { translate } from '@/i18n';
 
@@ -39,7 +40,9 @@ export default function PostsScreen() {
             }}
           />
 
-          <Text>{translate('posts.count', { count: 128 })}</Text>
+          <Text className="justify-center text-lg">
+            {translate('posts.count', { count: 128 })}
+          </Text>
 
           <TouchableOpacity onPress={onSelectPress} className="flex-row">
             <Search color={isDark ? white : black} />
@@ -47,6 +50,8 @@ export default function PostsScreen() {
           </TouchableOpacity>
         </View>
       </View>
+
+      <Post />
     </SafeAreaView>
   );
 }
