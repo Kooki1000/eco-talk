@@ -28,6 +28,9 @@
     "home": "Go to home screen!",
     "title": "Oops!"
   },
+  "post": {
+    "language": "Original Language: {{language}}"
+  },
   "posts": {
     "count": "{{count}} Posts",
     "mostPopular": "Most popular",
@@ -42,7 +45,7 @@
     "logout": "Log Out",
     "settings": {
       "language": "Language",
-      "theme": "Dark Mode"
+      "theme": "Theme"
     },
     "title": "General"
   },

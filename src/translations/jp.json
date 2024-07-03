@@ -28,6 +28,9 @@
     "home": "ホーム画面へ戻る",
     "title": "あれれ？"
   },
+  "post": {
+    "language": "元の言語：{{language}}"
+  },
   "posts": {
     "count": "{{count}}件の投稿",
     "mostPopular": "人気な投稿",

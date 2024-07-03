@@ -2,6 +2,7 @@
 import { router } from 'expo-router';
 import { ALargeSmall, Info, MapPinned, UserRound } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
+import React from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 
 import Banner from '@/components/banner';
@@ -37,7 +38,7 @@ export default function ProfileScreen() {
       <View className="mt-10">
         <Text
           tx="profile.title"
-          className="mb-8 items-cewnter text-center text-2xl font-bold"
+          className="items-cewnter mb-8 text-center text-2xl font-bold"
         />
 
         <View style={styles.settingsContainer}>
