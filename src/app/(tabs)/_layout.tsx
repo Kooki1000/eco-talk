@@ -8,7 +8,6 @@ import {
   UserRound,
 } from 'lucide-react-native';
 
-import { useClientOnlyValue } from '@/hooks/use-client-only-value';
 import { useThemeConfig } from '@/hooks/use-theme-config';
 
 export default function TabLayout() {
@@ -17,9 +16,6 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        // Disable the static render of the header on web
-        // to prevent a hydration error in React Navigation v6.
-        headerShown: useClientOnlyValue(false, true),
         tabBarActiveTintColor: colorScheme.colors.text,
         tabBarShowLabel: false,
       }}

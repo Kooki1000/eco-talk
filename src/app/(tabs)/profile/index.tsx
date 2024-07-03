@@ -37,7 +37,7 @@ export default function ProfileScreen() {
       <View className="mt-10">
         <Text
           tx="profile.title"
-          className="mb-8 items-center text-center text-2xl font-bold"
+          className="mb-8 items-cewnter text-center text-2xl font-bold"
         />
 
         <View style={styles.settingsContainer}>
@@ -76,7 +76,7 @@ export default function ProfileScreen() {
             onPress={deleteAccount}
             tx="profile.delte"
             textClassName="text-xl text-black"
-            className="h-10 w-80 rounded-3xl bg-red-300"
+            className="h-10 w-80 rounded-3xl bg-red-300 dark:bg-[#E26D6D]"
           />
         </View>
       </View>

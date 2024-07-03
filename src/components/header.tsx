@@ -1,3 +1,4 @@
+import { Link } from 'expo-router';
 import { ChevronDown, CircleUserRound } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import { StyleSheet, View, type ViewProps } from 'react-native';
@@ -16,11 +17,13 @@ const Header = ({ style, className }: Props) => {
   return (
     <View style={[style, styles.container]} className={className}>
       <View style={styles.leftContainer}>
-        <CircleUserRound
-          color={isDark ? white : black}
-          size={40}
-          strokeWidth={1}
-        />
+        <Link href={'/(tabs)/profile'} asChild>
+          <CircleUserRound
+            color={isDark ? white : black}
+            size={40}
+            strokeWidth={1}
+          />
+        </Link>
       </View>
 
       <View style={styles.rightContainer}>

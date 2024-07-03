@@ -29,14 +29,20 @@
     "title": "あれれ？"
   },
   "posts": {
+    "count": "{{count}}件の投稿",
+    "mostPopular": "人気な投稿",
+    "newest": "新しい順",
+    "oldest": "古い順",
+    "search": "検索",
+    "sortBy": "並び替え",
     "title": "あなたの街の投稿"
   },
   "profile": {
     "delte": "アカウントを削除",
     "logout": "ログアウト",
     "settings": {
-      "language": "言語：",
-      "theme": "ダークモード："
+      "language": "言語",
+      "theme": "ダークモード"
     },
     "title": "設定"
   },
