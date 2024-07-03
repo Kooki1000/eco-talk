@@ -38,7 +38,7 @@ export default function ProfileScreen() {
       <View className="mt-10">
         <Text
           tx="profile.title"
-          className="items-cewnter mb-8 text-center text-2xl font-bold"
+          className="mb-8 text-center text-2xl font-bold"
         />
 
         <View style={styles.settingsContainer}>
