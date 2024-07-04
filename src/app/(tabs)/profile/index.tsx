@@ -2,6 +2,7 @@
 import { router } from 'expo-router';
 import { ALargeSmall, Info, MapPinned, UserRound } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
+import React from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 
 import Banner from '@/components/banner';
@@ -37,7 +38,7 @@ export default function ProfileScreen() {
       <View className="mt-10">
         <Text
           tx="profile.title"
-          className="mb-8 items-center text-center text-2xl font-bold"
+          className="mb-8 text-center text-2xl font-bold"
         />
 
         <View style={styles.settingsContainer}>
@@ -76,7 +77,7 @@ export default function ProfileScreen() {
             onPress={deleteAccount}
             tx="profile.delte"
             textClassName="text-xl text-black"
-            className="h-10 w-80 rounded-3xl bg-red-300"
+            className="h-10 w-80 rounded-3xl bg-red-300 dark:bg-[#E26D6D]"
           />
         </View>
       </View>

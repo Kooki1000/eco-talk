@@ -10,3 +10,9 @@ export const themes: Option[] = [
   { value: 'dark', label: 'theme.dark' },
   { value: 'system', label: 'theme.system' },
 ];
+
+export const sortOptions: Option[] = [
+  { value: 'newest', label: 'posts.newest' },
+  { value: 'oldest', label: 'posts.oldest' },
+  { value: 'most-popular', label: 'posts.mostPopular' },
+];

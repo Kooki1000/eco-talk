@@ -77,8 +77,7 @@ const Option = memo(
   }) => {
     return (
       <Pressable
-        // eslint-disable-next-line tailwindcss/no-unnecessary-arbitrary-value
-        className="flex-row items-center border-b-[1px] border-neutral-300 bg-white px-3 py-2 dark:border-neutral-700 dark:bg-neutral-800"
+        className="flex-row items-center border-b-2 border-neutral-300 bg-white px-3 py-2 dark:border-neutral-700 dark:bg-neutral-800"
         {...props}
       >
         <Text tx={label} className="flex-1 dark:text-neutral-100" />

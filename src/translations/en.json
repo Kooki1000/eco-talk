@@ -28,15 +28,24 @@
     "home": "Go to home screen!",
     "title": "Oops!"
   },
+  "post": {
+    "language": "Original Language: {{language}}"
+  },
   "posts": {
+    "count": "{{count}} Posts",
+    "mostPopular": "Most popular",
+    "newest": "Newest",
+    "oldest": "Oldest",
+    "search": "Search post",
+    "sortBy": "Sort by:",
     "title": "Posts from Your City"
   },
   "profile": {
     "delte": "Delete Account",
     "logout": "Log Out",
     "settings": {
-      "language": "Language:",
-      "theme": "Dark Mode:"
+      "language": "Language",
+      "theme": "Theme"
     },
     "title": "General"
   },
