@@ -13,31 +13,31 @@ import { black, white } from './obytes/colors';
 
 const post = tv({
   slots: {
-    container: 'mb-5 w-[90%] rounded-lg p-4',
-    language: 'mr-1 flex h-11 w-48 justify-center rounded-2xl',
+    container: 'mb-5 w-fit rounded-lg p-4',
+    language: 'mr-1 flex h-11 justify-center rounded-2xl px-2',
   },
 
   variants: {
     variant: {
       red: {
-        container: 'bg-[#F1D9D9] dark:bg-[#E26D6D]',
-        language: 'bg-[#DFB2B2] dark:bg-[#B42121]',
+        container: 'bg-red-100 dark:bg-red-400',
+        language: 'bg-red-200 dark:bg-red-500',
       },
       orange: {
-        container: 'bg-[#FAE8DB] dark:bg-[#FCA363]',
-        language: 'bg-[#FAD2B6] dark:bg-[#CB5704]',
+        container: 'bg-orange-100 dark:bg-orange-400',
+        language: 'bg-orange-200 dark:bg-orange-500',
       },
       green: {
-        container: 'bg-[#C6DEB8] dark:bg-[#4F9467]',
-        language: 'bg-[#A3C68A] dark:bg-[#346D48]',
+        container: 'bg-green-100 dark:bg-green-500',
+        language: 'bg-green-200 dark:bg-green-600',
       },
       blue: {
-        container: 'bg-[#B8D8E6] dark:bg-[#3A9CA8]',
-        language: 'bg-[#8DBECF] dark:bg-[#1E6A7A]',
+        container: 'bg-blue-100 dark:bg-blue-400',
+        language: 'bg-blue-200 dark:bg-blue-500',
       },
       purple: {
-        container: 'bg-[#D4C9E2] dark:bg-[#8E6FB7]',
-        language: 'bg-[#B9A4D0] dark:bg-[#5C3A8A]',
+        container: 'bg-purple-100 dark:bg-purple-400',
+        language: 'bg-purple-100 dark:bg-purple-500',
       },
     },
   },
@@ -53,9 +53,17 @@ interface Props extends PostVariant {
   variant?: 'red' | 'orange' | 'green' | 'blue' | 'purple';
   text: string;
   langCode: Language;
+  containerClassName?: string;
+  languageClassName?: string;
 }
 
-const Post = ({ variant = 'red', text, langCode }: Props) => {
+const Post = ({
+  variant = 'red',
+  text,
+  langCode,
+  containerClassName = '',
+  languageClassName = '',
+}: Props) => {
   const styles = useMemo(() => post({ variant }), [variant]);
 
   const { colorScheme } = useColorScheme();
@@ -70,7 +78,11 @@ const Post = ({ variant = 'red', text, langCode }: Props) => {
   };
 
   return (
-    <View className={styles.container({})}>
+    <View
+      className={styles.container({
+        className: containerClassName,
+      })}
+    >
       <View className="flex-row items-center justify-between">
         <CircleUserRound
           color={isDark ? white : black}
@@ -78,7 +90,11 @@ const Post = ({ variant = 'red', text, langCode }: Props) => {
           strokeWidth={1}
         />
 
-        <View className={styles.language({})}>
+        <View
+          className={styles.language({
+            className: languageClassName,
+          })}
+        >
           <Text className="text-center text-sm">
             {translate('post.language', {
               language: translate(`locales.${langCode}`),
@@ -87,7 +103,7 @@ const Post = ({ variant = 'red', text, langCode }: Props) => {
         </View>
       </View>
 
-      <View className="mt-4 w-5/6 self-center px-3">
+      <View className="w- mt-4 self-center px-3">
         <Text className="mb-4">{text}</Text>
 
         <View className="ml-6 flex-row">

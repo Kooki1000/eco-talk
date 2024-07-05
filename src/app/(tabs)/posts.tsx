@@ -57,12 +57,15 @@ export default function PostsScreen() {
           </View>
         </View>
 
-        <View className="mt-4 w-full items-center">
+        <View
+          className="mt-4 items-center rounded-lg"
+          style={styles.postsContainer}
+        >
           <Post variant="red" text={loremText} langCode="en" />
           <Post variant="orange" text={loremText} langCode="en" />
-          <Post variant="green" text={loremText} langCode="jp" />
-          <Post variant="blue" text={loremText} langCode="jp" />
-          <Post variant="purple" text={loremText} langCode="jp" />
+          <Post variant="green" text={loremText} langCode="en" />
+          <Post variant="blue" text={loremText} langCode="en" />
+          <Post variant="purple" text={loremText} langCode="en" />
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -88,5 +91,9 @@ const styles = StyleSheet.create({
   },
   searchText: {
     marginLeft: 8,
+  },
+  postsContainer: {
+    marginLeft: 16,
+    marginRight: 16,
   },
 });
