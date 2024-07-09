@@ -1,3 +1,4 @@
+import { router } from 'expo-router';
 import { Search } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import { useState } from 'react';
@@ -26,6 +27,7 @@ export default function PostsScreen() {
 
   const onPostPress = (index: number) => {
     console.log('Post pressed:', index);
+    router.push(`/(tabs)/posts/${index}`);
   };
 
   return (

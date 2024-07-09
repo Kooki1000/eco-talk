@@ -37,7 +37,7 @@ const post = tv({
       },
       purple: {
         container: 'bg-purple-100 dark:bg-purple-400',
-        language: 'bg-purple-100 dark:bg-purple-500',
+        language: 'bg-purple-200 dark:bg-purple-500',
       },
     },
   },
