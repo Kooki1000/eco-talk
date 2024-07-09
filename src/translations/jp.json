@@ -29,7 +29,7 @@
     "title": "あれれ？"
   },
   "post": {
-    "language": "元の言語：{{language}}"
+    "translate": "元の言語："
   },
   "posts": {
     "count": "{{count}}件の投稿",
@@ -53,5 +53,9 @@
     "dark": "ダークモード",
     "light": "ライトモード",
     "system": "デフォルト"
+  },
+  "translatedLocales": {
+    "en": "英語",
+    "jp": "日本語"
   }
 }

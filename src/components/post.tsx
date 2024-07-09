@@ -1,7 +1,7 @@
 import { CircleUserRound, ThumbsDown, ThumbsUp } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
-import { useMemo } from 'react';
-import { TouchableOpacity, View } from 'react-native';
+import { forwardRef, useMemo } from 'react';
+import { Pressable, TouchableOpacity, View } from 'react-native';
 import type { VariantProps } from 'tailwind-variants';
 import { tv } from 'tailwind-variants';
 
@@ -51,72 +51,72 @@ type PostVariant = VariantProps<typeof post>;
 
 interface Props extends PostVariant {
   variant?: 'red' | 'orange' | 'green' | 'blue' | 'purple';
+  onPress: () => void;
   text: string;
   langCode: Language;
   containerClassName?: string;
   languageClassName?: string;
 }
 
-const Post = ({
-  variant = 'red',
-  text,
-  langCode,
-  containerClassName = '',
-  languageClassName = '',
-}: Props) => {
-  const styles = useMemo(() => post({ variant }), [variant]);
+export const Post = forwardRef<View, Props>(
+  (
+    {
+      variant = 'red',
+      text,
+      langCode,
+      containerClassName = '',
+      languageClassName = '',
+      ...props
+    },
+    ref
+  ) => {
+    const styles = useMemo(() => post({ variant }), [variant]);
 
-  const { colorScheme } = useColorScheme();
-  const isDark = colorScheme === 'dark';
+    const { colorScheme } = useColorScheme();
+    const isDark = colorScheme === 'dark';
 
-  const onThumbsUp = () => {
-    console.log('Thumbs up');
-  };
+    const onThumbsUp = () => {
+      console.log('Thumbs up');
+    };
 
-  const onThumbsDown = () => {
-    console.log('Thumbs down');
-  };
+    const onThumbsDown = () => {
+      console.log('Thumbs down');
+    };
 
-  return (
-    <View
-      className={styles.container({
-        className: containerClassName,
-      })}
-    >
-      <View className="flex-row items-center justify-between">
-        <CircleUserRound
-          color={isDark ? white : black}
-          size={48}
-          strokeWidth={1}
-        />
+    return (
+      <Pressable
+        className={styles.container({ className: containerClassName })}
+        {...props}
+        ref={ref}
+      >
+        <View className="flex-row items-center justify-between">
+          <CircleUserRound
+            color={isDark ? white : black}
+            size={48}
+            strokeWidth={1}
+          />
 
-        <View
-          className={styles.language({
-            className: languageClassName,
-          })}
-        >
-          <Text className="text-center text-sm">
-            {translate('post.language', {
-              language: translate(`locales.${langCode}`),
-            })}
-          </Text>
+          <View className={styles.language({ className: languageClassName })}>
+            <Text className="text-center text-sm">
+              {translate('post.translate')}
+              {translate(`translatedLocales.${langCode}`)}
+            </Text>
+          </View>
         </View>
-      </View>
 
-      <View className="w- mt-4 self-center px-3">
-        <Text className="mb-4">{text}</Text>
+        <View className="w- mt-4 self-center px-3">
+          <Text className="mb-4">{text}</Text>
 
-        <View className="ml-6 flex-row">
-          <TouchableOpacity onPress={onThumbsUp}>
-            <ThumbsUp color={isDark ? white : black} />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={onThumbsDown} className="ml-4">
-            <ThumbsDown color={isDark ? white : black} />
-          </TouchableOpacity>
+          <View className="ml-6 flex-row">
+            <TouchableOpacity onPress={onThumbsUp}>
+              <ThumbsUp color={isDark ? white : black} />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={onThumbsDown} className="ml-4">
+              <ThumbsDown color={isDark ? white : black} />
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
-    </View>
-  );
-};
-
-export default Post;
+      </Pressable>
+    );
+  }
+);

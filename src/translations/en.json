@@ -29,7 +29,7 @@
     "title": "Oops!"
   },
   "post": {
-    "language": "Original Language: {{language}}"
+    "translate": "Original Language: "
   },
   "posts": {
     "count": "{{count}} Posts",
@@ -53,5 +53,9 @@
     "dark": "Dark Mode",
     "light": "Light Mode",
     "system": "System"
+  },
+  "translatedLocales": {
+    "en": "English",
+    "jp": "Japanese"
   }
 }

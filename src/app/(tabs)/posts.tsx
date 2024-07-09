@@ -9,8 +9,8 @@ import { Select } from '@/components/customSelect';
 import Header from '@/components/header';
 import { Text } from '@/components/obytes';
 import { black, white } from '@/components/obytes/colors';
-import Post from '@/components/post';
-import { loremText } from '@/constants/dummyData';
+import { Post } from '@/components/post';
+import { loremText, postsData } from '@/constants/dummyData';
 import { sortOptions } from '@/constants/options';
 import { translate } from '@/i18n';
 
@@ -22,6 +22,10 @@ export default function PostsScreen() {
 
   const onSelectPress = () => {
     console.log('Search pressed');
+  };
+
+  const onPostPress = (index: number) => {
+    console.log('Post pressed:', index);
   };
 
   return (
@@ -61,11 +65,15 @@ export default function PostsScreen() {
           className="mt-4 items-center rounded-lg"
           style={styles.postsContainer}
         >
-          <Post variant="red" text={loremText} langCode="en" />
-          <Post variant="orange" text={loremText} langCode="en" />
-          <Post variant="green" text={loremText} langCode="en" />
-          <Post variant="blue" text={loremText} langCode="en" />
-          <Post variant="purple" text={loremText} langCode="en" />
+          {postsData.map((post, index) => (
+            <Post
+              key={index}
+              onPress={() => onPostPress(index)}
+              variant={post.variant}
+              text={loremText}
+              langCode={post.langCode}
+            />
+          ))}
         </View>
       </ScrollView>
     </SafeAreaView>
