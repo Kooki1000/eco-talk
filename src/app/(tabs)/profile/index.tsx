@@ -77,7 +77,7 @@ export default function ProfileScreen() {
             onPress={deleteAccount}
             tx="profile.delte"
             textClassName="text-xl text-black"
-            className="h-10 w-80 rounded-3xl bg-red-300 dark:bg-[#E26D6D]"
+            className="h-10 w-80 rounded-3xl bg-red-300 dark:bg-red-400"
           />
         </View>
       </View>

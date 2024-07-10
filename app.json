@@ -14,7 +14,7 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true,
+      "supportsTablet": false,
       "bundleIdentifier": "com.anonymous.casproject"
     },
     "android": {

@@ -1,3 +1,4 @@
+import { router } from 'expo-router';
 import { Search } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import { useState } from 'react';
@@ -9,8 +10,8 @@ import { Select } from '@/components/customSelect';
 import Header from '@/components/header';
 import { Text } from '@/components/obytes';
 import { black, white } from '@/components/obytes/colors';
-import Post from '@/components/post';
-import { loremText } from '@/constants/dummyData';
+import { Post } from '@/components/post';
+import { loremText, postsData } from '@/constants/dummyData';
 import { sortOptions } from '@/constants/options';
 import { translate } from '@/i18n';
 
@@ -22,6 +23,11 @@ export default function PostsScreen() {
 
   const onSelectPress = () => {
     console.log('Search pressed');
+  };
+
+  const onPostPress = (index: number) => {
+    console.log('Post pressed:', index);
+    router.push(`/(tabs)/posts/${index}`);
   };
 
   return (
@@ -57,12 +63,19 @@ export default function PostsScreen() {
           </View>
         </View>
 
-        <View className="mt-4 w-full items-center">
-          <Post variant="red" text={loremText} langCode="en" />
-          <Post variant="orange" text={loremText} langCode="en" />
-          <Post variant="green" text={loremText} langCode="jp" />
-          <Post variant="blue" text={loremText} langCode="jp" />
-          <Post variant="purple" text={loremText} langCode="jp" />
+        <View
+          className="mt-4 items-center rounded-lg"
+          style={styles.postsContainer}
+        >
+          {postsData.map((post, index) => (
+            <Post
+              key={index}
+              onPress={() => onPostPress(index)}
+              variant={post.variant}
+              text={loremText}
+              langCode={post.langCode}
+            />
+          ))}
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -88,5 +101,9 @@ const styles = StyleSheet.create({
   },
   searchText: {
     marginLeft: 8,
+  },
+  postsContainer: {
+    marginLeft: 16,
+    marginRight: 16,
   },
 });

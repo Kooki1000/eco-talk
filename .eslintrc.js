@@ -1,4 +1,6 @@
-// Modified from https://github.com/obytes/react-native-template-obytes/blob/master/.eslintrc.js
+// This code is modified from the original version found at:
+// https://github.com/obytes/react-native-template-obytes/blob/master/.eslintrc.js
+// Original code by OBytes (https://github.com/obytes), licensed under the MIT License.
 
 const path = require('path');
 
