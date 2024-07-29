@@ -27,7 +27,7 @@ export default function ProfileScreen() {
   };
 
   const deleteAccount = () => {
-    console.log('Delte account');
+    console.log('Delete account');
     router.push('/');
   };
 
@@ -52,9 +52,11 @@ export default function ProfileScreen() {
             className="mb-4 flex flex-row items-center"
           >
             <Info color={isDark ? white : black} size={28} />
-            <Text className="text-lg" style={styles.infoText}>
-              About
-            </Text>
+            <Text
+              tx="about.title"
+              className="text-lg"
+              style={styles.infoText}
+            />
           </Pressable>
 
           <View className="mb-6 flex flex-row items-center">
@@ -75,7 +77,7 @@ export default function ProfileScreen() {
 
           <Button
             onPress={deleteAccount}
-            tx="profile.delte"
+            tx="profile.delete"
             textClassName="text-xl text-black"
             className="h-10 w-80 rounded-3xl bg-red-300 dark:bg-red-400"
           />
