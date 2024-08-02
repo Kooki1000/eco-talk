@@ -47,6 +47,9 @@ export default function AboutScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    position: 'relative',
+    top: 0,
+    alignItems: 'center',
   },
   heading: {
     marginLeft: 16,

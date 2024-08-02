@@ -18,17 +18,17 @@ export default function ProfileScreen() {
 
   const onAboutPress = () => {
     console.log('About');
-    router.push('/profile/about');
+    router.navigate('/profile/about');
   };
 
   const logOut = () => {
     console.log('Log out');
-    router.push('/');
+    router.replace('/');
   };
 
   const deleteAccount = () => {
     console.log('Delete account');
-    router.push('/');
+    router.replace('/');
   };
 
   return (
@@ -72,14 +72,14 @@ export default function ProfileScreen() {
             onPress={logOut}
             tx="profile.logout"
             textClassName="text-xl text-black"
-            className="h-10 w-80 rounded-3xl bg-gray-300"
+            className="bg-gray-300 h-10 w-80 rounded-3xl"
           />
 
           <Button
             onPress={deleteAccount}
             tx="profile.delete"
             textClassName="text-xl text-black"
-            className="h-10 w-80 rounded-3xl bg-red-300 dark:bg-red-400"
+            className="bg-red-300 dark:bg-red-400 h-10 w-80 rounded-3xl"
           />
         </View>
       </View>
