@@ -1,6 +1,6 @@
 /* eslint-disable max-lines-per-function */
 import { router } from 'expo-router';
-import { ALargeSmall, Info, MapPinned, UserRound } from 'lucide-react-native';
+import { Info, MapPinned, UserRound } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import React from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
@@ -27,7 +27,7 @@ export default function ProfileScreen() {
   };
 
   const deleteAccount = () => {
-    console.log('Delte account');
+    console.log('Delete account');
     router.push('/');
   };
 
@@ -44,7 +44,6 @@ export default function ProfileScreen() {
         <View style={styles.settingsContainer}>
           <InfoRow IconComponent={MapPinned} text="Location: Yokohama City" />
           <LanguageSelect />
-          <InfoRow IconComponent={ALargeSmall} text="Text Size: 12" />
           <ThemeSelect />
 
           <Pressable
@@ -52,9 +51,11 @@ export default function ProfileScreen() {
             className="mb-4 flex flex-row items-center"
           >
             <Info color={isDark ? white : black} size={28} />
-            <Text className="text-lg" style={styles.infoText}>
-              About
-            </Text>
+            <Text
+              tx="about.title"
+              className="text-lg"
+              style={styles.infoText}
+            />
           </Pressable>
 
           <View className="mb-6 flex flex-row items-center">
@@ -75,7 +76,7 @@ export default function ProfileScreen() {
 
           <Button
             onPress={deleteAccount}
-            tx="profile.delte"
+            tx="profile.delete"
             textClassName="text-xl text-black"
             className="h-10 w-80 rounded-3xl bg-red-300 dark:bg-red-400"
           />
