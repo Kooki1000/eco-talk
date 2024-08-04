@@ -23,7 +23,6 @@ const Banner = ({ style, className }: Props) => {
       <ImageBackground
         source={require('../../assets/images/banner.png')}
         contentFit="cover"
-        style={styles.bannerStyle}
       >
         <View className="flex-row border-b-2 border-[#CBBDBD]">
           <View style={styles.iconContainer} className="mb-4">
@@ -48,9 +47,6 @@ const Banner = ({ style, className }: Props) => {
 };
 
 const styles = StyleSheet.create({
-  bannerStyle: {
-    opacity: 0.8,
-  },
   iconContainer: {
     position: 'relative',
   },
