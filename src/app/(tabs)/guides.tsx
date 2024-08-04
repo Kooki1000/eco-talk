@@ -1,13 +1,13 @@
 import { SafeAreaView, StyleSheet, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
-import Header from '@/components/header';
 import { Text } from '@/components/obytes';
+import UserInfoHeader from '@/components/userInfoHeader';
 
 export default function GuidesScreen() {
   return (
     <SafeAreaView>
-      <Header style={styles.header} />
+      <UserInfoHeader style={styles.header} />
       <ScrollView>
         <View style={styles.container} className="mb-16 mt-7">
           <View>

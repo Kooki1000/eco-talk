@@ -9,7 +9,13 @@ interface PlaceHolderProps extends TextInputProps {
 }
 
 const PlaceHolder = ({ placeholderKey, ...props }: PlaceHolderProps) => {
-  return <TextInput placeholder={translate(placeholderKey)} {...props} />;
+  const placeholder = translate(placeholderKey);
+
+  if (typeof placeholder !== 'string') {
+    console.error('Invalid placeholder value:', placeholderKey);
+  }
+
+  return <TextInput placeholder={placeholder} {...props} />;
 };
 
 export default PlaceHolder;

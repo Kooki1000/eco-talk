@@ -1,25 +1,25 @@
 import { router } from 'expo-router';
-import { CircleUserRound, Send, X } from 'lucide-react-native';
+import { CircleUserRound } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   KeyboardAvoidingView,
   Platform,
   SafeAreaView,
   StyleSheet,
-  TouchableOpacity,
-  View,
 } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
-import { Text } from '@/components/obytes';
+import AddPostHeader from '@/components/addPostHeader';
 import { black, white } from '@/components/obytes/colors';
 import PlaceHolder from '@/components/placeHolder';
 
 export default function AddPostScreen() {
   const [text, setText] = useState('');
+
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
+
   const onPostPress = () => {
     console.log('post content: ' + text + '  post date:' + Date());
     router.navigate('/posts');
@@ -27,21 +27,8 @@ export default function AddPostScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.header}>
-        <TouchableOpacity
-          onPress={() => router.back()}
-          className="flex-row justify-center"
-        >
-          <X color={isDark ? white : black} size={35} strokeWidth={1} />
-        </TouchableOpacity>
-        <Text className="text-lg">Yokohama City</Text>
-        <TouchableOpacity
-          onPress={onPostPress}
-          className="flex-row justify-center"
-        >
-          <Send color={isDark ? white : black} size={28} strokeWidth={1} />
-        </TouchableOpacity>
-      </View>
+      <AddPostHeader onPress={onPostPress} />
+
       <ScrollView
         keyboardShouldPersistTaps="always"
         keyboardDismissMode="none"
