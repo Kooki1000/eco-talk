@@ -7,10 +7,10 @@ import { ScrollView } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { Select } from '@/components/customSelect';
-import Header from '@/components/header';
 import { Text } from '@/components/obytes';
 import { black, white } from '@/components/obytes/colors';
 import { Post } from '@/components/post';
+import UserInfoHeader from '@/components/userInfoHeader';
 import { loremText, postsData } from '@/constants/dummyData';
 import { sortOptions } from '@/constants/options';
 import { translate } from '@/i18n';
@@ -32,7 +32,7 @@ export default function PostsScreen() {
 
   return (
     <SafeAreaView className="flex-1 items-center justify-center">
-      <Header style={styles.header} />
+      <UserInfoHeader style={styles.header} />
       <ScrollView>
         <View className="mb-5">
           <View style={styles.container} className="mt-10">

@@ -2,7 +2,6 @@
 import { router } from 'expo-router';
 import { Info, MapPinned, UserRound } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
-import React from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 
 import Banner from '@/components/banner';

@@ -6,7 +6,7 @@ import { type BottomSheetModal } from '@gorhom/bottom-sheet';
 import { FlashList } from '@shopify/flash-list';
 import { ChevronDown } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
-import React, { forwardRef, memo, useCallback, useMemo } from 'react';
+import { forwardRef, memo, useCallback, useMemo } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import { Pressable, type PressableProps } from 'react-native';
 
