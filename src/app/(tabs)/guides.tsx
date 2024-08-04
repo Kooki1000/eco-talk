@@ -18,7 +18,7 @@ export default function GuidesScreen() {
           </View>
           <View
             style={styles.sticker}
-            className="mb-3 mt-4 size-fit self-center rounded-lg bg-ivory px-3 dark:bg-green"
+            className="mb-3 mt-4 size-fit self-center rounded-lg bg-green-100 px-3 dark:bg-green-400"
           >
             <Text
               tx="guides.what.title"
@@ -33,7 +33,7 @@ export default function GuidesScreen() {
           </View>
           <View
             style={styles.sticker}
-            className="my-3 size-fit self-center rounded-lg bg-silver px-3 dark:bg-pink"
+            className="my-3 size-fit self-center rounded-lg bg-red-100 px-3 dark:bg-red-400"
           >
             <Text
               tx="guides.why.title"
@@ -48,7 +48,7 @@ export default function GuidesScreen() {
           </View>
           <View
             style={styles.sticker}
-            className="my-3 size-fit self-center rounded-lg bg-beige px-3 dark:bg-orange"
+            className="my-3 size-fit self-center rounded-lg bg-orange-100 px-3 dark:bg-orange-400"
           >
             <Text
               tx="guides.how.title"

@@ -72,14 +72,14 @@ export default function ProfileScreen() {
             onPress={logOut}
             tx="profile.logout"
             textClassName="text-xl text-black"
-            className="bg-gray-300 h-10 w-80 rounded-3xl"
+            className="h-10 w-80 rounded-3xl bg-gray-300"
           />
 
           <Button
             onPress={deleteAccount}
             tx="profile.delete"
             textClassName="text-xl text-black"
-            className="bg-red-300 dark:bg-red-400 h-10 w-80 rounded-3xl"
+            className="h-10 w-80 rounded-3xl bg-red-300 dark:bg-red-400"
           />
         </View>
       </View>

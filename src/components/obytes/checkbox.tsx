@@ -138,7 +138,7 @@ export const RadioIcon = ({ checked = false }: IconProps) => {
         width: SIZE,
         borderColor: color,
       }}
-      className="bg-transparent items-center justify-center rounded-[20px] border-2"
+      className="items-center justify-center rounded-[20px] border-2 bg-transparent"
       from={{ borderColor: '#CCCFD6' }}
       animate={{
         borderColor: color,
