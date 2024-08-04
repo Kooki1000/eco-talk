@@ -23,7 +23,7 @@ export default function AddPostScreen() {
   const isDark = colorScheme === 'dark';
 
   const onPostPress = () => {
-    console.log('post content: ' + text + '  post date:' + Date());
+    console.log('post content: ' + text);
     router.navigate('/posts');
   };
 
