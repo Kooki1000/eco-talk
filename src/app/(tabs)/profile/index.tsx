@@ -18,17 +18,17 @@ export default function ProfileScreen() {
 
   const onAboutPress = () => {
     console.log('About');
-    router.push('/profile/about');
+    router.navigate('/profile/about');
   };
 
   const logOut = () => {
     console.log('Log out');
-    router.push('/');
+    router.replace('/');
   };
 
   const deleteAccount = () => {
     console.log('Delete account');
-    router.push('/');
+    router.replace('/');
   };
 
   return (

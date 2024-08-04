@@ -19,6 +19,7 @@ export default function TabLayout() {
         tabBarActiveTintColor: colorScheme.colors.text,
         tabBarShowLabel: false,
       }}
+      backBehavior={'history'}
     >
       <Tabs.Screen
         name="index"
@@ -39,6 +40,7 @@ export default function TabLayout() {
         options={{
           headerShown: false,
           tabBarIcon: ({ color }) => <CirclePlus color={color} size={40} />,
+          tabBarStyle: { display: 'none' },
         }}
       />
       <Tabs.Screen

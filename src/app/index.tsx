@@ -8,12 +8,12 @@ import { translate } from '@/i18n';
 export default function index() {
   const GoogleLogin = () => {
     console.log('Logged in with Google');
-    router.push('/(tabs)');
+    router.replace('/(tabs)');
   };
 
   const AppleLogin = () => {
     console.log('Logged in with Apple');
-    router.push('/(tabs)');
+    router.replace('/(tabs)');
   };
 
   return (

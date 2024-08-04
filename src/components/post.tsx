@@ -13,7 +13,7 @@ import { black, white } from './obytes/colors';
 
 const post = tv({
   slots: {
-    container: 'mb-5 w-fit rounded-lg p-4',
+    container: 'mb-5 size-fit rounded-lg p-4',
     language: 'mr-1 flex h-11 justify-center rounded-2xl px-2',
   },
 
@@ -104,7 +104,7 @@ export const Post = forwardRef<View, Props>(
           </View>
         </View>
 
-        <View className="w- mt-4 self-center px-3">
+        <View className="mt-4 self-center px-3">
           <Text className="mb-4">{text}</Text>
 
           <View className="ml-6 flex-row">

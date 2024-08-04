@@ -27,55 +27,56 @@ export default function PostsScreen() {
 
   const onPostPress = (index: number) => {
     console.log('Post pressed:', index);
-    router.push(`/(tabs)/posts/${index}`);
+    router.navigate(`/(tabs)/posts/${index}`);
   };
 
   return (
     <SafeAreaView className="flex-1 items-center justify-center">
       <Header style={styles.header} />
+      <ScrollView>
+        <View className="mb-5">
+          <View style={styles.container} className="mt-10">
+            <Text tx="posts.title" className="text-2xl font-bold" />
 
-      <ScrollView className="mb-7">
-        <View style={styles.container} className="mt-10">
-          <Text tx="posts.title" className="text-2xl font-bold" />
+            <View style={styles.row}>
+              <Select
+                txKey="posts.sortBy"
+                options={sortOptions}
+                value={value}
+                onSelect={(option) => {
+                  console.log('Selected:', option);
+                  setValue(option as string);
+                }}
+              />
 
-          <View style={styles.row}>
-            <Select
-              txKey="posts.sortBy"
-              options={sortOptions}
-              value={value}
-              onSelect={(option) => {
-                console.log('Selected:', option);
-                setValue(option as string);
-              }}
-            />
+              <Text className="justify-center text-lg">
+                {translate('posts.count', { count: 128 })}
+              </Text>
 
-            <Text className="justify-center text-lg">
-              {translate('posts.count', { count: 128 })}
-            </Text>
-
-            <TouchableOpacity
-              onPress={onSelectPress}
-              className="flex-row justify-center"
-            >
-              <Search color={isDark ? white : black} />
-              <Text tx="posts.search" style={styles.searchText} />
-            </TouchableOpacity>
+              <TouchableOpacity
+                onPress={onSelectPress}
+                className="flex-row justify-center"
+              >
+                <Search color={isDark ? white : black} />
+                <Text tx="posts.search" style={styles.searchText} />
+              </TouchableOpacity>
+            </View>
           </View>
-        </View>
 
-        <View
-          className="mt-4 items-center rounded-lg"
-          style={styles.postsContainer}
-        >
-          {postsData.map((post, index) => (
-            <Post
-              key={index}
-              onPress={() => onPostPress(index)}
-              variant={post.variant}
-              text={loremText}
-              langCode={post.langCode}
-            />
-          ))}
+          <View
+            className="mt-4 items-center rounded-lg"
+            style={styles.postsContainer}
+          >
+            {postsData.map((post, index) => (
+              <Post
+                key={index}
+                onPress={() => onPostPress(index)}
+                variant={post.variant}
+                text={loremText}
+                langCode={post.langCode}
+              />
+            ))}
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
