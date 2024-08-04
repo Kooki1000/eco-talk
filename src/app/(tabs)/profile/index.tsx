@@ -1,8 +1,7 @@
 /* eslint-disable max-lines-per-function */
 import { router } from 'expo-router';
-import { ALargeSmall, Info, MapPinned, UserRound } from 'lucide-react-native';
+import { Info, MapPinned, UserRound } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
-import React from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 
 import Banner from '@/components/banner';
@@ -44,7 +43,6 @@ export default function ProfileScreen() {
         <View style={styles.settingsContainer}>
           <InfoRow IconComponent={MapPinned} text="Location: Yokohama City" />
           <LanguageSelect />
-          <InfoRow IconComponent={ALargeSmall} text="Text Size: 12" />
           <ThemeSelect />
 
           <Pressable

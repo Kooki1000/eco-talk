@@ -12,10 +12,12 @@ import { ScrollView } from 'react-native-gesture-handler';
 
 import AddPostHeader from '@/components/addPostHeader';
 import { black, white } from '@/components/obytes/colors';
-import PlaceHolder from '@/components/placeHolder';
+import PostInput from '@/components/postInput';
+import { useSoftKeyboardEffect } from '@/lib/keyboard';
 
 export default function AddPostScreen() {
   const [text, setText] = useState('');
+  useSoftKeyboardEffect();
 
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
@@ -42,7 +44,7 @@ export default function AddPostScreen() {
         <KeyboardAvoidingView
           behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         >
-          <PlaceHolder
+          <PostInput
             style={[styles.input, { color: isDark ? 'white' : 'black' }]}
             placeholderKey="add.insert"
             multiline

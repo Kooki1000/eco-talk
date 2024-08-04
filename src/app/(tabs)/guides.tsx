@@ -1,21 +1,18 @@
-import { SafeAreaView, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
-import { Text } from '@/components/obytes';
+import { SafeAreaView, Text } from '@/components/obytes';
 import UserInfoHeader from '@/components/userInfoHeader';
 
 export default function GuidesScreen() {
   return (
     <SafeAreaView>
       <UserInfoHeader style={styles.header} />
+
       <ScrollView>
         <View style={styles.container} className="mb-16 mt-7">
-          <View>
-            <Text
-              tx="guides.title"
-              className="text-center text-4xl font-bold"
-            />
-          </View>
+          <Text tx="guides.title" className="text-center text-4xl font-bold" />
+
           <View
             style={styles.sticker}
             className="mb-3 mt-4 size-fit self-center rounded-lg bg-green-100 px-3 dark:bg-green-400"
@@ -31,6 +28,7 @@ export default function GuidesScreen() {
               className="text-1xl leading-6"
             />
           </View>
+
           <View
             style={styles.sticker}
             className="my-3 size-fit self-center rounded-lg bg-red-100 px-3 dark:bg-red-400"
@@ -46,6 +44,7 @@ export default function GuidesScreen() {
               className="text-1xl leading-6"
             />
           </View>
+
           <View
             style={styles.sticker}
             className="my-3 size-fit self-center rounded-lg bg-orange-100 px-3 dark:bg-orange-400"

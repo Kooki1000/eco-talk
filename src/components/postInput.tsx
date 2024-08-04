@@ -8,7 +8,7 @@ interface PlaceHolderProps extends TextInputProps {
   placeholderKey: TxKeyPath;
 }
 
-const PlaceHolder = ({ placeholderKey, ...props }: PlaceHolderProps) => {
+const PostInput = ({ placeholderKey, ...props }: PlaceHolderProps) => {
   const placeholder = translate(placeholderKey);
 
   if (typeof placeholder !== 'string') {
@@ -18,4 +18,4 @@ const PlaceHolder = ({ placeholderKey, ...props }: PlaceHolderProps) => {
   return <TextInput placeholder={placeholder} {...props} />;
 };
 
-export default PlaceHolder;
+export default PostInput;
