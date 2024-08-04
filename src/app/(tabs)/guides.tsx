@@ -6,7 +6,7 @@ import UserInfoHeader from '@/components/userInfoHeader';
 
 export default function GuidesScreen() {
   return (
-    <SafeAreaView>
+    <SafeAreaView className="flex-1 items-center justify-center">
       <UserInfoHeader style={styles.header} />
 
       <ScrollView>
