@@ -20,8 +20,11 @@ export default function AddPostScreen() {
   const [text, setText] = useState('');
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
+  const onXPress = () => {
+    router.back();
+  };
   const onPostPress = () => {
-    console.log('post content: ' + text + '  post date:' + Date());
+    console.log('post content: ' + text);
     router.navigate('/posts');
   };
 
@@ -29,7 +32,7 @@ export default function AddPostScreen() {
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity
-          onPress={() => router.back()}
+          onPress={onXPress}
           className="flex-row justify-center"
         >
           <X color={isDark ? white : black} size={35} strokeWidth={1} />
