@@ -10,7 +10,7 @@ export default function GuidesScreen() {
       <UserInfoHeader style={styles.header} />
 
       <ScrollView>
-        <View style={styles.container} className="mb-16 mt-7">
+        <View style={styles.container} className="my-7">
           <Text tx="guides.title" className="text-center text-4xl font-bold" />
 
           <View
