@@ -1,9 +1,7 @@
-import { router } from 'expo-router';
 import { Search } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import { useState } from 'react';
-import { StyleSheet, TouchableOpacity, View } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
+import { FlatList, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { Select } from '@/components/customSelect';
@@ -27,58 +25,55 @@ export default function PostsScreen() {
 
   const onPostPress = (index: number) => {
     console.log('Post pressed:', index);
-    router.navigate(`/(tabs)/posts/${index}`);
   };
 
   return (
     <SafeAreaView className="flex-1 items-center justify-center">
       <UserInfoHeader style={styles.header} />
-      <ScrollView>
-        <View className="mb-5">
-          <View style={styles.container} className="mt-10">
-            <Text tx="posts.title" className="text-2xl font-bold" />
+      <View className="mb-5">
+        <View style={styles.container} className="mx-3 mt-6 rounded-sm py-4">
+          <Text tx="posts.title" className="text-2xl font-bold" />
 
-            <View style={styles.row}>
-              <Select
-                txKey="posts.sortBy"
-                options={sortOptions}
-                value={value}
-                onSelect={(option) => {
-                  console.log('Selected:', option);
-                  setValue(option as string);
-                }}
-              />
+          <View style={styles.row}>
+            <Select
+              txKey="posts.sortBy"
+              options={sortOptions}
+              value={value}
+              onSelect={(option) => {
+                console.log('Selected:', option);
+                setValue(option as string);
+              }}
+            />
 
-              <Text className="justify-center text-lg">
-                {translate('posts.count', { count: 128 })}
-              </Text>
+            <Text className="justify-center text-lg">
+              {translate('posts.count', { count: 128 })}
+            </Text>
 
-              <TouchableOpacity
-                onPress={onSelectPress}
-                className="flex-row justify-center"
-              >
-                <Search color={isDark ? white : black} />
-                <Text tx="posts.search" style={styles.searchText} />
-              </TouchableOpacity>
-            </View>
-          </View>
-
-          <View
-            className="mt-4 items-center rounded-lg"
-            style={styles.postsContainer}
-          >
-            {postsData.map((post, index) => (
-              <Post
-                key={index}
-                onPress={() => onPostPress(index)}
-                variant={post.variant}
-                text={loremText}
-                langCode={post.langCode}
-              />
-            ))}
+            <TouchableOpacity
+              onPress={onSelectPress}
+              className="flex-row justify-center"
+            >
+              <Search color={isDark ? white : black} />
+              <Text tx="posts.search" style={styles.searchText} />
+            </TouchableOpacity>
           </View>
         </View>
-      </ScrollView>
+
+        <View className="mt-4 items-center" style={styles.postsContainer}>
+          <FlatList
+            data={postsData}
+            renderItem={({ item }) => (
+              <Post
+                onPress={() => onPostPress(item.id)}
+                variant={item.variant}
+                text={loremText}
+                langCode={item.langCode}
+              />
+            )}
+            contentContainerStyle={{ paddingBottom: 400 }}
+          />
+        </View>
+      </View>
     </SafeAreaView>
   );
 }

@@ -9,9 +9,9 @@ export default function GuidesScreen() {
     <SafeAreaView className="flex-1 items-center justify-center">
       <UserInfoHeader style={styles.header} />
 
-      <ScrollView>
-        <View style={styles.container} className="my-7">
-          <Text tx="guides.title" className="text-center text-4xl font-bold" />
+      <ScrollView className="mt-3">
+        <View style={styles.container} className="mb-16 mt-8">
+          <Text tx="guides.title" className="text-center text-3xl font-bold" />
 
           <View
             style={styles.sticker}
@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
     position: 'relative',
     top: 0,
     alignItems: 'center',
+    height: '100%',
   },
   header: {
     position: 'relative',

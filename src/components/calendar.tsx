@@ -1,7 +1,5 @@
-import { Bell } from 'lucide-react-native';
-import { useColorScheme } from 'nativewind';
 import { forwardRef, useMemo } from 'react';
-import { TouchableOpacity, View } from 'react-native';
+import { View } from 'react-native';
 import type { VariantProps } from 'tailwind-variants';
 import { tv } from 'tailwind-variants';
 
@@ -9,7 +7,6 @@ import type { TxKeyPath } from '@/i18n';
 import { translate } from '@/i18n';
 
 import { Text } from './obytes';
-import { black, white } from './obytes/colors';
 
 const day = tv({
   slots: {
@@ -54,13 +51,9 @@ export const Calendar = forwardRef<View, Props>(
   ({ variant = 'red', text, containerClassName = '', days, ...props }, ref) => {
     const styles = useMemo(() => day({ variant }), [variant]);
 
-    const { colorScheme } = useColorScheme();
-    const isDark = colorScheme === 'dark';
-
-    const onNotificationPress = () => {
-      console.log('Notification');
-    };
-
+    const dateToDisplay = days.length > 0 ? days[0].date : 'No date available';
+    const dayOfWeekToDisplay =
+      days.length > 0 ? days[0].dayOfWeek : 'No day available';
     return (
       <View
         className={`${styles.container({
@@ -69,21 +62,11 @@ export const Calendar = forwardRef<View, Props>(
         {...props}
         ref={ref}
       >
-        {days.map((date, index) => (
-          <View key={index} className="items-center">
-            <Text className="text-lg">{date.date}</Text>
-            <Text className="text-lg">{date.dayOfWeek}</Text>
-          </View>
-        ))}
+        <View className="items-center">
+          <Text className="text-lg">{dateToDisplay}</Text>
+          <Text className="text-lg">{dayOfWeekToDisplay}</Text>
+        </View>
         <Text className="ml-6 mr-20 text-2xl">{translate(text)}</Text>
-        <TouchableOpacity onPress={onNotificationPress} className="flex-row">
-          <Bell
-            color={isDark ? white : black}
-            size={36}
-            strokeWidth={1}
-            className="ml-10"
-          />
-        </TouchableOpacity>
       </View>
     );
   }

@@ -1,8 +1,7 @@
 import { CalendarCheck } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
+import { FlatList, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { Calendar } from '@/components/calendar';
@@ -18,32 +17,33 @@ export default function HomeScreen() {
   return (
     <SafeAreaView className="flex-1 items-center justify-center">
       <UserInfoHeader style={styles.header} />
-      <ScrollView>
-        <Text tx="home.title" className="mt-8 self-center text-4xl font-bold" />
-        <View style={styles.container}>
-          <CalendarCheck
-            color={isDark ? white : black}
-            size={42}
-            strokeWidth={1}
-          />
-          <Text tx="home.upcoming" className="ml-2 text-xl font-medium" />
-        </View>
-        <View className="mb-20 items-center rounded-lg">
-          {dayData.map((day, index) => (
+      <Text tx="home.title" className="mt-8 self-center text-4xl font-bold" />
+      <View style={styles.container}>
+        <CalendarCheck
+          color={isDark ? white : black}
+          size={42}
+          strokeWidth={1}
+        />
+        <Text tx="home.upcoming" className="ml-2 text-xl font-medium" />
+      </View>
+      <View className="mb-20 items-center rounded-lg">
+        <FlatList
+          data={dayData}
+          renderItem={({ item }) => (
             <Calendar
-              key={index}
-              variant={day.variant}
-              text="calendar.Recyclable"
+              variant={item.variant}
+              text="calendar.Burnable"
               days={[
                 {
-                  date: day.date,
-                  dayOfWeek: day.dayOfWeek,
+                  date: item.date,
+                  dayOfWeek: item.dayOfWeek,
                 },
               ]}
             />
-          ))}
-        </View>
-      </ScrollView>
+          )}
+          contentContainerStyle={{ paddingBottom: 400 }}
+        />
+      </View>
     </SafeAreaView>
   );
 }
