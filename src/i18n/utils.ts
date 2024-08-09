@@ -2,6 +2,10 @@
 // https://github.com/obytes/react-native-template-obytes/blob/master/src/core/i18n/utils.tsx
 // Original code by OBytes (https://github.com/obytes), licensed under the MIT License.
 
+// Add other languages here
+import 'dayjs/locale/ja';
+
+import dayjs from 'dayjs';
 import type TranslateOptions from 'i18next';
 import i18n from 'i18next';
 import memoize from 'lodash.memoize';
@@ -32,6 +36,7 @@ export const translate = memoize(
 
 export const changeLanguage = (lang: Language) => {
   i18n.changeLanguage(lang);
+  dayjs.locale(`${lang}`);
 
   // Change here when adding RTL languages
   I18nManager.forceRTL(false);

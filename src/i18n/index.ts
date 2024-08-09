@@ -2,6 +2,9 @@
 // https://github.com/obytes/react-native-template-obytes/blob/master/src/core/i18n/index.tsx#L24
 // Original code by OBytes (https://github.com/obytes), licensed under the MIT License.
 
+import 'dayjs/locale/ja';
+
+import dayjs from 'dayjs';
 import { getLocales } from 'expo-localization';
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
@@ -23,5 +26,7 @@ export const isRTL: boolean = i18n.dir() === 'rtl';
 
 I18nManager.allowRTL(isRTL);
 I18nManager.forceRTL(isRTL);
+
+dayjs.locale(`${getLanguage() || getLocales()[0].languageCode!}`);
 
 export default i18n;
