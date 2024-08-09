@@ -1,5 +1,4 @@
-import React from 'react';
-import { FlatList, StyleSheet, View } from 'react-native';
+import { FlatList, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import PostsHeader from '@/components/headers/postsHeader';
@@ -13,13 +12,12 @@ export default function PostsScreen() {
   };
 
   return (
-    <SafeAreaView className="flex-1 items-center justify-center">
-      <UserInfoHeader style={styles.header} />
+    <SafeAreaView>
+      <UserInfoHeader />
 
-      <View className="mx-4 items-center pb-20">
+      <View className="mx-4">
         <FlatList
           data={postsData}
-          ListHeaderComponent={<PostsHeader />}
           renderItem={({ item }) => (
             <Post
               onPress={() => onPostPress(item.id)}
@@ -28,15 +26,10 @@ export default function PostsScreen() {
               langCode={item.langCode}
             />
           )}
+          ListHeaderComponent={<PostsHeader />}
+          ListFooterComponent={<View className="mb-32" />}
         />
       </View>
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  header: {
-    position: 'relative',
-    top: 0,
-  },
-});

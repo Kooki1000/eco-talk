@@ -6,8 +6,8 @@ import { SafeAreaView, Text } from '@/components/obytes';
 
 export default function GuidesScreen() {
   return (
-    <SafeAreaView className="flex-1 items-center justify-center">
-      <UserInfoHeader style={styles.header} />
+    <SafeAreaView>
+      <UserInfoHeader />
 
       <ScrollView className="mb-6 mt-3">
         <View style={styles.container} className="mb-16 mt-8">
@@ -15,7 +15,7 @@ export default function GuidesScreen() {
 
           <View
             style={styles.sticker}
-            className="mb-3 mt-4 size-fit self-center rounded-lg bg-green-100 px-3 dark:bg-green-400"
+            className="mb-3 mt-4 size-fit self-center rounded-lg bg-green-100 px-3 dark:bg-green-500"
           >
             <Text
               tx="guides.what.title"
@@ -71,10 +71,6 @@ const styles = StyleSheet.create({
     position: 'relative',
     top: 0,
     alignItems: 'center',
-  },
-  header: {
-    position: 'relative',
-    top: 0,
   },
   sticker: {
     marginLeft: 16,

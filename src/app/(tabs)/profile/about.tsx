@@ -5,8 +5,8 @@ import { Text } from '@/components/obytes';
 
 export default function AboutScreen() {
   return (
-    <SafeAreaView className="flex-1 items-center justify-center">
-      <ScrollView className="px-4">
+    <SafeAreaView>
+      <ScrollView className="mx-4">
         <View className="mt-4">
           <View className="mb-8">
             <Text tx="about.about.about" className="mb-2 text-2xl font-bold" />
