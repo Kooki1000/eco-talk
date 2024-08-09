@@ -9,9 +9,9 @@ export default function GuidesScreen() {
     <SafeAreaView className="flex-1 items-center justify-center">
       <UserInfoHeader style={styles.header} />
 
-      <ScrollView className="mt-3">
+      <ScrollView className="mb-6 mt-3">
         <View style={styles.container} className="mb-16 mt-8">
-          <Text tx="guides.title" className="text-center text-3xl font-bold" />
+          <Text tx="guides.title" className="text-center text-2xl font-bold" />
 
           <View
             style={styles.sticker}
@@ -19,13 +19,13 @@ export default function GuidesScreen() {
           >
             <Text
               tx="guides.what.title"
-              className="text-2xl font-bold leading-7"
+              className="text-xl font-bold leading-7"
               style={styles.question}
             />
             <Text
               tx="guides.what.content"
               style={styles.content}
-              className="text-1xl leading-6"
+              className="leading-6"
             />
           </View>
 
@@ -35,13 +35,13 @@ export default function GuidesScreen() {
           >
             <Text
               tx="guides.why.title"
-              className="text-2xl font-bold leading-7"
+              className="text-xl font-bold leading-7"
               style={styles.question}
             />
             <Text
               tx="guides.why.content"
               style={styles.content}
-              className="text-1xl leading-6"
+              className="leading-6"
             />
           </View>
 
@@ -51,13 +51,13 @@ export default function GuidesScreen() {
           >
             <Text
               tx="guides.how.title"
-              className="text-2xl font-bold leading-7"
+              className="text-xl font-bold leading-7"
               style={styles.question}
             />
             <Text
               tx="guides.how.content"
               style={styles.content}
-              className="text-1xl leading-6"
+              className="leading-6"
             />
           </View>
         </View>
