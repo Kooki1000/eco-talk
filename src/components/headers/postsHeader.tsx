@@ -58,14 +58,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   row: {
-    width: '80%',
+    width: '90%',
     justifyContent: 'space-between',
     marginTop: 12,
     flexDirection: 'row',
     alignItems: 'center',
   },
   searchText: {
-    marginLeft: 8,
+    marginLeft: 6,
   },
 });
 
