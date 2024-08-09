@@ -1,7 +1,7 @@
 import type { Option } from '@/components/customSelect';
 
 export const languages: Option[] = [
-  { value: 'jp', label: 'locales.jp' },
+  { value: 'ja', label: 'locales.ja' },
   { value: 'en', label: 'locales.en' },
 ];
 

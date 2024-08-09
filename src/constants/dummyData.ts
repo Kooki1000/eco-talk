@@ -10,16 +10,16 @@ type PostDataType = {
 
 export const postsData: PostDataType[] = [
   { id: 1, variant: 'red', langCode: 'en' },
-  { id: 2, variant: 'orange', langCode: 'jp' },
+  { id: 2, variant: 'orange', langCode: 'ja' },
   { id: 3, variant: 'green', langCode: 'en' },
-  { id: 4, variant: 'blue', langCode: 'jp' },
+  { id: 4, variant: 'blue', langCode: 'ja' },
   { id: 5, variant: 'purple', langCode: 'en' },
   { id: 6, variant: 'green', langCode: 'en' },
-  { id: 7, variant: 'purple', langCode: 'jp' },
+  { id: 7, variant: 'purple', langCode: 'ja' },
   { id: 8, variant: 'blue', langCode: 'en' },
   { id: 9, variant: 'orange', langCode: 'en' },
-  { id: 10, variant: 'red', langCode: 'jp' },
+  { id: 10, variant: 'red', langCode: 'ja' },
   { id: 11, variant: 'green', langCode: 'en' },
-  { id: 12, variant: 'blue', langCode: 'jp' },
+  { id: 12, variant: 'blue', langCode: 'ja' },
   { id: 13, variant: 'purple', langCode: 'en' },
 ];

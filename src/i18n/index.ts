@@ -14,7 +14,7 @@ export * from './utils';
 i18n.use(initReactI18next).init({
   resources,
   lng: getLanguage() || getLocales()[0].languageCode!,
-  fallbackLng: 'jp',
+  fallbackLng: 'ja',
   compatibilityJSON: 'v3',
 });
 

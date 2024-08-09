@@ -2,6 +2,6 @@ import type { resources } from './resources';
 
 declare module 'react-i18next' {
   interface CustomTypeOptions {
-    resources: (typeof resources)['jp'];
+    resources: (typeof resources)['ja'];
   }
 }

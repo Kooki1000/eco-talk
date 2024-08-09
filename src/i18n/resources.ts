@@ -1,9 +1,9 @@
 import en from '@/translations/en.json';
-import jp from '@/translations/jp.json';
+import ja from '@/translations/ja.json';
 
 export const resources = {
-  jp: {
-    translation: jp,
+  ja: {
+    translation: ja,
   },
   en: {
     translation: en,

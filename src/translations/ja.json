@@ -46,7 +46,7 @@
   },
   "locales": {
     "en": "English",
-    "jp": "日本語"
+    "ja": "日本語"
   },
   "notFound": {
     "description": "ページが見つかりません。",
@@ -81,6 +81,6 @@
   },
   "translatedLocales": {
     "en": "英語",
-    "jp": "日本語"
+    "ja": "日本語"
   }
 }

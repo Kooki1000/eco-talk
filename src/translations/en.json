@@ -46,7 +46,7 @@
   },
   "locales": {
     "en": "English",
-    "jp": "日本語"
+    "ja": "日本語"
   },
   "notFound": {
     "description": "This screen doesn't exist.",
@@ -81,6 +81,6 @@
   },
   "translatedLocales": {
     "en": "English",
-    "jp": "Japanese"
+    "ja": "Japanese"
   }
 }
