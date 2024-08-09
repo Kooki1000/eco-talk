@@ -42,11 +42,12 @@ type DayVariant = VariantProps<typeof calendar>;
 interface Props extends DayVariant {
   variant?: 'burnable' | 'nonBurnable' | 'bulky' | 'recyclable' | 'other';
   containerClassName?: string;
-  day?: string;
+  date?: string;
+  dayOfWeek?: string;
 }
 
 export const Calendar = forwardRef<View, Props>(
-  ({ variant, containerClassName = '', day, ...props }, ref) => {
+  ({ variant, containerClassName = '', date, dayOfWeek, ...props }, ref) => {
     const styles = useMemo(() => calendar({ variant }), [variant]);
     const type: TxKeyPath = `calendar.${variant}` as TxKeyPath;
 
@@ -57,8 +58,8 @@ export const Calendar = forwardRef<View, Props>(
         ref={ref}
       >
         <View className="items-center">
-          <Text className="text-lg">{dayjs(day).format('L')}</Text>
-          <Text className="text-lg">{dayjs(day).format('dddd')}</Text>
+          <Text className="text-lg">{date}</Text>
+          <Text className="text-lg">{dayOfWeek}</Text>
         </View>
         <Text className="ml-8 mr-20 text-center text-xl" tx={type} />
       </View>
