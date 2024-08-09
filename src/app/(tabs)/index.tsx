@@ -1,8 +1,8 @@
 import { StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
+import UserInfoHeader from '@/components/headers/userInfoHeader';
 import { Text } from '@/components/obytes';
-import UserInfoHeader from '@/components/userInfoHeader';
 
 export default function HomeScreen() {
   return (

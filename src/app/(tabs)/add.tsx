@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
-import AddPostHeader from '@/components/addPostHeader';
+import AddPostHeader from '@/components/headers/addPostHeader';
 import { black, white } from '@/components/obytes/colors';
 import PostInput from '@/components/postInput';
 import { useSoftKeyboardEffect } from '@/lib/keyboard';
