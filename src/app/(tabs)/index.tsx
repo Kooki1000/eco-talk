@@ -1,6 +1,5 @@
 import dayjs from 'dayjs';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
-import React from 'react';
 import { FlatList, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -13,13 +12,12 @@ dayjs.extend(localizedFormat);
 
 export default function HomeScreen() {
   return (
-    <SafeAreaView className="flex-1 items-center justify-center">
+    <SafeAreaView>
       <UserInfoHeader />
 
-      <View className="mb-20 items-center rounded-lg">
+      <View className="items-center rounded-lg">
         <FlatList
           data={dayData}
-          ListHeaderComponent={<HomeHeader />}
           renderItem={({ item }) => (
             <Calendar
               variant={item.type}
@@ -27,6 +25,9 @@ export default function HomeScreen() {
               dayOfWeek={dayjs(item.date).format('dddd')}
             />
           )}
+          ListHeaderComponent={<HomeHeader />}
+          ListFooterComponent={<View className="mb-32" />}
+          className="w-full px-6"
         />
       </View>
     </SafeAreaView>

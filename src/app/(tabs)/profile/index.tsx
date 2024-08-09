@@ -31,8 +31,8 @@ export default function ProfileScreen() {
   };
 
   return (
-    <SafeAreaView className="flex-1 items-center justify-center">
-      <Banner style={styles.banner} />
+    <SafeAreaView>
+      <Banner />
 
       <View className="mt-10">
         <Text
@@ -86,10 +86,6 @@ export default function ProfileScreen() {
 }
 
 const styles = StyleSheet.create({
-  banner: {
-    position: 'relative',
-    top: 0,
-  },
   settingsContainer: {
     marginLeft: 30,
     marginBottom: 20,

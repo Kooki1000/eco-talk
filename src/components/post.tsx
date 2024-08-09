@@ -32,8 +32,8 @@ const post = tv({
         language: 'bg-green-200 dark:bg-green-600',
       },
       blue: {
-        container: 'bg-blue-100 dark:bg-blue-400',
-        language: 'bg-blue-200 dark:bg-blue-500',
+        container: 'bg-blue-100 dark:bg-blue-500',
+        language: 'bg-blue-200 dark:bg-blue-600',
       },
       purple: {
         container: 'bg-purple-100 dark:bg-purple-400',

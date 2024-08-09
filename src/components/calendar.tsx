@@ -13,25 +13,25 @@ dayjs.extend(localizedFormat);
 
 const calendar = tv({
   slots: {
-    container: 'mb-2 size-fit flex-row items-center rounded-lg p-4',
+    container: 'mb-2 size-fit w-full flex-row items-center rounded-lg p-4',
   },
 
   variants: {
     variant: {
       burnable: {
-        container: 'bg-red-100 dark:bg-red-400',
+        container: 'bg-red-200 dark:bg-red-400',
       },
       nonBurnable: {
-        container: 'bg-orange-100 dark:bg-orange-400',
+        container: 'bg-orange-200 dark:bg-orange-400',
       },
       bulky: {
-        container: 'bg-green-100 dark:bg-green-500',
+        container: 'bg-green-200 dark:bg-green-500',
       },
       recyclable: {
-        container: 'bg-blue-100 dark:bg-blue-400',
+        container: 'bg-blue-200 dark:bg-blue-400',
       },
       other: {
-        container: 'bg-purple-100 dark:bg-purple-400',
+        container: 'bg-purple-200 dark:bg-purple-400',
       },
     },
   },

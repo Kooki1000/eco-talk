@@ -28,7 +28,7 @@ export default function AddPostScreen() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView>
       <AddPostHeader onPress={onPostPress} />
 
       <ScrollView
@@ -59,11 +59,6 @@ export default function AddPostScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    position: 'relative',
-    top: 0,
-  },
   content: {
     position: 'relative',
     top: 0,
@@ -78,16 +73,5 @@ const styles = StyleSheet.create({
     marginTop: 7,
     paddingLeft: 16,
     paddingRight: 60,
-  },
-  header: {
-    justifyContent: 'space-between',
-    borderBottomWidth: 2,
-    borderColor: '#CBBDBD',
-    paddingBottom: 13,
-    flexDirection: 'row',
-    alignContent: 'center',
-    alignItems: 'center',
-    paddingLeft: 16,
-    paddingRight: 16,
   },
 });
