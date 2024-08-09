@@ -27,11 +27,11 @@
   },
   "banner": "Username",
   "calendar": {
-    "Burnable": "Burnable",
-    "NonBurnable": "Non-Burnable",
-    "Bulky": "Bulky",
-    "Recyclable": "Recyclable",
-    "Other": "Other"
+    "bulky": "Bulky",
+    "burnable": "Burnable",
+    "nonBurnable": "Non-Burnable",
+    "other": "Other",
+    "recyclable": "Recyclable"
   },
   "guides": {
     "how": {
@@ -50,7 +50,7 @@
   },
   "home": {
     "title": "Welcome to EcoTalk",
-    "upcoming": "Upcoming trash schedule"
+    "upcoming": "Upcoming Trash Schedule"
   },
   "locales": {
     "en": "English",

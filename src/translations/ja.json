@@ -27,11 +27,11 @@
   },
   "banner": "ユーザー名",
   "calendar": {
-    "Burnable": "燃えるゴミ",
-    "NonBurnable": "燃えないゴミ",
-    "Bulky": "粗大ゴミ",
-    "Recyclable": "資源ゴミ",
-    "Other": "その他"
+    "bulky": "粗大ゴミ",
+    "burnable": "可燃ゴミ",
+    "nonBurnable": "不燃ゴミ",
+    "other": "その他",
+    "recyclable": "資源ゴミ"
   },
   "guides": {
     "how": {
@@ -50,7 +50,7 @@
   },
   "home": {
     "title": "EcoTalkへようこそ",
-    "upcoming": "Upcoming trash schedule"
+    "upcoming": "今後のゴミ出しの予定"
   },
   "locales": {
     "en": "English",
