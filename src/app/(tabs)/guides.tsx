@@ -1,8 +1,8 @@
 import { StyleSheet, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
+import UserInfoHeader from '@/components/headers/userInfoHeader';
 import { SafeAreaView, Text } from '@/components/obytes';
-import UserInfoHeader from '@/components/userInfoHeader';
 
 export default function GuidesScreen() {
   return (
