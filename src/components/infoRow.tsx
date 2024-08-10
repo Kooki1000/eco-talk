@@ -1,5 +1,6 @@
 import { ChevronDown, type LucideIcon } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
+import { memo } from 'react';
 import { StyleSheet } from 'react-native';
 
 import { Text, View } from './obytes';
@@ -10,7 +11,7 @@ type Prop = {
   text: string;
 };
 
-const InfoRow: React.FC<Prop> = ({ IconComponent, text }) => {
+const InfoRowComponent = ({ IconComponent, text }: Prop) => {
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
 
@@ -31,4 +32,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default InfoRow;
+export const InfoRow = memo(InfoRowComponent);

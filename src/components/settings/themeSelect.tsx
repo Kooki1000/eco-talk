@@ -1,4 +1,5 @@
 import { SunMoon } from 'lucide-react-native';
+import { memo } from 'react';
 import { View } from 'react-native';
 
 import { themes } from '@/constants/options';
@@ -9,7 +10,7 @@ import {
 
 import { Select } from './settingSelect';
 
-const ThemeSelect = () => {
+const ThemeSelectComponent = () => {
   const { selectedTheme, setSelectedTheme } = useSelectedTheme();
 
   return (
@@ -25,4 +26,4 @@ const ThemeSelect = () => {
   );
 };
 
-export default ThemeSelect;
+export const ThemeSelect = memo(ThemeSelectComponent);
