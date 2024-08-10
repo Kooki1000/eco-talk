@@ -15,21 +15,20 @@ export default function PostsScreen() {
     <SafeAreaView>
       <UserInfoHeader />
 
-      <View className="mx-4">
-        <FlatList
-          data={postsData}
-          renderItem={({ item }) => (
-            <Post
-              onPress={() => onPostPress(item.id)}
-              variant={item.variant}
-              text={loremText}
-              langCode={item.langCode}
-            />
-          )}
-          ListHeaderComponent={<PostsHeader />}
-          ListFooterComponent={<View className="mb-32" />}
-        />
-      </View>
+      <FlatList
+        data={postsData}
+        renderItem={({ item }) => (
+          <Post
+            onPress={() => onPostPress(item.id)}
+            variant={item.variant}
+            text={loremText}
+            langCode={item.langCode}
+          />
+        )}
+        ListHeaderComponent={<PostsHeader />}
+        ListFooterComponent={<View className="mb-20" />}
+        className="w-full"
+      />
     </SafeAreaView>
   );
 }

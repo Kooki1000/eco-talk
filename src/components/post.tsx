@@ -13,7 +13,7 @@ import { black, white } from './obytes/colors';
 
 const post = tv({
   slots: {
-    container: 'mb-5 size-fit rounded-lg p-4',
+    container: 'mx-auto mb-5 size-fit w-[90%] rounded-lg p-4',
     language: 'mr-1 flex h-11 justify-center rounded-2xl px-2',
   },
 
