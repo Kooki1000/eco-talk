@@ -1,6 +1,6 @@
 import { CircleUserRound, ThumbsDown, ThumbsUp } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
-import { forwardRef, useMemo } from 'react';
+import { forwardRef, memo, useMemo } from 'react';
 import { Pressable, TouchableOpacity, View } from 'react-native';
 import type { VariantProps } from 'tailwind-variants';
 import { tv } from 'tailwind-variants';
@@ -58,7 +58,7 @@ interface Props extends PostVariant {
   languageClassName?: string;
 }
 
-export const Post = forwardRef<View, Props>(
+const PostComponent = forwardRef<View, Props>(
   (
     {
       variant = 'red',
@@ -120,3 +120,5 @@ export const Post = forwardRef<View, Props>(
     );
   }
 );
+
+export const Post = memo(PostComponent);
