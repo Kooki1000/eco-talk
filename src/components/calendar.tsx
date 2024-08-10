@@ -1,4 +1,4 @@
-import { forwardRef, useMemo } from 'react';
+import { forwardRef, memo, useMemo } from 'react';
 import { View } from 'react-native';
 import type { VariantProps } from 'tailwind-variants';
 import { tv } from 'tailwind-variants';
@@ -43,7 +43,7 @@ interface Props extends DayVariant {
   dayOfWeek?: string;
 }
 
-export const Calendar = forwardRef<View, Props>(
+const CalendarComponent = forwardRef<View, Props>(
   ({ variant, containerClassName = '', date, dayOfWeek, ...props }, ref) => {
     const styles = useMemo(() => calendar({ variant }), [variant]);
     const type: TxKeyPath = `calendar.${variant}` as TxKeyPath;
@@ -64,3 +64,5 @@ export const Calendar = forwardRef<View, Props>(
     );
   }
 );
+
+export const Calendar = memo(CalendarComponent);
