@@ -1,15 +1,16 @@
-/* eslint-disable max-lines-per-function */
 import { router } from 'expo-router';
 import { Info, MapPinned, UserRound } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
+import React from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 
+import { DeleteAccountButton, LogOutButton } from '@/components/auth';
 import Banner from '@/components/banner';
-import InfoRow from '@/components/infoRow';
-import { Button, SafeAreaView, Text } from '@/components/obytes';
+import { InfoRow } from '@/components/infoRow';
+import { SafeAreaView, Text } from '@/components/obytes';
 import { black, white } from '@/components/obytes/colors';
-import LanguageSelect from '@/components/settings/languageSelect';
-import ThemeSelect from '@/components/settings/themeSelect';
+import { LanguageSelect } from '@/components/settings/languageSelect';
+import { ThemeSelect } from '@/components/settings/themeSelect';
 
 export default function ProfileScreen() {
   const { colorScheme } = useColorScheme();
@@ -18,16 +19,6 @@ export default function ProfileScreen() {
   const onAboutPress = () => {
     console.log('About');
     router.navigate('/profile/about');
-  };
-
-  const logOut = () => {
-    console.log('Log out');
-    router.replace('/');
-  };
-
-  const deleteAccount = () => {
-    console.log('Delete account');
-    router.replace('/');
   };
 
   return (
@@ -66,19 +57,8 @@ export default function ProfileScreen() {
         </View>
 
         <View className="items-center">
-          <Button
-            onPress={logOut}
-            tx="profile.logout"
-            textClassName="text-xl text-black"
-            className="h-10 w-80 rounded-3xl bg-gray-300"
-          />
-
-          <Button
-            onPress={deleteAccount}
-            tx="profile.delete"
-            textClassName="text-xl text-black"
-            className="h-10 w-80 rounded-3xl bg-red-300 dark:bg-red-400"
-          />
+          <LogOutButton />
+          <DeleteAccountButton />
         </View>
       </View>
     </SafeAreaView>
