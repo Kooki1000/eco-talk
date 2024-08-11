@@ -1,5 +1,5 @@
 import { FlatList, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import PostsHeader from '@/components/headers/postsHeader';
 import UserInfoHeader from '@/components/headers/userInfoHeader';
@@ -7,12 +7,19 @@ import { Post } from '@/components/post';
 import { loremText, postsData } from '@/constants/dummyData';
 
 export default function PostsScreen() {
+  const insets = useSafeAreaInsets();
+
   const onPostPress = (index: number) => {
     console.log('Post pressed:', index);
   };
 
   return (
-    <SafeAreaView>
+    <View
+      style={{
+        paddingTop: insets.top,
+        paddingBottom: insets.bottom,
+      }}
+    >
       <UserInfoHeader />
 
       <View className="mx-4">
@@ -30,6 +37,6 @@ export default function PostsScreen() {
           ListFooterComponent={<View className="mb-32" />}
         />
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
