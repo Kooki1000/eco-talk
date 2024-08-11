@@ -34,7 +34,7 @@ export default function HomeScreen() {
           )}
           ListHeaderComponent={<HomeHeader />}
           ListFooterComponent={<View className="mb-32" />}
-          className="w-full px-6"
+          className="w-full"
         />
       </View>
     </View>
