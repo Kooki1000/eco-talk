@@ -34,7 +34,7 @@ export default function PostsScreen() {
             />
           )}
           ListHeaderComponent={<PostsHeader />}
-          ListFooterComponent={<View className="mb-32" />}
+          ListFooterComponent={<View style={{ height: 128 }} />}
           className="mx-auto w-full"
         />
       </View>

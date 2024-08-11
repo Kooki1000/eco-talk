@@ -9,8 +9,7 @@ import { Text } from './obytes';
 
 const calendar = tv({
   slots: {
-    container:
-      'mx-auto mb-2 size-fit w-5/6 flex-row items-center rounded-lg p-4',
+    container: 'mb-2 size-fit w-full rounded-lg p-4',
   },
 
   variants: {
@@ -54,12 +53,17 @@ const CalendarComponent = forwardRef<View, Props>(
         {...props}
         ref={ref}
       >
-        <View className="items-center">
-          <Text className="text-lg">{date}</Text>
-          <Text className="text-lg">{dayOfWeek}</Text>
-        </View>
+        <View
+          className="w-full flex-row items-center"
+          style={{ paddingLeft: 12 }}
+        >
+          <View className="items-center" style={{ marginRight: 28 }}>
+            <Text className="text-lg">{date}</Text>
+            <Text className="text-lg">{dayOfWeek}</Text>
+          </View>
 
-        <Text className="text-center text-xl" tx={type} />
+          <Text className="text-center text-xl" tx={type} />
+        </View>
       </View>
     );
   }

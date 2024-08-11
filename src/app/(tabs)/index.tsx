@@ -18,11 +18,12 @@ export default function HomeScreen() {
       style={{
         paddingTop: insets.top,
         paddingBottom: insets.bottom,
+        alignItems: 'center',
       }}
     >
       <UserInfoHeader />
 
-      <View className="items-center rounded-lg">
+      <View style={{ width: '80%' }}>
         <FlatList
           data={dayData}
           renderItem={({ item }) => (
@@ -33,8 +34,8 @@ export default function HomeScreen() {
             />
           )}
           ListHeaderComponent={<HomeHeader />}
-          ListFooterComponent={<View className="mb-32" />}
-          className="w-full"
+          ListFooterComponent={<View style={{ height: 128 }} />}
+          className="mx-auto w-full"
         />
       </View>
     </View>
