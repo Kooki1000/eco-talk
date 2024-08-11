@@ -2,13 +2,9 @@ import { router } from 'expo-router';
 import { CircleUserRound } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import { useState } from 'react';
-import {
-  KeyboardAvoidingView,
-  Platform,
-  SafeAreaView,
-  StyleSheet,
-} from 'react-native';
+import { KeyboardAvoidingView, Platform, StyleSheet, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import AddPostHeader from '@/components/headers/addPostHeader';
 import { black, white } from '@/components/obytes/colors';
@@ -16,6 +12,8 @@ import PostInput from '@/components/postInput';
 import { useSoftKeyboardEffect } from '@/lib/keyboard';
 
 export default function AddPostScreen() {
+  const insets = useSafeAreaInsets();
+
   const [text, setText] = useState('');
   useSoftKeyboardEffect();
 
@@ -28,7 +26,12 @@ export default function AddPostScreen() {
   };
 
   return (
-    <SafeAreaView>
+    <View
+      style={{
+        paddingTop: insets.top,
+        paddingBottom: insets.bottom,
+      }}
+    >
       <AddPostHeader onPress={onPostPress} />
 
       <ScrollView
@@ -54,7 +57,7 @@ export default function AddPostScreen() {
           />
         </KeyboardAvoidingView>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }
 

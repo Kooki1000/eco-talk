@@ -1,18 +1,20 @@
 import { router } from 'expo-router';
 import { Info, MapPinned, UserRound } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
-import React from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { DeleteAccountButton, LogOutButton } from '@/components/auth';
 import Banner from '@/components/banner';
 import { InfoRow } from '@/components/infoRow';
-import { SafeAreaView, Text } from '@/components/obytes';
+import { Text } from '@/components/obytes';
 import { black, white } from '@/components/obytes/colors';
 import { LanguageSelect } from '@/components/settings/languageSelect';
 import { ThemeSelect } from '@/components/settings/themeSelect';
 
 export default function ProfileScreen() {
+  const insets = useSafeAreaInsets();
+
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
 
@@ -22,7 +24,12 @@ export default function ProfileScreen() {
   };
 
   return (
-    <SafeAreaView>
+    <View
+      style={{
+        paddingTop: insets.top,
+        paddingBottom: insets.bottom,
+      }}
+    >
       <Banner />
 
       <View className="mt-10">
@@ -61,7 +68,7 @@ export default function ProfileScreen() {
           <DeleteAccountButton />
         </View>
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
 

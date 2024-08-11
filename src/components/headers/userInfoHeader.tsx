@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 2,
     borderColor: '#CBBDBD',
     paddingBottom: 8,
+    width: '100%',
   },
   leftContainer: {
     alignItems: 'center',

@@ -1,12 +1,20 @@
 import { StyleSheet, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import UserInfoHeader from '@/components/headers/userInfoHeader';
-import { SafeAreaView, Text } from '@/components/obytes';
+import { Text } from '@/components/obytes';
 
 export default function GuidesScreen() {
+  const insets = useSafeAreaInsets();
+
   return (
-    <SafeAreaView>
+    <View
+      style={{
+        paddingTop: insets.top,
+        paddingBottom: insets.bottom,
+      }}
+    >
       <UserInfoHeader />
 
       <ScrollView className="mb-6 mt-3">
@@ -62,7 +70,7 @@ export default function GuidesScreen() {
           </View>
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }
 

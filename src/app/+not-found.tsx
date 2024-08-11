@@ -20,6 +20,7 @@ export default function NotFoundScreen() {
           title: translate('notFound.title'),
         }}
       />
+
       <View style={styles.container}>
         <Text tx="notFound.description" style={styles.title} />
 

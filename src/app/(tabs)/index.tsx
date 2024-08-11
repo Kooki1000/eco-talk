@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
 import { FlatList, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { Calendar } from '@/components/calendar';
 import HomeHeader from '@/components/headers/homeHeader';
@@ -11,11 +11,19 @@ import { dayData } from '@/constants/dummyData';
 dayjs.extend(localizedFormat);
 
 export default function HomeScreen() {
+  const insets = useSafeAreaInsets();
+
   return (
-    <SafeAreaView>
+    <View
+      style={{
+        paddingTop: insets.top,
+        paddingBottom: insets.bottom,
+        alignItems: 'center',
+      }}
+    >
       <UserInfoHeader />
 
-      <View className="items-center rounded-lg">
+      <View style={{ width: '80%' }}>
         <FlatList
           data={dayData}
           renderItem={({ item }) => (
@@ -26,10 +34,10 @@ export default function HomeScreen() {
             />
           )}
           ListHeaderComponent={<HomeHeader />}
-          ListFooterComponent={<View className="mb-32" />}
-          className="w-full px-6"
+          ListFooterComponent={<View style={{ height: 128 }} />}
+          className="mx-auto w-full"
         />
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
