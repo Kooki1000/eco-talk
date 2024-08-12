@@ -9,13 +9,11 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import AddPostHeader from '@/components/headers/addPostHeader';
 import { black, white } from '@/components/obytes/colors';
 import PostInput from '@/components/postInput';
-import { useSoftKeyboardEffect } from '@/lib/keyboard';
 
 export default function AddPostScreen() {
   const insets = useSafeAreaInsets();
 
   const [text, setText] = useState('');
-  useSoftKeyboardEffect();
 
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
