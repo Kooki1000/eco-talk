@@ -4,7 +4,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import PostsHeader from '@/components/headers/postsHeader';
 import UserInfoHeader from '@/components/headers/userInfoHeader';
 import { Post } from '@/components/post';
-import { loremText, postsData } from '@/constants/dummyData';
+import { dummyPosts } from '@/constants/dummyData';
 
 export default function PostsScreen() {
   const insets = useSafeAreaInsets();
@@ -24,14 +24,9 @@ export default function PostsScreen() {
 
       <View className="mx-4">
         <FlatList
-          data={postsData}
+          data={dummyPosts}
           renderItem={({ item }) => (
-            <Post
-              onPress={() => onPostPress(item.id)}
-              variant={item.variant}
-              text={loremText}
-              langCode={item.langCode}
-            />
+            <Post post={item} onPress={() => onPostPress(item.id)} />
           )}
           ListHeaderComponent={<PostsHeader />}
           ListFooterComponent={<View style={{ height: 128 }} />}

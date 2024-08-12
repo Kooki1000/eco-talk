@@ -1,43 +1,51 @@
-import { CircleUserRound, ThumbsDown, ThumbsUp } from 'lucide-react-native';
+/* eslint-disable max-lines-per-function */
+import { Image } from 'expo-image';
+import { CircleUserRound, Heart } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
-import { forwardRef, memo, useMemo } from 'react';
-import { Pressable, TouchableOpacity, View } from 'react-native';
+import { memo, useMemo, useState } from 'react';
+import { Pressable, StyleSheet, TouchableOpacity, View } from 'react-native';
 import type { VariantProps } from 'tailwind-variants';
 import { tv } from 'tailwind-variants';
 
-import { translate } from '@/i18n';
-import type { Language } from '@/i18n/resources';
+import { loremText } from '@/constants/dummyData';
+import type { PostDataType } from '@/lib/types';
 
 import { Text } from './obytes';
-import { black, white } from './obytes/colors';
+import { black, red, white } from './obytes/colors';
 
-const post = tv({
+const postVariant = tv({
   slots: {
-    container: 'mb-5 size-fit w-full rounded-lg py-4',
-    language: 'mr-1 flex h-11 justify-center rounded-2xl px-2',
+    container: 'mb-5 size-fit w-full rounded-lg px-2 py-4',
+    translation: 'justify-center rounded-2xl',
+    border: 'mt-5 w-full border-t-2',
   },
 
   variants: {
     variant: {
       red: {
         container: 'bg-red-100 dark:bg-red-400',
-        language: 'bg-red-200 dark:bg-red-500',
+        translation: 'bg-red-200 dark:bg-red-500',
+        border: 'dark:border-red border-pink-200 ',
       },
       orange: {
         container: 'bg-orange-100 dark:bg-orange-400',
-        language: 'bg-orange-200 dark:bg-orange-500',
+        translation: 'bg-orange-200 dark:bg-orange-500',
+        border: 'border-orange-200 dark:border-orange-500',
       },
       green: {
         container: 'bg-green-100 dark:bg-green-500',
-        language: 'bg-green-200 dark:bg-green-600',
+        translation: 'bg-green-200 dark:bg-green-600',
+        border: 'border-green-200 dark:border-green-500',
       },
       blue: {
         container: 'bg-blue-100 dark:bg-blue-500',
-        language: 'bg-blue-200 dark:bg-blue-600',
+        translation: 'bg-blue-200 dark:bg-blue-600',
+        border: 'border-blue-200 dark:border-blue-500',
       },
       purple: {
         container: 'bg-purple-100 dark:bg-purple-400',
-        language: 'bg-purple-200 dark:bg-purple-500',
+        translation: 'bg-purple-200 dark:bg-purple-500',
+        border: 'border-purple-200 dark:border-purple-500',
       },
     },
   },
@@ -47,78 +55,100 @@ const post = tv({
   },
 });
 
-type PostVariant = VariantProps<typeof post>;
+type PostVariant = VariantProps<typeof postVariant>;
 
 interface Props extends PostVariant {
-  variant?: 'red' | 'orange' | 'green' | 'blue' | 'purple';
   onPress: () => void;
-  text: string;
-  langCode: Language;
+  post: PostDataType;
   containerClassName?: string;
-  languageClassName?: string;
 }
 
-const PostComponent = forwardRef<View, Props>(
-  (
-    {
-      variant = 'red',
-      text,
-      langCode,
-      containerClassName = '',
-      languageClassName = '',
-      ...props
-    },
-    ref
-  ) => {
-    const styles = useMemo(() => post({ variant }), [variant]);
+const PostComponent = ({ post, containerClassName = '', ...props }: Props) => {
+  const { variant = 'red' } = post;
+  const styles = useMemo(() => postVariant({ variant }), [variant]);
 
-    const { colorScheme } = useColorScheme();
-    const isDark = colorScheme === 'dark';
+  const [showTranslation, setShowTranslation] = useState(false);
 
-    const onThumbsUp = () => {
-      console.log('Thumbs up');
-    };
+  const { colorScheme } = useColorScheme();
+  const isDark = colorScheme === 'dark';
 
-    const onThumbsDown = () => {
-      console.log('Thumbs down');
-    };
+  const onThumbsUp = () => {
+    console.log('Thumbs up');
+  };
 
-    return (
-      <Pressable
-        className={styles.container({ className: containerClassName })}
-        {...props}
-        ref={ref}
-      >
-        <View className="flex-row items-center justify-between">
+  const displayTranslation = () => {
+    console.log('Display translation');
+    setShowTranslation(true);
+  };
+
+  return (
+    <View
+      className={styles.container({ className: containerClassName })}
+      {...props}
+    >
+      <View className="flex-row items-center">
+        {post.user.avatar ? (
+          <Image
+            source={{ uri: post.user.avatar }}
+            style={{ width: 48, height: 48 }}
+          />
+        ) : (
           <CircleUserRound
             color={isDark ? white : black}
             size={48}
             strokeWidth={1}
           />
+        )}
 
-          <View className={styles.language({ className: languageClassName })}>
-            <Text className="text-center text-sm">
-              {translate('post.translate')}
-              {translate(`translatedLocales.${langCode}`)}
-            </Text>
-          </View>
+        <Text className="ml-2 text-xl">{post.user.name}</Text>
+      </View>
+
+      <View className="mt-4 self-center px-3">
+        <Text className="mb-4">{post.text}</Text>
+
+        <View style={styling.translateContainer}>
+          <Pressable
+            onPress={displayTranslation}
+            className={styles.translation({})}
+            style={styling.translateButton}
+          >
+            <Text tx="post.translate" className="text-center text-sm" />
+          </Pressable>
         </View>
+      </View>
 
-        <View className="mt-4 self-center px-3">
-          <Text className="mb-4">{text}</Text>
-
-          <View className="ml-6 flex-row">
-            <TouchableOpacity onPress={onThumbsUp}>
-              <ThumbsUp color={isDark ? white : black} />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={onThumbsDown} className="ml-4">
-              <ThumbsDown color={isDark ? white : black} />
-            </TouchableOpacity>
-          </View>
+      {showTranslation && (
+        <View className={styles.border({})}>
+          <Text className="my-4 px-3">{loremText}</Text>
         </View>
-      </Pressable>
-    );
-  }
-);
+      )}
+
+      <View className="ml-6">
+        <TouchableOpacity
+          onPress={onThumbsUp}
+          className="flex-row items-center"
+        >
+          {post.isLiked ? (
+            <Heart color={'none'} fill={red} />
+          ) : (
+            <Heart color={isDark ? white : black} />
+          )}
+          <Text className="ml-2 text-lg">{post.likes}</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+};
+
+const styling = StyleSheet.create({
+  translateContainer: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+  },
+  translateButton: {
+    height: 36,
+    width: 80,
+  },
+});
 
 export const Post = memo(PostComponent);
