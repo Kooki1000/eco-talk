@@ -40,6 +40,7 @@ export default function TabLayout() {
         options={{
           headerShown: false,
           tabBarIcon: ({ color }) => <CirclePlus color={color} size={40} />,
+          tabBarHideOnKeyboard: true,
         }}
       />
       <Tabs.Screen
