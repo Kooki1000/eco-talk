@@ -1,8 +1,9 @@
 import { CircleX } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
-import { Image, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
+import { Image } from './obytes';
 import { View } from './obytes';
 import { black, white } from './obytes/colors';
 

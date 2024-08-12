@@ -24,17 +24,7 @@
       },
       "package": "com.anonymous.casproject"
     },
-    "plugins": [
-      "expo-router",
-      "expo-localization",
-      [
-        "expo-image-picker",
-        {
-          "photosPermission": "Allow $(PRODUCT_NAME) to access your photos",
-          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera"
-        }
-      ]
-    ],
+    "plugins": ["expo-router", "expo-localization"],
     "experiments": {
       "typedRoutes": true
     }
