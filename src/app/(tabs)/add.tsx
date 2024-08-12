@@ -1,26 +1,53 @@
-import { router } from 'expo-router';
-import { CircleUserRound } from 'lucide-react-native';
+/* eslint-disable max-lines-per-function */
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Link, router } from 'expo-router';
+import { CircleUserRound, ImageUp, Send, X } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import { useState } from 'react';
-import { KeyboardAvoidingView, Platform, StyleSheet, View } from 'react-native';
+import { useForm } from 'react-hook-form';
+import {
+  KeyboardAvoidingView,
+  Platform,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import type { z } from 'zod';
 
-import AddPostHeader from '@/components/headers/addPostHeader';
+import { ControlledInput } from '@/components/customInput';
+import { Text } from '@/components/obytes';
 import { black, white } from '@/components/obytes/colors';
-import PostInput from '@/components/postInput';
+import { translate } from '@/i18n';
+import { postSchema } from '@/lib/schema';
+
+type FormType = z.infer<typeof postSchema>;
 
 export default function AddPostScreen() {
   const insets = useSafeAreaInsets();
 
-  const [text, setText] = useState('');
+  const { control, handleSubmit, reset } = useForm<FormType>({
+    resolver: zodResolver(postSchema),
+  });
+
+  const [charCount, setCharCount] = useState(0);
+
+  const onSubmit = (data: FormType) => {
+    console.log(data);
+
+    // Reset the form and char count
+    reset();
+    setCharCount(0);
+
+    router.navigate('/posts');
+  };
 
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
 
-  const onPostPress = () => {
-    console.log('post content: ' + text);
-    router.navigate('/posts');
+  const handleInputChange = (text: string) => {
+    setCharCount(text.length);
   };
 
   return (
@@ -30,28 +57,59 @@ export default function AddPostScreen() {
         paddingBottom: insets.bottom,
       }}
     >
-      <AddPostHeader onPress={onPostPress} />
+      <View style={styles.container}>
+        <View style={styles.leftContainer}>
+          <Link href={'/(tabs)/posts'} asChild>
+            <X color={isDark ? white : black} size={40} strokeWidth={1} />
+          </Link>
+        </View>
 
-      <ScrollView
-        keyboardShouldPersistTaps="always"
-        keyboardDismissMode="none"
-        contentContainerStyle={styles.content}
-      >
-        <CircleUserRound
-          color={isDark ? white : black}
-          size={48}
-          strokeWidth={1}
-        />
+        <Text className="text-lg">Yokohama City</Text>
+
+        <TouchableOpacity
+          onPress={handleSubmit(onSubmit)}
+          style={styles.rightContainer}
+        >
+          <Send color={isDark ? white : black} size={32} />
+        </TouchableOpacity>
+      </View>
+
+      <ScrollView contentContainerStyle={styles.content}>
+        <View className="flex-row items-center justify-between">
+          <CircleUserRound
+            color={isDark ? white : black}
+            size={48}
+            strokeWidth={1}
+          />
+
+          <View className="flex-row items-center">
+            <Text
+              className={charCount > 1000 ? 'text-red-500' : 'text-gray-500'}
+            >
+              {translate('add.charCount', { count: charCount })}
+            </Text>
+
+            <View className="ml-4 size-12 items-center justify-center rounded-full bg-red-200 dark:bg-red-400">
+              <ImageUp
+                color={isDark ? white : black}
+                size={24}
+                strokeWidth={1}
+                className="items-center"
+              />
+            </View>
+          </View>
+        </View>
+
         <KeyboardAvoidingView
           behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         >
-          <PostInput
-            style={[styles.input, { color: isDark ? 'white' : 'black' }]}
-            placeholderKey="add.insert"
+          <ControlledInput
+            name="content"
+            tx="add.insert"
+            control={control}
+            onChangeText={handleInputChange}
             multiline
-            onChangeText={(newText) => setText(newText)}
-            textAlign="left"
-            className="text-base font-normal"
+            maxLength={1000}
           />
         </KeyboardAvoidingView>
       </ScrollView>
@@ -60,6 +118,21 @@ export default function AddPostScreen() {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    borderBottomWidth: 2,
+    borderColor: '#CBBDBD',
+    paddingBottom: 8,
+  },
+  leftContainer: {
+    alignItems: 'center',
+    marginLeft: 10,
+  },
+  rightContainer: {
+    marginRight: 10,
+  },
   content: {
     position: 'relative',
     top: 0,
@@ -67,7 +140,6 @@ const styles = StyleSheet.create({
     paddingBottom: 16,
     marginLeft: 16,
     marginRight: 16,
-    flexDirection: 'row',
     alignContent: 'center',
   },
   input: {
