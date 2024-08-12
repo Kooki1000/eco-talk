@@ -13,7 +13,7 @@ const DeleteAccountButton = () => {
       onPress={deleteAccount}
       tx="profile.delete"
       textClassName="text-xl text-black"
-      className="h-10 w-80 rounded-3xl bg-red-300 dark:bg-red-400"
+      className="bg-red-300 dark:bg-red-400 h-10 w-80 rounded-3xl"
     />
   );
 };
