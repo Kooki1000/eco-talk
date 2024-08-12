@@ -41,8 +41,6 @@ interface ControlledInputProps<T extends FieldValues>
     InputControllerType<T> {}
 
 export const Input = forwardRef<TextInput, NInputProps>((props, ref) => {
-  const { _error, ...inputProps } = props;
-
   const placeholder = translate(props.tx);
 
   return (
@@ -52,18 +50,12 @@ export const Input = forwardRef<TextInput, NInputProps>((props, ref) => {
         placeholder={placeholder}
         placeholderTextColor={colors.neutral[400]}
         className="mt-0 rounded-xl px-4 py-3 text-base font-[500] leading-5 dark:text-white"
-        {...inputProps}
+        {...props}
         style={StyleSheet.flatten([
           { writingDirection: I18nManager.isRTL ? 'rtl' : 'ltr' },
-          inputProps.style,
+          props.style,
         ])}
       />
-
-      {/* {error && (
-        <Text className="ml-4 text-sm text-danger-400 dark:text-danger-600">
-          {error}
-        </Text>
-      )} */}
     </View>
   );
 });

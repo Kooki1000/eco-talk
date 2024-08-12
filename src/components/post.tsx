@@ -15,9 +15,9 @@ import { black, red, white } from './obytes/colors';
 
 const postVariant = tv({
   slots: {
-    container: 'mb-5 size-fit w-full rounded-lg px-2 py-4',
+    container: 'mb-5 size-fit w-full rounded-lg px-8 py-4',
     translation: 'justify-center rounded-2xl',
-    border: 'mt-5 w-full border-t-2',
+    border: 'w-full border-t-2',
   },
 
   variants: {
@@ -25,7 +25,7 @@ const postVariant = tv({
       red: {
         container: 'bg-red-100 dark:bg-red-400',
         translation: 'bg-red-200 dark:bg-red-500',
-        border: 'dark:border-red border-pink-200 ',
+        border: 'border-pink-200 dark:border-red',
       },
       orange: {
         container: 'bg-orange-100 dark:bg-orange-400',
@@ -77,8 +77,7 @@ const PostComponent = ({ post, containerClassName = '', ...props }: Props) => {
   };
 
   const displayTranslation = () => {
-    console.log('Display translation');
-    setShowTranslation(true);
+    setShowTranslation((prevState) => !prevState);
   };
 
   return (
@@ -112,14 +111,20 @@ const PostComponent = ({ post, containerClassName = '', ...props }: Props) => {
             className={styles.translation({})}
             style={styling.translateButton}
           >
-            <Text tx="post.translate" className="text-center text-sm" />
+            <Text
+              tx={showTranslation ? 'post.hide' : 'post.translate'}
+              className="text-center text-sm"
+            />
           </Pressable>
         </View>
       </View>
 
       {showTranslation && (
-        <View className={styles.border({})}>
-          <Text className="my-4 px-3">{loremText}</Text>
+        <View
+          className={styles.border({})}
+          style={{ borderTopWidth: 2, marginTop: 10 }}
+        >
+          <Text className="my-4 px-3 pt-4">{loremText}</Text>
         </View>
       )}
 
@@ -147,7 +152,7 @@ const styling = StyleSheet.create({
   },
   translateButton: {
     height: 36,
-    width: 80,
+    width: 120,
   },
 });
 

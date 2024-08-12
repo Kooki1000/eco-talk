@@ -26,7 +26,7 @@ const ImageInput: React.FC<ImageInputProps> = ({ setImage }) => {
   };
 
   return (
-    <View>
+    <View className="size-8">
       <TouchableOpacity onPress={handleImagePickerPress}>
         <ImageUp
           color={isDark ? white : black}
