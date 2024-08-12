@@ -62,6 +62,7 @@ const PostComponent = ({ post, containerClassName = '', ...props }: Props) => {
   const styles = useMemo(() => postVariant({ variant }), [variant]);
 
   const [showTranslation, setShowTranslation] = useState(false);
+  const [showReply, setShowReply] = useState(false);
 
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
@@ -72,6 +73,14 @@ const PostComponent = ({ post, containerClassName = '', ...props }: Props) => {
 
   const displayTranslation = () => {
     setShowTranslation((prevState) => !prevState);
+  };
+
+  const onReplyPress = () => {
+    console.log('Reply pressed');
+  };
+
+  const displayReply = () => {
+    setShowReply((prevState) => !prevState);
   };
 
   return (
@@ -96,22 +105,7 @@ const PostComponent = ({ post, containerClassName = '', ...props }: Props) => {
         <Text className="ml-2 text-xl">{post.user.name}</Text>
       </View>
 
-      <View className="mt-4 self-center px-3">
-        <Text className="mb-4">{post.text}</Text>
-
-        <View style={styling.translateContainer}>
-          <Pressable
-            onPress={displayTranslation}
-            className={styles.translation({})}
-            style={styling.translateButton}
-          >
-            <Text
-              tx={showTranslation ? 'post.hide' : 'post.translate'}
-              className="text-center text-sm"
-            />
-          </Pressable>
-        </View>
-      </View>
+      <Text className="mt-4 px-4">{post.text}</Text>
 
       {showTranslation && (
         <View
@@ -122,13 +116,28 @@ const PostComponent = ({ post, containerClassName = '', ...props }: Props) => {
             borderColor: isDark ? '#e5e7eb' : '#9ca3af',
           }}
         >
-          <Text className="my-4 px-3" style={{ paddingTop: 10 }}>
+          <Text className="my-4 px-4" style={{ paddingTop: 10 }}>
             {loremText}
           </Text>
         </View>
       )}
 
-      <View className="ml-6">
+      <View style={styling.translateContainer}>
+        <Pressable
+          onPress={displayTranslation}
+          className={styles.translation({})}
+          style={styling.translateButton}
+        >
+          <Text
+            tx={showTranslation ? 'post.hide' : 'post.translate'}
+            className="text-center text-sm"
+          />
+        </Pressable>
+      </View>
+
+      <View className="ml-8 flex-row">
+        <Text tx="post.reply" onPress={onReplyPress} className="mr-6" />
+
         <TouchableOpacity
           onPress={onThumbsUp}
           className="flex-row items-center"
@@ -141,6 +150,79 @@ const PostComponent = ({ post, containerClassName = '', ...props }: Props) => {
           <Text className="ml-2 text-lg">{post.likes}</Text>
         </TouchableOpacity>
       </View>
+
+      {showReply && (
+        <View className="ml-12 mt-4">
+          <View className="flex-row items-center">
+            {post.user.avatar ? (
+              <Image
+                source={{ uri: post.user.avatar }}
+                style={{ width: 48, height: 48 }}
+              />
+            ) : (
+              <CircleUserRound
+                color={isDark ? white : black}
+                size={36}
+                strokeWidth={1}
+              />
+            )}
+
+            <Text className="ml-2 text-lg">{post.user.name}</Text>
+          </View>
+
+          <Text className="mt-4 px-4">{post.text}</Text>
+
+          {showTranslation && (
+            <View
+              style={{
+                borderTopWidth: 1,
+                marginTop: 10,
+                marginBottom: 10,
+                borderColor: isDark ? '#e5e7eb' : '#9ca3af',
+              }}
+            >
+              <Text className="my-4 px-4" style={{ paddingTop: 10 }}>
+                {loremText}
+              </Text>
+            </View>
+          )}
+
+          <View style={styling.translateContainer}>
+            <Pressable
+              onPress={displayTranslation}
+              className={styles.translation({})}
+              style={styling.translateButton}
+            >
+              <Text
+                tx={showTranslation ? 'post.hide' : 'post.translate'}
+                className="text-center text-sm"
+              />
+            </Pressable>
+          </View>
+
+          <View className="ml-8 flex-row">
+            <Text tx="post.reply" onPress={onReplyPress} className="mr-6" />
+
+            <TouchableOpacity
+              onPress={onThumbsUp}
+              className="flex-row items-center"
+            >
+              {post.isLiked ? (
+                <Heart color={'none'} fill={red} />
+              ) : (
+                <Heart color={isDark ? white : black} />
+              )}
+              <Text className="ml-2 text-lg">{post.likes}</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      )}
+
+      <Text
+        tx={showReply ? 'post.hideReply' : 'post.hideReply'}
+        className="mt-4 text-center font-medium"
+        onPress={displayReply}
+      />
     </View>
   );
 };

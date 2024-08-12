@@ -64,6 +64,9 @@
   },
   "post": {
     "hide": "Hide Translation",
+    "hideReply": "Hide Replies",
+    "reply": "Reply",
+    "showReply": "Show Replies",
     "translate": "Show Translation"
   },
   "posts": {
