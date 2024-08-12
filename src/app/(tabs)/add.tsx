@@ -1,7 +1,7 @@
 /* eslint-disable max-lines-per-function */
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Link, router } from 'expo-router';
-import { CircleUserRound, ImageUp, Send, X } from 'lucide-react-native';
+import { router } from 'expo-router';
+import { CircleUserRound, Send, X } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -17,6 +17,8 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { z } from 'zod';
 
 import { ControlledInput } from '@/components/customInput';
+import DisplayImage from '@/components/displayImage';
+import ImageInput from '@/components/imageInput';
 import { Text } from '@/components/obytes';
 import { black, white } from '@/components/obytes/colors';
 import { translate } from '@/i18n';
@@ -32,6 +34,7 @@ export default function AddPostScreen() {
   });
 
   const [charCount, setCharCount] = useState(0);
+  const [image, setImage] = useState('');
 
   const onSubmit = (data: FormType) => {
     console.log(data);
@@ -39,6 +42,7 @@ export default function AddPostScreen() {
     // Reset the form and char count
     reset();
     setCharCount(0);
+    setImage('');
 
     router.navigate('/posts');
   };
@@ -59,9 +63,12 @@ export default function AddPostScreen() {
     >
       <View style={styles.container}>
         <View style={styles.leftContainer}>
-          <Link href={'/(tabs)/posts'} asChild>
+          <TouchableOpacity
+            onPress={() => router.back()}
+            className="flex-row justify-center"
+          >
             <X color={isDark ? white : black} size={40} strokeWidth={1} />
-          </Link>
+          </TouchableOpacity>
         </View>
 
         <Text className="text-lg">Yokohama City</Text>
@@ -90,12 +97,7 @@ export default function AddPostScreen() {
             </Text>
 
             <View className="ml-4 size-12 items-center justify-center rounded-full bg-red-200 dark:bg-red-400">
-              <ImageUp
-                color={isDark ? white : black}
-                size={24}
-                strokeWidth={1}
-                className="items-center"
-              />
+              <ImageInput setImage={setImage} />
             </View>
           </View>
         </View>
@@ -112,6 +114,7 @@ export default function AddPostScreen() {
             maxLength={1000}
           />
         </KeyboardAvoidingView>
+        <DisplayImage image={image} onRemoveImage={() => setImage('')} />
       </ScrollView>
     </View>
   );
