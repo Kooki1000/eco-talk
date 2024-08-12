@@ -6,9 +6,9 @@ import { KeyboardAvoidingView, Platform, StyleSheet, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
+import { Input } from '@/components/customInput';
 import AddPostHeader from '@/components/headers/addPostHeader';
 import { black, white } from '@/components/obytes/colors';
-import PostInput from '@/components/postInput';
 
 export default function AddPostScreen() {
   const insets = useSafeAreaInsets();
@@ -32,11 +32,7 @@ export default function AddPostScreen() {
     >
       <AddPostHeader onPress={onPostPress} />
 
-      <ScrollView
-        keyboardShouldPersistTaps="always"
-        keyboardDismissMode="none"
-        contentContainerStyle={styles.content}
-      >
+      <ScrollView contentContainerStyle={styles.content}>
         <CircleUserRound
           color={isDark ? white : black}
           size={48}
@@ -45,14 +41,7 @@ export default function AddPostScreen() {
         <KeyboardAvoidingView
           behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         >
-          <PostInput
-            style={[styles.input, { color: isDark ? 'white' : 'black' }]}
-            placeholderKey="add.insert"
-            multiline
-            onChangeText={(newText) => setText(newText)}
-            textAlign="left"
-            className="text-base font-normal"
-          />
+          <Input tx="add.insert" error="Hello" />
         </KeyboardAvoidingView>
       </ScrollView>
     </View>
