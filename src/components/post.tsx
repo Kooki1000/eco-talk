@@ -15,9 +15,8 @@ import { black, red, white } from './obytes/colors';
 
 const postVariant = tv({
   slots: {
-    container: 'mb-5 size-fit w-full rounded-lg px-8 py-4',
+    container: 'mb-5 size-fit w-full rounded-lg px-2 py-4',
     translation: 'justify-center rounded-2xl',
-    border: 'w-full border-t-2',
   },
 
   variants: {
@@ -25,27 +24,22 @@ const postVariant = tv({
       red: {
         container: 'bg-red-100 dark:bg-red-400',
         translation: 'bg-red-200 dark:bg-red-500',
-        border: 'border-pink-200 dark:border-red',
       },
       orange: {
         container: 'bg-orange-100 dark:bg-orange-400',
         translation: 'bg-orange-200 dark:bg-orange-500',
-        border: 'border-orange-200 dark:border-orange-500',
       },
       green: {
         container: 'bg-green-100 dark:bg-green-500',
         translation: 'bg-green-200 dark:bg-green-600',
-        border: 'border-green-200 dark:border-green-500',
       },
       blue: {
         container: 'bg-blue-100 dark:bg-blue-500',
         translation: 'bg-blue-200 dark:bg-blue-600',
-        border: 'border-blue-200 dark:border-blue-500',
       },
       purple: {
         container: 'bg-purple-100 dark:bg-purple-400',
         translation: 'bg-purple-200 dark:bg-purple-500',
-        border: 'border-purple-200 dark:border-purple-500',
       },
     },
   },
@@ -121,10 +115,16 @@ const PostComponent = ({ post, containerClassName = '', ...props }: Props) => {
 
       {showTranslation && (
         <View
-          className={styles.border({})}
-          style={{ borderTopWidth: 2, marginTop: 10 }}
+          style={{
+            borderTopWidth: 1,
+            marginTop: 10,
+            marginBottom: 10,
+            borderColor: isDark ? '#e5e7eb' : '#9ca3af',
+          }}
         >
-          <Text className="my-4 px-3 pt-4">{loremText}</Text>
+          <Text className="my-4 px-3" style={{ paddingTop: 10 }}>
+            {loremText}
+          </Text>
         </View>
       )}
 
