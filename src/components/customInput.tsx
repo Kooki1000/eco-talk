@@ -17,7 +17,6 @@ import { TextInput as NTextInput } from 'react-native';
 import { translate, type TxKeyPath } from '@/i18n';
 
 import colors from './obytes/colors';
-import { Text } from './obytes/text';
 
 export interface NInputProps extends TextInputProps {
   tx: TxKeyPath;
@@ -39,10 +38,10 @@ export type InputControllerType<T extends FieldValues> = {
 
 interface ControlledInputProps<T extends FieldValues>
   extends NInputProps,
-  InputControllerType<T> { }
+    InputControllerType<T> {}
 
 export const Input = forwardRef<TextInput, NInputProps>((props, ref) => {
-  const { error, ...inputProps } = props;
+  const { _error, ...inputProps } = props;
 
   const placeholder = translate(props.tx);
 
@@ -50,7 +49,6 @@ export const Input = forwardRef<TextInput, NInputProps>((props, ref) => {
     <View className="mb-2">
       <NTextInput
         ref={ref}
-        multiline={true}
         placeholder={placeholder}
         placeholderTextColor={colors.neutral[400]}
         className="mt-0 rounded-xl px-4 py-3 text-base font-[500] leading-5 dark:text-white"
@@ -61,11 +59,11 @@ export const Input = forwardRef<TextInput, NInputProps>((props, ref) => {
         ])}
       />
 
-      {error && (
+      {/* {error && (
         <Text className="ml-4 text-sm text-danger-400 dark:text-danger-600">
           {error}
         </Text>
-      )}
+      )} */}
     </View>
   );
 });
@@ -74,14 +72,17 @@ export const Input = forwardRef<TextInput, NInputProps>((props, ref) => {
 export function ControlledInput<T extends FieldValues>(
   props: ControlledInputProps<T>
 ) {
-  const { name, control, rules, ...inputProps } = props;
+  const { name, control, rules, onChangeText, ...inputProps } = props;
   const { field, fieldState } = useController({ control, name, rules });
 
   return (
     <Input
       ref={field.ref}
       autoCapitalize="none"
-      onChangeText={field.onChange}
+      onChangeText={(text) => {
+        field.onChange(text);
+        if (onChangeText) onChangeText(text);
+      }}
       value={(field.value as string) || ''}
       {...inputProps}
       error={fieldState.error?.message}
