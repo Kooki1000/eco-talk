@@ -96,9 +96,7 @@ export default function AddPostScreen() {
               {translate('add.charCount', { count: charCount })}
             </Text>
 
-            <View className="ml-4 size-12 items-center justify-center rounded-full bg-red-200 dark:bg-red-400">
-              <ImageInput setImage={setImage} />
-            </View>
+            <ImageInput setImage={setImage} />
           </View>
         </View>
 

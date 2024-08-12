@@ -22,11 +22,14 @@ const DisplayImage: React.FC<DisplayImageProps> = ({
   if (!image) return null;
 
   return (
-    <View>
+    <View
+      className="ml-4 items-center justify-center rounded-full bg-red-200 dark:bg-red-400"
+      style={{ height: 64, width: 64 }}
+    >
       <Image
         source={{ uri: image }}
         style={styles.image}
-        resizeMode="contain"
+        contentFit="contain"
         className="self-center"
       />
       <TouchableOpacity onPress={onRemoveImage}>
