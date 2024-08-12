@@ -63,8 +63,8 @@
     "title": "あれれ？"
   },
   "post": {
-    "translate": "翻訳を表示",
-    "hide": "翻訳を非表示"
+    "hide": "翻訳を非表示",
+    "translate": "翻訳を表示"
   },
   "posts": {
     "count": "{{count}}件の投稿",

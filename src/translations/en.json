@@ -63,8 +63,8 @@
     "title": "Oops!"
   },
   "post": {
-    "translate": "Show Translation",
-    "hide": "Hide Translation"
+    "hide": "Hide Translation",
+    "translate": "Show Translation"
   },
   "posts": {
     "count": "{{count}} Posts",
