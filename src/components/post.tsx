@@ -60,7 +60,6 @@ const postVariant = tv({
 type PostVariant = VariantProps<typeof postVariant>;
 
 interface Props extends PostVariant {
-  onPress: () => void;
   post: PostDataType;
   containerClassName?: string;
 }
@@ -119,7 +118,7 @@ const PostComponent = ({ post, containerClassName = '', ...props }: Props) => {
         </Text>
       </View>
 
-      <Text className="mt-4 px-4">{post.text}</Text>
+      <Text className="my-4 px-4">{post.text}</Text>
 
       {showTranslation && (
         <View
@@ -130,9 +129,7 @@ const PostComponent = ({ post, containerClassName = '', ...props }: Props) => {
             borderColor: isDark ? '#e5e7eb' : '#9ca3af',
           }}
         >
-          <Text className="my-4 px-4" style={{ paddingTop: 10 }}>
-            {loremText}
-          </Text>
+          <Text className="my-4 px-4">{loremText}</Text>
         </View>
       )}
 

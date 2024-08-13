@@ -102,7 +102,7 @@ const ReplyComponent = ({ reply, variant, ...props }: Props) => {
         </Text>
       </View>
 
-      <Text className="mt-4 px-4">{reply.text}</Text>
+      <Text className="my-4 px-4">{reply.text}</Text>
 
       {showTranslation && (
         <View
@@ -113,9 +113,7 @@ const ReplyComponent = ({ reply, variant, ...props }: Props) => {
             borderColor: isDark ? '#e5e7eb' : '#9ca3af',
           }}
         >
-          <Text className="my-4 px-4" style={{ paddingTop: 10 }}>
-            {loremText}
-          </Text>
+          <Text className="my-4 px-4">{loremText}</Text>
         </View>
       )}
 

@@ -5,10 +5,17 @@ export interface UserDataType {
   avatar?: string;
 }
 
+export interface CalendarDataType {
+  id: number;
+  type: 'burnable' | 'nonBurnable' | 'bulky' | 'recyclable' | 'other';
+  date: string;
+}
+
 export type VariantColor = 'red' | 'orange' | 'green' | 'blue' | 'purple';
 
 export interface PostDataType {
   id: number;
+  cityId: number;
   user: UserDataType;
   text: string;
   likes: number;
@@ -22,6 +29,9 @@ export interface PostDataType {
 
 export interface ReplyDataType {
   id: number;
+
+  // TODO: Require replyId
+  replyId?: number;
   user: UserDataType;
   text: string;
   likes: number;

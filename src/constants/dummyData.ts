@@ -1,4 +1,8 @@
-import type { PostDataType, ReplyDataType } from '@/lib/types';
+import type {
+  CalendarDataType,
+  PostDataType,
+  ReplyDataType,
+} from '@/lib/types';
 
 export const loremText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id malesuada mi, ut tempus diam. Morbi a purus sit amet neque gravida pellentesque. Morbi rhoncus sed leo sed dictum. Nam vulputate consectetur neque, ut dictum justo rhoncus et. Donec pellentesque sodales arcu eget sagittis. Donec faucibus congue pulvinar. Donec est mauris, molestie ac dolor id, sollicitudin iaculis diam. Vivamus sodales blandit auctor.`;
 
@@ -26,6 +30,7 @@ export const Reply: ReplyDataType[] = [
 export const dummyPosts: PostDataType[] = [
   {
     id: 1,
+    cityId: 1,
     user: { name: 'Alice' },
     text: loremText,
     likes: 10,
@@ -37,6 +42,7 @@ export const dummyPosts: PostDataType[] = [
   },
   {
     id: 2,
+    cityId: 1,
     user: { name: 'Bob' },
     text: loremText,
     likes: 20,
@@ -48,6 +54,7 @@ export const dummyPosts: PostDataType[] = [
   },
   {
     id: 3,
+    cityId: 1,
     user: { name: 'Charlie' },
     text: loremText,
     likes: 30,
@@ -59,6 +66,7 @@ export const dummyPosts: PostDataType[] = [
   },
   {
     id: 4,
+    cityId: 1,
     user: { name: 'David' },
     text: loremText,
     likes: 40,
@@ -70,6 +78,7 @@ export const dummyPosts: PostDataType[] = [
   },
   {
     id: 5,
+    cityId: 1,
     user: { name: 'Eve' },
     text: loremText,
     likes: 50,
@@ -81,13 +90,7 @@ export const dummyPosts: PostDataType[] = [
   },
 ];
 
-type DayDataType = {
-  id: number;
-  type: 'burnable' | 'nonBurnable' | 'bulky' | 'recyclable' | 'other';
-  date: string;
-};
-
-export const dayData: DayDataType[] = [
+export const dayData: CalendarDataType[] = [
   { id: 1, type: 'burnable', date: '2024-08-01' },
   { id: 2, type: 'nonBurnable', date: '2024-08-02' },
   { id: 3, type: 'bulky', date: '2024-08-03' },

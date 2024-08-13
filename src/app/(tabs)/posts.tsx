@@ -9,10 +9,6 @@ import { dummyPosts } from '@/constants/dummyData';
 export default function PostsScreen() {
   const insets = useSafeAreaInsets();
 
-  const onPostPress = (index: number) => {
-    console.log('Post pressed:', index);
-  };
-
   return (
     <View
       style={{
@@ -25,9 +21,7 @@ export default function PostsScreen() {
       <View className="mx-4">
         <FlatList
           data={dummyPosts}
-          renderItem={({ item }) => (
-            <Post post={item} onPress={() => onPostPress(item.id)} />
-          )}
+          renderItem={({ item }) => <Post post={item} />}
           ListHeaderComponent={<PostsHeader />}
           ListFooterComponent={<View style={{ height: 128 }} />}
           className="mx-auto w-full"
