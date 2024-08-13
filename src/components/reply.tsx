@@ -12,41 +12,34 @@ import { tv } from 'tailwind-variants';
 
 import { red } from '@/constants/colors';
 import { loremText } from '@/constants/dummyData';
-import type { PostDataType } from '@/lib/types';
+import type { ReplyDataType, VariantColor } from '@/lib/types';
 
 import { Text } from './obytes';
 import { black, white } from './obytes/colors';
-import { Reply } from './reply';
 
 dayjs.extend(utc);
 dayjs.extend(localizedFormat);
 
 const postVariant = tv({
   slots: {
-    container: 'mb-5 size-fit w-full rounded-lg px-2 py-4',
     translation: 'justify-center rounded-2xl',
   },
 
   variants: {
     variant: {
       red: {
-        container: 'bg-red-100 dark:bg-red-400',
         translation: 'bg-red-200 dark:bg-red-500',
       },
       orange: {
-        container: 'bg-orange-100 dark:bg-orange-400',
         translation: 'bg-orange-200 dark:bg-orange-500',
       },
       green: {
-        container: 'bg-green-100 dark:bg-green-500',
         translation: 'bg-green-200 dark:bg-green-600',
       },
       blue: {
-        container: 'bg-blue-100 dark:bg-blue-500',
         translation: 'bg-blue-200 dark:bg-blue-600',
       },
       purple: {
-        container: 'bg-purple-100 dark:bg-purple-400',
         translation: 'bg-purple-200 dark:bg-purple-500',
       },
     },
@@ -60,24 +53,17 @@ const postVariant = tv({
 type PostVariant = VariantProps<typeof postVariant>;
 
 interface Props extends PostVariant {
-  onPress: () => void;
-  post: PostDataType;
-  containerClassName?: string;
+  variant: VariantColor;
+  reply: ReplyDataType;
 }
 
-const PostComponent = ({ post, containerClassName = '', ...props }: Props) => {
-  const { variant = 'red' } = post;
+const ReplyComponent = ({ reply, variant, ...props }: Props) => {
   const styles = useMemo(() => postVariant({ variant }), [variant]);
 
   const [showTranslation, setShowTranslation] = useState(false);
-  const [showReply, setShowReply] = useState(false);
 
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
-
-  const onThumbsUp = () => {
-    console.log('Thumbs up');
-  };
 
   const displayTranslation = () => {
     setShowTranslation((prevState) => !prevState);
@@ -87,39 +73,36 @@ const PostComponent = ({ post, containerClassName = '', ...props }: Props) => {
     console.log('Reply pressed');
   };
 
-  const displayReply = () => {
-    setShowReply((prevState) => !prevState);
+  const onThumbsUp = () => {
+    console.log('Thumbs up');
   };
 
   return (
-    <View
-      className={styles.container({ className: containerClassName })}
-      {...props}
-    >
+    <View className="ml-12 mt-4 bg-transparent" {...props}>
       <View className="flex-row items-center justify-between">
         <View className="flex-row items-center">
-          {post.user.avatar ? (
+          {reply.user.avatar ? (
             <Image
-              source={{ uri: post.user.avatar }}
-              style={{ width: 48, height: 48 }}
+              source={{ uri: reply.user.avatar }}
+              style={{ width: 36, height: 36 }}
             />
           ) : (
             <CircleUserRound
               color={isDark ? white : black}
-              size={48}
+              size={36}
               strokeWidth={1}
             />
           )}
 
-          <Text className="ml-2 text-xl">{post.user.name}</Text>
+          <Text className="ml-2 text-lg">{reply.user.name}</Text>
         </View>
 
         <Text className="mr-4 text-sm">
-          {dayjs.utc(post.postedAt).format('LLL')}
+          {dayjs.utc(reply.postedAt).format('LLL')}
         </Text>
       </View>
 
-      <Text className="mt-4 px-4">{post.text}</Text>
+      <Text className="mt-4 px-4">{reply.text}</Text>
 
       {showTranslation && (
         <View
@@ -144,21 +127,12 @@ const PostComponent = ({ post, containerClassName = '', ...props }: Props) => {
         >
           <Text
             tx={
-              showTranslation ? 'post.showTranslation' : 'post.hideTranslation'
+              showTranslation ? 'post.hideTranslation' : 'post.showTranslation'
             }
             className="text-center text-sm"
           />
         </Pressable>
       </View>
-
-      {post.image && (
-        <Image
-          source={{ uri: post.image }}
-          style={styling.image}
-          contentFit="contain"
-          className="self-center"
-        />
-      )}
 
       <View className="ml-8 flex-row">
         <Text tx="post.reply" onPress={onReplyPress} className="mr-6" />
@@ -167,32 +141,14 @@ const PostComponent = ({ post, containerClassName = '', ...props }: Props) => {
           onPress={onThumbsUp}
           className="flex-row items-center"
         >
-          {post.isLiked ? (
+          {reply.isLiked ? (
             <Heart color={'none'} fill={red} />
           ) : (
             <Heart color={isDark ? white : black} />
           )}
-          <Text className="ml-2 text-lg">{post.likes}</Text>
+          <Text className="ml-2 text-lg">{reply.likes}</Text>
         </TouchableOpacity>
       </View>
-
-      {post.replies && (
-        <>
-          {showReply && (
-            <>
-              {post.replies.map((reply) => (
-                <Reply key={reply.id} variant={variant} reply={reply} />
-              ))}
-            </>
-          )}
-
-          <Text
-            tx={showReply ? 'post.hideReply' : 'post.showReply'}
-            className="mt-4 text-center font-medium"
-            onPress={displayReply}
-          />
-        </>
-      )}
     </View>
   );
 };
@@ -206,11 +162,6 @@ const styling = StyleSheet.create({
     height: 36,
     width: 120,
   },
-  image: {
-    width: 350,
-    height: 300,
-    marginVertical: 10,
-  },
 });
 
-export const Post = memo(PostComponent);
+export const Reply = memo(ReplyComponent);

@@ -1,6 +1,27 @@
-import type { PostDataType } from '@/lib/types';
+import type { PostDataType, ReplyDataType } from '@/lib/types';
 
 export const loremText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id malesuada mi, ut tempus diam. Morbi a purus sit amet neque gravida pellentesque. Morbi rhoncus sed leo sed dictum. Nam vulputate consectetur neque, ut dictum justo rhoncus et. Donec pellentesque sodales arcu eget sagittis. Donec faucibus congue pulvinar. Donec est mauris, molestie ac dolor id, sollicitudin iaculis diam. Vivamus sodales blandit auctor.`;
+
+export const Reply: ReplyDataType[] = [
+  {
+    id: 10,
+    user: { name: 'Alice' },
+    text: loremText,
+    likes: 10,
+    langCode: 'en',
+    isLiked: true,
+    postedAt: new Date('2023-10-05T12:00:00Z'),
+  },
+  {
+    id: 11,
+    user: { name: 'Bob' },
+    text: loremText,
+    likes: 20,
+    langCode: 'ja',
+    isLiked: false,
+    postedAt: new Date('2023-10-05T13:00:00Z'),
+  },
+];
 
 export const dummyPosts: PostDataType[] = [
   {
@@ -12,6 +33,7 @@ export const dummyPosts: PostDataType[] = [
     variant: 'red',
     isLiked: true,
     postedAt: new Date('2023-10-05T12:00:00Z'),
+    replies: Reply,
   },
   {
     id: 2,
@@ -22,6 +44,7 @@ export const dummyPosts: PostDataType[] = [
     variant: 'orange',
     isLiked: false,
     postedAt: new Date('2023-10-05T13:00:00Z'),
+    replies: Reply,
   },
   {
     id: 3,
@@ -32,6 +55,7 @@ export const dummyPosts: PostDataType[] = [
     variant: 'green',
     isLiked: false,
     postedAt: new Date('2023-10-05T14:00:00Z'),
+    replies: Reply,
   },
   {
     id: 4,
@@ -42,6 +66,7 @@ export const dummyPosts: PostDataType[] = [
     variant: 'blue',
     isLiked: true,
     postedAt: new Date('2023-10-05T15:00:00Z'),
+    replies: Reply,
   },
   {
     id: 5,
@@ -52,6 +77,7 @@ export const dummyPosts: PostDataType[] = [
     variant: 'purple',
     isLiked: false,
     postedAt: new Date('2023-10-05T16:00:00Z'),
+    replies: Reply,
   },
 ];
 
