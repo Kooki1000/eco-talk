@@ -23,7 +23,7 @@ const DisplayImage: React.FC<DisplayImageProps> = ({
 
   return (
     <View
-      className="bg-red-200 dark:bg-red-400 ml-4 items-center justify-center rounded-full"
+      className="ml-4 items-center justify-center rounded-full bg-red-200 dark:bg-red-400"
       style={{ height: 64, width: 64 }}
     >
       <Image

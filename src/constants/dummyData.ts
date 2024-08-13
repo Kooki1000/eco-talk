@@ -11,6 +11,7 @@ export const dummyPosts: PostDataType[] = [
     langCode: 'en',
     variant: 'red',
     isLiked: true,
+    postedAt: new Date('2023-10-05T12:00:00Z'),
   },
   {
     id: 2,
@@ -20,6 +21,7 @@ export const dummyPosts: PostDataType[] = [
     langCode: 'ja',
     variant: 'orange',
     isLiked: false,
+    postedAt: new Date('2023-10-05T13:00:00Z'),
   },
   {
     id: 3,
@@ -29,6 +31,7 @@ export const dummyPosts: PostDataType[] = [
     langCode: 'en',
     variant: 'green',
     isLiked: false,
+    postedAt: new Date('2023-10-05T14:00:00Z'),
   },
   {
     id: 4,
@@ -38,6 +41,7 @@ export const dummyPosts: PostDataType[] = [
     langCode: 'ja',
     variant: 'blue',
     isLiked: true,
+    postedAt: new Date('2023-10-05T15:00:00Z'),
   },
   {
     id: 5,
@@ -47,6 +51,7 @@ export const dummyPosts: PostDataType[] = [
     langCode: 'en',
     variant: 'purple',
     isLiked: false,
+    postedAt: new Date('2023-10-05T16:00:00Z'),
   },
 ];
 

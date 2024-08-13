@@ -1,4 +1,7 @@
 /* eslint-disable max-lines-per-function */
+import dayjs from 'dayjs';
+import localizedFormat from 'dayjs/plugin/localizedFormat';
+import utc from 'dayjs/plugin/utc';
 import { Image } from 'expo-image';
 import { CircleUserRound, Heart } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
@@ -11,7 +14,12 @@ import { loremText } from '@/constants/dummyData';
 import type { PostDataType } from '@/lib/types';
 
 import { Text } from './obytes';
-import { black, red, white } from './obytes/colors';
+import { black, white } from './obytes/colors';
+
+dayjs.extend(localizedFormat);
+dayjs.extend(utc);
+
+export const red = '#ff0000';
 
 const postVariant = tv({
   slots: {
@@ -88,21 +96,27 @@ const PostComponent = ({ post, containerClassName = '', ...props }: Props) => {
       className={styles.container({ className: containerClassName })}
       {...props}
     >
-      <View className="flex-row items-center">
-        {post.user.avatar ? (
-          <Image
-            source={{ uri: post.user.avatar }}
-            style={{ width: 48, height: 48 }}
-          />
-        ) : (
-          <CircleUserRound
-            color={isDark ? white : black}
-            size={48}
-            strokeWidth={1}
-          />
-        )}
+      <View className="flex-row items-center justify-between">
+        <View className="flex-row items-center">
+          {post.user.avatar ? (
+            <Image
+              source={{ uri: post.user.avatar }}
+              style={{ width: 48, height: 48 }}
+            />
+          ) : (
+            <CircleUserRound
+              color={isDark ? white : black}
+              size={48}
+              strokeWidth={1}
+            />
+          )}
 
-        <Text className="ml-2 text-xl">{post.user.name}</Text>
+          <Text className="ml-2 text-xl">{post.user.name}</Text>
+        </View>
+
+        <Text className="mr-4 text-sm">
+          {dayjs.utc(post.postedAt).format('LLL')}
+        </Text>
       </View>
 
       <Text className="mt-4 px-4">{post.text}</Text>
@@ -129,11 +143,22 @@ const PostComponent = ({ post, containerClassName = '', ...props }: Props) => {
           style={styling.translateButton}
         >
           <Text
-            tx={showTranslation ? 'post.hide' : 'post.translate'}
+            tx={
+              showTranslation ? 'post.showTranslation' : 'post.hideTranslation'
+            }
             className="text-center text-sm"
           />
         </Pressable>
       </View>
+
+      {post.image && (
+        <Image
+          source={{ uri: post.image }}
+          style={styling.image}
+          contentFit="contain"
+          className="self-center"
+        />
+      )}
 
       <View className="ml-8 flex-row">
         <Text tx="post.reply" onPress={onReplyPress} className="mr-6" />
@@ -153,21 +178,27 @@ const PostComponent = ({ post, containerClassName = '', ...props }: Props) => {
 
       {showReply && (
         <View className="ml-12 mt-4">
-          <View className="flex-row items-center">
-            {post.user.avatar ? (
-              <Image
-                source={{ uri: post.user.avatar }}
-                style={{ width: 48, height: 48 }}
-              />
-            ) : (
-              <CircleUserRound
-                color={isDark ? white : black}
-                size={36}
-                strokeWidth={1}
-              />
-            )}
+          <View className="flex-row items-center justify-between">
+            <View className="flex-row items-center">
+              {post.user.avatar ? (
+                <Image
+                  source={{ uri: post.user.avatar }}
+                  style={{ width: 36, height: 36 }}
+                />
+              ) : (
+                <CircleUserRound
+                  color={isDark ? white : black}
+                  size={36}
+                  strokeWidth={1}
+                />
+              )}
 
-            <Text className="ml-2 text-lg">{post.user.name}</Text>
+              <Text className="ml-2 text-lg">{post.user.name}</Text>
+            </View>
+
+            <Text className="mr-4 text-sm">
+              {dayjs.utc(post.postedAt).format('LLL')}
+            </Text>
           </View>
 
           <Text className="mt-4 px-4">{post.text}</Text>
@@ -194,7 +225,11 @@ const PostComponent = ({ post, containerClassName = '', ...props }: Props) => {
               style={styling.translateButton}
             >
               <Text
-                tx={showTranslation ? 'post.hide' : 'post.translate'}
+                tx={
+                  showTranslation
+                    ? 'post.hideTranslation'
+                    : 'post.showTranslation'
+                }
                 className="text-center text-sm"
               />
             </Pressable>
@@ -219,7 +254,7 @@ const PostComponent = ({ post, containerClassName = '', ...props }: Props) => {
       )}
 
       <Text
-        tx={showReply ? 'post.hideReply' : 'post.hideReply'}
+        tx={showReply ? 'post.hideReply' : 'post.showReply'}
         className="mt-4 text-center font-medium"
         onPress={displayReply}
       />
@@ -235,6 +270,11 @@ const styling = StyleSheet.create({
   translateButton: {
     height: 36,
     width: 120,
+  },
+  image: {
+    width: 350,
+    height: 300,
+    marginVertical: 10,
   },
 });
 

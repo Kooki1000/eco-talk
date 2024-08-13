@@ -27,7 +27,7 @@ const ImageInput: React.FC<ImageInputProps> = ({ setImage }) => {
 
   return (
     <View
-      className="bg-red-300 dark:bg-red-500 ml-5 items-center justify-center rounded-full"
+      className="ml-5 items-center justify-center rounded-full bg-red-300 dark:bg-red-500"
       style={{ height: 48, width: 48 }}
     >
       <TouchableOpacity onPress={handleImagePickerPress}>

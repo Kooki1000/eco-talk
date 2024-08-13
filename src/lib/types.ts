@@ -10,7 +10,8 @@ export interface PostDataType {
   user: UserDataType;
   text: string;
   likes: number;
-  postedAt?: string;
+  postedAt: Date;
+  image?: string;
   langCode: Language;
   variant?: 'red' | 'orange' | 'green' | 'blue' | 'purple';
   isLiked?: boolean;

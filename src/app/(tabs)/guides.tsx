@@ -39,7 +39,7 @@ export default function GuidesScreen() {
 
           <View
             style={styles.sticker}
-            className="bg-red-100 dark:bg-red-400 my-3 size-fit self-center rounded-lg px-3"
+            className="my-3 size-fit self-center rounded-lg bg-red-100 px-3 dark:bg-red-400"
           >
             <Text
               tx="guides.why.title"

@@ -63,11 +63,11 @@
     "title": "あれれ？"
   },
   "post": {
-    "hide": "翻訳を非表示",
     "hideReply": "返信を隠す",
+    "hideTranslation": "翻訳を表示",
     "reply": "返信",
     "showReply": "返信を表示",
-    "translate": "翻訳を隠す"
+    "showTranslation": "翻訳を隠す"
   },
   "posts": {
     "count": "{{count}}件の投稿",
