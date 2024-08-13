@@ -26,13 +26,7 @@ export default function HomeScreen() {
       <View style={{ width: '80%' }}>
         <FlatList
           data={dayData}
-          renderItem={({ item }) => (
-            <Calendar
-              variant={item.type}
-              date={dayjs(item.date).format('L')}
-              dayOfWeek={dayjs(item.date).format('dddd')}
-            />
-          )}
+          renderItem={({ item }) => <Calendar data={item} />}
           ListHeaderComponent={<HomeHeader />}
           ListFooterComponent={<View style={{ height: 128 }} />}
           className="mx-auto w-full"

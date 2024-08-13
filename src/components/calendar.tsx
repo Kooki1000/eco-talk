@@ -1,11 +1,15 @@
-import { forwardRef, memo, useMemo } from 'react';
+import dayjs from 'dayjs';
+import localizedFormat from 'dayjs/plugin/localizedFormat';
+import { memo, useMemo } from 'react';
 import { View } from 'react-native';
 import type { VariantProps } from 'tailwind-variants';
 import { tv } from 'tailwind-variants';
 
-import type { TxKeyPath } from '@/i18n';
+import type { CalendarDataType } from '@/lib/types';
 
 import { Text } from './obytes';
+
+dayjs.extend(localizedFormat);
 
 const calendar = tv({
   slots: {
@@ -36,37 +40,35 @@ const calendar = tv({
 type DayVariant = VariantProps<typeof calendar>;
 
 interface Props extends DayVariant {
-  variant?: 'burnable' | 'nonBurnable' | 'bulky' | 'recyclable' | 'other';
+  data: CalendarDataType;
   containerClassName?: string;
-  date?: string;
-  dayOfWeek?: string;
 }
 
-const CalendarComponent = forwardRef<View, Props>(
-  ({ variant, containerClassName = '', date, dayOfWeek, ...props }, ref) => {
-    const styles = useMemo(() => calendar({ variant }), [variant]);
-    const type: TxKeyPath = `calendar.${variant}` as TxKeyPath;
+const CalendarComponent = ({
+  data,
+  containerClassName = '',
+  ...props
+}: Props) => {
+  const styles = useMemo(() => calendar({ variant: data.type }), [data.type]);
 
-    return (
+  return (
+    <View
+      className={styles.container({ className: containerClassName })}
+      {...props}
+    >
       <View
-        className={styles.container({ className: containerClassName })}
-        {...props}
-        ref={ref}
+        className="w-full flex-row items-center"
+        style={{ paddingLeft: 12 }}
       >
-        <View
-          className="w-full flex-row items-center"
-          style={{ paddingLeft: 12 }}
-        >
-          <View className="items-center" style={{ marginRight: 28 }}>
-            <Text className="text-lg">{date}</Text>
-            <Text className="text-lg">{dayOfWeek}</Text>
-          </View>
-
-          <Text className="text-center text-xl" tx={type} />
+        <View className="items-center" style={{ marginRight: 28 }}>
+          <Text className="text-lg">{dayjs(data.date).format('L')}</Text>
+          <Text className="text-lg">{dayjs(data.date).format('dddd')}</Text>
         </View>
+
+        <Text className="text-center text-xl" tx={`calendar.${data.type}`} />
       </View>
-    );
-  }
-);
+    </View>
+  );
+};
 
 export const Calendar = memo(CalendarComponent);

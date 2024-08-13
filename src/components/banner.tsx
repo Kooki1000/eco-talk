@@ -31,6 +31,7 @@ const Banner = ({ style, className }: Props) => {
               color={isDark ? white : black}
               strokeWidth={1}
             />
+
             <View style={styles.cameraIcon}>
               <Camera size={30} color={isDark ? white : black} />
             </View>

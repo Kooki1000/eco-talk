@@ -5,13 +5,37 @@ export interface UserDataType {
   avatar?: string;
 }
 
+export interface CalendarDataType {
+  id: string;
+  type: 'burnable' | 'nonBurnable' | 'bulky' | 'recyclable' | 'other';
+  date: string;
+}
+
+export type VariantColor = 'red' | 'orange' | 'green' | 'blue' | 'purple';
+
 export interface PostDataType {
-  id: number;
+  id: string;
+  cityId: string;
   user: UserDataType;
   text: string;
   likes: number;
-  postedAt?: string;
+  postedAt: Date;
+  image?: string;
   langCode: Language;
-  variant?: 'red' | 'orange' | 'green' | 'blue' | 'purple';
+  variant?: VariantColor;
+  isLiked?: boolean;
+  replies?: ReplyDataType[];
+}
+
+export interface ReplyDataType {
+  id: string;
+
+  // TODO: Require replyId
+  replyId?: string;
+  user: UserDataType;
+  text: string;
+  likes: number;
+  postedAt: Date;
+  langCode: Language;
   isLiked?: boolean;
 }
