@@ -1,133 +1,83 @@
 // This code is modified from the original version found at:
-// https://github.com/obytes/react-native-template-obytes/blob/master/src/ui/select.tsx
+// https://github.com/obytes/react-native-template-obytes/blob/master/src/ui/input.tsx
 // Original code by OBytes (https://github.com/obytes), licensed under the MIT License.
 
-import { type BottomSheetModal } from '@gorhom/bottom-sheet';
-import { FlashList } from '@shopify/flash-list';
-import { ChevronDown } from 'lucide-react-native';
-import { useColorScheme } from 'nativewind';
-import { forwardRef, memo, useCallback, useMemo } from 'react';
-import { TouchableOpacity, View } from 'react-native';
-import { Pressable, type PressableProps } from 'react-native';
+import { forwardRef } from 'react';
+import type {
+  Control,
+  FieldValues,
+  Path,
+  RegisterOptions,
+} from 'react-hook-form';
+import { useController } from 'react-hook-form';
+import type { TextInput, TextInputProps } from 'react-native';
+import { I18nManager, StyleSheet, View } from 'react-native';
+import { TextInput as NTextInput } from 'react-native';
 
-import { colors, Modal, Text, useModal } from '@/components/obytes';
-import { black, white } from '@/components/obytes/colors';
 import { translate, type TxKeyPath } from '@/i18n';
 
-const List = FlashList;
+import colors from './obytes/colors';
 
-export type Option = { label: TxKeyPath; value: string | number };
-
-type OptionsProps = {
-  options: Option[];
-  onSelect: (option: Option) => void;
-  value?: string | number;
-};
-
-function keyExtractor(item: Option) {
-  return `select-item-${item.value}`;
-}
-
-export const Options = forwardRef<BottomSheetModal, OptionsProps>(
-  ({ options, onSelect, value }, ref) => {
-    const height = options.length * 70 + 100;
-    const snapPoints = useMemo(() => [height], [height]);
-    const { colorScheme } = useColorScheme();
-    const isDark = colorScheme === 'dark';
-
-    const renderSelectItem = useCallback(
-      ({ item }: { item: Option }) => (
-        <Option
-          key={`select-item-${item.value}`}
-          label={item.label}
-          selected={value === item.value}
-          onPress={() => onSelect(item)}
-        />
-      ),
-      [onSelect, value]
-    );
-
-    return (
-      <Modal
-        ref={ref}
-        index={0}
-        snapPoints={snapPoints}
-        backgroundStyle={{
-          backgroundColor: isDark ? colors.neutral[800] : colors.white,
-        }}
-      >
-        <List
-          data={options}
-          keyExtractor={keyExtractor}
-          renderItem={renderSelectItem}
-          estimatedItemSize={52}
-        />
-      </Modal>
-    );
-  }
-);
-
-const Option = memo(
-  ({
-    label,
-    ...props
-  }: PressableProps & {
-    selected?: boolean;
-    label: TxKeyPath;
-  }) => {
-    return (
-      <Pressable
-        className="flex-row items-center border-b-2 border-neutral-300 bg-white px-3 py-2 dark:border-neutral-700 dark:bg-neutral-800"
-        {...props}
-      >
-        <Text tx={label} className="flex-1 dark:text-neutral-100" />
-      </Pressable>
-    );
-  }
-);
-
-export interface SelectProps {
-  value?: string | number;
-  txKey: TxKeyPath;
-  txOption?: any;
+export interface NInputProps extends TextInputProps {
+  tx: TxKeyPath;
   disabled?: boolean;
   error?: string;
-  options?: Option[];
-  onSelect?: (value: string | number) => void;
-  placeholder?: string;
 }
 
-export const Select = (props: SelectProps) => {
-  const { txKey, txOption, options = [], disabled = false, onSelect } = props;
-  const modal = useModal();
+type TRule = Omit<
+  RegisterOptions,
+  'valueAsNumber' | 'valueAsDate' | 'setValueAs'
+>;
 
-  const { colorScheme } = useColorScheme();
-  const isDark = colorScheme === 'dark';
+export type RuleType<T> = { [name in keyof T]: TRule };
+export type InputControllerType<T extends FieldValues> = {
+  name: Path<T>;
+  control: Control<T>;
+  rules?: TRule;
+};
 
-  const onSelectOption = useCallback(
-    (option: Option) => {
-      onSelect?.(option.value);
-      modal.dismiss();
-    },
-    [modal, onSelect]
-  );
+interface ControlledInputProps<T extends FieldValues>
+  extends NInputProps,
+    InputControllerType<T> {}
+
+export const Input = forwardRef<TextInput, NInputProps>((props, ref) => {
+  const placeholder = translate(props.tx);
 
   return (
-    <>
-      <View>
-        <TouchableOpacity
-          className="flex-row items-center"
-          disabled={disabled}
-          onPress={modal.present}
-        >
-          <Text className="text-lg dark:text-neutral-100">
-            {txOption ? translate(txKey, txOption) : translate(txKey)}
-          </Text>
-          <ChevronDown color={isDark ? white : black} size={28} />
-        </TouchableOpacity>
-      </View>
-
-      <Options ref={modal.ref} options={options} onSelect={onSelectOption} />
-    </>
+    <View className="mb-2">
+      <NTextInput
+        ref={ref}
+        placeholder={placeholder}
+        placeholderTextColor={colors.neutral[400]}
+        className="mt-0 rounded-xl px-4 py-3 text-base font-[500] leading-5 dark:text-white"
+        {...props}
+        style={StyleSheet.flatten([
+          { writingDirection: I18nManager.isRTL ? 'rtl' : 'ltr' },
+          props.style,
+        ])}
+      />
+    </View>
   );
-};
+});
+
+// Only used with react-hook-form
+export function ControlledInput<T extends FieldValues>(
+  props: ControlledInputProps<T>
+) {
+  const { name, control, rules, onChangeText, ...inputProps } = props;
+  const { field, fieldState } = useController({ control, name, rules });
+
+  return (
+    <Input
+      ref={field.ref}
+      autoCapitalize="none"
+      onChangeText={(text) => {
+        field.onChange(text);
+        if (onChangeText) onChangeText(text);
+      }}
+      value={(field.value as string) || ''}
+      {...inputProps}
+      error={fieldState.error?.message}
+    />
+  );
+}
