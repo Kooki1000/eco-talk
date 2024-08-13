@@ -5,12 +5,11 @@ import utc from 'dayjs/plugin/utc';
 import { Image } from 'expo-image';
 import { CircleUserRound, Heart } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
-import { memo, useMemo, useState } from 'react';
+import React, { memo, useMemo, useState } from 'react';
 import { Pressable, StyleSheet, TouchableOpacity, View } from 'react-native';
 import type { VariantProps } from 'tailwind-variants';
 import { tv } from 'tailwind-variants';
 
-import { red } from '@/constants/colors';
 import { loremText } from '@/constants/dummyData';
 import type { PostDataType } from '@/lib/types';
 
@@ -62,9 +61,15 @@ type PostVariant = VariantProps<typeof postVariant>;
 interface Props extends PostVariant {
   post: PostDataType;
   containerClassName?: string;
+  onReplyPress: (id: string) => void;
 }
 
-const PostComponent = ({ post, containerClassName = '', ...props }: Props) => {
+const PostComponent = ({
+  post,
+  containerClassName = '',
+  onReplyPress,
+  ...props
+}: Props) => {
   const { variant = 'red' } = post;
   const styles = useMemo(() => postVariant({ variant }), [variant]);
 
@@ -80,10 +85,6 @@ const PostComponent = ({ post, containerClassName = '', ...props }: Props) => {
 
   const displayTranslation = () => {
     setShowTranslation((prevState) => !prevState);
-  };
-
-  const onReplyPress = () => {
-    console.log('Reply pressed');
   };
 
   const displayReply = () => {
@@ -158,14 +159,18 @@ const PostComponent = ({ post, containerClassName = '', ...props }: Props) => {
       )}
 
       <View className="ml-8 flex-row">
-        <Text tx="post.reply" onPress={onReplyPress} className="mr-6" />
+        <Text
+          tx="post.reply"
+          onPress={() => onReplyPress(`Post ${post.id}`)}
+          className="mr-6"
+        />
 
         <TouchableOpacity
           onPress={onThumbsUp}
           className="flex-row items-center"
         >
           {post.isLiked ? (
-            <Heart color={'none'} fill={red} />
+            <Heart color={'none'} fill={'#ff0000'} />
           ) : (
             <Heart color={isDark ? white : black} />
           )}
@@ -178,7 +183,12 @@ const PostComponent = ({ post, containerClassName = '', ...props }: Props) => {
           {showReply && (
             <>
               {post.replies.map((reply) => (
-                <Reply key={reply.id} variant={variant} reply={reply} />
+                <Reply
+                  key={reply.id}
+                  variant={variant}
+                  reply={reply}
+                  onReplyPress={onReplyPress}
+                />
               ))}
             </>
           )}

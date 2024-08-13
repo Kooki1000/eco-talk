@@ -1,4 +1,4 @@
-import type { Option } from '@/components/customSelect';
+import type { Option } from '@/components/postInput';
 
 export const languages: Option[] = [
   { value: 'ja', label: 'locales.ja' },

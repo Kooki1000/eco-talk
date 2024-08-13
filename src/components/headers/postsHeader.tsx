@@ -6,7 +6,7 @@ import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { sortOptions } from '@/constants/options';
 import { translate } from '@/i18n';
 
-import { Select } from '../customSelect';
+import { Select } from '../postInput';
 import { Text } from '../obytes';
 import { black, white } from '../obytes/colors';
 

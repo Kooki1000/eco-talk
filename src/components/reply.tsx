@@ -10,7 +10,6 @@ import { Pressable, StyleSheet, TouchableOpacity, View } from 'react-native';
 import type { VariantProps } from 'tailwind-variants';
 import { tv } from 'tailwind-variants';
 
-import { red } from '@/constants/colors';
 import { loremText } from '@/constants/dummyData';
 import type { ReplyDataType, VariantColor } from '@/lib/types';
 
@@ -55,9 +54,10 @@ type PostVariant = VariantProps<typeof postVariant>;
 interface Props extends PostVariant {
   variant: VariantColor;
   reply: ReplyDataType;
+  onReplyPress: (id: string) => void;
 }
 
-const ReplyComponent = ({ reply, variant, ...props }: Props) => {
+const ReplyComponent = ({ reply, variant, onReplyPress, ...props }: Props) => {
   const styles = useMemo(() => postVariant({ variant }), [variant]);
 
   const [showTranslation, setShowTranslation] = useState(false);
@@ -67,10 +67,6 @@ const ReplyComponent = ({ reply, variant, ...props }: Props) => {
 
   const displayTranslation = () => {
     setShowTranslation((prevState) => !prevState);
-  };
-
-  const onReplyPress = () => {
-    console.log('Reply pressed');
   };
 
   const onThumbsUp = () => {
@@ -133,14 +129,18 @@ const ReplyComponent = ({ reply, variant, ...props }: Props) => {
       </View>
 
       <View className="ml-8 flex-row">
-        <Text tx="post.reply" onPress={onReplyPress} className="mr-6" />
+        <Text
+          tx="post.reply"
+          onPress={() => onReplyPress(`Reply ${reply.id}`)}
+          className="mr-6"
+        />
 
         <TouchableOpacity
           onPress={onThumbsUp}
           className="flex-row items-center"
         >
           {reply.isLiked ? (
-            <Heart color={'none'} fill={red} />
+            <Heart color={'none'} fill={'#ff0000'} />
           ) : (
             <Heart color={isDark ? white : black} />
           )}
