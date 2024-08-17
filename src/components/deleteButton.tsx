@@ -1,6 +1,6 @@
 import { X } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
-import { Alert, Platform, Pressable } from 'react-native';
+import { Alert, Platform, Pressable, StyleSheet } from 'react-native';
 
 import { translate } from '@/i18n';
 
@@ -49,11 +49,19 @@ const DeleteButton = ({ type, id }: DeleteButtonProps) => {
   return (
     <Pressable
       onPress={() => showDeleteConfirmation()}
-      className="absolute right-4 top-0"
+      style={styles.container}
     >
       <X size={20} color={isDark ? white : black} />
     </Pressable>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    position: 'absolute',
+    right: 16,
+    top: 0,
+  },
+});
 
 export default DeleteButton;
