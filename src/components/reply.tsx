@@ -13,6 +13,7 @@ import { tv } from 'tailwind-variants';
 import { loremText } from '@/constants/dummyData';
 import type { ReplyDataType, VariantColor } from '@/lib/types';
 
+import DeleteButton from './deleteButton';
 import { Text } from './obytes';
 import { black, white } from './obytes/colors';
 
@@ -65,17 +66,19 @@ const ReplyComponent = ({ reply, variant, onReplyPress, ...props }: Props) => {
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
 
-  const displayTranslation = () => {
-    setShowTranslation((prevState) => !prevState);
-  };
-
   const onThumbsUp = () => {
     console.log('Thumbs up');
   };
 
+  const displayTranslation = () => {
+    setShowTranslation((prevState) => !prevState);
+  };
+
   return (
     <View className="ml-12 mt-4 bg-transparent" {...props}>
-      <View className="flex-row items-center justify-between">
+      <DeleteButton type="reply" id={reply.id} />
+
+      <View className="mt-5 flex-row items-center justify-between">
         <View className="flex-row items-center">
           {reply.user.avatar ? (
             <Image

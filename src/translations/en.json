@@ -34,6 +34,15 @@
     "other": "Other",
     "recyclable": "Recyclable"
   },
+  "city": {
+    "chiyoda": "Chiyoda City"
+  },
+  "confirmDelete": {
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "delete": "Delete",
+    "description": "Are you sure you want to delete?"
+  },
   "guides": {
     "how": {
       "content": "   Waste sorting plays a vital role in protecting both the environment and our communities. By carefully separating recyclable materials—like paper, glass, metal, and plastics—from other waste, we can significantly reduce the strain on natural resources. Imagine this: recycling just one tonne of paper saves 17 trees, 26,000 liters of water, and 4,000 kWh of electricity. That’s a huge impact from just a small change in our daily habits!\n    When we sort our waste properly, we’re not only preserving resources but also cutting down on the amount of trash that ends up in landfills. This helps to prevent serious environmental issues like groundwater contamination and the release of greenhouse gases. Additionally, sorting ensures that hazardous items—such as chemicals, batteries, and medical waste—are disposed of safely. This prevents harmful exposure to people and wildlife, and reduces the release of toxic substances during incineration.\n    Proper waste sorting also makes our communities cleaner and healthier. It reduces litter, keeps pests at bay, and minimizes the unpleasant odors that come from improper waste disposal. By taking a few extra moments to sort your trash, you’re contributing to a more sustainable future and helping to create a better living environment for everyone.",

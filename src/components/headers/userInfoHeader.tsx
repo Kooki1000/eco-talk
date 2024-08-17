@@ -1,5 +1,5 @@
 import { Link } from 'expo-router';
-import { ChevronDown, CircleUserRound } from 'lucide-react-native';
+import { CircleUserRound } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import { StyleSheet, View, type ViewProps } from 'react-native';
 
@@ -27,8 +27,8 @@ const UserInfoHeader = ({ style, className }: Props) => {
       </View>
 
       <View style={styles.rightContainer}>
-        <Text className="text-lg">Yokohama City</Text>
-        <ChevronDown color={isDark ? white : black} size={32} />
+        <Text tx="city.chiyoda" className="text-lg" />
+        {/* <ChevronDown color={isDark ? white : black} size={32} /> */}
       </View>
     </View>
   );
