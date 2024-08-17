@@ -5,7 +5,7 @@ import utc from 'dayjs/plugin/utc';
 import { Image } from 'expo-image';
 import { CircleUserRound, Heart } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
-import React, { memo, useMemo, useState } from 'react';
+import { memo, useMemo, useState } from 'react';
 import { Pressable, StyleSheet, TouchableOpacity, View } from 'react-native';
 import type { VariantProps } from 'tailwind-variants';
 import { tv } from 'tailwind-variants';
@@ -13,6 +13,7 @@ import { tv } from 'tailwind-variants';
 import { loremText } from '@/constants/dummyData';
 import type { PostDataType } from '@/lib/types';
 
+import DeleteButton from './deleteButton';
 import { Text } from './obytes';
 import { black, white } from './obytes/colors';
 import { Reply } from './reply';
@@ -96,7 +97,11 @@ const PostComponent = ({
       className={styles.container({ className: containerClassName })}
       {...props}
     >
-      <View className="flex-row items-center justify-between">
+      <View className="mt-0.5">
+        <DeleteButton type="post" id={post.id} />
+      </View>
+
+      <View className="mt-2 flex-row items-center justify-between">
         <View className="flex-row items-center">
           {post.user.avatar ? (
             <Image

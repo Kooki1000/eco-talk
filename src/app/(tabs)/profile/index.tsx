@@ -1,14 +1,14 @@
 import { router } from 'expo-router';
-import { Info, MapPinned, UserRound } from 'lucide-react-native';
+import { Info, UserRound } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { DeleteAccountButton, LogOutButton } from '@/components/auth';
 import Banner from '@/components/banner';
-import { InfoRow } from '@/components/infoRow';
 import { Text } from '@/components/obytes';
 import { black, white } from '@/components/obytes/colors';
+import { CityInfo } from '@/components/settings/ cityInfo';
 import { LanguageSelect } from '@/components/settings/languageSelect';
 import { ThemeSelect } from '@/components/settings/themeSelect';
 
@@ -39,7 +39,7 @@ export default function ProfileScreen() {
         />
 
         <View style={styles.settingsContainer}>
-          <InfoRow IconComponent={MapPinned} text="Location: Yokohama City" />
+          <CityInfo />
           <LanguageSelect />
           <ThemeSelect />
 
