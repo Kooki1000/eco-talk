@@ -48,6 +48,7 @@ export default function TabLayout() {
         options={{
           headerShown: false,
           tabBarIcon: ({ color }) => <MessageSquareText color={color} />,
+          tabBarHideOnKeyboard: true,
         }}
       />
       <Tabs.Screen
