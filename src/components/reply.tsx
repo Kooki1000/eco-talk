@@ -78,7 +78,7 @@ const ReplyComponent = ({ reply, variant, onReplyPress, ...props }: Props) => {
     <View className="ml-12 mt-4 bg-transparent" {...props}>
       <DeleteButton type="reply" id={reply.id} />
 
-      <View className="mt-5 flex-row items-center justify-between">
+      <View className="mt-4 flex-row items-center justify-between">
         <View className="flex-row items-center">
           {reply.user.avatar ? (
             <Image

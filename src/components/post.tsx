@@ -97,7 +97,7 @@ const PostComponent = ({
       className={styles.container({ className: containerClassName })}
       {...props}
     >
-      <View className="mt-0.5">
+      <View style={{ marginTop: 2 }}>
         <DeleteButton type="post" id={post.id} />
       </View>
 
