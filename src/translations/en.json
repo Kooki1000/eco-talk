@@ -96,6 +96,12 @@
     },
     "title": "General"
   },
+  "signIn": {
+    "title": "Sign In"
+  },
+  "signUp": {
+    "title": "Sign Up"
+  },
   "theme": {
     "dark": "Dark Mode",
     "light": "Light Mode",

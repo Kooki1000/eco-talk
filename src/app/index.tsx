@@ -8,12 +8,12 @@ import { translate } from '@/i18n';
 export default function index() {
   const onSignIn = () => {
     console.log('Signed in');
-    router.replace('/(tabs)');
+    router.replace('/(auth)/sign-in');
   };
 
   const onSignUp = () => {
     console.log('Signed up');
-    router.replace('/(tabs)');
+    router.replace('/(auth)/sign-in');
   };
 
   return (

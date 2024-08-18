@@ -96,6 +96,12 @@
     },
     "title": "設定"
   },
+  "signIn": {
+    "title": "ログイン"
+  },
+  "signUp": {
+    "title": "アカウントの作成"
+  },
   "theme": {
     "dark": "ダークモード",
     "light": "ライトモード",
