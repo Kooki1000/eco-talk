@@ -6,14 +6,14 @@ import { Button, Image, Text } from '@/components/obytes';
 import { translate } from '@/i18n';
 
 export default function index() {
-  const GoogleLogin = () => {
-    console.log('Logged in with Google');
-    router.replace('/(tabs)');
+  const onSignIn = () => {
+    console.log('Signed in');
+    router.replace('/(auth)/sign-in');
   };
 
-  const AppleLogin = () => {
-    console.log('Logged in with Apple');
-    router.replace('/(tabs)');
+  const onSignUp = () => {
+    console.log('Signed up');
+    router.replace('/(auth)/sign-in');
   };
 
   return (
@@ -24,19 +24,19 @@ export default function index() {
         contentFit="contain"
       />
 
-      <Text tx="auth.title" className="my-5 text-center text-5xl font-bold" />
+      <Text tx="auth.title" className="my-5 text-center text-4xl font-bold" />
       <Text tx="auth.description" className="mx-8 mb-5 text-center text-2xl" />
 
       <Button
-        onPress={GoogleLogin}
-        tx="auth.apple"
+        onPress={onSignIn}
+        tx="auth.signIn"
         textClassName="text-xl text-black"
         className="h-12 w-96 rounded-3xl border border-solid border-black bg-white"
       />
 
       <Button
-        onPress={AppleLogin}
-        tx="auth.google"
+        onPress={onSignUp}
+        tx="auth.signUp"
         textClassName="text-xl text-black"
         className="h-12 w-96 rounded-3xl border border-solid border-black bg-white"
       />
