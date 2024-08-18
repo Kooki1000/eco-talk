@@ -15,7 +15,10 @@ export default function ProfileStack() {
         // eslint-disable-next-line react/no-unstable-nested-components
         headerLeft: () => (
           <Link href="/(tabs)/profile" asChild>
-            <MoveLeft color={isDark ? white : black} />
+            <MoveLeft
+              color={isDark ? white : black}
+              style={{ marginRight: 4 }}
+            />
           </Link>
         ),
       }}
