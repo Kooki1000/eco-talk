@@ -20,9 +20,9 @@
     "title": "投稿"
   },
   "auth": {
-    "apple": "Appleでサインイン",
     "description": "ゴミ処理をわかりやすく",
-    "google": "Googleでログイン",
+    "signIn": "ログイン",
+    "signUp": "アカウントを作成",
     "title": "EcoTalkへようこそ",
     "visitor": "ログインせず使用する"
   },

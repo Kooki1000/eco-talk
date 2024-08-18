@@ -20,9 +20,9 @@
     "title": "Add Post"
   },
   "auth": {
-    "apple": "Sign in with Apple",
     "description": "Your tool for navigating Japan's trash rules.",
-    "google": "Sign in with Google",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
     "title": "Welcome to EcoTalk",
     "visitor": "Explore as visitor"
   },
