@@ -71,7 +71,7 @@ export default function AddPostScreen() {
           </TouchableOpacity>
         </View>
 
-        <Text className="text-lg">Yokohama City</Text>
+        <Text tx="city.chiyoda" className="text-lg" />
 
         <TouchableOpacity
           onPress={handleSubmit(onSubmit)}

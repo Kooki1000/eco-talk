@@ -28,7 +28,7 @@ const AddPostHeader = ({ style, className, onPress }: Props) => {
         </Link>
       </View>
 
-      <Text className="text-lg">Yokohama City</Text>
+      <Text tx="city.chiyoda" className="text-lg" />
 
       <TouchableOpacity onPress={onPress} style={styles.rightContainer}>
         <Send color={isDark ? white : black} size={32} />
