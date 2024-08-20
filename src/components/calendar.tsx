@@ -5,7 +5,7 @@ import { View } from 'react-native';
 import type { VariantProps } from 'tailwind-variants';
 import { tv } from 'tailwind-variants';
 
-import type { CalendarDataType } from '@/lib/types';
+import type { CalendarDataType } from '@/types/types';
 
 import { Text } from './obytes';
 

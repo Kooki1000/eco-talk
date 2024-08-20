@@ -11,7 +11,7 @@ import type { VariantProps } from 'tailwind-variants';
 import { tv } from 'tailwind-variants';
 
 import { loremText } from '@/constants/dummyData';
-import type { PostDataType } from '@/lib/types';
+import type { PostDataType } from '@/types/types';
 
 import DeleteButton from './deleteButton';
 import { Text } from './obytes';
