@@ -1,11 +1,11 @@
 import dayjs from 'dayjs';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
-import { memo, useMemo } from 'react';
+import React, { memo, useMemo } from 'react';
 import { View } from 'react-native';
 import type { VariantProps } from 'tailwind-variants';
 import { tv } from 'tailwind-variants';
 
-import type { CalendarDataType } from '@/types/types';
+import type { Tables } from '@/types/database.types';
 
 import { Text } from './obytes';
 
@@ -30,6 +30,9 @@ const calendar = tv({
       recyclable: {
         container: 'bg-blue-200 dark:bg-blue-400',
       },
+      plastic: {
+        container: 'bg-yellow-100 dark:bg-yellow-400',
+      },
       other: {
         container: 'bg-purple-200 dark:bg-purple-400',
       },
@@ -40,7 +43,7 @@ const calendar = tv({
 type DayVariant = VariantProps<typeof calendar>;
 
 interface Props extends DayVariant {
-  data: CalendarDataType;
+  data: Tables<'trash_schedule'>;
   containerClassName?: string;
 }
 
@@ -64,7 +67,6 @@ const CalendarComponent = ({
           <Text className="text-lg">{dayjs(data.date).format('L')}</Text>
           <Text className="text-lg">{dayjs(data.date).format('dddd')}</Text>
         </View>
-
         <Text className="text-center text-xl" tx={`calendar.${data.type}`} />
       </View>
     </View>

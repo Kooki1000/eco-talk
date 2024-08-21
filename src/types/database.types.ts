@@ -232,34 +232,25 @@ export type Database = {
           address: string | null;
           city: string;
           created_at: string;
-          date: string | null;
+          date: string;
           id: string;
-          info: string | null;
           type: Database['public']['Enums']['trash_type'];
-          week_of_month: number | null;
-          weekday: Database['public']['Enums']['weekday'] | null;
         };
         Insert: {
           address?: string | null;
           city: string;
           created_at?: string;
-          date?: string | null;
+          date: string;
           id?: string;
-          info?: string | null;
           type: Database['public']['Enums']['trash_type'];
-          week_of_month?: number | null;
-          weekday?: Database['public']['Enums']['weekday'] | null;
         };
         Update: {
           address?: string | null;
           city?: string;
           created_at?: string;
-          date?: string | null;
+          date?: string;
           id?: string;
-          info?: string | null;
           type?: Database['public']['Enums']['trash_type'];
-          week_of_month?: number | null;
-          weekday?: Database['public']['Enums']['weekday'] | null;
         };
         Relationships: [
           {
@@ -294,14 +285,6 @@ export type Database = {
         | 'recyclable'
         | 'plastic'
         | 'other';
-      weekday:
-        | 'Sunday'
-        | 'Monday'
-        | 'Tuesday'
-        | 'Wednesday'
-        | 'Thursday'
-        | 'Friday'
-        | 'Saturday';
     };
     CompositeTypes: {
       [_ in never]: never;

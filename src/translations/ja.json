@@ -32,6 +32,7 @@
     "burnable": "可燃ゴミ",
     "nonBurnable": "不燃ゴミ",
     "other": "その他",
+    "plastic": "プラスチック",
     "recyclable": "資源ゴミ"
   },
   "city": {

@@ -32,6 +32,7 @@
     "burnable": "Burnable",
     "nonBurnable": "Non-Burnable",
     "other": "Other",
+    "plastic": "Plastic",
     "recyclable": "Recyclable"
   },
   "city": {
