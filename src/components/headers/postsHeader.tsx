@@ -3,7 +3,7 @@ import { useColorScheme } from 'nativewind';
 import { useState } from 'react';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
 
-import { sortOptions } from '@/constants/options';
+import { sortOptions } from '@/constants/options/options';
 import { translate } from '@/i18n';
 
 import { Select } from '../customSelect';

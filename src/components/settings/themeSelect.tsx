@@ -2,7 +2,7 @@ import { SunMoon } from 'lucide-react-native';
 import { memo } from 'react';
 import { View } from 'react-native';
 
-import { themes } from '@/constants/options';
+import { themes } from '@/constants/options/options';
 import {
   type ColorSchemeType,
   useSelectedTheme,
