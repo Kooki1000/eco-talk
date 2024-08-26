@@ -9,6 +9,35 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      addresses: {
+        Row: {
+          city: string;
+          created_at: string;
+          id: string;
+          name: string;
+        };
+        Insert: {
+          city: string;
+          created_at?: string;
+          id?: string;
+          name: string;
+        };
+        Update: {
+          city?: string;
+          created_at?: string;
+          id?: string;
+          name?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'addresses_city_fkey';
+            columns: ['city'];
+            isOneToOne: false;
+            referencedRelation: 'cities';
+            referencedColumns: ['id'];
+          }
+        ];
+      };
       cities: {
         Row: {
           created_at: string;
@@ -203,33 +232,34 @@ export type Database = {
           address: string | null;
           city: string;
           created_at: string;
-          date: string | null;
+          date: string;
           id: string;
           type: Database['public']['Enums']['trash_type'];
-          week_of_month: number | null;
-          weekday: Database['public']['Enums']['weekday'] | null;
         };
         Insert: {
           address?: string | null;
           city: string;
           created_at?: string;
-          date?: string | null;
+          date: string;
           id?: string;
           type: Database['public']['Enums']['trash_type'];
-          week_of_month?: number | null;
-          weekday?: Database['public']['Enums']['weekday'] | null;
         };
         Update: {
           address?: string | null;
           city?: string;
           created_at?: string;
-          date?: string | null;
+          date?: string;
           id?: string;
           type?: Database['public']['Enums']['trash_type'];
-          week_of_month?: number | null;
-          weekday?: Database['public']['Enums']['weekday'] | null;
         };
         Relationships: [
+          {
+            foreignKeyName: 'trash_schedule_address_fkey';
+            columns: ['address'];
+            isOneToOne: false;
+            referencedRelation: 'addresses';
+            referencedColumns: ['id'];
+          },
           {
             foreignKeyName: 'trash_schedule_city_id_fkey';
             columns: ['city'];
@@ -248,15 +278,13 @@ export type Database = {
     };
     Enums: {
       color_variant: 'red' | 'orange' | 'green' | 'blue' | 'purple';
-      trash_type: 'burnable' | 'nonBurnable' | 'bulky' | 'recyclable' | 'other';
-      weekday:
-        | 'Sunday'
-        | 'Monday'
-        | 'Tuesday'
-        | 'Wednesday'
-        | 'Thursday'
-        | 'Friday'
-        | 'Saturday';
+      trash_type:
+        | 'burnable'
+        | 'nonBurnable'
+        | 'bulky'
+        | 'recyclable'
+        | 'plastic'
+        | 'other';
     };
     CompositeTypes: {
       [_ in never]: never;

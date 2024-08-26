@@ -2,7 +2,7 @@ import { Languages } from 'lucide-react-native';
 import { memo } from 'react';
 import { View } from 'react-native';
 
-import { languages } from '@/constants/options';
+import { languages } from '@/constants/options/options';
 import type { Language } from '@/i18n/resources';
 import { useSelectedLanguage } from '@/i18n/utils';
 

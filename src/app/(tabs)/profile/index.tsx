@@ -8,7 +8,7 @@ import { DeleteAccountButton, LogOutButton } from '@/components/auth';
 import Banner from '@/components/banner';
 import { Text } from '@/components/obytes';
 import { black, white } from '@/components/obytes/colors';
-import { CityInfo } from '@/components/settings/ cityInfo';
+import { AddressSelect } from '@/components/settings/AddressSelect';
 import { LanguageSelect } from '@/components/settings/languageSelect';
 import { ThemeSelect } from '@/components/settings/themeSelect';
 
@@ -39,7 +39,7 @@ export default function ProfileScreen() {
         />
 
         <View style={styles.settingsContainer}>
-          <CityInfo />
+          <AddressSelect />
           <LanguageSelect />
           <ThemeSelect />
 

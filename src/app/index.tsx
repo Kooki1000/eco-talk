@@ -3,7 +3,6 @@ import { StyleSheet } from 'react-native';
 import { View } from 'react-native';
 
 import { Button, Image, Text } from '@/components/obytes';
-import { translate } from '@/i18n';
 
 export default function index() {
   const onSignIn = () => {
@@ -41,8 +40,8 @@ export default function index() {
         className="h-12 w-96 rounded-3xl border border-solid border-black bg-white"
       />
 
-      <Link href="/(tabs)" className="mt-10 underline">
-        {translate('auth.visitor')}
+      <Link href="/(tabs)" className="mt-10">
+        <Text tx="auth.visitor" className="underline" />
       </Link>
     </View>
   );

@@ -90,7 +90,7 @@ export const dummyPosts: PostDataType[] = [
 ];
 
 export const dayData: CalendarDataType[] = [
-  { id: '1', type: 'burnable', date: '2024-08-01' },
+  { id: '1', type: 'plastic', date: '2024-08-01' },
   { id: '2', type: 'nonBurnable', date: '2024-08-02' },
   { id: '3', type: 'bulky', date: '2024-08-03' },
   { id: '4', type: 'recyclable', date: '2024-08-04' },
@@ -104,7 +104,7 @@ export const dayData: CalendarDataType[] = [
   { id: '12', type: 'nonBurnable', date: '2024-08-12' },
   { id: '13', type: 'other', date: '2024-08-13' },
   { id: '14', type: 'burnable', date: '2024-08-14' },
-  { id: '15', type: 'nonBurnable', date: '2024-08-15' },
+  { id: '15', type: 'plastic', date: '2024-08-15' },
   { id: '16', type: 'bulky', date: '2024-08-16' },
   { id: '17', type: 'recyclable', date: '2024-08-17' },
   { id: '18', type: 'other', date: '2024-08-18' },
@@ -116,7 +116,7 @@ export const dayData: CalendarDataType[] = [
   { id: '24', type: 'recyclable', date: '2024-08-24' },
   { id: '25', type: 'bulky', date: '2024-08-25' },
   { id: '26', type: 'other', date: '2024-08-26' },
-  { id: '27', type: 'bulky', date: '2024-08-27' },
+  { id: '27', type: 'plastic', date: '2024-08-27' },
   { id: '28', type: 'nonBurnable', date: '2024-08-28' },
   { id: '29', type: 'bulky', date: '2024-08-29' },
   { id: '30', type: 'other', date: '2024-08-30' },
