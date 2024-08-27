@@ -1,19 +1,26 @@
+/* eslint-disable max-lines-per-function */
 import { router } from 'expo-router';
 import { Info, UserRound } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import { DeleteAccountButton, LogOutButton } from '@/components/auth';
+import {
+  DeleteAccountButton,
+  LogInButton,
+  LogOutButton,
+} from '@/components/auth';
 import Banner from '@/components/banner';
-import { Text } from '@/components/obytes';
+import { Image, Text } from '@/components/obytes';
 import { black, white } from '@/components/obytes/colors';
 import { AddressSelect } from '@/components/settings/addressSelect';
 import { LanguageSelect } from '@/components/settings/languageSelect';
 import { ThemeSelect } from '@/components/settings/themeSelect';
+import { useAuth } from '@/providers/auth-provider';
 
 export default function ProfileScreen() {
   const insets = useSafeAreaInsets();
+  const { profile } = useAuth();
 
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
@@ -30,7 +37,17 @@ export default function ProfileScreen() {
         paddingBottom: insets.bottom,
       }}
     >
-      <Banner />
+      {profile ? (
+        <Banner profile={profile} />
+      ) : (
+        <View className="border-b-2 border-[#CBBDBD]">
+          <Image
+            source={require('../../../../assets/images/banner.png')}
+            contentFit="cover"
+            style={{ height: 110, width: '100%' }}
+          />
+        </View>
+      )}
 
       <View className="mt-10">
         <Text
@@ -55,17 +72,25 @@ export default function ProfileScreen() {
             />
           </Pressable>
 
-          <View className="mb-6 flex flex-row items-center">
-            <UserRound color={isDark ? white : black} size={28} />
-            <Text className="text-lg" style={styles.infoText}>
-              test@example.com
-            </Text>
-          </View>
+          {profile?.username && (
+            <View className="mb-6 flex flex-row items-center">
+              <UserRound color={isDark ? white : black} size={28} />
+              <Text className="text-lg" style={styles.infoText}>
+                {profile.username}
+              </Text>
+            </View>
+          )}
         </View>
 
         <View className="items-center">
-          <LogOutButton />
-          <DeleteAccountButton />
+          {profile ? (
+            <>
+              <LogOutButton />
+              <DeleteAccountButton />
+            </>
+          ) : (
+            <LogInButton />
+          )}
         </View>
       </View>
     </View>

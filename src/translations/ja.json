@@ -108,7 +108,6 @@
     "title": "EcoTalkへようこそ",
     "visitor": "ログインせず使用する"
   },
-  "banner": "ユーザー名",
   "calendar": {
     "bulky": "粗大ゴミ",
     "burnable": "可燃ゴミ",
@@ -187,12 +186,19 @@
   },
   "profile": {
     "delete": "アカウントを削除",
+    "login": "ログイン・アカウント作成",
     "logout": "ログアウト",
     "settings": {
       "language": "言語",
       "theme": "テーマ"
     },
     "title": "設定"
+  },
+  "requireAuth": {
+    "cancel": "戻る",
+    "description": "返信するにはログインしてください。",
+    "move": "ログイン",
+    "warning": "ログインが必要です"
   },
   "signUp": {
     "title": "アカウントの作成"

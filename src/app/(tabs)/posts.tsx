@@ -1,6 +1,13 @@
+import { router } from 'expo-router';
 import { useRef, useState } from 'react';
 import type { TextInput } from 'react-native';
-import { FlatList, KeyboardAvoidingView, Platform, View } from 'react-native';
+import {
+  Alert,
+  FlatList,
+  KeyboardAvoidingView,
+  Platform,
+  View,
+} from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import PostsHeader from '@/components/headers/postsHeader';
@@ -8,14 +15,36 @@ import UserInfoHeader from '@/components/headers/userInfoHeader';
 import { Post } from '@/components/post';
 import ReplyInput from '@/components/replyInput';
 import { dummyPosts } from '@/constants/dummyData';
+import { translate } from '@/i18n';
+import { useAuth } from '@/providers/auth-provider';
 
 export default function PostsScreen() {
   const insets = useSafeAreaInsets();
   const inputRef = useRef<TextInput>(null);
+
+  const { profile } = useAuth();
   const [replyId, setReplyId] = useState<string | null>(null);
 
   const handleReplyPress = (id: string) => {
-    console.log(`Reply pressed from: ${id}`);
+    if (!profile) {
+      Alert.alert(
+        translate('requireAuth.warning'),
+        translate('requireAuth.description'),
+        [
+          {
+            text: translate('requireAuth.cancel'),
+            style: Platform.OS === 'ios' ? 'cancel' : undefined,
+          },
+          {
+            text: translate('requireAuth.move'),
+            onPress: () => router.navigate('/'),
+          },
+        ]
+      );
+
+      return;
+    }
+
     setReplyId(id);
 
     setTimeout(() => {
