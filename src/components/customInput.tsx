@@ -2,7 +2,7 @@
 // https://github.com/obytes/react-native-template-obytes/blob/master/src/ui/input.tsx
 // Original code by OBytes (https://github.com/obytes), licensed under the MIT License.
 
-import { forwardRef } from 'react';
+import { forwardRef, useRef } from 'react';
 import type {
   Control,
   FieldValues,
@@ -11,7 +11,11 @@ import type {
 } from 'react-hook-form';
 import { useController } from 'react-hook-form';
 import type { TextInput, TextInputProps } from 'react-native';
-import { I18nManager, StyleSheet, View } from 'react-native';
+import {
+  I18nManager,
+  StyleSheet,
+  TouchableWithoutFeedback,
+} from 'react-native';
 import { TextInput as NTextInput } from 'react-native';
 
 import { translate, type TxKeyPath } from '@/i18n';
@@ -44,19 +48,17 @@ export const Input = forwardRef<TextInput, NInputProps>((props, ref) => {
   const placeholder = translate(props.tx);
 
   return (
-    <View className="mb-2">
-      <NTextInput
-        ref={ref}
-        placeholder={placeholder}
-        placeholderTextColor={colors.neutral[400]}
-        className="mt-0 rounded-xl px-4 py-3 text-base font-[500] leading-5 dark:text-white"
-        {...props}
-        style={StyleSheet.flatten([
-          { writingDirection: I18nManager.isRTL ? 'rtl' : 'ltr' },
-          props.style,
-        ])}
-      />
-    </View>
+    <NTextInput
+      ref={ref}
+      placeholder={placeholder}
+      placeholderTextColor={colors.neutral[400]}
+      className="rounded-xl px-4 py-3 text-base font-[500] leading-5 dark:text-white"
+      {...props}
+      style={StyleSheet.flatten([
+        { writingDirection: I18nManager.isRTL ? 'rtl' : 'ltr' },
+        props.style,
+      ])}
+    />
   );
 });
 
@@ -66,18 +68,21 @@ export function ControlledInput<T extends FieldValues>(
 ) {
   const { name, control, rules, onChangeText, ...inputProps } = props;
   const { field, fieldState } = useController({ control, name, rules });
+  const inputRef = useRef<NTextInput>(null);
 
   return (
-    <Input
-      ref={field.ref}
-      autoCapitalize="none"
-      onChangeText={(text) => {
-        field.onChange(text);
-        if (onChangeText) onChangeText(text);
-      }}
-      value={(field.value as string) || ''}
-      {...inputProps}
-      error={fieldState.error?.message}
-    />
+    <TouchableWithoutFeedback onPress={() => inputRef.current?.focus()}>
+      <Input
+        ref={field.ref}
+        autoCapitalize="none"
+        onChangeText={(text) => {
+          field.onChange(text);
+          if (onChangeText) onChangeText(text);
+        }}
+        value={(field.value as string) || ''}
+        {...inputProps}
+        error={fieldState.error?.message}
+      />
+    </TouchableWithoutFeedback>
   );
 }

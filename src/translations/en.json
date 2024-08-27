@@ -103,7 +103,7 @@
   },
   "auth": {
     "description": "Your tool for navigating Japan's trash rules.",
-    "signIn": "Sign In",
+    "logIn": "Log In",
     "signUp": "Sign Up",
     "title": "Welcome to EcoTalk",
     "visitor": "Explore as visitor"
@@ -152,6 +152,17 @@
     "en": "English",
     "ja": "日本語"
   },
+  "logIn": {
+    "email": "Email",
+    "enterEmail": "Enter your Email",
+    "enterPassword": "Enter your Password",
+    "forgot": "Forgot password?",
+    "invalid": "Email or password is invalid",
+    "password": "Password",
+    "signUp": "Don't have an account? Sign up",
+    "title": "Log In",
+    "welcome": "Welcome back!"
+  },
   "notFound": {
     "description": "This screen doesn't exist.",
     "home": "Go to home screen!",
@@ -188,9 +199,6 @@
     "description": "You must be signed in to reply.",
     "move": "Sign In",
     "warning": "Sign In is Required"
-  },
-  "signIn": {
-    "title": "Sign In"
   },
   "signUp": {
     "title": "Sign Up"

@@ -103,7 +103,7 @@
   },
   "auth": {
     "description": "ゴミ処理をわかりやすく",
-    "signIn": "ログイン",
+    "logIn": "ログイン",
     "signUp": "アカウントを作成",
     "title": "EcoTalkへようこそ",
     "visitor": "ログインせず使用する"
@@ -152,6 +152,17 @@
     "en": "English",
     "ja": "日本語"
   },
+  "logIn": {
+    "email": "メールアドレス",
+    "enterEmail": "メールアドレスの入力",
+    "enterPassword": "パスワードの入力",
+    "forgot": "パスワードを忘れた場合",
+    "invalid": "メールアドレスまたはパスワードが正しくありません",
+    "password": "パスワード",
+    "signUp": "アカウントを持っていない場合",
+    "title": "ログイン",
+    "welcome": "おかえりなさい！"
+  },
   "notFound": {
     "description": "ページが見つかりません。",
     "home": "ホーム画面へ戻る",
@@ -188,9 +199,6 @@
     "description": "返信するにはログインしてください。",
     "move": "ログイン",
     "warning": "ログインが必要です"
-  },
-  "signIn": {
-    "title": "ログイン"
   },
   "signUp": {
     "title": "アカウントの作成"
