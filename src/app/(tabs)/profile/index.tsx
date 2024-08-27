@@ -1,5 +1,4 @@
 /* eslint-disable max-lines-per-function */
-import { Image } from 'expo-image';
 import { router } from 'expo-router';
 import { Info, UserRound } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
@@ -12,7 +11,7 @@ import {
   LogOutButton,
 } from '@/components/auth';
 import Banner from '@/components/banner';
-import { Text } from '@/components/obytes';
+import { Image, Text } from '@/components/obytes';
 import { black, white } from '@/components/obytes/colors';
 import { AddressSelect } from '@/components/settings/addressSelect';
 import { LanguageSelect } from '@/components/settings/languageSelect';

@@ -1,4 +1,3 @@
-import { Image } from 'expo-image';
 import { Link } from 'expo-router';
 import { CircleUserRound } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
@@ -6,7 +5,7 @@ import { StyleSheet, View, type ViewProps } from 'react-native';
 
 import { useAuth } from '@/providers/auth-provider';
 
-import { Text } from '../obytes';
+import { Image, Text } from '../obytes';
 
 interface Props extends ViewProps {
   className?: string;

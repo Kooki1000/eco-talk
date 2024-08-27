@@ -1,5 +1,4 @@
 import { ImageBackground } from 'expo-image';
-import { Image } from 'expo-image';
 import { Camera, CircleUserRound, Pencil } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import { useMemo } from 'react';
@@ -8,7 +7,7 @@ import { twMerge } from 'tailwind-merge';
 
 import type { Tables } from '@/types/database.types';
 
-import { Text } from './obytes';
+import { Image, Text } from './obytes';
 import { black, white } from './obytes/colors';
 
 interface Props extends ViewProps {
