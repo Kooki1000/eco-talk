@@ -3,6 +3,9 @@
 // Original code by OBytes (https://github.com/obytes), licensed under the MIT License.
 
 import { useFocusEffect } from '@react-navigation/native';
+import type { ReactNode } from 'react';
+import React from 'react';
+import { Keyboard, TouchableWithoutFeedback } from 'react-native';
 import { AvoidSoftInput } from 'react-native-avoid-softinput';
 
 /**
@@ -27,3 +30,9 @@ export const useSoftKeyboardEffect = () => {
     };
   });
 };
+
+export const DismissKeyboard = ({ children }: { children: ReactNode }) => (
+  <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+    {children}
+  </TouchableWithoutFeedback>
+);

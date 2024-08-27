@@ -59,6 +59,7 @@ export default function AddPostScreen() {
       style={{
         paddingTop: insets.top,
         paddingBottom: insets.bottom,
+        flex: 1,
       }}
     >
       <View style={styles.container}>
