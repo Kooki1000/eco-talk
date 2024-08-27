@@ -4,14 +4,14 @@ import { StyleSheet, View } from 'react-native';
 import { Text } from '@/components/obytes';
 import { translate } from '@/i18n';
 
-const SignUpScreen = () => {
+export default function SignUpScreen() {
   return (
     <View style={styles.container}>
       <Stack.Screen options={{ title: translate('signUp.title') }} />
       <Text className="text-2xl">Sign Up</Text>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -20,5 +20,3 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-
-export default SignUpScreen;

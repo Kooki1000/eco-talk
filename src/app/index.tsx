@@ -5,14 +5,14 @@ import { View } from 'react-native';
 import { Button, Image, Text } from '@/components/obytes';
 
 export default function index() {
-  const onSignIn = () => {
-    console.log('Signed in');
-    router.replace('/(auth)/sign-in');
+  const onLogIn = () => {
+    console.log('Logged in');
+    router.navigate('/(auth)/log-in');
   };
 
   const onSignUp = () => {
     console.log('Signed up');
-    router.replace('/(auth)/sign-in');
+    router.navigate('/(auth)/sign-up');
   };
 
   return (
@@ -27,8 +27,8 @@ export default function index() {
       <Text tx="auth.description" className="mx-8 mb-5 text-center text-2xl" />
 
       <Button
-        onPress={onSignIn}
-        tx="auth.signIn"
+        onPress={onLogIn}
+        tx="auth.logIn"
         textClassName="text-xl text-black"
         className="h-12 w-96 rounded-3xl border border-solid border-black bg-white"
       />
@@ -40,8 +40,8 @@ export default function index() {
         className="h-12 w-96 rounded-3xl border border-solid border-black bg-white"
       />
 
-      <Link href="/(tabs)" className="mt-10">
-        <Text tx="auth.visitor" className="underline" />
+      <Link href="/(tabs)" className="mt-10 underline">
+        <Text tx="auth.visitor" />
       </Link>
     </View>
   );
