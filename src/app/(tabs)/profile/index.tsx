@@ -8,7 +8,7 @@ import { DeleteAccountButton, LogOutButton } from '@/components/auth';
 import Banner from '@/components/banner';
 import { Text } from '@/components/obytes';
 import { black, white } from '@/components/obytes/colors';
-import { AddressSelect } from '@/components/settings/AddressSelect';
+import { AddressSelect } from '@/components/settings/addressSelect';
 import { LanguageSelect } from '@/components/settings/languageSelect';
 import { ThemeSelect } from '@/components/settings/themeSelect';
 
