@@ -1,6 +1,6 @@
 /* eslint-disable max-lines-per-function */
 import { zodResolver } from '@hookform/resolvers/zod';
-import { router, Stack } from 'expo-router';
+import { Link, router, Stack } from 'expo-router';
 import { CircleX, Eye, EyeOff, KeyRound, Mail } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import React, { useState } from 'react';
@@ -16,7 +16,7 @@ import {
 } from 'react-native';
 import type { z } from 'zod';
 
-import { ControlledInput } from '@/components/accountInput';
+import { ControlledInput } from '@/components/customInput';
 import { Button, Text } from '@/components/obytes';
 import { black, white } from '@/components/obytes/colors';
 import { translate } from '@/i18n';
@@ -72,12 +72,15 @@ export default function LogInScreen() {
       style={styles.container}
     >
       <Stack.Screen options={{ title: translate('logIn.title') }} />
+
       <Text
         tx="logIn.welcome"
         className="mt-8 text-center text-2xl font-bold"
       />
+
       <View className="mt-8 w-4/5">
         <Text tx="logIn.email" className="mb-2 ml-3 font-semibold" />
+
         <View style={styles.textContainer}>
           <Mail color={isDark ? white : black} size={22} />
           <View className="w-full">
@@ -91,6 +94,7 @@ export default function LogInScreen() {
               style={styles.input}
             />
           </View>
+
           {email.length > 0 && (
             <TouchableOpacity
               onPress={() => setEmail('')}
@@ -101,8 +105,10 @@ export default function LogInScreen() {
           )}
         </View>
       </View>
+
       <View className="mt-6 w-4/5">
         <Text tx="logIn.password" className="mb-2 ml-3 font-semibold" />
+
         <View style={styles.textContainer}>
           <KeyRound color={isDark ? white : black} size={22} />
           <View className="w-full">
@@ -115,6 +121,7 @@ export default function LogInScreen() {
               style={styles.input}
             />
           </View>
+
           <TouchableOpacity
             onPress={() => setPasswordVisible(!isPasswordVisible)}
             className="absolute right-5"
@@ -127,13 +134,15 @@ export default function LogInScreen() {
           </TouchableOpacity>
         </View>
       </View>
-      <View className="mt-6 w-4/5">
-        <TouchableOpacity onPress={onForgotPress}>
+
+      <View className="w-4/5">
+        <TouchableOpacity className="mb-6 mt-4" onPress={onForgotPress}>
           <Text
             tx="logIn.forgot"
             className="text-sm text-blue-500 dark:text-blue-700"
           />
         </TouchableOpacity>
+
         <Button
           className="h-10 items-center justify-center rounded-xl bg-blue-500 px-4 dark:bg-blue-700"
           disabled={isSubmitting}
@@ -145,16 +154,18 @@ export default function LogInScreen() {
             <Text className="font-bold text-white" tx="logIn.title" />
           )}
         </Button>
+
         {(errors.email || errors.password) && (
           <Text className="text-sm text-red-500" tx="logIn.invalid" />
         )}
       </View>
-      <TouchableOpacity onPress={() => router.navigate('/(auth)/sign-up')}>
+
+      <Link href={'/(auth)/sign-up'}>
         <Text
           tx="logIn.signUp"
           className="mt-3 text-center text-sm text-blue-500 dark:bg-blue-700"
         />
-      </TouchableOpacity>
+      </Link>
     </KeyboardAvoidingView>
   );
 }

@@ -11,7 +11,7 @@ import type {
 } from 'react-hook-form';
 import { useController } from 'react-hook-form';
 import type { TextInput, TextInputProps } from 'react-native';
-import { I18nManager, StyleSheet, View } from 'react-native';
+import { I18nManager, StyleSheet } from 'react-native';
 import { TextInput as NTextInput } from 'react-native';
 
 import { translate, type TxKeyPath } from '@/i18n';
@@ -44,19 +44,17 @@ export const Input = forwardRef<TextInput, NInputProps>((props, ref) => {
   const placeholder = translate(props.tx);
 
   return (
-    <View>
-      <NTextInput
-        ref={ref}
-        placeholder={placeholder}
-        placeholderTextColor={colors.neutral[400]}
-        className="rounded-xl px-4 py-3 text-base font-[500] leading-5 dark:text-white"
-        {...props}
-        style={StyleSheet.flatten([
-          { writingDirection: I18nManager.isRTL ? 'rtl' : 'ltr' },
-          props.style,
-        ])}
-      />
-    </View>
+    <NTextInput
+      ref={ref}
+      placeholder={placeholder}
+      placeholderTextColor={colors.neutral[400]}
+      className="rounded-xl px-4 py-3 text-base font-[500] leading-5 dark:text-white"
+      {...props}
+      style={StyleSheet.flatten([
+        { writingDirection: I18nManager.isRTL ? 'rtl' : 'ltr' },
+        props.style,
+      ])}
+    />
   );
 });
 
