@@ -3,12 +3,13 @@ import dayjs from 'dayjs';
 
 import { QUERY_KEYS } from '@/constants/queryKeys';
 import { supabase } from '@/lib/supabase';
+import type { Tables } from '@/types/database.types';
 
 export const useTrashSchedule = (addressId: string) => {
   const today = dayjs().format('YYYY-MM-DD');
   const thirtyDaysFromNow = dayjs().add(30, 'day').format('YYYY-MM-DD');
 
-  return useQuery({
+  return useQuery<Tables<'trash_schedule'>[]>({
     queryKey: [QUERY_KEYS.TRASH_SCHEDULE, addressId],
     queryFn: async () => {
       const { data, error } = await supabase
@@ -22,7 +23,7 @@ export const useTrashSchedule = (addressId: string) => {
         throw new Error(error.message);
       }
 
-      return data;
+      return data as Tables<'trash_schedule'>[];
     },
   });
 };
