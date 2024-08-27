@@ -79,7 +79,6 @@ export const Modal = forwardRef(
         ref={modal.ref}
         index={0}
         snapPoints={snapPoints}
-        style={{ marginTop: 24 }}
         backdropComponent={props.backdropComponent || renderBackdrop}
         handleComponent={renderHandleComponent}
       />

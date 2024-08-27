@@ -14,9 +14,6 @@
     },
     "title": "About"
   },
-  "data": {
-    "error": "Oops! Failed to fetch data."
-  },
   "add": {
     "charCount": "Character Count: {{count}} / 1000",
     "insert": "What's happening?",
@@ -111,7 +108,6 @@
     "title": "Welcome to EcoTalk",
     "visitor": "Explore as visitor"
   },
-  "banner": "Username",
   "calendar": {
     "bulky": "Bulky",
     "burnable": "Burnable",
@@ -129,14 +125,17 @@
     "delete": "Delete",
     "description": "Are you sure you want to delete?"
   },
+  "data": {
+    "error": "Oops! Failed to fetch data."
+  },
   "guides": {
     "how": {
-      "content": "   Waste sorting plays a vital role in protecting both the environment and our communities. By carefully separating recyclable materials—like paper, glass, metal, and plastics—from other waste, we can significantly reduce the strain on natural resources. Imagine this: recycling just one tonne of paper saves 17 trees, 26,000 liters of water, and 4,000 kWh of electricity. That’s a huge impact from just a small change in our daily habits!\n    When we sort our waste properly, we’re not only preserving resources but also cutting down on the amount of trash that ends up in landfills. This helps to prevent serious environmental issues like groundwater contamination and the release of greenhouse gases. Additionally, sorting ensures that hazardous items—such as chemicals, batteries, and medical waste—are disposed of safely. This prevents harmful exposure to people and wildlife, and reduces the release of toxic substances during incineration.\n    Proper waste sorting also makes our communities cleaner and healthier. It reduces litter, keeps pests at bay, and minimizes the unpleasant odors that come from improper waste disposal. By taking a few extra moments to sort your trash, you’re contributing to a more sustainable future and helping to create a better living environment for everyone.",
+      "content": "   Waste sorting plays a vital role in protecting both the environment and our communities. By carefully separating recyclable materials—like paper, glass, metal, and plastics—from other waste, we can significantly reduce the strain on natural resources. Imagine this: recycling just one tonne of paper saves 17 trees, 26,000 liters of water, and 4,000 kWh of electricity. That's a huge impact from just a small change in our daily habits!\n    When we sort our waste properly, we're not only preserving resources but also cutting down on the amount of trash that ends up in landfills. This helps to prevent serious environmental issues like groundwater contamination and the release of greenhouse gases. Additionally, sorting ensures that hazardous items—such as chemicals, batteries, and medical waste—are disposed of safely. This prevents harmful exposure to people and wildlife, and reduces the release of toxic substances during incineration.\n    Proper waste sorting also makes our communities cleaner and healthier. It reduces litter, keeps pests at bay, and minimizes the unpleasant odors that come from improper waste disposal. By taking a few extra moments to sort your trash, you're contributing to a more sustainable future and helping to create a better living environment for everyone.",
       "title": "How should waste sorting done?"
     },
     "title": "General Information",
     "what": {
-      "content": "    As the name implies, the waste sorting process divides waste into categories based on material, size, or recyclability. In Japan, waste sorting regulations vary by location, determined by the city or a specific ward in large urban areas. However, as a rule of thumb, wastes should be divided into four categories: burnable, non-burnable, recyclable, and bulky. Each type of garbage is typically collected on different days and frequencies. The details regarding this information in English can usually be found on the municipality’s English-language websites.\n    Usually, the municipality typically distributes a city guidebook that covers waste disposal during the initial registration process. If the residence does not have a collection area, the waste should be disposed of at the nearest public collection point. In this case, residents are usually notified when they move in, and schedules are posted near collection points.\n    Furthermore, garbage should only be brought out in the morning on collection day, as putting it out at other times will attract animals and cause problems. In addition, waste should be well packaged according to specific guidance. For example, cans and bottles should be rinsed out, and paper must be tied in bundles.\n    In Japan, effective waste sorting is not only an environmentally conscious effort but also a legal requirement, so everyone should be aware of and follow the rules.",
+      "content": "    As the name implies, the waste sorting process divides waste into categories based on material, size, or recyclability. In Japan, waste sorting regulations vary by location, determined by the city or a specific ward in large urban areas. However, as a rule of thumb, wastes should be divided into four categories: burnable, non-burnable, recyclable, and bulky. Each type of garbage is typically collected on different days and frequencies. The details regarding this information in English can usually be found on the municipality's English-language websites.\n    Usually, the municipality typically distributes a city guidebook that covers waste disposal during the initial registration process. If the residence does not have a collection area, the waste should be disposed of at the nearest public collection point. In this case, residents are usually notified when they move in, and schedules are posted near collection points.\n    Furthermore, garbage should only be brought out in the morning on collection day, as putting it out at other times will attract animals and cause problems. In addition, waste should be well packaged according to specific guidance. For example, cans and bottles should be rinsed out, and paper must be tied in bundles.\n    In Japan, effective waste sorting is not only an environmentally conscious effort but also a legal requirement, so everyone should be aware of and follow the rules.",
       "title": "What is waste sorting?"
     },
     "why": {
@@ -145,9 +144,9 @@
     }
   },
   "home": {
+    "setAddress": "Set Your Address",
     "title": "Welcome to EcoTalk",
-    "upcoming": "Upcoming Trash Schedule",
-    "setAddress": "Set Your Address"
+    "upcoming": "Upcoming Trash Schedule"
   },
   "locales": {
     "en": "English",
@@ -176,12 +175,19 @@
   },
   "profile": {
     "delete": "Delete Account",
+    "login": "Sign In / Sign Up",
     "logout": "Log Out",
     "settings": {
       "language": "Language",
       "theme": "Theme"
     },
     "title": "General"
+  },
+  "requireAuth": {
+    "cancel": "Cancel",
+    "description": "You must be signed in to reply.",
+    "move": "Sign In",
+    "warning": "Sign In is Required"
   },
   "signIn": {
     "title": "Sign In"

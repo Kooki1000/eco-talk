@@ -9,9 +9,10 @@ import { StyleSheet } from 'react-native';
 import FlashMessage from 'react-native-flash-message';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
-import { APIProvider } from '@/api/api-provider';
 import { loadSelectedTheme } from '@/hooks/use-selected-theme';
 import { useThemeConfig } from '@/hooks/use-theme-config';
+import AuthProvider from '@/providers/auth-provider';
+import { QueryProvider } from '@/providers/query-provider';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -48,12 +49,14 @@ function Providers({ children }: { children: React.ReactNode }) {
       className={theme.dark ? `dark` : undefined}
     >
       <ThemeProvider value={theme}>
-        <APIProvider>
-          <BottomSheetModalProvider>
-            {children}
-            <FlashMessage position="top" />
-          </BottomSheetModalProvider>
-        </APIProvider>
+        <AuthProvider>
+          <QueryProvider>
+            <BottomSheetModalProvider>
+              {children}
+              <FlashMessage position="top" />
+            </BottomSheetModalProvider>
+          </QueryProvider>
+        </AuthProvider>
       </ThemeProvider>
     </GestureHandlerRootView>
   );

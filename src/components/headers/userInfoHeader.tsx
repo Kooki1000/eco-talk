@@ -3,14 +3,17 @@ import { CircleUserRound } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import { StyleSheet, View, type ViewProps } from 'react-native';
 
-import { Text } from '../obytes';
-import { black, white } from '../obytes/colors';
+import { useAuth } from '@/providers/auth-provider';
+
+import { Image, Text } from '../obytes';
 
 interface Props extends ViewProps {
   className?: string;
 }
 
 const UserInfoHeader = ({ style, className }: Props) => {
+  const { profile } = useAuth();
+
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
 
@@ -18,17 +21,26 @@ const UserInfoHeader = ({ style, className }: Props) => {
     <View style={[style, styles.container]} className={className}>
       <View style={styles.leftContainer}>
         <Link href={'/(tabs)/profile'} asChild>
-          <CircleUserRound
-            color={isDark ? white : black}
-            size={40}
-            strokeWidth={1}
-          />
+          {profile?.avatar ? (
+            <Link href={'/(tabs)/profile'} asChild>
+              <Image
+                source={{ uri: profile.avatar }}
+                contentFit="cover"
+                style={{ width: 40, height: 40, borderRadius: 20 }}
+              />
+            </Link>
+          ) : (
+            <CircleUserRound
+              color={isDark ? 'white' : 'black'}
+              size={40}
+              strokeWidth={1}
+            />
+          )}
         </Link>
       </View>
 
       <View style={styles.rightContainer}>
         <Text tx="city.chiyoda" className="text-lg" />
-        {/* <ChevronDown color={isDark ? white : black} size={32} /> */}
       </View>
     </View>
   );

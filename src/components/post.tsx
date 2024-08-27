@@ -2,7 +2,6 @@
 import dayjs from 'dayjs';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
 import utc from 'dayjs/plugin/utc';
-import { Image } from 'expo-image';
 import { CircleUserRound, Heart } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import { memo, useMemo, useState } from 'react';
@@ -14,7 +13,7 @@ import { loremText } from '@/constants/dummyData';
 import type { PostDataType } from '@/types/types';
 
 import DeleteButton from './deleteButton';
-import { Text } from './obytes';
+import { Image, Text } from './obytes';
 import { black, white } from './obytes/colors';
 import { Reply } from './reply';
 

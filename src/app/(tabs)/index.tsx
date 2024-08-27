@@ -9,7 +9,7 @@ import { HomeContainer } from '@/components/container/homeContainer';
 import HomeHeader from '@/components/headers/homeHeader';
 import UserInfoHeader from '@/components/headers/userInfoHeader';
 import { Text } from '@/components/obytes';
-import { AddressSelect } from '@/components/settings/AddressSelect';
+import { AddressSelect } from '@/components/settings/addressSelect';
 import { useSelectedAddress } from '@/hooks/use-selected-address';
 
 export default function HomeScreen() {
