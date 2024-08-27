@@ -2,19 +2,22 @@
 // https://github.com/obytes/react-native-template-obytes/blob/master/src/ui/select.tsx
 // Original code by OBytes (https://github.com/obytes), licensed under the MIT License.
 
-import { type BottomSheetModal } from '@gorhom/bottom-sheet';
+import {
+  BottomSheetFlatList,
+  type BottomSheetModal,
+} from '@gorhom/bottom-sheet';
 import { FlashList } from '@shopify/flash-list';
 import { ChevronDown, type LucideIcon } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import { forwardRef, memo, useCallback, useMemo } from 'react';
-import { TouchableOpacity, View } from 'react-native';
+import { Platform, TouchableOpacity, View } from 'react-native';
 import { Pressable, type PressableProps } from 'react-native';
 
 import { colors, Modal, Text, useModal } from '@/components/obytes';
 import { black, white } from '@/components/obytes/colors';
 import { translate, type TxKeyPath } from '@/i18n';
 
-const List = FlashList;
+const List = Platform.OS === 'web' ? FlashList : BottomSheetFlatList;
 
 export type Option = { label: TxKeyPath; value: string | number };
 
@@ -51,6 +54,7 @@ export const Options = forwardRef<BottomSheetModal, OptionsProps>(
       <Modal
         ref={ref}
         index={0}
+        style={{ marginTop: 32 }}
         snapPoints={snapPoints}
         backgroundStyle={{
           backgroundColor: isDark ? colors.neutral[800] : colors.white,
@@ -60,7 +64,7 @@ export const Options = forwardRef<BottomSheetModal, OptionsProps>(
           data={options}
           keyExtractor={keyExtractor}
           renderItem={renderSelectItem}
-          estimatedItemSize={52}
+          ListFooterComponent={<View style={{ height: 32 }} />}
         />
       </Modal>
     );

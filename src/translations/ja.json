@@ -183,6 +183,12 @@
     },
     "title": "設定"
   },
+  "requireAuth": {
+    "cancel": "戻る",
+    "description": "返信するにはログインしてください。",
+    "move": "ログイン",
+    "warning": "ログインが必要です"
+  },
   "signIn": {
     "title": "ログイン"
   },
