@@ -4,6 +4,7 @@ import { useColorScheme } from 'nativewind';
 import React from 'react';
 
 import { black, white } from '@/components/obytes/colors';
+import { translate } from '@/i18n';
 
 export default function TabLayout() {
   const { colorScheme } = useColorScheme();
@@ -22,6 +23,11 @@ export default function TabLayout() {
           </Link>
         ),
       }}
-    />
+    >
+      <Stack.Screen
+        name="log-in"
+        options={{ title: translate('logIn.title') }}
+      />
+    </Stack>
   );
 }

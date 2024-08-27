@@ -1,9 +1,9 @@
 /* eslint-disable max-lines-per-function */
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Link, router, Stack } from 'expo-router';
+import { Link, router } from 'expo-router';
 import { CircleX, Eye, EyeOff, KeyRound, Mail } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 import {
@@ -71,8 +71,6 @@ export default function LogInScreen() {
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={styles.container}
     >
-      <Stack.Screen options={{ title: translate('logIn.title') }} />
-
       <Text
         tx="logIn.welcome"
         className="mt-8 text-center text-2xl font-bold"
