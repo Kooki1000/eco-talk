@@ -15,7 +15,7 @@
     "title": "このアプリについて"
   },
   "add": {
-    "charCount": "文字数: {{count}}字（1000字中）",
+    "charCount": "文字数: {{count}}字 (1000字中)",
     "insert": "今何が起こってる？",
     "title": "投稿"
   },
@@ -94,8 +94,8 @@
       "sanbancho-2": "三番町7・9・12・14・16・18・20・22・24番地",
       "soto-kanda-1-and-4-and-5-chome": "外神田一丁目12〜18番、四丁目・五丁目",
       "soto-kanda-1-chome-and-2-3-and-6-chome": "外神田一丁目1〜11番、二丁目・三丁目・六丁目",
-      "uchi-kanda-1-2-3-chome-except": "内神田一丁目・二丁目・三丁目（13・18・19・20・21・22番を除く）",
-      "uchi-kanda-3-chome-except": "内神田三丁目13・18・19・20・21・22",
+      "uchi-kanda-1-2-3-chome-except": "内神田一丁目・二丁目・三丁目 (13・18・19・20・21・22番を除く)",
+      "uchi-kanda-3-chome-except": "内神田三丁目13・18・19・20・21・22番地",
       "uchisaiwaicho-1-and-2-chome": "内幸町一丁目・二丁目",
       "yonbancho": "四番町",
       "yurakucho-1-to-2-chome": "有楽町一丁目・二丁目"
@@ -154,12 +154,12 @@
   },
   "logIn": {
     "email": "メールアドレス",
-    "enterEmail": "メールアドレスの入力",
-    "enterPassword": "パスワードの入力",
-    "forgot": "パスワードを忘れた場合",
+    "enterEmail": "メールアドレス",
+    "enterPassword": "パスワード",
+    "forgot": "パスワードを忘れた場合はこちら",
     "invalid": "メールアドレスまたはパスワードが正しくありません",
     "password": "パスワード",
-    "signUp": "アカウントを持っていない場合",
+    "signUp": "アカウントをお持ちでない場合はこちら",
     "title": "ログイン",
     "welcome": "おかえりなさい！"
   },
