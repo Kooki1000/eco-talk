@@ -201,20 +201,20 @@
     "warning": "ログインが必要です"
   },
   "signUp": {
-    "title": "登録",
+    "afterPolicy": "に同意したことになります。",
+    "beforePolicy": "登録することで、",
+    "confirmation": "パスワードの再入力",
     "create": "アカウントの作成",
-    "username": "ユーザー名の入力",
     "enterEmail": "メールアドレスの入力",
     "enterPassword": "パスワードの入力",
-    "confirmation": "パスワードの再入力",
-    "logIn": "すでにアカウントをお持ちの場合",
-    "beforePolicy": "登録することで、",
-    "policy": "プライバシーポリシー",
-    "afterPolicy": "に同意したことになります",
-    "invalidUsername": "3〜20文字以内で設定してください",
+    "invalidConfirmation": "パスワードが一致しません",
     "invalidEmail": "メールアドレスが正しくありません",
     "invalidPassword": "8文字以上で設定してください",
-    "invalidConfirmation": "パスワードが一致しません"
+    "invalidUsername": "3〜20文字以内で設定してください",
+    "logIn": "すでにアカウントをお持ちの場合",
+    "policy": "プライバシーポリシー",
+    "title": "登録",
+    "username": "ユーザー名の入力"
   },
   "theme": {
     "dark": "ダークモード",

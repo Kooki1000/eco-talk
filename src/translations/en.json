@@ -201,20 +201,20 @@
     "warning": "Sign In is Required"
   },
   "signUp": {
-    "title": "Sign Up",
+    "afterPolicy": ".",
+    "beforePolicy": "By signing up, you agree to our ",
+    "confirmation": "Enter your password again",
     "create": "Create An Account",
-    "username": "Enter your username",
     "enterEmail": "Enter your email",
     "enterPassword": "Enter your password",
-    "confirmation": "Enter your password again",
-    "logIn": "Already have an account? Log in",
-    "beforePolicy": "By signing up, you agree to our ",
-    "policy": "Privacy Policy",
-    "afterPolicy": "",
-    "invalidUsername": "This must be between 3 to 20 characters",
+    "invalidConfirmation": "Passwords do not match",
     "invalidEmail": "Invalid email adress",
     "invalidPassword": "Password must be at least 8 characters",
-    "invalidConfirmation": "Passwords do not match"
+    "invalidUsername": "This must be between 3 to 20 characters",
+    "logIn": "Already have an account? Log in",
+    "policy": "Privacy Policy",
+    "title": "Sign Up",
+    "username": "Enter your username"
   },
   "theme": {
     "dark": "Dark Mode",
