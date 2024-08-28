@@ -133,15 +133,12 @@ export default function LogInScreen() {
             </TouchableOpacity>
           </View>
         </View>
-
+        <Text
+          tx="logIn.forgot"
+          className="mb-6 ml-[10%] mt-4 self-start text-sm text-blue-500 dark:text-blue-700"
+          onPress={onForgotPress}
+        />
         <View className="w-4/5">
-          <View>
-            <Text
-              tx="logIn.forgot"
-              className="mb-6 mt-4 text-sm text-blue-500 dark:text-blue-700"
-              onPress={onForgotPress}
-            />
-          </View>
           <Button
             className="h-10 items-center justify-center rounded-xl bg-blue-500 px-4 dark:bg-blue-700"
             disabled={isSubmitting}
