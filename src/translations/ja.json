@@ -154,12 +154,12 @@
   },
   "logIn": {
     "email": "メールアドレス",
-    "enterEmail": "メールアドレスの入力",
-    "enterPassword": "パスワードの入力",
-    "forgot": "パスワードを忘れた場合",
+    "enterEmail": "メールアドレス",
+    "enterPassword": "パスワード",
+    "forgot": "パスワードを忘れた場合はこちら",
     "invalid": "メールアドレスまたはパスワードが正しくありません",
     "password": "パスワード",
-    "signUp": "アカウントを持っていない場合",
+    "signUp": "アカウントをお持ちでない場合はこちら",
     "title": "ログイン",
     "welcome": "おかえりなさい！"
   },
