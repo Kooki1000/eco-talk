@@ -201,7 +201,14 @@
     "warning": "Sign In is Required"
   },
   "signUp": {
-    "title": "Sign Up"
+    "title": "Sign Up",
+    "create": "Create An Account",
+    "username": "Enter your username",
+    "enterEmail": "Enter your email",
+    "enterPassword": "Enter your password",
+    "confirmation": "Enter your password again",
+    "logIn": "Already have an account? Log in",
+    "policy": "View our Privacy Policy"
   },
   "theme": {
     "dark": "Dark Mode",
