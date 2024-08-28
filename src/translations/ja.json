@@ -208,7 +208,13 @@
     "enterPassword": "パスワードの入力",
     "confirmation": "パスワードの再入力",
     "logIn": "すでにアカウントをお持ちの場合",
-    "policy": "プライバシーポリシーをご確認ください"
+    "beforePolicy": "登録することで、",
+    "policy": "プライバシーポリシー",
+    "afterPolicy": "に同意したことになります",
+    "invalidUsername": "3〜20文字以内で設定してください",
+    "invalidEmail": "メールアドレスが正しくありません",
+    "invalidPassword": "8文字以上で設定してください",
+    "invalidConfirmation": "パスワードが一致しません"
   },
   "theme": {
     "dark": "ダークモード",

@@ -4,7 +4,7 @@ import { Button } from '../obytes/button';
 
 const LogInButton = () => {
   const logIn = () => {
-    router.replace('/');
+    router.navigate('/');
   };
 
   return (

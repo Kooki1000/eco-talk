@@ -14,7 +14,7 @@ export default function TabLayout() {
       screenOptions={{
         // eslint-disable-next-line react/no-unstable-nested-components
         headerLeft: () => (
-          <Link href="/" asChild>
+          <Link href="/(auth)/sign-up" asChild>
             <MoveLeft
               color={isDark ? white : black}
               style={{ marginRight: 4 }}
@@ -24,10 +24,13 @@ export default function TabLayout() {
       }}
     >
       <Stack.Screen
-        name="log-in"
-        options={{ title: translate('logIn.title') }}
+        name="index"
+        options={{ title: translate('signUp.title') }}
       />
-      <Stack.Screen name="sign-up" options={{ headerShown: false }} />
+      <Stack.Screen
+        name="policy"
+        options={{ title: translate('about.title') }}
+      />
     </Stack>
   );
 }

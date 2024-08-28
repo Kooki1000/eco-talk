@@ -208,7 +208,13 @@
     "enterPassword": "Enter your password",
     "confirmation": "Enter your password again",
     "logIn": "Already have an account? Log in",
-    "policy": "View our Privacy Policy"
+    "beforePolicy": "By signing up, you agree to our ",
+    "policy": "Privacy Policy",
+    "afterPolicy": "",
+    "invalidUsername": "This must be between 3 to 20 characters",
+    "invalidEmail": "Invalid email adress",
+    "invalidPassword": "Password must be at least 8 characters",
+    "invalidConfirmation": "Passwords do not match"
   },
   "theme": {
     "dark": "Dark Mode",

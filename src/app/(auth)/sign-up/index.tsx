@@ -32,7 +32,6 @@ import { signUpSchema } from '@/lib/schema';
 
 type FormType = z.infer<typeof signUpSchema>;
 
-
 export default function SignUpScreen() {
   useSoftKeyboardEffect();
   const [isPasswordVisible, setPasswordVisible] = useState(false);
@@ -40,10 +39,6 @@ export default function SignUpScreen() {
 
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
-
-  const onPolicyPress = () => {
-    console.log('Show Policy');
-  };
 
   const [email, setEmail] = useState('');
 
@@ -66,11 +61,17 @@ export default function SignUpScreen() {
       console.log(data);
       router.navigate('/(tabs)');
     } catch (error) {
+      setError('username', {
+        message: translate('signUp.invalidUsername'),
+      });
       setError('email', {
-        message: translate('logIn.invalid'),
+        message: translate('signUp.invalidEmail'),
       });
       setError('password', {
-        message: translate('logIn.invalid'),
+        message: translate('signUp.invalidPassword'),
+      });
+      setError('confirmation', {
+        message: translate('signUp.invalidConfirmation'),
       });
     }
   };
@@ -93,11 +94,18 @@ export default function SignUpScreen() {
               name="username"
               control={control}
               tx="signUp.username"
-              error={errors.email?.message}
+              error={errors.username?.message}
               style={styles.input}
             />
           </View>
         </View>
+
+        {errors.username && (
+          <Text
+            className="ml-[10%] self-start text-sm text-red-500"
+            tx="signUp.invalidUsername"
+          />
+        )}
 
         <View className="mt-8 w-4/5" style={styles.textContainer}>
           <Mail color={isDark ? white : black} size={22} />
@@ -122,6 +130,13 @@ export default function SignUpScreen() {
             </TouchableOpacity>
           )}
         </View>
+
+        {errors.email && (
+          <Text
+            className="ml-[10%] self-start text-sm text-red-500"
+            tx="signUp.invalidEmail"
+          />
+        )}
 
         <View className="mt-6 w-4/5" style={styles.textContainer}>
           <KeyRound color={isDark ? white : black} size={22} />
@@ -148,6 +163,13 @@ export default function SignUpScreen() {
           </TouchableOpacity>
         </View>
 
+        {errors.password && (
+          <Text
+            className="ml-[10%] self-start text-sm text-red-500"
+            tx="signUp.invalidPassword"
+          />
+        )}
+
         <View className="mt-6 w-4/5" style={styles.textContainer}>
           <KeyRound color={isDark ? white : black} size={22} />
           <View className="w-full">
@@ -172,14 +194,24 @@ export default function SignUpScreen() {
             )}
           </TouchableOpacity>
         </View>
-        {errors.email && (
-          <Text className="text-sm text-red-500" tx="logIn.invalid" />
+
+        {!errors.password && errors.confirmation && (
+          <Text
+            className="ml-[10%] self-start text-sm text-red-500"
+            tx="signUp.invalidConfirmation"
+          />
         )}
-        <Text
-          tx="signUp.policy"
-          className="mb-6 ml-[10%] mt-4 self-start text-sm text-blue-500 dark:text-blue-700"
-          onPress={onPolicyPress}
-        />
+
+        <Text className="mb-6 mt-4 w-4/5 text-center text-sm">
+          <Text tx="signUp.beforePolicy" />
+          <Text
+            tx="signUp.policy"
+            className="underline"
+            onPress={() => router.push('/sign-up/policy')}
+          />
+          <Text tx="signUp.afterPolicy" />
+        </Text>
+
         <Button
           className="h-10 w-4/5 items-center justify-center rounded-xl bg-blue-500 px-4 dark:bg-blue-700"
           disabled={isSubmitting}
@@ -195,7 +227,7 @@ export default function SignUpScreen() {
         <Text
           tx="signUp.logIn"
           className="mt-3 text-center text-sm text-blue-500 dark:bg-blue-700"
-          onPress={() => router.push('/(auth)/log-in')}
+          onPress={() => router.replace('/(auth)/log-in')}
         />
       </KeyboardAvoidingView>
     </DismissKeyboard>

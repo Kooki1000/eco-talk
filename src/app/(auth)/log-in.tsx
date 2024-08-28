@@ -158,7 +158,7 @@ export default function LogInScreen() {
         <Text
           tx="logIn.signUp"
           className="mt-3 text-center text-sm text-blue-500 dark:bg-blue-700"
-          onPress={() => router.push('/(auth)/sign-up')}
+          onPress={() => router.replace('/(auth)/sign-up')}
         />
       </KeyboardAvoidingView>
     </DismissKeyboard>

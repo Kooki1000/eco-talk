@@ -5,7 +5,7 @@ import { Button } from '../obytes/button';
 const DeleteAccountButton = () => {
   const deleteAccount = () => {
     console.log('Delete account');
-    router.replace('/');
+    router.navigate('/');
   };
 
   return (

@@ -5,7 +5,7 @@ import { Button } from '../obytes/button';
 const LogOutButton = () => {
   const logOut = () => {
     console.log('Log out');
-    router.replace('/');
+    router.navigate('/');
   };
 
   return (
