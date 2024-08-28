@@ -22,6 +22,7 @@ import { black, white } from '@/components/obytes/colors';
 import { translate } from '@/i18n';
 import { DismissKeyboard, useSoftKeyboardEffect } from '@/lib/keyboard';
 import { logInSchema } from '@/lib/schema';
+import { supabase } from '@/lib/supabase';
 
 type FormType = z.infer<typeof logInSchema>;
 
@@ -32,38 +33,39 @@ export default function LogInScreen() {
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
 
-  const onForgotPress = () => {
+  /* const onForgotPress = () => {
     console.log('Forgot password');
-  };
-
-  const [email, setEmail] = useState('');
+  }; */
 
   const {
     control,
     handleSubmit,
     setError,
     reset,
+    watch,
     formState: { errors, isSubmitting },
   } = useForm<FormType>({
     resolver: zodResolver(logInSchema),
     reValidateMode: 'onSubmit',
   });
 
+  const email = watch('email');
+
   const onSubmit: SubmitHandler<FormType> = async (data: FormType) => {
-    try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      reset();
-      setEmail('');
-      console.log(data);
-      router.navigate('/(tabs)');
-    } catch (error) {
-      setError('email', {
+    const { error } = await supabase.auth.signInWithPassword({
+      email: data.email,
+      password: data.password,
+    });
+
+    if (error) {
+      setError('root', {
         message: translate('logIn.invalid'),
       });
-      setError('password', {
-        message: translate('logIn.invalid'),
-      });
+
+      return;
     }
+
+    router.navigate('/(tabs)');
   };
 
   return (
@@ -88,15 +90,13 @@ export default function LogInScreen() {
                 control={control}
                 tx="logIn.enterEmail"
                 error={errors.email?.message}
-                value={email}
-                onChangeText={setEmail}
                 style={styles.input}
               />
             </View>
 
-            {email.length > 0 && (
+            {email && (
               <TouchableOpacity
-                onPress={() => setEmail('')}
+                onPress={() => reset({ email: '' })}
                 className="absolute right-5"
               >
                 <CircleX color={isDark ? white : black} size={18} />
@@ -134,16 +134,15 @@ export default function LogInScreen() {
           </View>
         </View>
 
-        <View className="w-4/5">
-          <View>
-            <Text
-              tx="logIn.forgot"
-              className="mb-6 mt-4 text-sm text-blue-500 dark:text-blue-700"
-              onPress={onForgotPress}
-            />
-          </View>
+        <View className="mt-4 w-4/5">
+          {/* <Text
+            tx="logIn.forgot"
+            className="mb-3 text-sm text-blue-500 dark:text-blue-700"
+            onPress={onForgotPress}
+          /> */}
+
           <Button
-            className="h-10 items-center justify-center rounded-xl bg-blue-500 px-4 dark:bg-blue-700"
+            className="mb-4 h-10 items-center justify-center rounded-xl bg-blue-500 px-4 dark:bg-blue-700"
             disabled={isSubmitting}
             onPress={handleSubmit(onSubmit)}
           >
@@ -155,14 +154,14 @@ export default function LogInScreen() {
           </Button>
 
           {(errors.email || errors.password) && (
-            <Text className="text-sm text-red-500" tx="logIn.invalid" />
+            <Text className="mb-6 text-sm text-red-500" tx="logIn.invalid" />
           )}
         </View>
 
         <Link href={'/(auth)/sign-up'}>
           <Text
             tx="logIn.signUp"
-            className="mt-3 text-center text-sm text-blue-500 dark:bg-blue-700"
+            className="text-center text-sm text-blue-500 dark:bg-blue-700"
           />
         </Link>
       </KeyboardAvoidingView>
@@ -176,7 +175,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   textContainer: {
-    height: 53,
+    height: 52,
     borderColor: 'gray',
     borderWidth: 2,
     borderRadius: 10,
