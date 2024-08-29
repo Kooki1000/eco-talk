@@ -104,7 +104,7 @@
   "auth": {
     "description": "ゴミ処理をわかりやすく",
     "logIn": "ログイン",
-    "signUp": "登録",
+    "signUp": "アカウント作成",
     "title": "EcoTalkへようこそ",
     "visitor": "ログインせず使用する"
   },
@@ -168,6 +168,9 @@
     "home": "ホーム画面へ戻る",
     "title": "あれれ？"
   },
+  "policy": {
+    "title": "利用規約"
+  },
   "post": {
     "hideReply": "返信を隠す",
     "hideTranslation": "翻訳を表示",
@@ -186,7 +189,7 @@
   },
   "profile": {
     "delete": "アカウントを削除",
-    "login": "ログイン・登録",
+    "login": "ログイン・アカウント作成",
     "logout": "ログアウト",
     "settings": {
       "language": "言語",
@@ -202,19 +205,19 @@
   },
   "signUp": {
     "afterPolicy": "に同意したことになります。",
-    "beforePolicy": "登録することで、",
+    "beforePolicy": "アカウントを作成することで、",
     "confirmation": "パスワードの再入力",
     "create": "アカウントの作成",
-    "enterEmail": "メールアドレスの入力",
-    "enterPassword": "パスワードの入力",
+    "enterEmail": "メールアドレス",
+    "enterPassword": "パスワード",
     "invalidConfirmation": "パスワードが一致しません",
     "invalidEmail": "メールアドレスが正しくありません",
     "invalidPassword": "8文字以上で設定してください",
     "invalidUsername": "3〜20文字以内で設定してください",
-    "logIn": "すでにアカウントをお持ちの場合",
-    "policy": "プライバシーポリシー",
-    "title": "登録",
-    "username": "ユーザー名の入力"
+    "logIn": "すでにアカウントをお持ちの場合はこちら",
+    "policy": "利用規約",
+    "title": "アカウント作成",
+    "username": "ユーザー名"
   },
   "theme": {
     "dark": "ダークモード",

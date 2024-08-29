@@ -207,7 +207,7 @@ export default function SignUpScreen() {
           <Text
             tx="signUp.policy"
             className="underline"
-            onPress={() => router.push('/sign-up/policy')}
+            onPress={() => router.push('/(auth)/sign-up/policy')}
           />
           <Text tx="signUp.afterPolicy" />
         </Text>
@@ -240,7 +240,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   textContainer: {
-    height: 53,
+    height: 52,
     borderColor: 'gray',
     borderWidth: 2,
     borderRadius: 10,

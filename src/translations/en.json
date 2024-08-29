@@ -154,8 +154,8 @@
   },
   "logIn": {
     "email": "Email",
-    "enterEmail": "Enter your Email",
-    "enterPassword": "Enter your Password",
+    "enterEmail": "Enter your email",
+    "enterPassword": "Enter your password",
     "forgot": "Forgot password?",
     "invalid": "Email or password is invalid",
     "password": "Password",
@@ -167,6 +167,9 @@
     "description": "This screen doesn't exist.",
     "home": "Go to home screen!",
     "title": "Oops!"
+  },
+  "policy": {
+    "title": "Terms of Use"
   },
   "post": {
     "hideReply": "Hide Replies",
@@ -203,7 +206,7 @@
   "signUp": {
     "afterPolicy": ".",
     "beforePolicy": "By signing up, you agree to our ",
-    "confirmation": "Enter your password again",
+    "confirmation": "Confirm your password",
     "create": "Create An Account",
     "enterEmail": "Enter your email",
     "enterPassword": "Enter your password",
@@ -212,7 +215,7 @@
     "invalidPassword": "Password must be at least 8 characters",
     "invalidUsername": "This must be between 3 to 20 characters",
     "logIn": "Already have an account? Log in",
-    "policy": "Privacy Policy",
+    "policy": "Terms of Use",
     "title": "Sign Up",
     "username": "Enter your username"
   },

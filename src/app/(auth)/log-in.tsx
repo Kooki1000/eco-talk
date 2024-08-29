@@ -132,7 +132,7 @@ export default function LogInScreen() {
             </TouchableOpacity>
           </View>
         </View>
-        
+
         <View className="mt-4 w-4/5">
           <Button
             className="mb-4 h-10 items-center justify-center rounded-xl bg-blue-500 px-4 dark:bg-blue-700"
@@ -150,13 +150,12 @@ export default function LogInScreen() {
             <Text className="mb-6 text-sm text-red-500" tx="logIn.invalid" />
           )}
         </View>
-        
+
         <Text
           tx="logIn.signUp"
           className="mt-3 text-center text-sm text-blue-500 dark:bg-blue-700"
           onPress={() => router.replace('/(auth)/sign-up')}
         />
-        
       </KeyboardAvoidingView>
     </DismissKeyboard>
   );
