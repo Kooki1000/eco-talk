@@ -196,8 +196,9 @@
   },
   "requireAuth": {
     "cancel": "Cancel",
-    "description": "You must be signed in to reply.",
     "move": "Sign In",
+    "post": "You must be signed in to post.",
+    "reply": "You must be signed in to reply.",
     "warning": "Sign In is Required"
   },
   "signUp": {
