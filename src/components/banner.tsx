@@ -32,11 +32,12 @@ const Banner = ({ profile, style, className }: Props) => {
             {profile.avatar ? (
               <Image
                 source={{ uri: profile.avatar }}
+                cachePolicy={'disk'}
                 style={{
                   height: 96,
                   width: 96,
                   borderRadius: 48,
-                  borderWidth: 1,
+                  borderWidth: 2,
                 }}
               />
             ) : (

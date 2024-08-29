@@ -4,6 +4,7 @@ import { router } from 'expo-router';
 import { CircleUserRound, Send, X } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import { useState } from 'react';
+import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 import {
   Alert,
@@ -18,10 +19,12 @@ import { ScrollView } from 'react-native-gesture-handler';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { z } from 'zod';
 
+import { useCreatePost } from '@/api/posts';
+import { uploadImage } from '@/api/upload-image';
 import { ControlledInput } from '@/components/customInput';
 import DisplayImage from '@/components/displayImage';
 import ImageInput from '@/components/imageInput';
-import { Text } from '@/components/obytes';
+import { Image, Text } from '@/components/obytes';
 import { black, white } from '@/components/obytes/colors';
 import { translate } from '@/i18n';
 import { postSchema } from '@/lib/schema';
@@ -37,18 +40,36 @@ export default function AddPostScreen() {
     resolver: zodResolver(postSchema),
   });
 
+  const { mutate: createPost } = useCreatePost();
+
   const [charCount, setCharCount] = useState(0);
   const [image, setImage] = useState('');
 
-  const onSubmit = (data: FormType) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<FormType> = async (data: FormType) => {
+    if (!profile) return;
 
-    // Reset the form and char count
-    reset();
-    setCharCount(0);
-    setImage('');
+    let imagePath = '';
+    if (image) {
+      imagePath = (await uploadImage(image)) || '';
+    }
 
-    router.navigate('/posts');
+    createPost(
+      {
+        userId: profile.id,
+        content: data.content,
+        img_url: imagePath,
+      },
+      {
+        onSuccess: () => {
+          // Reset the form and char count
+          reset();
+          setCharCount(0);
+          setImage('');
+
+          router.navigate('/posts');
+        },
+      }
+    );
   };
 
   const { colorScheme } = useColorScheme();
@@ -108,11 +129,24 @@ export default function AddPostScreen() {
 
         <ScrollView contentContainerStyle={styles.content}>
           <View className="flex-row items-center justify-between">
-            <CircleUserRound
-              color={isDark ? white : black}
-              size={48}
-              strokeWidth={1}
-            />
+            {profile?.avatar ? (
+              <Image
+                source={{ uri: profile.avatar }}
+                style={{
+                  width: 48,
+                  height: 48,
+                  borderRadius: 24,
+                  borderWidth: 1,
+                }}
+                cachePolicy={'disk'}
+              />
+            ) : (
+              <CircleUserRound
+                color={isDark ? white : black}
+                size={48}
+                strokeWidth={1}
+              />
+            )}
 
             <View className="flex-row items-center">
               <Text
