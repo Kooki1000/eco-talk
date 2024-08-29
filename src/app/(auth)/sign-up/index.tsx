@@ -29,6 +29,7 @@ import { black, white } from '@/components/obytes/colors';
 import { translate } from '@/i18n';
 import { DismissKeyboard, useSoftKeyboardEffect } from '@/lib/keyboard';
 import { signUpSchema } from '@/lib/schema';
+import { supabase } from '@/lib/supabase';
 
 type FormType = z.infer<typeof signUpSchema>;
 
@@ -40,40 +41,34 @@ export default function SignUpScreen() {
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
 
-  const [email, setEmail] = useState('');
-
   const {
     control,
     handleSubmit,
     setError,
-    reset,
+    watch,
     formState: { errors, isSubmitting },
   } = useForm<FormType>({
     resolver: zodResolver(signUpSchema),
     reValidateMode: 'onSubmit',
   });
 
+  const email = watch('email');
+
   const onSubmit: SubmitHandler<FormType> = async (data: FormType) => {
-    try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      reset();
-      setEmail('');
-      console.log(data);
-      router.navigate('/(tabs)');
-    } catch (error) {
-      setError('username', {
-        message: translate('signUp.invalidUsername'),
+    const { error } = await supabase.auth.signUp({
+      email: data.email,
+      password: data.password,
+    });
+
+    if (error) {
+      setError('root', {
+        message: translate('signUp.error'),
       });
-      setError('email', {
-        message: translate('signUp.invalidEmail'),
-      });
-      setError('password', {
-        message: translate('signUp.invalidPassword'),
-      });
-      setError('confirmation', {
-        message: translate('signUp.invalidConfirmation'),
-      });
+
+      return;
     }
+
+    router.navigate('/(auth)/sign-up/policy');
   };
 
   return (
@@ -116,16 +111,12 @@ export default function SignUpScreen() {
               tx="signUp.enterEmail"
               error={errors.email?.message}
               value={email}
-              onChangeText={setEmail}
               style={styles.input}
             />
           </View>
 
-          {email.length > 0 && (
-            <TouchableOpacity
-              onPress={() => setEmail('')}
-              className="absolute right-5"
-            >
+          {email && (
+            <TouchableOpacity className="absolute right-5">
               <CircleX color={isDark ? white : black} size={18} />
             </TouchableOpacity>
           )}
@@ -187,7 +178,7 @@ export default function SignUpScreen() {
             onPress={() => setConfirmationVisible(!isConfirmationVisible)}
             className="absolute right-5"
           >
-            {isPasswordVisible ? (
+            {isConfirmationVisible ? (
               <EyeOff color={isDark ? white : black} size={18} />
             ) : (
               <Eye color={isDark ? white : black} size={18} />

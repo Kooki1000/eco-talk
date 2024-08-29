@@ -13,10 +13,13 @@ export const logInSchema = z.object({
 
 export const signUpSchema = z
   .object({
-    username: z.string().min(3).max(20),
-    email: z.string().email(),
-    password: z.string().min(8),
-    confirmation: z.string(),
+    username: z
+      .string({ message: translate('signUp.invalidUsername') })
+      .min(3)
+      .max(20),
+    email: z.string({ message: translate('signUp.invalidEmail') }).email(),
+    password: z.string({ message: translate('signUp.invalidPassword') }).min(8),
+    confirmation: z.string({ message: translate('signUp.confirmation') }),
   })
   .refine((data) => data.password === data.confirmation, {
     message: translate('signUp.invalidConfirmation'),

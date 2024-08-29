@@ -204,12 +204,13 @@
     "warning": "ログインが必要です"
   },
   "signUp": {
-    "afterPolicy": "に同意したことになります。",
+    "afterPolicy": "に同意したものとみなします。",
     "beforePolicy": "アカウントを作成することで、",
     "confirmation": "パスワードの再入力",
     "create": "アカウントの作成",
     "enterEmail": "メールアドレス",
     "enterPassword": "パスワード",
+    "error": "アカウントの作成に失敗しました",
     "invalidConfirmation": "パスワードが一致しません",
     "invalidEmail": "メールアドレスが正しくありません",
     "invalidPassword": "8文字以上で設定してください",

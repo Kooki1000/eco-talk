@@ -210,6 +210,7 @@
     "create": "Create An Account",
     "enterEmail": "Enter your email",
     "enterPassword": "Enter your password",
+    "error": "Failed to create an account",
     "invalidConfirmation": "Passwords do not match",
     "invalidEmail": "Invalid email adress",
     "invalidPassword": "Password must be at least 8 characters",
