@@ -23,13 +23,13 @@ import {
 } from 'react-native';
 import type { z } from 'zod';
 
+import { useSignUp } from '@/api/sign-up';
 import { ControlledInput } from '@/components/customInput';
 import { Button, Text } from '@/components/obytes';
 import { black, white } from '@/components/obytes/colors';
 import { translate } from '@/i18n';
 import { DismissKeyboard, useSoftKeyboardEffect } from '@/lib/keyboard';
 import { signUpSchema } from '@/lib/schema';
-import { supabase } from '@/lib/supabase';
 
 type FormType = z.infer<typeof signUpSchema>;
 
@@ -37,6 +37,8 @@ export default function SignUpScreen() {
   useSoftKeyboardEffect();
   const [isPasswordVisible, setPasswordVisible] = useState(false);
   const [isConfirmationVisible, setConfirmationVisible] = useState(false);
+
+  const { mutateAsync: signUp } = useSignUp();
 
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
@@ -55,20 +57,14 @@ export default function SignUpScreen() {
   const email = watch('email');
 
   const onSubmit: SubmitHandler<FormType> = async (data: FormType) => {
-    const { error } = await supabase.auth.signUp({
-      email: data.email,
-      password: data.password,
-    });
-
-    if (error) {
+    try {
+      await signUp(data);
+      router.navigate('/(tabs)');
+    } catch (e) {
       setError('root', {
         message: translate('signUp.error'),
       });
-
-      return;
     }
-
-    router.navigate('/(auth)/sign-up/policy');
   };
 
   return (
