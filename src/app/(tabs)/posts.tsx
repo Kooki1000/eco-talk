@@ -29,7 +29,7 @@ export default function PostsScreen() {
     if (!profile) {
       Alert.alert(
         translate('requireAuth.warning'),
-        translate('requireAuth.description'),
+        translate('requireAuth.reply'),
         [
           {
             text: translate('requireAuth.cancel'),

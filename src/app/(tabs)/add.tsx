@@ -6,10 +6,12 @@ import { useColorScheme } from 'nativewind';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import {
+  Alert,
   KeyboardAvoidingView,
   Platform,
   StyleSheet,
   TouchableOpacity,
+  TouchableWithoutFeedback,
   View,
 } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -23,11 +25,13 @@ import { Text } from '@/components/obytes';
 import { black, white } from '@/components/obytes/colors';
 import { translate } from '@/i18n';
 import { postSchema } from '@/lib/schema';
+import { useAuth } from '@/providers/auth-provider';
 
 type FormType = z.infer<typeof postSchema>;
 
 export default function AddPostScreen() {
   const insets = useSafeAreaInsets();
+  const { profile } = useAuth();
 
   const { control, handleSubmit, reset } = useForm<FormType>({
     resolver: zodResolver(postSchema),
@@ -54,68 +58,89 @@ export default function AddPostScreen() {
     setCharCount(text.length);
   };
 
+  const handleScreenPress = () => {
+    if (!profile) {
+      Alert.alert(
+        translate('requireAuth.warning'),
+        translate('requireAuth.post'),
+        [
+          {
+            text: translate('requireAuth.cancel'),
+            style: Platform.OS === 'ios' ? 'cancel' : undefined,
+          },
+          {
+            text: translate('requireAuth.move'),
+            onPress: () => router.navigate('/'),
+          },
+        ]
+      );
+    }
+  };
+
   return (
-    <View
-      style={{
-        paddingTop: insets.top,
-        paddingBottom: insets.bottom,
-        flex: 1,
-      }}
-    >
-      <View style={styles.container}>
-        <View style={styles.leftContainer}>
+    <TouchableWithoutFeedback onPress={handleScreenPress}>
+      <View
+        style={{
+          paddingTop: insets.top,
+          paddingBottom: insets.bottom,
+          flex: 1,
+        }}
+      >
+        <View style={styles.container}>
+          <View style={styles.leftContainer}>
+            <TouchableOpacity
+              onPress={() => router.back()}
+              className="flex-row justify-center"
+            >
+              <X color={isDark ? white : black} size={40} strokeWidth={1} />
+            </TouchableOpacity>
+          </View>
+
+          <Text tx="city.chiyoda" className="text-lg" />
+
           <TouchableOpacity
-            onPress={() => router.back()}
-            className="flex-row justify-center"
+            onPress={handleSubmit(onSubmit)}
+            style={styles.rightContainer}
           >
-            <X color={isDark ? white : black} size={40} strokeWidth={1} />
+            <Send color={isDark ? white : black} size={32} />
           </TouchableOpacity>
         </View>
 
-        <Text tx="city.chiyoda" className="text-lg" />
+        <ScrollView contentContainerStyle={styles.content}>
+          <View className="flex-row items-center justify-between">
+            <CircleUserRound
+              color={isDark ? white : black}
+              size={48}
+              strokeWidth={1}
+            />
 
-        <TouchableOpacity
-          onPress={handleSubmit(onSubmit)}
-          style={styles.rightContainer}
-        >
-          <Send color={isDark ? white : black} size={32} />
-        </TouchableOpacity>
-      </View>
+            <View className="flex-row items-center">
+              <Text
+                className={charCount > 1000 ? 'text-red-500' : 'text-gray-500'}
+              >
+                {translate('add.charCount', { count: charCount })}
+              </Text>
 
-      <ScrollView contentContainerStyle={styles.content}>
-        <View className="flex-row items-center justify-between">
-          <CircleUserRound
-            color={isDark ? white : black}
-            size={48}
-            strokeWidth={1}
-          />
-
-          <View className="flex-row items-center">
-            <Text
-              className={charCount > 1000 ? 'text-red-500' : 'text-gray-500'}
-            >
-              {translate('add.charCount', { count: charCount })}
-            </Text>
-
-            <ImageInput setImage={setImage} />
+              <ImageInput setImage={setImage} />
+            </View>
           </View>
-        </View>
 
-        <KeyboardAvoidingView
-          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-        >
-          <ControlledInput
-            name="content"
-            tx="add.insert"
-            control={control}
-            onChangeText={handleInputChange}
-            multiline
-            maxLength={1000}
-          />
-        </KeyboardAvoidingView>
-        <DisplayImage image={image} onRemoveImage={() => setImage('')} />
-      </ScrollView>
-    </View>
+          <KeyboardAvoidingView
+            behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+          >
+            <ControlledInput
+              name="content"
+              tx="add.insert"
+              control={control}
+              onChangeText={handleInputChange}
+              multiline
+              maxLength={1000}
+            />
+          </KeyboardAvoidingView>
+          <DisplayImage image={image} onRemoveImage={() => setImage('')} />
+        </ScrollView>
+      </View>
+    </TouchableWithoutFeedback>
   );
 }
 
