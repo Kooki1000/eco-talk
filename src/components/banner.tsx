@@ -1,10 +1,15 @@
+/* eslint-disable max-lines-per-function */
 import { ImageBackground } from 'expo-image';
+import * as ImagePicker from 'expo-image-picker';
 import { Camera, CircleUserRound, Pencil } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import { useMemo } from 'react';
 import { StyleSheet, View, type ViewProps } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import { twMerge } from 'tailwind-merge';
 
+import { useUpdateAvatar } from '@/api/update-avatar';
+import { uploadAvatar } from '@/api/upload-image';
 import type { Tables } from '@/types/database.types';
 
 import { Image, Text } from './obytes';
@@ -20,6 +25,30 @@ const Banner = ({ profile, style, className }: Props) => {
   const isDark = colorScheme === 'dark';
 
   const ViewStyle = useMemo(() => twMerge('w-full', className), [className]);
+
+  const { mutate: updateAvatar } = useUpdateAvatar();
+
+  const handleImagePickerPress = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      allowsEditing: true,
+      quality: 1,
+    });
+
+    if (!result.canceled) {
+      const imagePath = await uploadAvatar(result.assets[0].uri);
+      if (!imagePath) return;
+
+      updateAvatar(
+        { userId: profile.id, img_url: imagePath },
+        {
+          onSuccess: () => {
+            // TODO: Update profile in store
+          },
+        }
+      );
+    }
+  };
 
   return (
     <View className={ViewStyle} style={style}>
@@ -48,9 +77,12 @@ const Banner = ({ profile, style, className }: Props) => {
               />
             )}
 
-            <View style={styles.cameraIcon}>
+            <TouchableOpacity
+              onPress={handleImagePickerPress}
+              style={styles.cameraIcon}
+            >
               <Camera size={30} color={isDark ? white : black} />
-            </View>
+            </TouchableOpacity>
           </View>
 
           <View className="ml-16 flex-row items-center">
