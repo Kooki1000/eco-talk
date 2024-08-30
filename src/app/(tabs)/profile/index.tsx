@@ -42,7 +42,7 @@ export default function ProfileScreen() {
       ) : (
         <View className="border-b-2 border-[#CBBDBD]">
           <Image
-            source={require('../../../../assets/images/banner.png')}
+            source={require('@assets/images/banner.png')}
             contentFit="cover"
             style={{ height: 110, width: '100%' }}
           />

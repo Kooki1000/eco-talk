@@ -53,7 +53,7 @@ const Banner = ({ profile, style, className }: Props) => {
   return (
     <View className={ViewStyle} style={style}>
       <ImageBackground
-        source={require('../../assets/images/banner.png')}
+        source={require('@assets/images/banner.png')}
         contentFit="cover"
       >
         <View className="flex-row border-b-2 border-[#CBBDBD]">
