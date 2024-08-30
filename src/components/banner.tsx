@@ -4,8 +4,7 @@ import * as ImagePicker from 'expo-image-picker';
 import { Camera, CircleUserRound, Pencil } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import { useMemo } from 'react';
-import { StyleSheet, View, type ViewProps } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Pressable, StyleSheet, View, type ViewProps } from 'react-native';
 import { twMerge } from 'tailwind-merge';
 
 import { useUpdateAvatar } from '@/api/update-avatar';
@@ -77,12 +76,12 @@ const Banner = ({ profile, style, className }: Props) => {
               />
             )}
 
-            <TouchableOpacity
+            <Pressable
               onPress={handleImagePickerPress}
               style={styles.cameraIcon}
             >
               <Camera size={30} color={isDark ? white : black} />
-            </TouchableOpacity>
+            </Pressable>
           </View>
 
           <View className="ml-16 flex-row items-center">

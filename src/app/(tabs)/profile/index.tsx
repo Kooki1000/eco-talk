@@ -5,11 +5,7 @@ import { useColorScheme } from 'nativewind';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import {
-  DeleteAccountButton,
-  LogInButton,
-  LogOutButton,
-} from '@/components/auth';
+import { LogInButton, LogOutButton } from '@/components/auth';
 import Banner from '@/components/banner';
 import { Image, Text } from '@/components/obytes';
 import { black, white } from '@/components/obytes/colors';
@@ -22,13 +18,15 @@ export default function ProfileScreen() {
   const insets = useSafeAreaInsets();
   const { profile } = useAuth();
 
+  /* const profile = {
+    avatar: 'https://picsum.photos/200',
+    id: '12345',
+    updated_at: '2023-10-01T12:00:00Z',
+    username: 'john_doe',
+  }; */
+
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
-
-  const onAboutPress = () => {
-    console.log('About');
-    router.navigate('/profile/about');
-  };
 
   return (
     <View
@@ -61,7 +59,7 @@ export default function ProfileScreen() {
           <ThemeSelect />
 
           <Pressable
-            onPress={onAboutPress}
+            onPress={() => router.navigate('/profile/about')}
             className="mb-4 flex flex-row items-center"
           >
             <Info color={isDark ? white : black} size={28} />
@@ -83,14 +81,7 @@ export default function ProfileScreen() {
         </View>
 
         <View className="items-center">
-          {profile ? (
-            <>
-              <LogOutButton />
-              <DeleteAccountButton />
-            </>
-          ) : (
-            <LogInButton />
-          )}
+          {profile ? <LogOutButton /> : <LogInButton />}
         </View>
       </View>
     </View>
