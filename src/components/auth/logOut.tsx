@@ -1,11 +1,18 @@
 import { router } from 'expo-router';
 
+import { supabase } from '@/lib/supabase';
+
 import { Button } from '../obytes/button';
 
 const LogOutButton = () => {
-  const logOut = () => {
-    console.log('Log out');
-    router.navigate('/');
+  const logOut = async () => {
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+      console.error('Error logging out:', error.message);
+      return;
+    }
+
+    router.replace('/');
   };
 
   return (
