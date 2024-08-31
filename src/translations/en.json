@@ -192,7 +192,11 @@
       "language": "Language",
       "theme": "Theme"
     },
-    "title": "General"
+    "title": "General",
+    "username": {
+      "error": "There was an error updating your username.",
+      "length": "Username must be at least 3 characters."
+    }
   },
   "requireAuth": {
     "cancel": "Cancel",

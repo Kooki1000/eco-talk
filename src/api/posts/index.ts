@@ -22,8 +22,6 @@ export const useCreatePost = () => {
         img_url,
       });
 
-      console.log('error', error);
-
       if (error) {
         throw new Error(error.message);
       }

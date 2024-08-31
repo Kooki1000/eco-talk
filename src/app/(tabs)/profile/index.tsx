@@ -5,30 +5,27 @@ import { useColorScheme } from 'nativewind';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import {
-  DeleteAccountButton,
-  LogInButton,
-  LogOutButton,
-} from '@/components/auth';
+import { LogInButton, LogOutButton } from '@/components/auth';
 import Banner from '@/components/banner';
 import { Image, Text } from '@/components/obytes';
 import { black, white } from '@/components/obytes/colors';
 import { AddressSelect } from '@/components/settings/addressSelect';
 import { LanguageSelect } from '@/components/settings/languageSelect';
 import { ThemeSelect } from '@/components/settings/themeSelect';
-import { useAuth } from '@/providers/auth-provider';
 
 export default function ProfileScreen() {
   const insets = useSafeAreaInsets();
-  const { profile } = useAuth();
+  /* const { profile } = useAuth(); */
+
+  const profile = {
+    avatar: 'https://picsum.photos/200',
+    id: '12345',
+    updated_at: '2023-10-01T12:00:00Z',
+    username: 'john_doe',
+  };
 
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
-
-  const onAboutPress = () => {
-    console.log('About');
-    router.navigate('/profile/about');
-  };
 
   return (
     <View
@@ -42,9 +39,9 @@ export default function ProfileScreen() {
       ) : (
         <View className="border-b-2 border-[#CBBDBD]">
           <Image
-            source={require('../../../../assets/images/banner.png')}
+            source={require('@assets/images/banner.png')}
             contentFit="cover"
-            style={{ height: 110, width: '100%' }}
+            style={{ height: 86, width: '100%' }}
           />
         </View>
       )}
@@ -61,7 +58,7 @@ export default function ProfileScreen() {
           <ThemeSelect />
 
           <Pressable
-            onPress={onAboutPress}
+            onPress={() => router.navigate('/profile/about')}
             className="mb-4 flex flex-row items-center"
           >
             <Info color={isDark ? white : black} size={28} />
@@ -83,14 +80,7 @@ export default function ProfileScreen() {
         </View>
 
         <View className="items-center">
-          {profile ? (
-            <>
-              <LogOutButton />
-              <DeleteAccountButton />
-            </>
-          ) : (
-            <LogInButton />
-          )}
+          {profile ? <LogOutButton /> : <LogInButton />}
         </View>
       </View>
     </View>

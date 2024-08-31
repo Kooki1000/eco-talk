@@ -33,10 +33,6 @@ export default function LogInScreen() {
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
 
-  /* const onForgotPress = () => {
-    console.log('Forgot password');
-  }; */
-
   const {
     control,
     handleSubmit,
@@ -135,12 +131,6 @@ export default function LogInScreen() {
         </View>
 
         <View className="mt-4 w-4/5">
-          {/* <Text
-            tx="logIn.forgot"
-            className="mb-3 text-sm text-blue-500 dark:text-blue-700"
-            onPress={onForgotPress}
-          /> */}
-
           <Button
             className="mb-4 h-10 items-center justify-center rounded-xl bg-blue-500 px-4 dark:bg-blue-700"
             disabled={isSubmitting}

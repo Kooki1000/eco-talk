@@ -20,7 +20,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { z } from 'zod';
 
 import { useCreatePost } from '@/api/posts';
-import { uploadImage } from '@/api/upload-image';
+import { uploadPostImage } from '@/api/upload-image';
 import { ControlledInput } from '@/components/customInput';
 import DisplayImage from '@/components/displayImage';
 import ImageInput from '@/components/imageInput';
@@ -50,7 +50,7 @@ export default function AddPostScreen() {
 
     let imagePath = '';
     if (image) {
-      imagePath = (await uploadImage(image)) || '';
+      imagePath = (await uploadPostImage(image)) || '';
     }
 
     createPost(
