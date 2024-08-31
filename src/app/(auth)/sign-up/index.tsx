@@ -76,18 +76,16 @@ export default function SignUpScreen() {
 
         <View className="mt-8 w-4/5" style={styles.textContainer}>
           <CircleUserRound color={isDark ? white : black} size={22} />
-          <View className="w-full">
-            <ControlledInput
-              name="username"
-              control={control}
-              tx="signUp.username"
-              error={errors.username?.message}
-              style={styles.input}
-              keyboardType="ascii-capable"
-              textContentType="username"
-              autoCorrect={false}
-            />
-          </View>
+          <ControlledInput
+            name="username"
+            control={control}
+            tx="signUp.username"
+            error={errors.username?.message}
+            style={styles.input}
+            keyboardType="ascii-capable"
+            textContentType="username"
+            autoCorrect={false}
+          />
         </View>
 
         {errors.username && (
@@ -99,18 +97,16 @@ export default function SignUpScreen() {
 
         <View className="mt-8 w-4/5" style={styles.textContainer}>
           <Mail color={isDark ? white : black} size={22} />
-          <View className="w-full">
-            <ControlledInput
-              name="email"
-              control={control}
-              tx="signUp.enterEmail"
-              error={errors.email?.message}
-              style={styles.input}
-              keyboardType="email-address"
-              textContentType="emailAddress"
-              spellCheck={false}
-            />
-          </View>
+          <ControlledInput
+            name="email"
+            control={control}
+            tx="signUp.enterEmail"
+            error={errors.email?.message}
+            style={styles.input}
+            keyboardType="email-address"
+            textContentType="emailAddress"
+            spellCheck={false}
+          />
         </View>
 
         {errors.email && (
@@ -122,19 +118,17 @@ export default function SignUpScreen() {
 
         <View className="mt-6 w-4/5" style={styles.textContainer}>
           <KeyRound color={isDark ? white : black} size={22} />
-          <View className="w-full">
-            <ControlledInput
-              name="password"
-              control={control}
-              tx="signUp.enterPassword"
-              secureTextEntry={!isPasswordVisible}
-              error={errors.password?.message}
-              style={styles.input}
-              keyboardType="ascii-capable"
-              textContentType="newPassword"
-              spellCheck={false}
-            />
-          </View>
+          <ControlledInput
+            name="password"
+            control={control}
+            tx="signUp.enterPassword"
+            secureTextEntry={!isPasswordVisible}
+            error={errors.password?.message}
+            style={styles.input}
+            keyboardType="ascii-capable"
+            textContentType="newPassword"
+            spellCheck={false}
+          />
 
           <TouchableOpacity
             onPress={() => setPasswordVisible(!isPasswordVisible)}
@@ -157,19 +151,17 @@ export default function SignUpScreen() {
 
         <View className="mt-6 w-4/5" style={styles.textContainer}>
           <KeyRound color={isDark ? white : black} size={22} />
-          <View className="w-full">
-            <ControlledInput
-              name="confirmation"
-              control={control}
-              tx="signUp.confirmation"
-              secureTextEntry={!isConfirmationVisible}
-              error={errors.confirmation?.message}
-              style={styles.input}
-              keyboardType="ascii-capable"
-              textContentType="newPassword"
-              spellCheck={false}
-            />
-          </View>
+          <ControlledInput
+            name="confirmation"
+            control={control}
+            tx="signUp.confirmation"
+            secureTextEntry={!isConfirmationVisible}
+            error={errors.confirmation?.message}
+            style={styles.input}
+            keyboardType="ascii-capable"
+            textContentType="newPassword"
+            spellCheck={false}
+          />
 
           <TouchableOpacity
             onPress={() => setConfirmationVisible(!isConfirmationVisible)}

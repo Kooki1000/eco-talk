@@ -75,18 +75,16 @@ export default function LogInScreen() {
 
           <View style={styles.textContainer}>
             <Mail color={isDark ? white : black} size={22} />
-            <View className="w-full">
-              <ControlledInput
-                name="email"
-                control={control}
-                tx="logIn.enterEmail"
-                error={errors.email?.message}
-                style={styles.input}
-                keyboardType="email-address"
-                textContentType="emailAddress"
-                autoCorrect={false}
-              />
-            </View>
+            <ControlledInput
+              name="email"
+              control={control}
+              tx="logIn.enterEmail"
+              error={errors.email?.message}
+              style={styles.input}
+              keyboardType="email-address"
+              textContentType="emailAddress"
+              autoCorrect={false}
+            />
           </View>
         </View>
 
@@ -95,19 +93,17 @@ export default function LogInScreen() {
 
           <View style={styles.textContainer}>
             <KeyRound color={isDark ? white : black} size={22} />
-            <View className="w-full">
-              <ControlledInput
-                name="password"
-                control={control}
-                tx="logIn.enterPassword"
-                secureTextEntry={!isPasswordVisible}
-                error={errors.password?.message}
-                style={styles.input}
-                keyboardType="ascii-capable"
-                textContentType="password"
-                autoCorrect={false}
-              />
-            </View>
+            <ControlledInput
+              name="password"
+              control={control}
+              tx="logIn.enterPassword"
+              secureTextEntry={!isPasswordVisible}
+              error={errors.password?.message}
+              style={styles.input}
+              keyboardType="ascii-capable"
+              textContentType="password"
+              autoCorrect={false}
+            />
 
             <TouchableOpacity
               onPress={() => setPasswordVisible(!isPasswordVisible)}
