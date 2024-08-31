@@ -1,7 +1,7 @@
 /* eslint-disable max-lines-per-function */
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Link, router } from 'expo-router';
-import { CircleX, Eye, EyeOff, KeyRound, Mail } from 'lucide-react-native';
+import { router } from 'expo-router';
+import { Eye, EyeOff, KeyRound, Mail } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import { useState } from 'react';
 import type { SubmitHandler } from 'react-hook-form';
@@ -20,14 +20,13 @@ import { ControlledInput } from '@/components/customInput';
 import { Button, Text } from '@/components/obytes';
 import { black, white } from '@/components/obytes/colors';
 import { translate } from '@/i18n';
-import { DismissKeyboard, useSoftKeyboardEffect } from '@/lib/keyboard';
+import { DismissKeyboard } from '@/lib/keyboard';
 import { logInSchema } from '@/lib/schema';
 import { supabase } from '@/lib/supabase';
 
 type FormType = z.infer<typeof logInSchema>;
 
 export default function LogInScreen() {
-  useSoftKeyboardEffect();
   const [isPasswordVisible, setPasswordVisible] = useState(false);
 
   const { colorScheme } = useColorScheme();
@@ -37,15 +36,11 @@ export default function LogInScreen() {
     control,
     handleSubmit,
     setError,
-    reset,
-    watch,
     formState: { errors, isSubmitting },
   } = useForm<FormType>({
     resolver: zodResolver(logInSchema),
     reValidateMode: 'onSubmit',
   });
-
-  const email = watch('email');
 
   const onSubmit: SubmitHandler<FormType> = async (data: FormType) => {
     const { error } = await supabase.auth.signInWithPassword({
@@ -87,17 +82,11 @@ export default function LogInScreen() {
                 tx="logIn.enterEmail"
                 error={errors.email?.message}
                 style={styles.input}
+                keyboardType="email-address"
+                textContentType="emailAddress"
+                autoCorrect={false}
               />
             </View>
-
-            {email && (
-              <TouchableOpacity
-                onPress={() => reset({ email: '' })}
-                className="absolute right-5"
-              >
-                <CircleX color={isDark ? white : black} size={18} />
-              </TouchableOpacity>
-            )}
           </View>
         </View>
 
@@ -114,6 +103,9 @@ export default function LogInScreen() {
                 secureTextEntry={!isPasswordVisible}
                 error={errors.password?.message}
                 style={styles.input}
+                keyboardType="ascii-capable"
+                textContentType="password"
+                autoCorrect={false}
               />
             </View>
 
@@ -148,12 +140,11 @@ export default function LogInScreen() {
           )}
         </View>
 
-        <Link href={'/(auth)/sign-up'}>
-          <Text
-            tx="logIn.signUp"
-            className="text-center text-sm text-blue-500 dark:bg-blue-700"
-          />
-        </Link>
+        <Text
+          tx="logIn.signUp"
+          className="mt-3 text-center text-sm text-blue-500 dark:bg-blue-700"
+          onPress={() => router.replace('/(auth)/sign-up')}
+        />
       </KeyboardAvoidingView>
     </DismissKeyboard>
   );

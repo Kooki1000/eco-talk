@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
-import React, { memo, useMemo } from 'react';
+import { memo, useMemo } from 'react';
 import { View } from 'react-native';
 import type { VariantProps } from 'tailwind-variants';
 import { tv } from 'tailwind-variants';

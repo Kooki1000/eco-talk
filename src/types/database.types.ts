@@ -155,19 +155,22 @@ export type Database = {
       };
       profiles: {
         Row: {
-          avatar: string | null;
+          avatar_url: string | null;
+          full_name: string | null;
           id: string;
           updated_at: string | null;
           username: string | null;
         };
         Insert: {
-          avatar?: string | null;
+          avatar_url?: string | null;
+          full_name?: string | null;
           id: string;
           updated_at?: string | null;
           username?: string | null;
         };
         Update: {
-          avatar?: string | null;
+          avatar_url?: string | null;
+          full_name?: string | null;
           id?: string;
           updated_at?: string | null;
           username?: string | null;
@@ -191,6 +194,7 @@ export type Database = {
           id: string;
           lang_code: string | null;
           like_count: number;
+          post: string;
         };
         Insert: {
           author: string;
@@ -200,6 +204,7 @@ export type Database = {
           id?: string;
           lang_code?: string | null;
           like_count?: number;
+          post: string;
         };
         Update: {
           author?: string;
@@ -209,6 +214,7 @@ export type Database = {
           id?: string;
           lang_code?: string | null;
           like_count?: number;
+          post?: string;
         };
         Relationships: [
           {
@@ -223,6 +229,13 @@ export type Database = {
             columns: ['city'];
             isOneToOne: false;
             referencedRelation: 'cities';
+            referencedColumns: ['id'];
+          },
+          {
+            foreignKeyName: 'replies_post_fkey';
+            columns: ['post'];
+            isOneToOne: false;
+            referencedRelation: 'posts';
             referencedColumns: ['id'];
           }
         ];

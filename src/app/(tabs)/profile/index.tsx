@@ -1,4 +1,3 @@
-/* eslint-disable max-lines-per-function */
 import { router } from 'expo-router';
 import { Info, UserRound } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
@@ -15,14 +14,7 @@ import { ThemeSelect } from '@/components/settings/themeSelect';
 
 export default function ProfileScreen() {
   const insets = useSafeAreaInsets();
-  /* const { profile } = useAuth(); */
-
-  const profile = {
-    avatar: 'https://picsum.photos/200',
-    id: '12345',
-    updated_at: '2023-10-01T12:00:00Z',
-    username: 'john_doe',
-  };
+  const { profile } = useAuth();
 
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';

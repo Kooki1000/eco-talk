@@ -1,17 +1,22 @@
-import { Link, router } from 'expo-router';
+import { Link, Redirect, router } from 'expo-router';
 import { StyleSheet } from 'react-native';
 import { View } from 'react-native';
 
 import { Button, Image, Text } from '@/components/obytes';
+import { useAuth } from '@/providers/auth-provider';
 
-export default function index() {
+export default function IndexScreen() {
+  const { profile } = useAuth();
+
+  if (profile) {
+    return <Redirect href="/(tabs)" />;
+  }
+
   const onLogIn = () => {
-    console.log('Logged in');
     router.navigate('/(auth)/log-in');
   };
 
   const onSignUp = () => {
-    console.log('Signed up');
     router.navigate('/(auth)/sign-up');
   };
 

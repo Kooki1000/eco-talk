@@ -9,6 +9,7 @@ type AuthState = {
   profile: Tables<'profiles'> | null;
   loading: boolean;
   fetchSession: () => Promise<void>;
+  setProfile: (profile: Tables<'profiles'>) => void;
 };
 
 export const useAuthStore = create<AuthState>((set) => {
@@ -44,5 +45,6 @@ export const useAuthStore = create<AuthState>((set) => {
     profile: null,
     loading: true,
     fetchSession,
+    setProfile: (profile) => set({ profile }),
   };
 });
