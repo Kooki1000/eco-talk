@@ -14,7 +14,7 @@ import {
 import type { TextInput } from 'react-native-gesture-handler';
 import { twMerge } from 'tailwind-merge';
 
-import { useUpdateAvatar } from '@/api/update-avatar';
+import { useUpdateAvatar, useUpdateUsername } from '@/api/update-profile';
 import { uploadAvatar } from '@/api/upload-image';
 import { translate } from '@/i18n';
 import type { Tables } from '@/types/database.types';
@@ -38,6 +38,7 @@ const Banner = ({ profile, style, className }: Props) => {
   const ViewStyle = useMemo(() => twMerge('w-full', className), [className]);
 
   const { mutate: updateAvatar } = useUpdateAvatar();
+  const { mutate: updateUsername } = useUpdateUsername();
 
   useEffect(() => {
     setUsername(profile.username ?? '');
@@ -79,11 +80,23 @@ const Banner = ({ profile, style, className }: Props) => {
     setUsername(profile.username ?? '');
   };
 
-  const updateUsername = () => {
+  const handleUpdateUsername = () => {
     if (username.length < 3) {
       Alert.alert(translate('profile.usernameLength'));
       return;
     }
+
+    updateUsername(
+      { userId: profile.id, username },
+      {
+        onSuccess: () => {
+          setEditable(false);
+          inputRef.current?.blur();
+
+          // TODO: Update profile in store
+        },
+      }
+    );
   };
 
   return (
@@ -144,7 +157,7 @@ const Banner = ({ profile, style, className }: Props) => {
                   <X size={24} color={isDark ? white : black} />
                 </Pressable>
 
-                <Pressable onPress={updateUsername}>
+                <Pressable onPress={handleUpdateUsername}>
                   <Check size={24} color={'red'} />
                 </Pressable>
               </View>
