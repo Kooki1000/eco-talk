@@ -41,7 +41,7 @@ const UsernameInput = ({ profile }: UsernameInputProps) => {
   const handleCancel = () => {
     inputRef.current?.blur();
     setEditable(false);
-    setUsername(username);
+    setUsername(profile.username ?? '');
   };
 
   const handleUpdateUsername = () => {
