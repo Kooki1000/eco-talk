@@ -3,7 +3,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { router } from 'expo-router';
 import {
   CircleUserRound,
-  CircleX,
   Eye,
   EyeOff,
   KeyRound,
@@ -47,15 +46,11 @@ export default function SignUpScreen() {
     control,
     handleSubmit,
     setError,
-    reset,
-    watch,
     formState: { errors, isSubmitting },
   } = useForm<FormType>({
     resolver: zodResolver(signUpSchema),
     reValidateMode: 'onSubmit',
   });
-
-  const email = watch('email');
 
   const onSubmit: SubmitHandler<FormType> = async (data: FormType) => {
     try {
@@ -90,7 +85,7 @@ export default function SignUpScreen() {
               style={styles.input}
               keyboardType="ascii-capable"
               textContentType="username"
-              spellCheck={false}
+              autoCorrect={false}
             />
           </View>
         </View>
@@ -110,22 +105,12 @@ export default function SignUpScreen() {
               control={control}
               tx="signUp.enterEmail"
               error={errors.email?.message}
-              value={email}
               style={styles.input}
               keyboardType="email-address"
               textContentType="emailAddress"
               spellCheck={false}
             />
           </View>
-
-          {email && (
-            <TouchableOpacity
-              onPress={() => reset({ email: '' })}
-              className="absolute right-5"
-            >
-              <CircleX color={isDark ? white : black} size={18} />
-            </TouchableOpacity>
-          )}
         </View>
 
         {errors.email && (

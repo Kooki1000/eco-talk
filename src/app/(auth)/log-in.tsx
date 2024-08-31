@@ -1,7 +1,7 @@
 /* eslint-disable max-lines-per-function */
 import { zodResolver } from '@hookform/resolvers/zod';
 import { router } from 'expo-router';
-import { CircleX, Eye, EyeOff, KeyRound, Mail } from 'lucide-react-native';
+import { Eye, EyeOff, KeyRound, Mail } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import { useState } from 'react';
 import type { SubmitHandler } from 'react-hook-form';
@@ -36,15 +36,11 @@ export default function LogInScreen() {
     control,
     handleSubmit,
     setError,
-    reset,
-    watch,
     formState: { errors, isSubmitting },
   } = useForm<FormType>({
     resolver: zodResolver(logInSchema),
     reValidateMode: 'onSubmit',
   });
-
-  const email = watch('email');
 
   const onSubmit: SubmitHandler<FormType> = async (data: FormType) => {
     const { error } = await supabase.auth.signInWithPassword({
@@ -88,18 +84,9 @@ export default function LogInScreen() {
                 style={styles.input}
                 keyboardType="email-address"
                 textContentType="emailAddress"
-                spellCheck={false}
+                autoCorrect={false}
               />
             </View>
-
-            {email && (
-              <TouchableOpacity
-                onPress={() => reset({ email: '' })}
-                className="absolute right-5"
-              >
-                <CircleX color={isDark ? white : black} size={18} />
-              </TouchableOpacity>
-            )}
           </View>
         </View>
 
@@ -118,7 +105,7 @@ export default function LogInScreen() {
                 style={styles.input}
                 keyboardType="ascii-capable"
                 textContentType="password"
-                spellCheck={false}
+                autoCorrect={false}
               />
             </View>
 
