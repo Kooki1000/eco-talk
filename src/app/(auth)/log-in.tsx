@@ -103,7 +103,9 @@ export default function LogInScreen() {
                 secureTextEntry={!isPasswordVisible}
                 error={errors.password?.message}
                 style={styles.input}
-                keyboardType="ascii-capable"
+                keyboardType={
+                  Platform.OS === 'ios' ? 'ascii-capable' : 'default'
+                }
                 textContentType="password"
                 autoCorrect={false}
               />

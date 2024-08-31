@@ -44,7 +44,7 @@ const Banner = ({ profile, style, className }: Props) => {
               />
             ) : (
               <CircleUserRound
-                size={36}
+                size={72}
                 color={isDark ? white : black}
                 strokeWidth={1}
               />

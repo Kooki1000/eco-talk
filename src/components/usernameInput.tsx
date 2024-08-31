@@ -71,7 +71,7 @@ const UsernameInput = ({ profile }: UsernameInputProps) => {
   };
 
   return (
-    <View className="ml-4 flex-row items-center">
+    <View className="ml-6 flex-row items-center">
       <View className="mr-3">
         <Input
           ref={inputRef}
