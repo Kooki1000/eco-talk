@@ -3,13 +3,20 @@ import { ImageBackground } from 'expo-image';
 import * as ImagePicker from 'expo-image-picker';
 import { Camera, Check, CircleUserRound, Pencil, X } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
-import { useMemo, useRef, useState } from 'react';
-import { Pressable, StyleSheet, View, type ViewProps } from 'react-native';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import {
+  Alert,
+  Pressable,
+  StyleSheet,
+  View,
+  type ViewProps,
+} from 'react-native';
 import type { TextInput } from 'react-native-gesture-handler';
 import { twMerge } from 'tailwind-merge';
 
 import { useUpdateAvatar } from '@/api/update-avatar';
 import { uploadAvatar } from '@/api/upload-image';
+import { translate } from '@/i18n';
 import type { Tables } from '@/types/database.types';
 
 import { Image, Input } from './obytes';
@@ -25,11 +32,16 @@ const Banner = ({ profile, style, className }: Props) => {
   const isDark = colorScheme === 'dark';
 
   const [editable, setEditable] = useState(false);
+  const [username, setUsername] = useState(profile.username ?? '');
   const inputRef = useRef<TextInput>(null);
 
   const ViewStyle = useMemo(() => twMerge('w-full', className), [className]);
 
   const { mutate: updateAvatar } = useUpdateAvatar();
+
+  useEffect(() => {
+    setUsername(profile.username ?? '');
+  }, [profile.username]);
 
   const handleImagePickerPress = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
@@ -53,17 +65,25 @@ const Banner = ({ profile, style, className }: Props) => {
     }
   };
 
-  const handleCancel = () => {
-    inputRef.current?.blur();
-    setEditable(false);
-  };
-
   const handlePencilPress = () => {
     setEditable(!editable);
 
     setTimeout(() => {
       inputRef.current?.focus();
     }, 0);
+  };
+
+  const handleCancel = () => {
+    inputRef.current?.blur();
+    setEditable(false);
+    setUsername(profile.username ?? '');
+  };
+
+  const updateUsername = () => {
+    if (username.length < 3) {
+      Alert.alert(translate('profile.usernameLength'));
+      return;
+    }
   };
 
   return (
@@ -105,25 +125,28 @@ const Banner = ({ profile, style, className }: Props) => {
             <View className="mr-3">
               <Input
                 ref={inputRef}
-                className="text-xl font-bold"
-                defaultValue={profile.username ?? ''}
-                editable={editable}
-                maxLength={12}
+                className="text-xl font-bold dark:text-neutral-100"
+                value={username}
+                onChangeText={setUsername}
+                maxLength={16}
               />
             </View>
 
             {!editable ? (
               <Pencil
+                size={24}
                 color={isDark ? white : black}
                 onPress={handlePencilPress}
               />
             ) : (
               <View className="flex-row">
                 <Pressable onPress={handleCancel}>
-                  <X color={isDark ? white : black} size={24} />
+                  <X size={24} color={isDark ? white : black} />
                 </Pressable>
 
-                <Check color={'red'} />
+                <Pressable onPress={updateUsername}>
+                  <Check size={24} color={'red'} />
+                </Pressable>
               </View>
             )}
           </View>

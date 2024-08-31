@@ -192,7 +192,8 @@
       "language": "Language",
       "theme": "Theme"
     },
-    "title": "General"
+    "title": "General",
+    "usernameLength": "Username must be at least 3 characters."
   },
   "requireAuth": {
     "cancel": "Cancel",
