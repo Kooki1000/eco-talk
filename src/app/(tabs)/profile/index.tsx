@@ -11,6 +11,7 @@ import { black, white } from '@/components/obytes/colors';
 import { AddressSelect } from '@/components/settings/addressSelect';
 import { LanguageSelect } from '@/components/settings/languageSelect';
 import { ThemeSelect } from '@/components/settings/themeSelect';
+import { useAuth } from '@/providers/auth-provider';
 
 export default function ProfileScreen() {
   const insets = useSafeAreaInsets();
