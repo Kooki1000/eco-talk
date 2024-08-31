@@ -23,8 +23,6 @@ const Banner = ({ profile, style, className }: Props) => {
 
   const ViewStyle = useMemo(() => twMerge('w-full', className), [className]);
 
-  console.log(profile.avatar_url);
-
   return (
     <View className={ViewStyle} style={style}>
       <ImageBackground
