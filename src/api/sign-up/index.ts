@@ -32,7 +32,7 @@ export const useSignUp = () => {
         .eq('id', userData.user?.id)
         .select();
 
-      if (error || !profileData) {
+      if (error) {
         throw new Error('signUp.queryError');
       }
 

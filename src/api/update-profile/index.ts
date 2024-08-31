@@ -37,7 +37,7 @@ export const useUpdateAvatar = () => {
     mutationFn: async ({ userId, img_url }: UpdateAvatarArgs) => {
       const { data, error } = await supabase
         .from('profiles')
-        .update({ avatar: img_url })
+        .update({ avatar_url: img_url })
         .eq('id', userId)
         .select()
         .single();

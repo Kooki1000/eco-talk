@@ -5,12 +5,15 @@ import { Pressable, StyleSheet } from 'react-native';
 
 import { useUpdateAvatar } from '@/api/update-profile';
 import { uploadAvatar } from '@/api/upload-image';
+import { useAuthStore } from '@/stores/useAuthStore';
 
 import { black, white } from './obytes/colors';
 
 const AvatarPicker = ({ userId }: { userId: string }) => {
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
+
+  const setProfile = useAuthStore((state) => state.setProfile);
 
   const { mutate: updateAvatar } = useUpdateAvatar();
 
@@ -28,8 +31,8 @@ const AvatarPicker = ({ userId }: { userId: string }) => {
       updateAvatar(
         { userId: userId, img_url: imagePath },
         {
-          onSuccess: () => {
-            // TODO: Update profile in store
+          onSuccess: (profile) => {
+            setProfile(profile);
           },
         }
       );

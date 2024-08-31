@@ -214,7 +214,7 @@ export default function SignUpScreen() {
 
         <Text
           tx="signUp.logIn"
-          className="mt-3 text-center text-sm text-blue-500 dark:bg-blue-700"
+          className="mt-3 text-center text-sm text-blue-500 dark:underline"
           onPress={() => router.replace('/(auth)/log-in')}
         />
       </KeyboardAvoidingView>

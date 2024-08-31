@@ -7,6 +7,7 @@ import { Alert, Pressable, View } from 'react-native';
 
 import { useUpdateUsername } from '@/api/update-profile';
 import { translate } from '@/i18n';
+import { useAuthStore } from '@/stores/useAuthStore';
 import type { Tables } from '@/types/database.types';
 
 import { Input } from './obytes';
@@ -19,6 +20,8 @@ interface UsernameInputProps {
 const UsernameInput = ({ profile }: UsernameInputProps) => {
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
+
+  const setProfile = useAuthStore((state) => state.setProfile);
 
   const [editable, setEditable] = useState(false);
   const [username, setUsername] = useState(profile.username ?? '');
@@ -53,11 +56,11 @@ const UsernameInput = ({ profile }: UsernameInputProps) => {
     updateUsername(
       { userId: profile.id, username },
       {
-        onSuccess: () => {
+        onSuccess: (data) => {
           setEditable(false);
           inputRef.current?.blur();
 
-          // TODO: Update profile in store
+          setProfile(data);
         },
         onError: () => {
           Alert.alert(translate('profile.username.error'));
