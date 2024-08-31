@@ -23,7 +23,7 @@ export default function IndexScreen() {
   return (
     <View style={styles.container}>
       <Image
-        source={require('../../assets/images/logo.png')}
+        source={require('@assets/images/logo.png')}
         style={styles.image}
         contentFit="contain"
       />

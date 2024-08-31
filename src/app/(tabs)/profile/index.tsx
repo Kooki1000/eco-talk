@@ -13,7 +13,6 @@ import { black, white } from '@/components/obytes/colors';
 import { AddressSelect } from '@/components/settings/addressSelect';
 import { LanguageSelect } from '@/components/settings/languageSelect';
 import { ThemeSelect } from '@/components/settings/themeSelect';
-import { useAuth } from '@/providers/auth-provider';
 
 export default function ProfileScreen() {
   const insets = useSafeAreaInsets();
@@ -21,10 +20,6 @@ export default function ProfileScreen() {
 
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
-
-  const onAboutPress = () => {
-    router.navigate('/profile/about');
-  };
 
   return (
     <View
@@ -38,9 +33,9 @@ export default function ProfileScreen() {
       ) : (
         <View className="border-b-2 border-[#CBBDBD]">
           <Image
-            source={require('../../../../assets/images/banner.png')}
+            source={require('@assets/images/banner.png')}
             contentFit="cover"
-            style={{ height: 110, width: '100%' }}
+            style={{ height: 86, width: '100%' }}
           />
         </View>
       )}
@@ -57,7 +52,7 @@ export default function ProfileScreen() {
           <ThemeSelect />
 
           <Pressable
-            onPress={onAboutPress}
+            onPress={() => router.navigate('/profile/about')}
             className="mb-4 flex flex-row items-center"
           >
             <Info color={isDark ? white : black} size={28} />
@@ -79,13 +74,7 @@ export default function ProfileScreen() {
         </View>
 
         <View className="items-center">
-          {profile ? (
-            <>
-              <LogOutButton />
-            </>
-          ) : (
-            <LogInButton />
-          )}
+          {profile ? <LogOutButton /> : <LogInButton />}
         </View>
       </View>
     </View>
