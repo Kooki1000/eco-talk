@@ -67,7 +67,11 @@ export const uploadAvatar = async (
     .upload(filePath, decode(base64), { contentType });
 
   if (data) {
-    return data.path;
+    const { data: urlData } = supabase.storage
+      .from('avatars')
+      .getPublicUrl(data.fullPath);
+
+    return urlData.publicUrl;
   }
 
   return;
