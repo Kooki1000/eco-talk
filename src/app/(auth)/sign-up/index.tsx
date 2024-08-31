@@ -3,13 +3,14 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { router } from 'expo-router';
 import {
   CircleUserRound,
+  CircleX,
   Eye,
   EyeOff,
   KeyRound,
   Mail,
 } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 import {
@@ -46,6 +47,7 @@ export default function SignUpScreen() {
     control,
     handleSubmit,
     setError,
+    reset,
     watch,
     formState: { errors, isSubmitting },
   } = useForm<FormType>({
@@ -115,6 +117,15 @@ export default function SignUpScreen() {
               spellCheck={false}
             />
           </View>
+
+          {email && (
+            <TouchableOpacity
+              onPress={() => reset({ email: '' })}
+              className="absolute right-5"
+            >
+              <CircleX color={isDark ? white : black} size={18} />
+            </TouchableOpacity>
+          )}
         </View>
 
         {errors.email && (
