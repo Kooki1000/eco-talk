@@ -32,10 +32,6 @@ export default function LogInScreen() {
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
 
-  /* const onForgotPress = () => {
-    console.log('Forgot password');
-  }; */
-
   const {
     control,
     handleSubmit,
@@ -90,6 +86,9 @@ export default function LogInScreen() {
                 tx="logIn.enterEmail"
                 error={errors.email?.message}
                 style={styles.input}
+                keyboardType="email-address"
+                textContentType="emailAddress"
+                spellCheck={false}
               />
             </View>
 
@@ -117,6 +116,9 @@ export default function LogInScreen() {
                 secureTextEntry={!isPasswordVisible}
                 error={errors.password?.message}
                 style={styles.input}
+                keyboardType="ascii-capable"
+                textContentType="password"
+                spellCheck={false}
               />
             </View>
 

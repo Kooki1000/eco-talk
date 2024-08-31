@@ -3,7 +3,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { router } from 'expo-router';
 import {
   CircleUserRound,
-  CircleX,
   Eye,
   EyeOff,
   KeyRound,
@@ -87,6 +86,9 @@ export default function SignUpScreen() {
               tx="signUp.username"
               error={errors.username?.message}
               style={styles.input}
+              keyboardType="ascii-capable"
+              textContentType="username"
+              spellCheck={false}
             />
           </View>
         </View>
@@ -108,14 +110,11 @@ export default function SignUpScreen() {
               error={errors.email?.message}
               value={email}
               style={styles.input}
+              keyboardType="email-address"
+              textContentType="emailAddress"
+              spellCheck={false}
             />
           </View>
-
-          {email && (
-            <TouchableOpacity className="absolute right-5">
-              <CircleX color={isDark ? white : black} size={18} />
-            </TouchableOpacity>
-          )}
         </View>
 
         {errors.email && (
@@ -135,6 +134,9 @@ export default function SignUpScreen() {
               secureTextEntry={!isPasswordVisible}
               error={errors.password?.message}
               style={styles.input}
+              keyboardType="ascii-capable"
+              textContentType="newPassword"
+              spellCheck={false}
             />
           </View>
 
@@ -167,6 +169,9 @@ export default function SignUpScreen() {
               secureTextEntry={!isConfirmationVisible}
               error={errors.confirmation?.message}
               style={styles.input}
+              keyboardType="ascii-capable"
+              textContentType="newPassword"
+              spellCheck={false}
             />
           </View>
 
