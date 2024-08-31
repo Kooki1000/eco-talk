@@ -1,26 +1,16 @@
-/* eslint-disable max-lines-per-function */
 import { ImageBackground } from 'expo-image';
-import * as ImagePicker from 'expo-image-picker';
-import { Camera, Check, CircleUserRound, Pencil, X } from 'lucide-react-native';
+import { CircleUserRound } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
-import { useEffect, useMemo, useRef, useState } from 'react';
-import {
-  Alert,
-  Pressable,
-  StyleSheet,
-  View,
-  type ViewProps,
-} from 'react-native';
-import type { TextInput } from 'react-native-gesture-handler';
+import { useMemo } from 'react';
+import { StyleSheet, View, type ViewProps } from 'react-native';
 import { twMerge } from 'tailwind-merge';
 
-import { useUpdateAvatar, useUpdateUsername } from '@/api/update-profile';
-import { uploadAvatar } from '@/api/upload-image';
-import { translate } from '@/i18n';
 import type { Tables } from '@/types/database.types';
 
-import { Image, Input } from './obytes';
+import AvatarPicker from './avatarPicker';
+import { Image } from './obytes';
 import { black, white } from './obytes/colors';
+import UsernameInput from './usernameInput';
 
 interface Props extends ViewProps {
   profile: Tables<'profiles'>;
@@ -31,73 +21,7 @@ const Banner = ({ profile, style, className }: Props) => {
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
 
-  const [editable, setEditable] = useState(false);
-  const [username, setUsername] = useState(profile.username ?? '');
-  const inputRef = useRef<TextInput>(null);
-
   const ViewStyle = useMemo(() => twMerge('w-full', className), [className]);
-
-  const { mutate: updateAvatar } = useUpdateAvatar();
-  const { mutate: updateUsername } = useUpdateUsername();
-
-  useEffect(() => {
-    setUsername(profile.username ?? '');
-  }, [profile.username]);
-
-  const handleImagePickerPress = async () => {
-    let result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.Images,
-      allowsEditing: true,
-      quality: 1,
-    });
-
-    if (!result.canceled) {
-      const imagePath = await uploadAvatar(result.assets[0].uri);
-      if (!imagePath) return;
-
-      updateAvatar(
-        { userId: profile.id, img_url: imagePath },
-        {
-          onSuccess: () => {
-            // TODO: Update profile in store
-          },
-        }
-      );
-    }
-  };
-
-  const handlePencilPress = () => {
-    setEditable(!editable);
-
-    setTimeout(() => {
-      inputRef.current?.focus();
-    }, 0);
-  };
-
-  const handleCancel = () => {
-    inputRef.current?.blur();
-    setEditable(false);
-    setUsername(profile.username ?? '');
-  };
-
-  const handleUpdateUsername = () => {
-    if (username.length < 3) {
-      Alert.alert(translate('profile.usernameLength'));
-      return;
-    }
-
-    updateUsername(
-      { userId: profile.id, username },
-      {
-        onSuccess: () => {
-          setEditable(false);
-          inputRef.current?.blur();
-
-          // TODO: Update profile in store
-        },
-      }
-    );
-  };
 
   return (
     <View className={ViewStyle} style={style}>
@@ -126,43 +50,10 @@ const Banner = ({ profile, style, className }: Props) => {
               />
             )}
 
-            <Pressable
-              onPress={handleImagePickerPress}
-              style={styles.cameraIcon}
-            >
-              <Camera size={30} color={isDark ? white : black} />
-            </Pressable>
+            <AvatarPicker userId={profile.id} />
           </View>
 
-          <View className="ml-4 flex-row items-center">
-            <View className="mr-3">
-              <Input
-                ref={inputRef}
-                className="text-xl font-bold dark:text-neutral-100"
-                value={username}
-                onChangeText={setUsername}
-                maxLength={16}
-              />
-            </View>
-
-            {!editable ? (
-              <Pencil
-                size={24}
-                color={isDark ? white : black}
-                onPress={handlePencilPress}
-              />
-            ) : (
-              <View className="flex-row">
-                <Pressable onPress={handleCancel}>
-                  <X size={24} color={isDark ? white : black} />
-                </Pressable>
-
-                <Pressable onPress={handleUpdateUsername}>
-                  <Check size={24} color={'red'} />
-                </Pressable>
-              </View>
-            )}
-          </View>
+          <UsernameInput profile={profile} />
         </View>
       </ImageBackground>
     </View>
@@ -172,11 +63,6 @@ const Banner = ({ profile, style, className }: Props) => {
 const styles = StyleSheet.create({
   iconContainer: {
     position: 'relative',
-  },
-  cameraIcon: {
-    position: 'absolute',
-    right: -16,
-    bottom: -16,
   },
 });
 

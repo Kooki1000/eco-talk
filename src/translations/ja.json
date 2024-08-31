@@ -193,7 +193,10 @@
       "theme": "テーマ"
     },
     "title": "設定",
-    "usernameLength": "ユーザー名は3文字以上で設定してください"
+    "username": {
+      "error": "ユーザー名の変更に失敗しました。",
+      "length": "ユーザー名は3文字以上で設定してください。"
+    }
   },
   "requireAuth": {
     "cancel": "戻る",
