@@ -2,14 +2,11 @@
 import { router } from 'expo-router';
 import { Info, UserRound } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
+import React from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import {
-  DeleteAccountButton,
-  LogInButton,
-  LogOutButton,
-} from '@/components/auth';
+import { LogInButton, LogOutButton } from '@/components/auth';
 import Banner from '@/components/banner';
 import { Image, Text } from '@/components/obytes';
 import { black, white } from '@/components/obytes/colors';
@@ -26,7 +23,6 @@ export default function ProfileScreen() {
   const isDark = colorScheme === 'dark';
 
   const onAboutPress = () => {
-    console.log('About');
     router.navigate('/profile/about');
   };
 
@@ -86,7 +82,6 @@ export default function ProfileScreen() {
           {profile ? (
             <>
               <LogOutButton />
-              <DeleteAccountButton />
             </>
           ) : (
             <LogInButton />

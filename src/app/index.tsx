@@ -6,12 +6,10 @@ import { Button, Image, Text } from '@/components/obytes';
 
 export default function index() {
   const onLogIn = () => {
-    console.log('Logged in');
     router.navigate('/(auth)/log-in');
   };
 
   const onSignUp = () => {
-    console.log('Signed up');
     router.navigate('/(auth)/sign-up');
   };
 

@@ -52,15 +52,15 @@ export default function SignUpScreen() {
     reValidateMode: 'onSubmit',
   });
 
-  const onSubmit: SubmitHandler<FormType> = async (data: FormType) => {
-    try {
-      await signUp(data);
-      router.navigate('/(tabs)');
-    } catch (e) {
-      setError('root', {
-        message: translate('signUp.error'),
-      });
-    }
+  const onSubmit: SubmitHandler<FormType> = (data: FormType) => {
+    signUp(data, {
+      onSuccess: () => router.navigate('/(tabs)'),
+      onError: () => {
+        setError('root', {
+          message: translate('signUp.error'),
+        });
+      },
+    });
   };
 
   return (

@@ -33,7 +33,7 @@ export const useSignUp = () => {
         .select();
 
       if (error || !profileData) {
-        throw new Error('signUp.error');
+        throw new Error('signUp.queryError');
       }
 
       setProfile(profileData as unknown as Tables<'profiles'>);
