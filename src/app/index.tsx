@@ -2,16 +2,11 @@ import { Link, Redirect, router } from 'expo-router';
 import { StyleSheet } from 'react-native';
 import { View } from 'react-native';
 
-import LoadingIndicator from '@/components/loadingIndicator';
 import { Button, Image, Text } from '@/components/obytes';
 import { useAuth } from '@/providers/auth-provider';
 
 export default function IndexScreen() {
-  const { profile, loading } = useAuth();
-
-  if (loading) {
-    return <LoadingIndicator />;
-  }
+  const { profile } = useAuth();
 
   if (profile) {
     return <Redirect href="/(tabs)" />;
