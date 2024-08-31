@@ -12,18 +12,17 @@ import { black, white } from '@/components/obytes/colors';
 import { AddressSelect } from '@/components/settings/addressSelect';
 import { LanguageSelect } from '@/components/settings/languageSelect';
 import { ThemeSelect } from '@/components/settings/themeSelect';
-import { useAuth } from '@/providers/auth-provider';
 
 export default function ProfileScreen() {
   const insets = useSafeAreaInsets();
-  const { profile } = useAuth();
+  /* const { profile } = useAuth(); */
 
-  /* const profile = {
+  const profile = {
     avatar: 'https://picsum.photos/200',
     id: '12345',
     updated_at: '2023-10-01T12:00:00Z',
     username: 'john_doe',
-  }; */
+  };
 
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
@@ -42,7 +41,7 @@ export default function ProfileScreen() {
           <Image
             source={require('@assets/images/banner.png')}
             contentFit="cover"
-            style={{ height: 110, width: '100%' }}
+            style={{ height: 86, width: '100%' }}
           />
         </View>
       )}

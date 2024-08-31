@@ -1,17 +1,18 @@
 /* eslint-disable max-lines-per-function */
 import { ImageBackground } from 'expo-image';
 import * as ImagePicker from 'expo-image-picker';
-import { Camera, CircleUserRound, Pencil } from 'lucide-react-native';
+import { Camera, Check, CircleUserRound, Pencil, X } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
-import { useMemo } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { Pressable, StyleSheet, View, type ViewProps } from 'react-native';
+import type { TextInput } from 'react-native-gesture-handler';
 import { twMerge } from 'tailwind-merge';
 
 import { useUpdateAvatar } from '@/api/update-avatar';
 import { uploadAvatar } from '@/api/upload-image';
 import type { Tables } from '@/types/database.types';
 
-import { Image, Text } from './obytes';
+import { Image, Input } from './obytes';
 import { black, white } from './obytes/colors';
 
 interface Props extends ViewProps {
@@ -22,6 +23,9 @@ interface Props extends ViewProps {
 const Banner = ({ profile, style, className }: Props) => {
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
+
+  const [editable, setEditable] = useState(false);
+  const inputRef = useRef<TextInput>(null);
 
   const ViewStyle = useMemo(() => twMerge('w-full', className), [className]);
 
@@ -49,6 +53,19 @@ const Banner = ({ profile, style, className }: Props) => {
     }
   };
 
+  const handleCancel = () => {
+    inputRef.current?.blur();
+    setEditable(false);
+  };
+
+  const handlePencilPress = () => {
+    setEditable(!editable);
+
+    setTimeout(() => {
+      inputRef.current?.focus();
+    }, 0);
+  };
+
   return (
     <View className={ViewStyle} style={style}>
       <ImageBackground
@@ -62,15 +79,15 @@ const Banner = ({ profile, style, className }: Props) => {
                 source={{ uri: profile.avatar }}
                 cachePolicy={'disk'}
                 style={{
-                  height: 96,
-                  width: 96,
-                  borderRadius: 48,
+                  height: 72,
+                  width: 72,
+                  borderRadius: 36,
                   borderWidth: 2,
                 }}
               />
             ) : (
               <CircleUserRound
-                size={96}
+                size={36}
                 color={isDark ? white : black}
                 strokeWidth={1}
               />
@@ -84,9 +101,31 @@ const Banner = ({ profile, style, className }: Props) => {
             </Pressable>
           </View>
 
-          <View className="ml-16 flex-row items-center">
-            <Text className="mr-3 text-2xl font-bold">{profile.username}</Text>
-            <Pencil color={isDark ? white : black} />
+          <View className="ml-4 flex-row items-center">
+            <View className="mr-3">
+              <Input
+                ref={inputRef}
+                className="text-xl font-bold"
+                defaultValue={profile.username ?? ''}
+                editable={editable}
+                maxLength={12}
+              />
+            </View>
+
+            {!editable ? (
+              <Pencil
+                color={isDark ? white : black}
+                onPress={handlePencilPress}
+              />
+            ) : (
+              <View className="flex-row">
+                <Pressable onPress={handleCancel}>
+                  <X color={isDark ? white : black} size={24} />
+                </Pressable>
+
+                <Check color={'red'} />
+              </View>
+            )}
           </View>
         </View>
       </ImageBackground>
@@ -100,8 +139,8 @@ const styles = StyleSheet.create({
   },
   cameraIcon: {
     position: 'absolute',
-    right: -12,
-    bottom: -12,
+    right: -16,
+    bottom: -16,
   },
 });
 
