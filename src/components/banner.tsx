@@ -31,9 +31,9 @@ const Banner = ({ profile, style, className }: Props) => {
       >
         <View className="flex-row border-b-2 border-[#CBBDBD]">
           <View style={styles.iconContainer} className="mb-4 ml-2">
-            {profile.avatar ? (
+            {profile.avatar_url ? (
               <Image
-                source={{ uri: profile.avatar }}
+                source={{ uri: profile.avatar_url }}
                 cachePolicy={'disk'}
                 style={{
                   height: 72,
@@ -44,7 +44,7 @@ const Banner = ({ profile, style, className }: Props) => {
               />
             ) : (
               <CircleUserRound
-                size={36}
+                size={72}
                 color={isDark ? white : black}
                 strokeWidth={1}
               />
