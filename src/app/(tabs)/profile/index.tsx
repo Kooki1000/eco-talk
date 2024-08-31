@@ -1,8 +1,6 @@
-/* eslint-disable max-lines-per-function */
 import { router } from 'expo-router';
 import { Info, UserRound } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
-import React from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
