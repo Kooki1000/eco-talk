@@ -21,10 +21,10 @@ const UserInfoHeader = ({ style, className }: Props) => {
     <View style={[style, styles.container]} className={className}>
       <View style={styles.leftContainer}>
         <Link href={'/(tabs)/profile'} asChild>
-          {profile?.avatar ? (
+          {profile?.avatar_url ? (
             <Link href={'/(tabs)/profile'} asChild>
               <Image
-                source={{ uri: profile.avatar }}
+                source={{ uri: profile.avatar_url }}
                 contentFit="cover"
                 style={{ width: 40, height: 40, borderRadius: 20 }}
                 cachePolicy={'disk'}

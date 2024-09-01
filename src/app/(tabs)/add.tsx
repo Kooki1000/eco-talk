@@ -129,9 +129,9 @@ export default function AddPostScreen() {
 
         <ScrollView contentContainerStyle={styles.content}>
           <View className="flex-row items-center justify-between">
-            {profile?.avatar ? (
+            {profile?.avatar_url ? (
               <Image
-                source={{ uri: profile.avatar }}
+                source={{ uri: profile.avatar_url }}
                 style={{
                   width: 48,
                   height: 48,
