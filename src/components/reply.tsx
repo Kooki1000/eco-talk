@@ -81,12 +81,12 @@ const ReplyComponent = ({ reply, variant, onReplyPress, ...props }: Props) => {
     <View className="ml-12 mt-4 bg-transparent" {...props}>
       {isAuthor && <DeleteButton type="reply" id={reply.id} />}
 
-      <View className="mt-4 flex-row items-center justify-between">
+      <View className="mt-4">
         <View className="flex-row items-center">
           {reply.profiles.avatar_url ? (
             <Image
               source={{ uri: reply.profiles.avatar_url }}
-              style={{ width: 24, height: 25, borderRadius: 12 }}
+              style={{ width: 24, height: 24, borderRadius: 12 }}
             />
           ) : (
             <CircleUserRound
@@ -95,13 +95,14 @@ const ReplyComponent = ({ reply, variant, onReplyPress, ...props }: Props) => {
               strokeWidth={1}
             />
           )}
-
-          <Text className="ml-2 text-lg">{reply.profiles.username}</Text>
+          <Text className="ml-2">{reply.profiles.username}</Text>
         </View>
 
-        <Text className="mr-4 text-sm">
-          {dayjs.utc(reply.created_at).format('LLL')}
-        </Text>
+        <View className="flex-row justify-end">
+          <Text className="text-sm">
+            {dayjs.utc(reply.created_at).format('LLL')}
+          </Text>
+        </View>
       </View>
 
       <Text className="my-4 px-4">{reply.content}</Text>

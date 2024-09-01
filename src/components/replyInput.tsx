@@ -4,8 +4,9 @@ import { useEffect, useState } from 'react';
 import type { TextInput } from 'react-native';
 import { StyleSheet, View } from 'react-native';
 
-import { Input } from '@/components/obytes';
+import { Image, Input } from '@/components/obytes';
 import { black, white } from '@/components/obytes/colors';
+import { useAuth } from '@/providers/auth-provider';
 
 interface KeyboardInputProps {
   replyId: string | null;
@@ -13,11 +14,13 @@ interface KeyboardInputProps {
 }
 
 const ReplyInput: React.FC<KeyboardInputProps> = ({ replyId, inputRef }) => {
-  const [inputValue, setInputValue] = useState('');
-  const [inputDisabled, setInputDisabled] = useState(true);
+  const { profile } = useAuth();
 
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
+
+  const [inputValue, setInputValue] = useState('');
+  const [inputDisabled, setInputDisabled] = useState(true);
 
   useEffect(() => {
     if (replyId) {
@@ -42,11 +45,18 @@ const ReplyInput: React.FC<KeyboardInputProps> = ({ replyId, inputRef }) => {
       className="flex-row border-t-2 border-[#CBBDBD] bg-white px-2 py-3 dark:bg-black"
     >
       <View className="mr-2">
-        <CircleUserRound
-          color={isDark ? white : black}
-          size={36}
-          strokeWidth={1}
-        />
+        {profile?.avatar_url ? (
+          <Image
+            source={{ uri: profile.avatar_url }}
+            style={{ width: 36, height: 36, borderRadius: 18 }}
+          />
+        ) : (
+          <CircleUserRound
+            color={isDark ? white : black}
+            size={36}
+            strokeWidth={1}
+          />
+        )}
       </View>
 
       <View style={{ flex: 1 }}>
