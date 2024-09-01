@@ -120,7 +120,7 @@ export default function PostsScreen() {
           />
         </View>
 
-        <ReplyInput inputRef={inputRef} replyId={replyId} />
+        <ReplyInput inputRef={inputRef} postId={replyId} />
       </View>
     </KeyboardAvoidingView>
   );

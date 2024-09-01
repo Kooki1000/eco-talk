@@ -133,7 +133,7 @@ const ReplyComponent = ({ reply, variant, onReplyPress, ...props }: Props) => {
       <View className="ml-8 flex-row">
         <Text
           tx="post.reply"
-          onPress={() => onReplyPress(`Reply ${reply.id}`)}
+          onPress={() => onReplyPress(reply.id)}
           className="mr-6"
         />
 

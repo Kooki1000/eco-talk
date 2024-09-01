@@ -4,39 +4,51 @@ import { useEffect, useState } from 'react';
 import type { TextInput } from 'react-native';
 import { StyleSheet, View } from 'react-native';
 
+import { useCreateReply } from '@/api/replies';
 import { Image, Input } from '@/components/obytes';
 import { black, white } from '@/components/obytes/colors';
 import { useAuth } from '@/providers/auth-provider';
 
 interface KeyboardInputProps {
-  replyId: string | null;
+  postId: string | null;
   inputRef: React.RefObject<TextInput>;
 }
 
-const ReplyInput: React.FC<KeyboardInputProps> = ({ replyId, inputRef }) => {
+const ReplyInput: React.FC<KeyboardInputProps> = ({ postId, inputRef }) => {
   const { profile } = useAuth();
 
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
 
+  const { mutate: createReply } = useCreateReply();
+
   const [inputValue, setInputValue] = useState('');
   const [inputDisabled, setInputDisabled] = useState(true);
 
   useEffect(() => {
-    if (replyId) {
+    if (postId) {
       setInputDisabled(false);
     }
-  }, [replyId]);
+  }, [postId]);
 
   const handleSubmit = () => {
-    if (!inputValue.trim()) {
+    if (!inputValue.trim() || !profile || !postId) {
       return;
     }
 
-    console.log(`Replying to: ${replyId} with: ${inputValue}`);
+    createReply(
+      { userId: profile.id, content: inputValue, postId: postId },
+      {
+        onSuccess: () => {
+          if (inputRef.current) {
+            inputRef.current.blur();
+          }
 
-    setInputValue('');
-    setInputDisabled(true);
+          setInputValue('');
+          setInputDisabled(true);
+        },
+      }
+    );
   };
 
   return (

@@ -168,7 +168,7 @@ const PostComponent = ({
       <View className="ml-8 flex-row">
         <Text
           tx="post.reply"
-          onPress={() => onReplyPress(`Post ${post.id}`)}
+          onPress={() => onReplyPress(post.id)}
           className="mr-6"
         />
 
@@ -184,7 +184,7 @@ const PostComponent = ({
                   key={reply.id}
                   variant={variant}
                   reply={reply}
-                  onReplyPress={onReplyPress}
+                  onReplyPress={() => onReplyPress(post.id)}
                 />
               ))}
             </>
