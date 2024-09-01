@@ -3,7 +3,7 @@ import { useColorScheme } from 'nativewind';
 import { memo } from 'react';
 import { Alert, TouchableOpacity } from 'react-native';
 
-import { useLikePost, useUnlikePost } from '@/api/likes';
+import { useLikeReply, useUnlikeReply } from '@/api/likes';
 import { translate } from '@/i18n';
 import { useAuth } from '@/providers/auth-provider';
 import type { DetailedReply } from '@/types/types';
@@ -14,8 +14,8 @@ import { black, white } from './obytes/colors';
 const LikeReplyComponent = ({ reply }: { reply: DetailedReply }) => {
   const { profile } = useAuth();
 
-  const { mutate: likePost } = useLikePost();
-  const { mutate: unlikePost } = useUnlikePost();
+  const { mutate: likeReply } = useLikeReply();
+  const { mutate: unlikeReply } = useUnlikeReply();
 
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
@@ -29,8 +29,8 @@ const LikeReplyComponent = ({ reply }: { reply: DetailedReply }) => {
     }
 
     if (reply.isLiked) {
-      unlikePost(
-        { userId: profile?.id ?? '', postId: reply.id },
+      unlikeReply(
+        { userId: profile?.id ?? '', replyId: reply.id },
         {
           onSuccess: () => {
             reply.isLiked = false;
@@ -42,8 +42,8 @@ const LikeReplyComponent = ({ reply }: { reply: DetailedReply }) => {
       return;
     }
 
-    likePost(
-      { userId: profile?.id ?? '', postId: reply.id },
+    likeReply(
+      { userId: profile?.id ?? '', replyId: reply.id },
       {
         onSuccess: () => {
           reply.isLiked = true;

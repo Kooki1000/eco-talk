@@ -1,9 +1,11 @@
+import { useQueryClient } from '@tanstack/react-query';
 import { Search } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import { useState } from 'react';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
 
 import { sortOptions } from '@/constants/options/options';
+import { QUERY_KEYS } from '@/constants/queryKeys';
 import { translate } from '@/i18n';
 
 import { Select } from '../input/customSelect';
@@ -14,9 +16,19 @@ const PostsHeader = ({ postCount }: { postCount: number }) => {
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
 
+  const queryClient = useQueryClient();
+
   const [value, setValue] = useState<string | undefined>();
 
-  const onSelectPress = () => {
+  const onSelectPress = (option: string) => {
+    setValue(option);
+    queryClient.invalidateQueries({
+      queryKey: [QUERY_KEYS.POSTS, option],
+      exact: true,
+    });
+  };
+
+  const onSearchPress = () => {
     console.log('Search pressed');
   };
 
@@ -30,8 +42,7 @@ const PostsHeader = ({ postCount }: { postCount: number }) => {
           options={sortOptions}
           value={value}
           onSelect={(option) => {
-            console.log('Selected:', option);
-            setValue(option as string);
+            onSelectPress(option as string);
           }}
         />
 
@@ -40,7 +51,7 @@ const PostsHeader = ({ postCount }: { postCount: number }) => {
         </Text>
 
         <TouchableOpacity
-          onPress={onSelectPress}
+          onPress={onSearchPress}
           className="flex-row justify-center"
         >
           <Search color={isDark ? white : black} />
