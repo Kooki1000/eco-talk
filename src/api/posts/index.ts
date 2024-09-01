@@ -1,43 +1,11 @@
 import type { PostgrestError } from '@supabase/supabase-js';
-import { useMutation, useQuery } from '@tanstack/react-query';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
 import { CHIYODA_ID, variantColors } from '@/constants';
 import { QUERY_KEYS } from '@/constants/queryKeys';
 import { supabase } from '@/lib/supabase';
 import type { Tables } from '@/types/database.types';
 import type { DetailedPost } from '@/types/types';
-
-interface CreatePostData {
-  userId: string;
-  cityId?: string;
-  content: string;
-  img_url?: string;
-}
-
-export const useCreatePost = () => {
-  return useMutation({
-    async mutationFn(data: CreatePostData) {
-      const { userId, content, img_url, cityId = CHIYODA_ID } = data;
-
-      const randomVariant =
-        variantColors[Math.floor(Math.random() * variantColors.length)];
-
-      const { error } = await supabase.from('posts').insert({
-        author: userId,
-        city: cityId,
-        content,
-        img_url,
-        variant: randomVariant,
-      });
-
-      if (error) {
-        throw new Error(error.message);
-      }
-
-      return;
-    },
-  });
-};
 
 interface FetchPostsData {
   userId?: string;
@@ -81,6 +49,59 @@ export const useFetchPosts = ({
         ...post,
         isLiked: likesData.some((like) => like.post === post.id),
       })) as DetailedPost[];
+    },
+  });
+};
+
+interface CreatePostData {
+  userId: string;
+  cityId?: string;
+  content: string;
+  img_url?: string;
+}
+
+export const useCreatePost = () => {
+  return useMutation({
+    async mutationFn(data: CreatePostData) {
+      const { userId, content, img_url, cityId = CHIYODA_ID } = data;
+
+      const randomVariant =
+        variantColors[Math.floor(Math.random() * variantColors.length)];
+
+      const { error } = await supabase.from('posts').insert({
+        author: userId,
+        city: cityId,
+        content,
+        img_url,
+        variant: randomVariant,
+      });
+
+      if (error) {
+        throw new Error(error.message);
+      }
+
+      return;
+    },
+  });
+};
+
+export const useDeletePost = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    async mutationFn(postId: string) {
+      const { error } = await supabase.from('posts').delete().eq('id', postId);
+
+      if (error) {
+        throw new Error(error.message);
+      }
+
+      return;
+    },
+    async onSuccess() {
+      await queryClient.invalidateQueries({
+        queryKey: [QUERY_KEYS.POSTS],
+      });
     },
   });
 };

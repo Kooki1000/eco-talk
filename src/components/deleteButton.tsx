@@ -2,6 +2,8 @@ import { X } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import { Alert, Platform, Pressable, StyleSheet } from 'react-native';
 
+import { useDeletePost } from '@/api/posts';
+import { useDeleteReply } from '@/api/replies';
 import { translate } from '@/i18n';
 
 import { black, white } from './obytes/colors';
@@ -14,6 +16,9 @@ interface DeleteButtonProps {
 const DeleteButton = ({ type, id }: DeleteButtonProps) => {
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
+
+  const { mutate: deletePost } = useDeletePost();
+  const { mutate: deleteReply } = useDeleteReply();
 
   const showDeleteConfirmation = () => {
     Alert.alert(
@@ -28,22 +33,14 @@ const DeleteButton = ({ type, id }: DeleteButtonProps) => {
           style: Platform.OS === 'ios' ? 'destructive' : undefined,
           onPress: () => {
             if (type === 'post') {
-              onPostDelete();
+              deletePost(id);
             } else {
-              onReplyDelete();
+              deleteReply(id);
             }
           },
         },
       ]
     );
-  };
-
-  const onPostDelete = () => {
-    console.log(`Delete post ${id}`);
-  };
-
-  const onReplyDelete = () => {
-    console.log(`Delete reply ${id}`);
   };
 
   return (

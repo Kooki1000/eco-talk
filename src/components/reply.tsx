@@ -98,11 +98,9 @@ const ReplyComponent = ({ reply, variant, onReplyPress, ...props }: Props) => {
           <Text className="ml-2">{reply.profiles.username}</Text>
         </View>
 
-        <View className="flex-row justify-end">
-          <Text className="text-sm">
-            {dayjs.utc(reply.created_at).format('LLL')}
-          </Text>
-        </View>
+        <Text className="ml-12 text-sm">
+          {dayjs.utc(reply.created_at).format('LLL')}
+        </Text>
       </View>
 
       <Text className="my-4 px-4">{reply.content}</Text>

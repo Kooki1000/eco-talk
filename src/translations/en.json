@@ -203,11 +203,11 @@
   },
   "requireAuth": {
     "cancel": "Cancel",
+    "like": "You must be signed in to like.",
     "move": "Sign In",
     "post": "You must be signed in to post.",
     "reply": "You must be signed in to reply.",
-    "warning": "Sign In is Required",
-    "like": "You must be signed in to like."
+    "warning": "Sign In is Required"
   },
   "signUp": {
     "afterPolicy": ".",
