@@ -10,37 +10,20 @@ import type { DetailedPost, DetailedReply } from '@/types/types';
 interface FetchPostsData {
   userId?: string;
   cityId?: string;
-  option?: 'newest' | 'oldest' | 'most-popular';
 }
 
 export const useFetchPosts = ({
   userId,
   cityId = CHIYODA_ID,
-  option = 'newest',
 }: FetchPostsData = {}) => {
   return useQuery({
-    queryKey: [QUERY_KEYS.POSTS, option],
+    queryKey: [QUERY_KEYS.POSTS, cityId],
     queryFn: async () => {
-      let query = supabase
+      const { data: postsData, error: postsError } = await supabase
         .from('posts')
         .select('*, profiles(*), replies(*, profiles(*))')
-        .eq('city', cityId);
-
-      switch (option) {
-        case 'oldest':
-          query = query.order('created_at', { ascending: true });
-          break;
-        case 'most-popular':
-          query = query.order('like_count', { ascending: false });
-          break;
-        case 'newest':
-          query = query.order('created_at', { ascending: false });
-          break;
-        default:
-          throw new Error(`Unknown sorting option: ${option}`);
-      }
-
-      const { data: postsData, error: postsError } = await query;
+        .eq('city', cityId)
+        .order('created_at', { ascending: false });
 
       if (postsError) {
         throw new Error(postsError.message);
