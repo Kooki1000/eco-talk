@@ -10,7 +10,7 @@ import { Select } from '../customSelect';
 import { Text } from '../obytes';
 import { black, white } from '../obytes/colors';
 
-const PostsHeader = () => {
+const PostsHeader = ({ postCount }: { postCount: number }) => {
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
 
@@ -36,7 +36,7 @@ const PostsHeader = () => {
         />
 
         <Text className="justify-center text-lg">
-          {translate('posts.count', { count: 128 })}
+          {translate('posts.count', { count: postCount })}
         </Text>
 
         <TouchableOpacity
