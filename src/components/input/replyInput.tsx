@@ -1,3 +1,4 @@
+/* eslint-disable max-lines-per-function */
 import { CircleUserRound } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import { useEffect, useState } from 'react';
@@ -12,9 +13,14 @@ import { useAuth } from '@/providers/auth-provider';
 interface KeyboardInputProps {
   postId: string | null;
   inputRef: React.RefObject<TextInput>;
+  resetReplyId: () => void;
 }
 
-const ReplyInput: React.FC<KeyboardInputProps> = ({ postId, inputRef }) => {
+const ReplyInput: React.FC<KeyboardInputProps> = ({
+  postId,
+  inputRef,
+  resetReplyId,
+}) => {
   const { profile } = useAuth();
 
   const { colorScheme } = useColorScheme();
@@ -46,6 +52,7 @@ const ReplyInput: React.FC<KeyboardInputProps> = ({ postId, inputRef }) => {
 
           setInputValue('');
           setInputDisabled(true);
+          resetReplyId();
         },
       }
     );

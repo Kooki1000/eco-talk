@@ -69,6 +69,10 @@ export default function PostsScreen() {
     }, 0);
   };
 
+  const resetReplyId = () => {
+    setReplyId(null);
+  };
+
   if (isPending) {
     return (
       <PostContainer>
@@ -120,7 +124,11 @@ export default function PostsScreen() {
           />
         </View>
 
-        <ReplyInput inputRef={inputRef} postId={replyId} />
+        <ReplyInput
+          inputRef={inputRef}
+          postId={replyId}
+          resetReplyId={resetReplyId}
+        />
       </View>
     </KeyboardAvoidingView>
   );
