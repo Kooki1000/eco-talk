@@ -16,7 +16,7 @@ import {
 } from 'react-native';
 import type { z } from 'zod';
 
-import { ControlledInput } from '@/components/customInput';
+import { ControlledInput } from '@/components/input/customInput';
 import { Button, Text } from '@/components/obytes';
 import { black, white } from '@/components/obytes/colors';
 import { translate } from '@/i18n';

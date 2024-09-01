@@ -18,9 +18,9 @@ import { useFetchPosts } from '@/api/posts';
 import { PostContainer } from '@/components/container/postsContainer';
 import PostsHeader from '@/components/headers/postsHeader';
 import UserInfoHeader from '@/components/headers/userInfoHeader';
+import ReplyInput from '@/components/input/replyInput';
 import { Text } from '@/components/obytes';
 import { Post } from '@/components/post';
-import ReplyInput from '@/components/replyInput';
 import { translate } from '@/i18n';
 import { useAuth } from '@/providers/auth-provider';
 

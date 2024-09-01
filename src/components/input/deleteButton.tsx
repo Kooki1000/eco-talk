@@ -4,9 +4,8 @@ import { Alert, Platform, Pressable, StyleSheet } from 'react-native';
 
 import { useDeletePost } from '@/api/posts';
 import { useDeleteReply } from '@/api/replies';
+import { black, white } from '@/components/obytes/colors';
 import { translate } from '@/i18n';
-
-import { black, white } from './obytes/colors';
 
 interface DeleteButtonProps {
   type: 'post' | 'reply';

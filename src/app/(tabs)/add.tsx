@@ -21,9 +21,9 @@ import type { z } from 'zod';
 
 import { useCreatePost } from '@/api/posts';
 import { uploadPostImage } from '@/api/upload-image';
-import { ControlledInput } from '@/components/customInput';
 import DisplayImage from '@/components/displayImage';
-import ImageInput from '@/components/imageInput';
+import { ControlledInput } from '@/components/input/customInput';
+import ImageInput from '@/components/input/imageInput';
 import { Image, Text } from '@/components/obytes';
 import { black, white } from '@/components/obytes/colors';
 import { translate } from '@/i18n';

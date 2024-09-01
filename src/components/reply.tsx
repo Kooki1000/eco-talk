@@ -21,7 +21,7 @@ import { translate } from '@/i18n';
 import { useAuth } from '@/providers/auth-provider';
 import type { DetailedReply, VariantColor } from '@/types/types';
 
-import DeleteButton from './deleteButton';
+import DeleteButton from './input/deleteButton';
 import { Image, Text } from './obytes';
 import { black, white } from './obytes/colors';
 

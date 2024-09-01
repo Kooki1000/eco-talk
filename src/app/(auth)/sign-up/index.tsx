@@ -23,7 +23,7 @@ import {
 import type { z } from 'zod';
 
 import { useSignUp } from '@/api/sign-up';
-import { ControlledInput } from '@/components/customInput';
+import { ControlledInput } from '@/components/input/customInput';
 import { Button, Text } from '@/components/obytes';
 import { black, white } from '@/components/obytes/colors';
 import { translate } from '@/i18n';
