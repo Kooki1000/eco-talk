@@ -1,3 +1,4 @@
+/* eslint-disable max-lines-per-function */
 import { router } from 'expo-router';
 import { useRef, useState } from 'react';
 import type { TextInput } from 'react-native';
@@ -24,7 +25,10 @@ export default function PostsScreen() {
   const inputRef = useRef<TextInput>(null);
 
   const { profile } = useAuth();
-  const { data: postsData, isPending } = useFetchPosts();
+  const { data: postsData, isPending } = useFetchPosts({
+    userId: profile?.id,
+  });
+
   const [replyId, setReplyId] = useState<string | null>(null);
 
   const handleReplyPress = (id: string) => {
