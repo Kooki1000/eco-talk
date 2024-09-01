@@ -5,11 +5,19 @@ import utc from 'dayjs/plugin/utc';
 import { CircleUserRound, Heart } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import { memo, useMemo, useState } from 'react';
-import { Pressable, StyleSheet, TouchableOpacity, View } from 'react-native';
+import {
+  Alert,
+  Pressable,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import type { VariantProps } from 'tailwind-variants';
 import { tv } from 'tailwind-variants';
 
+import { useLikeReply, useUnlikeReply } from '@/api/likes';
 import { loremText } from '@/constants/dummyData';
+import { translate } from '@/i18n';
 import { useAuth } from '@/providers/auth-provider';
 import type { DetailedReply, VariantColor } from '@/types/types';
 
@@ -63,14 +71,46 @@ const ReplyComponent = ({ reply, variant, onReplyPress, ...props }: Props) => {
 
   const [showTranslation, setShowTranslation] = useState(false);
 
+  const { mutate: likeReply } = useLikeReply();
+  const { mutate: unlikeReply } = useUnlikeReply();
+
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
 
   const { profile } = useAuth();
   const isAuthor = profile?.id === reply.profiles.id;
 
-  const onThumbsUp = () => {
-    console.log('Thumbs up');
+  const onLike = () => {
+    if (!profile) {
+      Alert.alert(
+        translate('requireAuth.warning'),
+        translate('requireAuth.like')
+      );
+    }
+
+    if (reply.isLiked) {
+      unlikeReply(
+        { userId: profile?.id ?? '', replyId: reply.id },
+        {
+          onSuccess: () => {
+            reply.isLiked = false;
+            reply.like_count -= 1;
+          },
+        }
+      );
+
+      return;
+    }
+
+    likeReply(
+      { userId: profile?.id ?? '', replyId: reply.id },
+      {
+        onSuccess: () => {
+          reply.isLiked = true;
+          reply.like_count += 1;
+        },
+      }
+    );
   };
 
   const displayTranslation = () => {
@@ -140,10 +180,7 @@ const ReplyComponent = ({ reply, variant, onReplyPress, ...props }: Props) => {
           className="mr-6"
         />
 
-        <TouchableOpacity
-          onPress={onThumbsUp}
-          className="flex-row items-center"
-        >
+        <TouchableOpacity onPress={onLike} className="flex-row items-center">
           {reply.isLiked ? (
             <Heart color={'none'} fill={'#ff0000'} />
           ) : (

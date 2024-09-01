@@ -12,6 +12,7 @@ export type DetailedPost = Tables<'posts'> & {
 
 export type DetailedReply = Tables<'replies'> & {
   profiles: Tables<'profiles'>;
+  isLiked?: boolean;
 };
 
 export interface UserDataType {

@@ -5,7 +5,7 @@ import { CHIYODA_ID, variantColors } from '@/constants';
 import { QUERY_KEYS } from '@/constants/queryKeys';
 import { supabase } from '@/lib/supabase';
 import type { Tables } from '@/types/database.types';
-import type { DetailedPost } from '@/types/types';
+import type { DetailedPost, DetailedReply } from '@/types/types';
 
 interface FetchPostsData {
   userId?: string;
@@ -48,6 +48,10 @@ export const useFetchPosts = ({
       return postsData.map((post: DetailedPost) => ({
         ...post,
         isLiked: likesData.some((like) => like.post === post.id),
+        replies: post.replies.map((reply: DetailedReply) => ({
+          ...reply,
+          isLiked: likesData.some((like) => like.reply === reply.id),
+        })),
       })) as DetailedPost[];
     },
   });
