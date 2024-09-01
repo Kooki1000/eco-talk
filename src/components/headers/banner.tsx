@@ -7,10 +7,10 @@ import { twMerge } from 'tailwind-merge';
 
 import type { Tables } from '@/types/database.types';
 
-import AvatarPicker from './avatarPicker';
-import { Image } from './obytes';
-import { black, white } from './obytes/colors';
-import UsernameInput from './usernameInput';
+import AvatarPicker from '../input/avatarPicker';
+import UsernameInput from '../input/usernameInput';
+import { Image } from '../obytes';
+import { black, white } from '../obytes/colors';
 
 interface Props extends ViewProps {
   profile: Tables<'profiles'>;

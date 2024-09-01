@@ -5,9 +5,8 @@ import { Pressable, StyleSheet } from 'react-native';
 
 import { useUpdateAvatar } from '@/api/update-profile';
 import { uploadAvatar } from '@/api/upload-image';
+import { black, white } from '@/components/obytes/colors';
 import { useAuthStore } from '@/stores/useAuthStore';
-
-import { black, white } from './obytes/colors';
 
 const AvatarPicker = ({ userId }: { userId: string }) => {
   const { colorScheme } = useColorScheme();

@@ -18,9 +18,8 @@ import {
 } from 'react-native';
 import { TextInput as NTextInput } from 'react-native';
 
+import colors from '@/components/obytes/colors';
 import { translate, type TxKeyPath } from '@/i18n';
-
-import colors from './obytes/colors';
 
 export interface NInputProps extends TextInputProps {
   tx: TxKeyPath;

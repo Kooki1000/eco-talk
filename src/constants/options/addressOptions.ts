@@ -1,4 +1,4 @@
-import type { Option } from '@/components/customSelect';
+import type { Option } from '@/components/input/customSelect';
 
 export const addressOptions: Option[] = [
   {

@@ -5,7 +5,7 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { LogInButton, LogOutButton } from '@/components/auth';
-import Banner from '@/components/banner';
+import Banner from '@/components/headers/banner';
 import { Image, Text } from '@/components/obytes';
 import { black, white } from '@/components/obytes/colors';
 import { AddressSelect } from '@/components/settings/addressSelect';

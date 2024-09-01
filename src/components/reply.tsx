@@ -2,17 +2,19 @@
 import dayjs from 'dayjs';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
 import utc from 'dayjs/plugin/utc';
-import { CircleUserRound, Heart } from 'lucide-react-native';
+import { CircleUserRound } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import { memo, useMemo, useState } from 'react';
-import { Pressable, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
 import type { VariantProps } from 'tailwind-variants';
 import { tv } from 'tailwind-variants';
 
 import { loremText } from '@/constants/dummyData';
-import type { ReplyDataType, VariantColor } from '@/types/types';
+import { useAuth } from '@/providers/auth-provider';
+import type { DetailedReply, VariantColor } from '@/types/types';
 
-import DeleteButton from './deleteButton';
+import DeleteButton from './input/deleteButton';
+import { LikeReply } from './likeReply';
 import { Image, Text } from './obytes';
 import { black, white } from './obytes/colors';
 
@@ -53,7 +55,7 @@ type PostVariant = VariantProps<typeof postVariant>;
 
 interface Props extends PostVariant {
   variant: VariantColor;
-  reply: ReplyDataType;
+  reply: DetailedReply;
   onReplyPress: (id: string) => void;
 }
 
@@ -65,9 +67,8 @@ const ReplyComponent = ({ reply, variant, onReplyPress, ...props }: Props) => {
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
 
-  const onThumbsUp = () => {
-    console.log('Thumbs up');
-  };
+  const { profile } = useAuth();
+  const isAuthor = profile?.id === reply.profiles.id;
 
   const displayTranslation = () => {
     setShowTranslation((prevState) => !prevState);
@@ -75,32 +76,31 @@ const ReplyComponent = ({ reply, variant, onReplyPress, ...props }: Props) => {
 
   return (
     <View className="ml-12 mt-4 bg-transparent" {...props}>
-      <DeleteButton type="reply" id={reply.id} />
+      {isAuthor && <DeleteButton type="reply" id={reply.id} />}
 
-      <View className="mt-4 flex-row items-center justify-between">
+      <View className="mt-4">
         <View className="flex-row items-center">
-          {reply.user.avatar ? (
+          {reply.profiles.avatar_url ? (
             <Image
-              source={{ uri: reply.user.avatar }}
-              style={{ width: 36, height: 36 }}
+              source={{ uri: reply.profiles.avatar_url }}
+              style={{ width: 24, height: 24, borderRadius: 12 }}
             />
           ) : (
             <CircleUserRound
               color={isDark ? white : black}
-              size={36}
+              size={24}
               strokeWidth={1}
             />
           )}
-
-          <Text className="ml-2 text-lg">{reply.user.name}</Text>
+          <Text className="ml-2">{reply.profiles.username}</Text>
         </View>
 
-        <Text className="mr-4 text-sm">
-          {dayjs.utc(reply.postedAt).format('LLL')}
+        <Text className="ml-12 text-sm">
+          {dayjs.utc(reply.created_at).format('LLL')}
         </Text>
       </View>
 
-      <Text className="my-4 px-4">{reply.text}</Text>
+      <Text className="my-4 px-4">{reply.content}</Text>
 
       {showTranslation && (
         <View
@@ -133,21 +133,11 @@ const ReplyComponent = ({ reply, variant, onReplyPress, ...props }: Props) => {
       <View className="ml-8 flex-row">
         <Text
           tx="post.reply"
-          onPress={() => onReplyPress(`Reply ${reply.id}`)}
+          onPress={() => onReplyPress(reply.id)}
           className="mr-6"
         />
 
-        <TouchableOpacity
-          onPress={onThumbsUp}
-          className="flex-row items-center"
-        >
-          {reply.isLiked ? (
-            <Heart color={'none'} fill={'#ff0000'} />
-          ) : (
-            <Heart color={isDark ? white : black} />
-          )}
-          <Text className="ml-2 text-lg">{reply.likes}</Text>
-        </TouchableOpacity>
+        <LikeReply reply={reply} />
       </View>
     </View>
   );

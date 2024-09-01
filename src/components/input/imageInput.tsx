@@ -3,8 +3,8 @@ import { ImageUp } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-import { View } from './obytes';
-import { black, white } from './obytes/colors';
+import { View } from '@/components/obytes';
+import { black, white } from '@/components/obytes/colors';
 
 interface ImageInputProps {
   setImage: (uri: string) => void;

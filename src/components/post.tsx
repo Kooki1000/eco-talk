@@ -2,17 +2,19 @@
 import dayjs from 'dayjs';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
 import utc from 'dayjs/plugin/utc';
-import { CircleUserRound, Heart } from 'lucide-react-native';
+import { CircleUserRound } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import { memo, useMemo, useState } from 'react';
-import { Pressable, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
 import type { VariantProps } from 'tailwind-variants';
 import { tv } from 'tailwind-variants';
 
 import { loremText } from '@/constants/dummyData';
-import type { PostDataType } from '@/types/types';
+import { useAuth } from '@/providers/auth-provider';
+import type { DetailedPost, VariantColor } from '@/types/types';
 
-import DeleteButton from './deleteButton';
+import DeleteButton from './input/deleteButton';
+import { LikePost } from './likePost';
 import { Image, Text } from './obytes';
 import { black, white } from './obytes/colors';
 import { Reply } from './reply';
@@ -59,7 +61,7 @@ const postVariant = tv({
 type PostVariant = VariantProps<typeof postVariant>;
 
 interface Props extends PostVariant {
-  post: PostDataType;
+  post: DetailedPost;
   containerClassName?: string;
   onReplyPress: (id: string) => void;
 }
@@ -70,18 +72,17 @@ const PostComponent = ({
   onReplyPress,
   ...props
 }: Props) => {
-  const { variant = 'red' } = post;
+  const variant: VariantColor = post.variant ?? 'red';
   const styles = useMemo(() => postVariant({ variant }), [variant]);
 
-  const [showTranslation, setShowTranslation] = useState(false);
+  const { profile } = useAuth();
+  const isAuthor = profile?.id === post.profiles.id;
+
   const [showReply, setShowReply] = useState(false);
+  const [showTranslation, setShowTranslation] = useState(false);
 
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
-
-  const onThumbsUp = () => {
-    console.log('Thumbs up');
-  };
 
   const displayTranslation = () => {
     setShowTranslation((prevState) => !prevState);
@@ -96,34 +97,36 @@ const PostComponent = ({
       className={styles.container({ className: containerClassName })}
       {...props}
     >
-      <View style={{ marginTop: 2 }}>
-        <DeleteButton type="post" id={post.id} />
-      </View>
+      {isAuthor && (
+        <View style={{ marginTop: 2, marginBottom: 8 }}>
+          <DeleteButton type="post" id={post.id} />
+        </View>
+      )}
 
       <View className="mt-2 flex-row items-center justify-between">
         <View className="flex-row items-center">
-          {post.user.avatar ? (
+          {post.profiles.avatar_url ? (
             <Image
-              source={{ uri: post.user.avatar }}
-              style={{ width: 48, height: 48 }}
+              source={{ uri: post.profiles.avatar_url }}
+              style={{ width: 36, height: 36, borderRadius: 18 }}
             />
           ) : (
             <CircleUserRound
               color={isDark ? white : black}
-              size={48}
+              size={36}
               strokeWidth={1}
             />
           )}
 
-          <Text className="ml-2 text-xl">{post.user.name}</Text>
+          <Text className="ml-2">{post.profiles.username}</Text>
         </View>
 
         <Text className="mr-4 text-sm">
-          {dayjs.utc(post.postedAt).format('LLL')}
+          {dayjs.utc(post.created_at).format('LLL')}
         </Text>
       </View>
 
-      <Text className="my-4 px-4">{post.text}</Text>
+      <Text className="my-4 px-4">{post.content}</Text>
 
       {showTranslation && (
         <View
@@ -146,16 +149,16 @@ const PostComponent = ({
         >
           <Text
             tx={
-              showTranslation ? 'post.showTranslation' : 'post.hideTranslation'
+              showTranslation ? 'post.hideTranslation' : 'post.showTranslation'
             }
             className="text-center text-sm"
           />
         </Pressable>
       </View>
 
-      {post.image && (
+      {post.img_url && (
         <Image
-          source={{ uri: post.image }}
+          source={{ uri: post.img_url }}
           style={styling.image}
           contentFit="contain"
           className="self-center"
@@ -165,24 +168,14 @@ const PostComponent = ({
       <View className="ml-8 flex-row">
         <Text
           tx="post.reply"
-          onPress={() => onReplyPress(`Post ${post.id}`)}
+          onPress={() => onReplyPress(post.id)}
           className="mr-6"
         />
 
-        <TouchableOpacity
-          onPress={onThumbsUp}
-          className="flex-row items-center"
-        >
-          {post.isLiked ? (
-            <Heart color={'none'} fill={'#ff0000'} />
-          ) : (
-            <Heart color={isDark ? white : black} />
-          )}
-          <Text className="ml-2 text-lg">{post.likes}</Text>
-        </TouchableOpacity>
+        <LikePost post={post} />
       </View>
 
-      {post.replies && (
+      {post.replies.length > 0 && (
         <>
           {showReply && (
             <>
@@ -191,7 +184,7 @@ const PostComponent = ({
                   key={reply.id}
                   variant={variant}
                   reply={reply}
-                  onReplyPress={onReplyPress}
+                  onReplyPress={() => onReplyPress(post.id)}
                 />
               ))}
             </>

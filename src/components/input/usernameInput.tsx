@@ -6,12 +6,11 @@ import type { TextInput } from 'react-native';
 import { Alert, Pressable, View } from 'react-native';
 
 import { useUpdateUsername } from '@/api/update-profile';
+import { Input } from '@/components/obytes';
+import { black, white } from '@/components/obytes/colors';
 import { translate } from '@/i18n';
 import { useAuthStore } from '@/stores/useAuthStore';
 import type { Tables } from '@/types/database.types';
-
-import { Input } from './obytes';
-import { black, white } from './obytes/colors';
 
 interface UsernameInputProps {
   profile: Tables<'profiles'>;

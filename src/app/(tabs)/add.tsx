@@ -21,9 +21,9 @@ import type { z } from 'zod';
 
 import { useCreatePost } from '@/api/posts';
 import { uploadPostImage } from '@/api/upload-image';
-import { ControlledInput } from '@/components/customInput';
 import DisplayImage from '@/components/displayImage';
-import ImageInput from '@/components/imageInput';
+import { ControlledInput } from '@/components/input/customInput';
+import ImageInput from '@/components/input/imageInput';
 import { Image, Text } from '@/components/obytes';
 import { black, white } from '@/components/obytes/colors';
 import { translate } from '@/i18n';
@@ -129,9 +129,9 @@ export default function AddPostScreen() {
 
         <ScrollView contentContainerStyle={styles.content}>
           <View className="flex-row items-center justify-between">
-            {profile?.avatar ? (
+            {profile?.avatar_url ? (
               <Image
-                source={{ uri: profile.avatar }}
+                source={{ uri: profile.avatar_url }}
                 style={{
                   width: 48,
                   height: 48,

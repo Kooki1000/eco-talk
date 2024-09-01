@@ -1,47 +1,14 @@
-import type { Language } from '@/i18n/resources';
-
-export interface UserDataType {
-  name: string;
-  avatar?: string;
-}
-
-export interface CalendarDataType {
-  id: string;
-  type:
-    | 'burnable'
-    | 'nonBurnable'
-    | 'bulky'
-    | 'recyclable'
-    | 'plastic'
-    | 'other';
-  date: string;
-}
+import type { Tables } from './database.types';
 
 export type VariantColor = 'red' | 'orange' | 'green' | 'blue' | 'purple';
 
-export interface PostDataType {
-  id: string;
-  cityId: string;
-  user: UserDataType;
-  text: string;
-  likes: number;
-  postedAt: Date;
-  image?: string;
-  langCode: Language;
-  variant?: VariantColor;
+export type DetailedPost = Tables<'posts'> & {
+  profiles: Tables<'profiles'>;
   isLiked?: boolean;
-  replies?: ReplyDataType[];
-}
+  replies: DetailedReply[];
+};
 
-export interface ReplyDataType {
-  id: string;
-
-  // TODO: Require replyId
-  replyId?: string;
-  user: UserDataType;
-  text: string;
-  likes: number;
-  postedAt: Date;
-  langCode: Language;
+export type DetailedReply = Tables<'replies'> & {
+  profiles: Tables<'profiles'>;
   isLiked?: boolean;
-}
+};
