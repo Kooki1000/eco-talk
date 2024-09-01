@@ -34,7 +34,7 @@ export const uploadPostImage = async (
 
   if (data) {
     const { data: urlData } = supabase.storage
-      .from('avatars')
+      .from('post-images')
       .getPublicUrl(data.path);
 
     return urlData.publicUrl;
