@@ -9,6 +9,8 @@ import { ActivityIndicator, Pressable, StyleSheet, View } from 'react-native';
 import type { VariantProps } from 'tailwind-variants';
 import { tv } from 'tailwind-variants';
 
+import { useFetchTranslations } from '@/api/translations';
+import { useSelectedLanguage } from '@/i18n/utils';
 import { useAuth } from '@/providers/auth-provider';
 import type { DetailedPost, VariantColor } from '@/types/types';
 
@@ -77,11 +79,23 @@ const PostComponent = ({
   const { profile } = useAuth();
   const isAuthor = profile?.id === post.profiles.id;
 
+  const { colorScheme } = useColorScheme();
+  const isDark = colorScheme === 'dark';
+
+  let { language } = useSelectedLanguage();
+
   const [showReply, setShowReply] = useState(false);
   const [showTranslation, setShowTranslation] = useState(false);
 
-  const { colorScheme } = useColorScheme();
-  const isDark = colorScheme === 'dark';
+  const {
+    data: translations,
+    isPending,
+    _isError,
+  } = useFetchTranslations({
+    langCode: language,
+    postId: post.id,
+    showTranslation: showTranslation,
+  });
 
   const displayTranslation = () => {
     setShowTranslation((prevState) => !prevState);
