@@ -49,7 +49,7 @@ export default function LogInScreen() {
     });
 
     if (error) {
-      setError('root', {
+      setError('email', {
         message: translate('logIn.invalid'),
       });
 

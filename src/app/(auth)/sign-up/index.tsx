@@ -56,7 +56,7 @@ export default function SignUpScreen() {
     signUp(data, {
       onSuccess: () => router.navigate('/(tabs)'),
       onError: () => {
-        setError('root', {
+        setError('email', {
           message: translate('signUp.error'),
         });
       },
