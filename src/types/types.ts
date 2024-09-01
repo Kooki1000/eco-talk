@@ -1,5 +1,18 @@
 import type { Language } from '@/i18n/resources';
 
+import type { Tables } from './database.types';
+
+export type VariantColor = 'red' | 'orange' | 'green' | 'blue' | 'purple';
+
+export type DetailedPost = Tables<'posts'> & {
+  profiles: Tables<'profiles'>;
+  replies: DetailedReply[];
+};
+
+export type DetailedReply = Tables<'replies'> & {
+  profiles: Tables<'profiles'>;
+};
+
 export interface UserDataType {
   name: string;
   avatar?: string;
@@ -16,8 +29,6 @@ export interface CalendarDataType {
     | 'other';
   date: string;
 }
-
-export type VariantColor = 'red' | 'orange' | 'green' | 'blue' | 'purple';
 
 export interface PostDataType {
   id: string;

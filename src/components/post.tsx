@@ -10,7 +10,8 @@ import type { VariantProps } from 'tailwind-variants';
 import { tv } from 'tailwind-variants';
 
 import { loremText } from '@/constants/dummyData';
-import type { PostDataType } from '@/types/types';
+import { useAuth } from '@/providers/auth-provider';
+import type { DetailedPost, VariantColor } from '@/types/types';
 
 import DeleteButton from './deleteButton';
 import { Image, Text } from './obytes';
@@ -59,7 +60,7 @@ const postVariant = tv({
 type PostVariant = VariantProps<typeof postVariant>;
 
 interface Props extends PostVariant {
-  post: PostDataType;
+  post: DetailedPost;
   containerClassName?: string;
   onReplyPress: (id: string) => void;
 }
@@ -70,11 +71,14 @@ const PostComponent = ({
   onReplyPress,
   ...props
 }: Props) => {
-  const { variant = 'red' } = post;
+  const variant: VariantColor = post.variant ?? 'red';
   const styles = useMemo(() => postVariant({ variant }), [variant]);
 
   const [showTranslation, setShowTranslation] = useState(false);
   const [showReply, setShowReply] = useState(false);
+
+  const { profile } = useAuth();
+  const isAuthor = profile?.id === post.profiles.id;
 
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
@@ -96,34 +100,36 @@ const PostComponent = ({
       className={styles.container({ className: containerClassName })}
       {...props}
     >
-      <View style={{ marginTop: 2 }}>
-        <DeleteButton type="post" id={post.id} />
-      </View>
+      {isAuthor && (
+        <View style={{ marginTop: 2, marginBottom: 8 }}>
+          <DeleteButton type="post" id={post.id} />
+        </View>
+      )}
 
       <View className="mt-2 flex-row items-center justify-between">
         <View className="flex-row items-center">
-          {post.user.avatar ? (
+          {post.profiles.avatar_url ? (
             <Image
-              source={{ uri: post.user.avatar }}
-              style={{ width: 48, height: 48 }}
+              source={{ uri: post.profiles.avatar_url }}
+              style={{ width: 36, height: 36, borderRadius: 18 }}
             />
           ) : (
             <CircleUserRound
               color={isDark ? white : black}
-              size={48}
+              size={36}
               strokeWidth={1}
             />
           )}
 
-          <Text className="ml-2 text-xl">{post.user.name}</Text>
+          <Text className="ml-2">{post.profiles.username}</Text>
         </View>
 
         <Text className="mr-4 text-sm">
-          {dayjs.utc(post.postedAt).format('LLL')}
+          {dayjs.utc(post.created_at).format('LLL')}
         </Text>
       </View>
 
-      <Text className="my-4 px-4">{post.text}</Text>
+      <Text className="my-4 px-4">{post.content}</Text>
 
       {showTranslation && (
         <View
@@ -153,9 +159,9 @@ const PostComponent = ({
         </Pressable>
       </View>
 
-      {post.image && (
+      {post.img_url && (
         <Image
-          source={{ uri: post.image }}
+          source={{ uri: post.img_url }}
           style={styling.image}
           contentFit="contain"
           className="self-center"
@@ -178,7 +184,7 @@ const PostComponent = ({
           ) : (
             <Heart color={isDark ? white : black} />
           )}
-          <Text className="ml-2 text-lg">{post.likes}</Text>
+          <Text className="ml-2 text-lg">{post.like_count}</Text>
         </TouchableOpacity>
       </View>
 
