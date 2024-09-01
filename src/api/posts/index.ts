@@ -61,6 +61,8 @@ interface CreatePostData {
 }
 
 export const useCreatePost = () => {
+  const queryClient = useQueryClient();
+
   return useMutation({
     async mutationFn(data: CreatePostData) {
       const { userId, content, img_url, cityId = CHIYODA_ID } = data;
@@ -81,6 +83,11 @@ export const useCreatePost = () => {
       }
 
       return;
+    },
+    async onSuccess() {
+      await queryClient.invalidateQueries({
+        queryKey: [QUERY_KEYS.POSTS],
+      });
     },
   });
 };
