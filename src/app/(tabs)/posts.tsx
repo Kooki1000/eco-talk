@@ -1,3 +1,4 @@
+/* eslint-disable max-lines-per-function */
 import { router } from 'expo-router';
 import { useRef, useState } from 'react';
 import type { TextInput } from 'react-native';
@@ -10,8 +11,10 @@ import {
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
+import { useFetchPosts } from '@/api/posts';
 import PostsHeader from '@/components/headers/postsHeader';
 import UserInfoHeader from '@/components/headers/userInfoHeader';
+import LoadingIndicator from '@/components/loadingIndicator';
 import { Post } from '@/components/post';
 import ReplyInput from '@/components/replyInput';
 import { dummyPosts } from '@/constants/dummyData';
@@ -23,6 +26,7 @@ export default function PostsScreen() {
   const inputRef = useRef<TextInput>(null);
 
   const { profile } = useAuth();
+  const { data: posts, isPending } = useFetchPosts();
   const [replyId, setReplyId] = useState<string | null>(null);
 
   const handleReplyPress = (id: string) => {
@@ -51,6 +55,12 @@ export default function PostsScreen() {
       inputRef.current?.focus();
     }, 0);
   };
+
+  if (isPending) {
+    return <LoadingIndicator />;
+  }
+
+  console.log(posts);
 
   return (
     <KeyboardAvoidingView
