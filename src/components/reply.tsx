@@ -5,11 +5,10 @@ import utc from 'dayjs/plugin/utc';
 import { CircleUserRound } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import { memo, useMemo, useState } from 'react';
-import { Pressable, StyleSheet, View } from 'react-native';
+import { ActivityIndicator, Pressable, StyleSheet, View } from 'react-native';
 import type { VariantProps } from 'tailwind-variants';
 import { tv } from 'tailwind-variants';
 
-import { loremText } from '@/constants/dummyData';
 import { useAuth } from '@/providers/auth-provider';
 import type { DetailedReply, VariantColor } from '@/types/types';
 
@@ -111,7 +110,9 @@ const ReplyComponent = ({ reply, variant, onReplyPress, ...props }: Props) => {
             borderColor: isDark ? '#e5e7eb' : '#9ca3af',
           }}
         >
-          <Text className="my-4 px-4">{loremText}</Text>
+          <View className="mt-6">
+            <ActivityIndicator />
+          </View>
         </View>
       )}
 
