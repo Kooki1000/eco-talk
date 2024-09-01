@@ -2,26 +2,19 @@
 import dayjs from 'dayjs';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
 import utc from 'dayjs/plugin/utc';
-import { CircleUserRound, Heart } from 'lucide-react-native';
+import { CircleUserRound } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import { memo, useMemo, useState } from 'react';
-import {
-  Alert,
-  Pressable,
-  StyleSheet,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
 import type { VariantProps } from 'tailwind-variants';
 import { tv } from 'tailwind-variants';
 
-import { useLikePost, useUnlikePost } from '@/api/likes';
 import { loremText } from '@/constants/dummyData';
-import { translate } from '@/i18n';
 import { useAuth } from '@/providers/auth-provider';
 import type { DetailedPost, VariantColor } from '@/types/types';
 
 import DeleteButton from './input/deleteButton';
+import { LikePost } from './likePost';
 import { Image, Text } from './obytes';
 import { black, white } from './obytes/colors';
 import { Reply } from './reply';
@@ -88,44 +81,8 @@ const PostComponent = ({
   const [showReply, setShowReply] = useState(false);
   const [showTranslation, setShowTranslation] = useState(false);
 
-  const { mutate: likePost } = useLikePost();
-  const { mutate: unlikePost } = useUnlikePost();
-
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
-
-  const onLike = () => {
-    if (!profile) {
-      Alert.alert(
-        translate('requireAuth.warning'),
-        translate('requireAuth.like')
-      );
-    }
-
-    if (post.isLiked) {
-      unlikePost(
-        { userId: profile?.id ?? '', postId: post.id },
-        {
-          onSuccess: () => {
-            post.isLiked = false;
-            post.like_count -= 1;
-          },
-        }
-      );
-
-      return;
-    }
-
-    likePost(
-      { userId: profile?.id ?? '', postId: post.id },
-      {
-        onSuccess: () => {
-          post.isLiked = true;
-          post.like_count += 1;
-        },
-      }
-    );
-  };
 
   const displayTranslation = () => {
     setShowTranslation((prevState) => !prevState);
@@ -215,14 +172,7 @@ const PostComponent = ({
           className="mr-6"
         />
 
-        <TouchableOpacity onPress={onLike} className="flex-row items-center">
-          {post.isLiked ? (
-            <Heart color={'none'} fill={'#ff0000'} />
-          ) : (
-            <Heart color={isDark ? white : black} />
-          )}
-          <Text className="ml-2 text-lg">{post.like_count}</Text>
-        </TouchableOpacity>
+        <LikePost post={post} />
       </View>
 
       {post.replies.length > 0 && (
