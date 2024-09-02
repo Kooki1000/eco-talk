@@ -3,6 +3,7 @@
 // Original code by OBytes (https://github.com/obytes), licensed under the MIT License.
 
 import 'dayjs/locale/ja';
+import 'dayjs/locale/zh';
 
 import dayjs from 'dayjs';
 import { getLocales } from 'expo-localization';

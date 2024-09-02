@@ -150,7 +150,8 @@
   },
   "locales": {
     "en": "English",
-    "ja": "日本語"
+    "ja": "日本語",
+    "zh": "中文"
   },
   "logIn": {
     "email": "Email",
@@ -179,12 +180,6 @@
     "showTranslation": "Show Translation"
   },
   "posts": {
-    "count": "{{count}} Posts",
-    "mostPopular": "Most popular",
-    "newest": "Newest",
-    "oldest": "Oldest",
-    "search": "Search post",
-    "sortBy": "Sort by:",
     "title": "Posts from Your City"
   },
   "profile": {
@@ -233,6 +228,7 @@
   },
   "translatedLocales": {
     "en": "English",
-    "ja": "Japanese"
+    "ja": "Japanese",
+    "zh": "Chinese"
   }
 }

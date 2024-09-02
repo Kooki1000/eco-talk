@@ -4,6 +4,7 @@
 
 // Add other languages here
 import 'dayjs/locale/ja';
+import 'dayjs/locale/zh';
 
 import dayjs from 'dayjs';
 import type TranslateOptions from 'i18next';

@@ -3,6 +3,7 @@ import type { Option } from '@/components/input/customSelect';
 export const languages: Option[] = [
   { value: 'ja', label: 'locales.ja' },
   { value: 'en', label: 'locales.en' },
+  { value: 'zh', label: 'locales.zh' },
 ];
 
 export const themes: Option[] = [
