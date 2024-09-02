@@ -4,17 +4,19 @@ import { QUERY_KEYS } from '@/constants/queryKeys';
 import { supabase } from '@/lib/supabase';
 import type { Tables } from '@/types/database.types';
 
-interface FetchTranslationsData {
+interface FetchTranslationData {
+  content: string;
   langCode: string;
   postId?: string;
   replyId?: string;
 }
 
-export const useFetchTranslations = ({
+export const useFetchTranslation = ({
+  content,
   langCode,
   postId,
   replyId,
-}: FetchTranslationsData) => {
+}: FetchTranslationData) => {
   return useQuery({
     queryKey: [QUERY_KEYS.TRANSLATIONS, langCode, postId, replyId],
     enabled: !!postId || !!replyId,
@@ -23,7 +25,7 @@ export const useFetchTranslations = ({
         throw new Error('postId or replyId is required');
       }
 
-      const { data: translationsData, error: translationsError } =
+      const { data: translationFetchData, error: translationFetchError } =
         await supabase
           .from('translations')
           .select('*')
@@ -31,11 +33,26 @@ export const useFetchTranslations = ({
           .or(`post.eq.${postId},reply.eq.${replyId}`)
           .single();
 
-      if (translationsError) {
-        throw new Error(translationsError.message);
+      if (translationFetchError) {
+        throw new Error(translationFetchError.message);
       }
 
-      return translationsData as Tables<'translations'>;
+      if (translationFetchData !== null) {
+        return translationFetchData as Tables<'translations'>;
+      }
+
+      const {
+        data: generatedTranslationData,
+        error: generatedTranslationError,
+      } = await supabase.functions.invoke('translation', {
+        body: { content, postId, replyId, langCode },
+      });
+
+      if (generatedTranslationError) {
+        throw new Error(generatedTranslationError.message);
+      }
+
+      return generatedTranslationData as Tables<'translations'>;
     },
   });
 };
