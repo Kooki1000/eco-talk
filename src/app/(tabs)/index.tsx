@@ -9,7 +9,9 @@ import { HomeContainer } from '@/components/container/homeContainer';
 import HomeHeader from '@/components/headers/homeHeader';
 import UserInfoHeader from '@/components/headers/userInfoHeader';
 import { Text } from '@/components/obytes';
+import { white } from '@/components/obytes/colors';
 import { AddressSelect } from '@/components/settings/addressSelect';
+import { red } from '@/constants';
 import { useSelectedAddress } from '@/hooks/use-selected-address';
 
 export default function HomeScreen() {
@@ -22,7 +24,7 @@ export default function HomeScreen() {
   const {
     data: trashSchedule,
     isPending,
-    error,
+    isError,
   } = useTrashSchedule(selectedAddress);
 
   if (!selectedAddress) {
@@ -46,11 +48,11 @@ export default function HomeScreen() {
     );
   }
 
-  if (error || trashSchedule.length === 0) {
+  if (isError || trashSchedule.length === 0) {
     return (
       <HomeContainer>
         <View className="mt-24 items-center">
-          <TriangleAlert size={48} color={isDark ? 'white' : 'red'} />
+          <TriangleAlert size={48} color={isDark ? white : red} />
           <Text tx="data.error" className="mt-6 text-xl font-bold" />
         </View>
       </HomeContainer>

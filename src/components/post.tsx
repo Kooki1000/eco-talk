@@ -5,11 +5,10 @@ import utc from 'dayjs/plugin/utc';
 import { CircleUserRound } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import { memo, useMemo, useState } from 'react';
-import { ActivityIndicator, Pressable, StyleSheet, View } from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
 import type { VariantProps } from 'tailwind-variants';
 import { tv } from 'tailwind-variants';
 
-import { useFetchTranslations } from '@/api/translations';
 import { useSelectedLanguage } from '@/i18n/utils';
 import { useAuth } from '@/providers/auth-provider';
 import type { DetailedPost, VariantColor } from '@/types/types';
@@ -19,6 +18,7 @@ import { LikePost } from './likePost';
 import { Image, Text } from './obytes';
 import { black, white } from './obytes/colors';
 import { Reply } from './reply';
+import { TranslatedText } from './translation';
 
 dayjs.extend(utc);
 dayjs.extend(localizedFormat);
@@ -82,20 +82,10 @@ const PostComponent = ({
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
 
-  let { language } = useSelectedLanguage();
+  const { language } = useSelectedLanguage();
 
   const [showReply, setShowReply] = useState(false);
   const [showTranslation, setShowTranslation] = useState(false);
-
-  const {
-    data: translations,
-    isPending,
-    _isError,
-  } = useFetchTranslations({
-    langCode: language,
-    postId: post.id,
-    showTranslation: showTranslation,
-  });
 
   const displayTranslation = () => {
     setShowTranslation((prevState) => !prevState);
@@ -142,18 +132,7 @@ const PostComponent = ({
       <Text className="my-4 px-4">{post.content}</Text>
 
       {showTranslation && (
-        <View
-          style={{
-            borderTopWidth: 1,
-            marginTop: 10,
-            marginBottom: 10,
-            borderColor: isDark ? '#e5e7eb' : '#9ca3af',
-          }}
-        >
-          <View className="mt-6">
-            <ActivityIndicator />
-          </View>
-        </View>
+        <TranslatedText langCode={language} postId={post.id} />
       )}
 
       <View style={styling.translateContainer}>
@@ -164,7 +143,7 @@ const PostComponent = ({
         >
           <Text
             tx={
-              showTranslation ? 'post.hideTranslation' : 'post.showTranslation'
+              showTranslation ? 'post.showTranslation' : 'post.hideTranslation'
             }
             className="text-center text-sm"
           />

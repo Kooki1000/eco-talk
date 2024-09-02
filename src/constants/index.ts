@@ -9,3 +9,5 @@ export const variantColors: VariantColor[] = [
   'blue',
   'purple',
 ];
+
+export const red = '#ef4444';

@@ -20,7 +20,9 @@ import PostsHeader from '@/components/headers/postsHeader';
 import UserInfoHeader from '@/components/headers/userInfoHeader';
 import ReplyInput from '@/components/input/replyInput';
 import { Text } from '@/components/obytes';
+import { white } from '@/components/obytes/colors';
 import { Post } from '@/components/post';
+import { red } from '@/constants';
 import { translate } from '@/i18n';
 import { useAuth } from '@/providers/auth-provider';
 
@@ -32,7 +34,7 @@ export default function PostsScreen() {
   const {
     data: postsData,
     isPending,
-    error,
+    isError,
   } = useFetchPosts({
     userId: profile?.id,
   });
@@ -76,7 +78,7 @@ export default function PostsScreen() {
   if (isPending) {
     return (
       <PostContainer>
-        <PostsHeader postCount={0} />
+        <PostsHeader />
         <View className="mt-36 items-center">
           <ActivityIndicator />
         </View>
@@ -84,12 +86,12 @@ export default function PostsScreen() {
     );
   }
 
-  if (error || !postsData || postsData.length === 0) {
+  if (isError || !postsData || postsData.length === 0) {
     return (
       <PostContainer>
-        <PostsHeader postCount={0} />
+        <PostsHeader />
         <View className="mt-24 items-center">
-          <TriangleAlert size={48} color={isDark ? 'white' : 'red'} />
+          <TriangleAlert size={48} color={isDark ? white : red} />
           <Text tx="data.error" className="mt-6 text-xl font-bold" />
         </View>
       </PostContainer>
@@ -116,9 +118,7 @@ export default function PostsScreen() {
             renderItem={({ item }) => (
               <Post post={item} onReplyPress={handleReplyPress} />
             )}
-            ListHeaderComponent={
-              <PostsHeader postCount={postsData?.length ?? 0} />
-            }
+            ListHeaderComponent={<PostsHeader />}
             ListFooterComponent={<View style={{ height: 100 }} />}
             className="mx-auto w-full"
           />

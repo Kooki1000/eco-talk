@@ -8,18 +8,16 @@ interface FetchTranslationsData {
   langCode: string;
   postId?: string;
   replyId?: string;
-  showTranslation: boolean;
 }
 
 export const useFetchTranslations = ({
   langCode,
   postId,
   replyId,
-  showTranslation,
 }: FetchTranslationsData) => {
   return useQuery({
     queryKey: [QUERY_KEYS.TRANSLATIONS, langCode, postId, replyId],
-    enabled: !showTranslation && (!!postId || !!replyId),
+    enabled: !!postId || !!replyId,
     queryFn: async () => {
       if (!postId && !replyId) {
         throw new Error('postId or replyId is required');
