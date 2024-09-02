@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "cas-project",
-    "slug": "cas-project",
+    "name": "EcoTalk",
+    "slug": "eco-talk",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -15,14 +15,14 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.anonymous.casproject"
+      "bundleIdentifier": "com.ecotalk.ecotalk"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.anonymous.casproject"
+      "package": "com.ecotalk.ecotalk"
     },
     "plugins": ["expo-router", "expo-localization"],
     "experiments": {
