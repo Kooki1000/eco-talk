@@ -5,10 +5,11 @@ import utc from 'dayjs/plugin/utc';
 import { CircleUserRound } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import { memo, useMemo, useState } from 'react';
-import { ActivityIndicator, Pressable, StyleSheet, View } from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
 import type { VariantProps } from 'tailwind-variants';
 import { tv } from 'tailwind-variants';
 
+import { useSelectedLanguage } from '@/i18n';
 import { useAuth } from '@/providers/auth-provider';
 import type { DetailedReply, VariantColor } from '@/types/types';
 
@@ -16,6 +17,7 @@ import DeleteButton from './input/deleteButton';
 import { LikeReply } from './likeReply';
 import { Image, Text } from './obytes';
 import { black, white } from './obytes/colors';
+import { TranslatedText } from './translatedText';
 
 dayjs.extend(utc);
 dayjs.extend(localizedFormat);
@@ -66,6 +68,8 @@ const ReplyComponent = ({ reply, variant, onReplyPress, ...props }: Props) => {
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
 
+  const { language } = useSelectedLanguage();
+
   const { profile } = useAuth();
   const isAuthor = profile?.id === reply.profiles.id;
 
@@ -102,18 +106,7 @@ const ReplyComponent = ({ reply, variant, onReplyPress, ...props }: Props) => {
       <Text className="my-4 px-4">{reply.content}</Text>
 
       {showTranslation && (
-        <View
-          style={{
-            borderTopWidth: 1,
-            marginTop: 10,
-            marginBottom: 10,
-            borderColor: isDark ? '#e5e7eb' : '#9ca3af',
-          }}
-        >
-          <View className="mt-6">
-            <ActivityIndicator />
-          </View>
-        </View>
+        <TranslatedText langCode={language} replyId={reply.id} />
       )}
 
       <View style={styling.translateContainer}>
@@ -124,7 +117,7 @@ const ReplyComponent = ({ reply, variant, onReplyPress, ...props }: Props) => {
         >
           <Text
             tx={
-              showTranslation ? 'post.hideTranslation' : 'post.showTranslation'
+              showTranslation ? 'post.showTranslation' : 'post.hideTranslation'
             }
             className="text-center text-sm"
           />

@@ -7,6 +7,7 @@ import { useState } from 'react';
 import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 import {
+  ActivityIndicator,
   Alert,
   KeyboardAvoidingView,
   Platform,
@@ -42,11 +43,13 @@ export default function AddPostScreen() {
 
   const { mutate: createPost } = useCreatePost();
 
-  const [charCount, setCharCount] = useState(0);
   const [image, setImage] = useState('');
+  const [charCount, setCharCount] = useState(0);
+  const [loading, setLoading] = useState(false);
 
   const onSubmit: SubmitHandler<FormType> = async (data: FormType) => {
     if (!profile) return;
+    setLoading(true);
 
     let imagePath = '';
     if (image) {
@@ -65,8 +68,12 @@ export default function AddPostScreen() {
           reset();
           setCharCount(0);
           setImage('');
+          setLoading(false);
 
           router.navigate('/posts');
+        },
+        onError: () => {
+          setLoading(false);
         },
       }
     );
@@ -173,6 +180,12 @@ export default function AddPostScreen() {
           </KeyboardAvoidingView>
           <DisplayImage image={image} onRemoveImage={() => setImage('')} />
         </ScrollView>
+
+        {loading && (
+          <View style={styles.loadingOverlay}>
+            <ActivityIndicator size="large" color={isDark ? white : black} />
+          </View>
+        )}
       </View>
     </TouchableWithoutFeedback>
   );
@@ -207,5 +220,11 @@ const styles = StyleSheet.create({
     marginTop: 7,
     paddingLeft: 16,
     paddingRight: 60,
+  },
+  loadingOverlay: {
+    ...StyleSheet.absoluteFillObject,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
 });

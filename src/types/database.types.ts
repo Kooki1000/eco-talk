@@ -240,6 +240,48 @@ export type Database = {
           }
         ];
       };
+      translations: {
+        Row: {
+          content: string;
+          created_at: string;
+          id: number;
+          langCode: string;
+          post: string | null;
+          reply: string | null;
+        };
+        Insert: {
+          content: string;
+          created_at?: string;
+          id?: number;
+          langCode: string;
+          post?: string | null;
+          reply?: string | null;
+        };
+        Update: {
+          content?: string;
+          created_at?: string;
+          id?: number;
+          langCode?: string;
+          post?: string | null;
+          reply?: string | null;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'translations_post_fkey';
+            columns: ['post'];
+            isOneToOne: false;
+            referencedRelation: 'posts';
+            referencedColumns: ['id'];
+          },
+          {
+            foreignKeyName: 'translations_reply_fkey';
+            columns: ['reply'];
+            isOneToOne: false;
+            referencedRelation: 'replies';
+            referencedColumns: ['id'];
+          }
+        ];
+      };
       trash_schedule: {
         Row: {
           address: string | null;
