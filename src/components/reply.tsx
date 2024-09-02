@@ -17,7 +17,7 @@ import DeleteButton from './input/deleteButton';
 import { LikeReply } from './likeReply';
 import { Image, Text } from './obytes';
 import { black, white } from './obytes/colors';
-import { TranslatedText } from './translation';
+import { TranslatedText } from './translatedText';
 
 dayjs.extend(utc);
 dayjs.extend(localizedFormat);

@@ -18,7 +18,7 @@ import { LikePost } from './likePost';
 import { Image, Text } from './obytes';
 import { black, white } from './obytes/colors';
 import { Reply } from './reply';
-import { TranslatedText } from './translation';
+import { TranslatedText } from './translatedText';
 
 dayjs.extend(utc);
 dayjs.extend(localizedFormat);
