@@ -147,7 +147,7 @@ const PostComponent = ({
         >
           <Text
             tx={
-              showTranslation ? 'post.showTranslation' : 'post.hideTranslation'
+              showTranslation ? 'post.hideTranslation' : 'post.showTranslation'
             }
             className="text-center text-sm"
           />

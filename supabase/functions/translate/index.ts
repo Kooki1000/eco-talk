@@ -26,6 +26,7 @@ Deno.serve(async (req) => {
       target_lang: langCode,
     }),
   }).catch((error) => {
+    console.error(error);
     return new Response(JSON.stringify({ error: error.message }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       status: 400,
@@ -33,12 +34,11 @@ Deno.serve(async (req) => {
   });
 
   const deeplData = await deeplResponse.json();
+  const translatedText = deeplData.translations[0].text;
 
-  // Destruct the response object and return it
-  const { translations } = deeplData.translations[0].text;
-  console.log(`Translated text: ${translations}`);
+  console.log(`Translated text: ${translatedText}`);
 
-  return new Response(JSON.stringify({ data: translations }), {
+  return new Response(JSON.stringify({ data: translatedText }), {
     headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     status: 200,
   });

@@ -173,10 +173,10 @@
   },
   "post": {
     "hideReply": "返信を隠す",
-    "hideTranslation": "翻訳を表示",
+    "hideTranslation": "翻訳を隠す",
     "reply": "返信",
     "showReply": "返信を表示",
-    "showTranslation": "翻訳を隠す"
+    "showTranslation": "翻訳を表示"
   },
   "posts": {
     "count": "{{count}}件の投稿",
