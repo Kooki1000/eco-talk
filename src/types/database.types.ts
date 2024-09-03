@@ -244,24 +244,24 @@ export type Database = {
         Row: {
           content: string;
           created_at: string;
-          id: number;
-          langCode: string;
+          id: string;
+          lang_code: string;
           post: string | null;
           reply: string | null;
         };
         Insert: {
           content: string;
           created_at?: string;
-          id?: number;
-          langCode: string;
+          id?: string;
+          lang_code: string;
           post?: string | null;
           reply?: string | null;
         };
         Update: {
           content?: string;
           created_at?: string;
-          id?: number;
-          langCode?: string;
+          id?: string;
+          lang_code?: string;
           post?: string | null;
           reply?: string | null;
         };
