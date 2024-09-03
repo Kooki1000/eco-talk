@@ -106,7 +106,11 @@ const ReplyComponent = ({ reply, variant, onReplyPress, ...props }: Props) => {
       <Text className="my-4 px-4">{reply.content}</Text>
 
       {showTranslation && (
-        <TranslatedText langCode={language} replyId={reply.id} />
+        <TranslatedText
+          langCode={language}
+          replyId={reply.id}
+          content={reply.content}
+        />
       )}
 
       <View style={styling.translateContainer}>

@@ -17,7 +17,7 @@ interface TranslationProps {
 }
 
 const TranslatedTextComponent = ({
-  langCode: language,
+  langCode,
   postId,
   replyId,
   content,
@@ -30,7 +30,7 @@ const TranslatedTextComponent = ({
     isPending,
     isError,
   } = useFetchTranslation({
-    langCode: language,
+    langCode: langCode,
     postId: postId,
     replyId: replyId,
     content,

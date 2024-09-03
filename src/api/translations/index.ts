@@ -47,11 +47,15 @@ export const useFetchTranslation = ({
         return translationFetchData[0] as Tables<'translations'>;
       }
 
+      if (langCode === 'en') {
+        langCode = 'EN-US';
+      }
+
       const {
         data: generatedTranslationData,
         error: generatedTranslationError,
-      } = await supabase.functions.invoke('translation', {
-        body: { content, postId, replyId, langCode },
+      } = await supabase.functions.invoke('translate', {
+        body: { content, postId, replyId, langCode: langCode.toUpperCase() },
       });
 
       if (generatedTranslationError) {
