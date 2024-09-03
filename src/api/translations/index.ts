@@ -62,22 +62,24 @@ export const useFetchTranslation = ({
         throw new Error(generatedTranslationError.message);
       }
 
-      const { data: newTranslationData, error: newTranslationError } =
-        await supabase
-          .from('translations')
-          .insert({
-            content: generatedTranslationData.data,
-            post: postId,
-            reply: replyId,
-            lang_code: langCode,
-          })
-          .single();
+      const generatedTranslation = {
+        content: generatedTranslationData.data,
+        post: postId,
+        reply: replyId,
+        lang_code: langCode,
+      };
 
-      if (newTranslationError) {
-        throw new Error(newTranslationError.message);
-      }
+      supabase
+        .from('translations')
+        .insert(generatedTranslation)
+        .single()
+        .then(({ error: insertError }) => {
+          if (insertError) {
+            console.error('Failed to insert translation:', insertError.message);
+          }
+        });
 
-      return newTranslationData as Tables<'translations'>;
+      return generatedTranslation as Tables<'translations'>;
     },
   });
 };
