@@ -132,7 +132,11 @@ const PostComponent = ({
       <Text className="my-4 px-4">{post.content}</Text>
 
       {showTranslation && (
-        <TranslatedText langCode={language} postId={post.id} />
+        <TranslatedText
+          langCode={language}
+          postId={post.id}
+          content={post.content}
+        />
       )}
 
       <View style={styling.translateContainer}>

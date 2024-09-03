@@ -3,7 +3,7 @@ import { useColorScheme } from 'nativewind';
 import { memo } from 'react';
 import { ActivityIndicator, View } from 'react-native';
 
-import { useFetchTranslations } from '@/api/translations';
+import { useFetchTranslation } from '@/api/translations';
 import type { Language } from '@/i18n/resources';
 
 import { Text } from './obytes';
@@ -13,12 +13,14 @@ interface TranslationProps {
   langCode: Language;
   postId?: string;
   replyId?: string;
+  content: string;
 }
 
 const TranslatedTextComponent = ({
   langCode: language,
   postId,
   replyId,
+  content,
 }: TranslationProps) => {
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
@@ -27,10 +29,11 @@ const TranslatedTextComponent = ({
     data: translation,
     isPending,
     isError,
-  } = useFetchTranslations({
+  } = useFetchTranslation({
     langCode: language,
     postId: postId,
     replyId: replyId,
+    content,
   });
 
   return (
@@ -51,7 +54,7 @@ const TranslatedTextComponent = ({
             <Text tx="data.error" className="ml-2" />
           </View>
         ) : (
-          <Text>{translation.content}</Text>
+          <Text className="px-4">{translation.content}</Text>
         )}
       </View>
     </View>

@@ -25,20 +25,26 @@ export const useFetchTranslation = ({
         throw new Error('postId or replyId is required');
       }
 
+      let query = supabase
+        .from('translations')
+        .select('*')
+        .eq('lang_code', langCode);
+
+      if (postId) {
+        query = query.eq('post', postId);
+      } else if (replyId) {
+        query = query.eq('reply', replyId);
+      }
+
       const { data: translationFetchData, error: translationFetchError } =
-        await supabase
-          .from('translations')
-          .select('*')
-          .eq('lang_code', langCode)
-          .or(`post.eq.${postId},reply.eq.${replyId}`)
-          .single();
+        await query;
 
       if (translationFetchError) {
         throw new Error(translationFetchError.message);
       }
 
-      if (translationFetchData !== null) {
-        return translationFetchData as Tables<'translations'>;
+      if (translationFetchData.length > 0) {
+        return translationFetchData[0] as Tables<'translations'>;
       }
 
       const {
