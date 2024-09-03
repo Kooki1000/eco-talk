@@ -10,7 +10,7 @@ import { corsHeaders } from '../_shared/cors.ts';
 console.log(`Function "translate" up and running!`);
 
 Deno.serve(async (req) => {
-  const { content, postId, replyId, langCode } = await req.json();
+  const { content, langCode } = await req.json();
 
   const deeplApiUrl = 'https://api-free.deepl.com/v2/translate';
   const deeplAuthKey = Deno.env.get('DEEPL_KEY');
@@ -34,35 +34,14 @@ Deno.serve(async (req) => {
 
   const deeplData = await deeplResponse.json();
 
-  try {
-    const supabaseClient = createClient(
-      Deno.env.get('SB_URL'),
-      Deno.env.get('SB_ANON_KEY')
-    );
+  // Destruct the response object and return it
+  const { translations } = deeplData.translations[0].text;
+  console.log(`Translated text: ${translations}`);
 
-    const normalizedLangCode =
-      langCode === 'EN-US' ? 'en' : langCode.toLowerCase();
-
-    const { data, error } = await supabaseClient.from('translations').insert({
-      content: deeplData.translations.text,
-      post: postId,
-      reply: replyId,
-      lang_code: normalizedLangCode,
-    });
-
-    if (error) throw error;
-
-    return new Response(JSON.stringify({ data }), {
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      status: 200,
-    });
-  } catch (error) {
-    console.error(error);
-    return new Response(JSON.stringify({ error: error.message }), {
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      status: 400,
-    });
-  }
+  return new Response(JSON.stringify({ data: translations }), {
+    headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    status: 200,
+  });
 });
 
 /* To invoke locally:

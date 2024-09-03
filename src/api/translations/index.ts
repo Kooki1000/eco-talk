@@ -55,7 +55,7 @@ export const useFetchTranslation = ({
         data: generatedTranslationData,
         error: generatedTranslationError,
       } = await supabase.functions.invoke('translate', {
-        body: { content, postId, replyId, langCode: langCode.toUpperCase() },
+        body: { content, langCode: langCode.toUpperCase() },
       });
 
       if (generatedTranslationError) {
