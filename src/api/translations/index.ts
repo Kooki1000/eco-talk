@@ -73,8 +73,6 @@ export const useFetchTranslation = ({
           })
           .single();
 
-      console.log('newTranslationData', newTranslationData);
-
       if (newTranslationError) {
         throw new Error(newTranslationError.message);
       }
