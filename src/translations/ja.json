@@ -166,16 +166,16 @@
     },
     "title": "ゴミの分別のイロハ",
     "what": {
-      "guide1": "Waste sorting in Japan involves dividing waste into specific categories based on material, size, or recyclability. Each city or ward may have its own regulations, but generally, waste is divided into four main categories:",
-      "guide2": "Each type of waste is collected on different days. Information on collection schedules can usually be found on your city's website or in a city guidebook provided during the registration process.",
-      "guide3": "If your residence does not have a collection area, waste should be taken to the nearest public collection point. Residents are usually notified of this when they move in, and schedules are often posted near collection points.",
+      "guide1": "日本でのゴミの分別は、そのゴミの材質、大きさ、リサイクル可能かどうかによって分けられます。細かなルールは各市町村ごとに異なりますが、ゴミは大まかに以下の４つの種類に分類できます：",
+      "guide2": "それぞれのゴミの収集日は異なることが多いです。収集日に関する情報は、各市町村のホームページなどをご確認ください。",
+      "guide3": "ゴミはお近くの集積場所に置いてください。集積場所にはゴミ出しのスケジュールが張られていることが多いです。参考にしてください。",
       "tips": {
-        "rules": "Following these guidelines is not just environmentally friendly—it's also a legal requirement in Japan.",
-        "subtip1": "Rinse cans and bottles.",
-        "subtip2": "Tie paper bundles with string.",
-        "subtitle": "Important Tips:",
-        "tips1": "Only bring out garbage in the morning on collection days to avoid attracting animals.",
-        "tips2": "Make sure waste is properly packaged. For example:"
+        "rules": "ゴミの分別のルールに従うのは環境のためだけではなく、法律上の義務です。",
+        "subtip1": "缶やペットポトルを洗う",
+        "subtip2": "紙の束は紐で結ぶ",
+        "subtitle": "ゴミ出しのコツ:",
+        "tips1": "動物が集まるのを避けるため、ゴミは収集日の朝に出すようにしましょう。",
+        "tips2": "ゴミはきちんと処理した状態で出しましょう："
       },
       "title": "ゴミの分別って何？"
     },

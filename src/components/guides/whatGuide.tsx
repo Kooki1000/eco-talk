@@ -10,7 +10,7 @@ const WhatGuide = () => {
         <Text tx="guides.what.title" className="mt-4 text-xl font-bold" />
         <Text tx="guides.what.guide1" className="mt-2" />
 
-        <View className="mb-2">
+        <View className="my-2">
           <Text>
             {'\u25cf'} {translate('calendar.burnable')}
           </Text>
@@ -33,7 +33,7 @@ const WhatGuide = () => {
           className="my-4 text-xl font-bold"
         />
 
-        <Text className="mt-2">
+        <Text>
           {'\u25cf'} {translate('guides.what.tips.tips1')}
         </Text>
         <Text className="mt-2">
