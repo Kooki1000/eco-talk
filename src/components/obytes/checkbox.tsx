@@ -70,7 +70,7 @@ const Label = ({ text, className = '' }: LabelProps) => {
 };
 
 export const CheckboxIcon = ({ checked = false }: IconProps) => {
-  const color = checked ? colors.primary[300] : colors.charcoal[400];
+  const color = checked ? '#3b82f6' : colors.charcoal[400];
   return (
     <MotiView
       style={{

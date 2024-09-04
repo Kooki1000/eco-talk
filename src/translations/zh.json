@@ -205,8 +205,6 @@
     "warning": "请先登陆。"
   },
   "signUp": {
-    "afterPolicy": "。",
-    "beforePolicy": "通过创建账户，您被视为已同意我们的",
     "confirmation": "请再次输入密码",
     "create": "创建账号",
     "enterEmail": "请输入电子邮件地址",
@@ -217,7 +215,7 @@
     "invalidPassword": "请设置8个字符以上的密码",
     "invalidUsername": "请设置3到20个字符之间的用户名",
     "logIn": "已有账户？登陆",
-    "policy": "利用規約",
+    "terms": "I have read and agreed to the Terms of Service and Privacy Policy.",
     "title": "创建账号",
     "username": "用户名"
   },

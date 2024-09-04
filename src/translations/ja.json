@@ -205,8 +205,6 @@
     "warning": "ログインが必要です"
   },
   "signUp": {
-    "afterPolicy": "に同意したものとみなします。",
-    "beforePolicy": "アカウントを作成することで、",
     "confirmation": "パスワードの再入力",
     "create": "アカウントの作成",
     "enterEmail": "メールアドレス",
@@ -217,7 +215,7 @@
     "invalidPassword": "8文字以上で設定してください",
     "invalidUsername": "3〜20文字以内で設定してください",
     "logIn": "すでにアカウントをお持ちの場合はこちら",
-    "policy": "利用規約",
+    "terms": "利用規約とプライバシーポリシーに同意します",
     "title": "アカウント作成",
     "username": "ユーザー名"
   },

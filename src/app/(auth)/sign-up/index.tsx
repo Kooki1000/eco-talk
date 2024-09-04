@@ -24,7 +24,7 @@ import type { z } from 'zod';
 
 import { useSignUp } from '@/api/sign-up';
 import { ControlledInput } from '@/components/input/customInput';
-import { Button, Text } from '@/components/obytes';
+import { Button, Checkbox, Text } from '@/components/obytes';
 import { black, white } from '@/components/obytes/colors';
 import { translate } from '@/i18n';
 import { DismissKeyboard, useSoftKeyboardEffect } from '@/lib/keyboard';
@@ -36,6 +36,7 @@ export default function SignUpScreen() {
   useSoftKeyboardEffect();
   const [isPasswordVisible, setPasswordVisible] = useState(false);
   const [isConfirmationVisible, setConfirmationVisible] = useState(false);
+  const [isCheckboxChecked, setCheckboxChecked] = useState(false);
 
   const { mutateAsync: signUp } = useSignUp();
 
@@ -53,6 +54,10 @@ export default function SignUpScreen() {
   });
 
   const onSubmit: SubmitHandler<FormType> = (data: FormType) => {
+    if (!isCheckboxChecked) {
+      return;
+    }
+
     signUp(data, {
       onSuccess: () => router.navigate('/(tabs)'),
       onError: () => {
@@ -190,15 +195,21 @@ export default function SignUpScreen() {
           />
         )}
 
-        <Text className="mb-6 mt-4 w-4/5 text-center text-sm">
-          <Text tx="signUp.beforePolicy" />
-          <Text
-            tx="signUp.policy"
-            className="underline"
-            onPress={() => router.push('/(auth)/sign-up/policy')}
-          />
-          <Text tx="signUp.afterPolicy" />
-        </Text>
+        <View className="mb-6 mt-4 w-4/5 flex-row flex-wrap text-center text-sm">
+          <View className="flex-row items-center">
+            <Checkbox
+              onChange={() => setCheckboxChecked(!isCheckboxChecked)}
+              checked={isCheckboxChecked}
+              accessibilityLabel={''}
+            />
+            <View className="ml-2">
+              <Text
+                tx="signUp.terms"
+                onPress={() => router.push('/(auth)/sign-up/policy')}
+              />
+            </View>
+          </View>
+        </View>
 
         <Button
           className="h-10 w-4/5 items-center justify-center rounded-xl bg-blue-500 px-4 dark:bg-blue-700"

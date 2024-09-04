@@ -170,7 +170,7 @@
     "title": "Oops!"
   },
   "policy": {
-    "title": "Terms of Use"
+    "title": "Terms of Service"
   },
   "post": {
     "hideReply": "Hide Replies",
@@ -205,8 +205,6 @@
     "warning": "Sign In is Required"
   },
   "signUp": {
-    "afterPolicy": ".",
-    "beforePolicy": "By signing up, you agree to our ",
     "confirmation": "Confirm your password",
     "create": "Create An Account",
     "enterEmail": "Enter your email",
@@ -217,7 +215,7 @@
     "invalidPassword": "Password must be at least 8 characters.",
     "invalidUsername": "This must be between 3 to 20 characters.",
     "logIn": "Already have an account? Log in",
-    "policy": "Terms of Use",
+    "terms": "I have read and agreed to the Terms of Service and Privacy Policy.",
     "title": "Sign Up",
     "username": "Enter your username"
   },
