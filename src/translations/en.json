@@ -146,21 +146,21 @@
       "guide1": "Waste sorting in Japan is detailed, with guidelines that may vary by city or ward. Here's a general guide:",
       "nonBurnable": {
         "includes": "Includes: Metal items, ceramics, glass, and small household appliances.",
-        "instructions": "Disposal Instructions: Use designated non-burnable waste bags or follow local instructions. Wrap glass in newspaper to prevent injuries."
+        "instructions": "Use designated non-burnable waste bags or follow local instructions. Wrap glass in newspaper to prevent injuries."
       },
       "paper": {
         "includes": "Includes: Newspapers, magazines, cardboard, and other paper products.",
-        "instructions": "Disposal Instructions: Bundle items with string or use designated recycling bags. Flatten cardboard boxes.",
+        "instructions": "Bundle items with string or use designated recycling bags. Flatten cardboard boxes.",
         "title": "Paper"
       },
       "pet": {
         "includes": "Includes: Plastic bottles with the PET symbol (e.g., beverage bottles).",
-        "instructions": "Disposal Instructions: Rinse and clean items, remove food residue, and place in designated plastic waste bags. Some areas require removing caps and labels from bottles.",
+        "instructions": "Rinse and clean items, remove food residue, and place in designated plastic waste bags. Some areas require removing caps and labels from bottles.",
         "title": "PET Bottles"
       },
       "plastic": {
-        "includes": "Includes: Metal items, ceramics, glass, and small household appliances.",
-        "instructions": "Preparation: Use designated non-burnable waste bags or follow local instructions. Wrap glass in newspaper to prevent injuries."
+        "includes": "Includes: Wrappers and packaging with the plastic recycling symbol (♻).",
+        "instructions": "Rinse and clean items, remove food residue, and place in designated plastic waste bags."
       },
       "title": "How to Sort Waste in Japan"
     },

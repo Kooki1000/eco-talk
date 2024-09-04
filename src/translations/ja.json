@@ -131,42 +131,42 @@
   "guides": {
     "how": {
       "bulky": {
-        "includes": "Includes: Furniture, large appliances, and other bulky items.",
-        "instructions": "Disposal Instructions: Contact your local government to arrange a pickup. A special disposal ticket is often required, and items must be placed outside on the scheduled pickup day."
+        "includes": "家具、大型家電、その他かさばるもの",
+        "instructions": "自治体に連絡をするなどして引き取りを手配してください。専用の処理券が必要な場合が多く、引き取り日に屋外に置いておかなければいけません。"
       },
       "burnable": {
-        "includes": "Includes: Food scraps, kitchen waste, paper, small pieces of wood, and other organic items.",
-        "instructions": "Disposal Instructions: Use designated burnable waste bags, tie them securely, and place them in the designated area on the correct day."
+        "includes": "生ゴミ、紙ずく、木くず、その他の燃えるゴミ",
+        "instructions": "ゴミ袋に入れて、しっかりと縛られた状態で指定の収集場所に出してください。"
       },
       "cans": {
-        "includes": "Includes: Aluminum cans, steel cans, and glass bottles.",
-        "instructions": "Disposal Instructions: Rinse cans and bottles, remove caps, and place them in designated bins.",
-        "title": "Cans and Bottles"
+        "includes": "アルミ缶、スチール缶、ガラス瓶など",
+        "instructions": "水で洗ってキャップを外した状態で、指定のゴミ箱に入れる。",
+        "title": "缶とビン"
       },
       "guide1": "日本のゴミの分別のルールは世界的に見て厳しく、市や町ごとによってルールが異なります。大まかなルールは以下の通りです：",
       "nonBurnable": {
-        "includes": "Includes: Metal items, ceramics, glass, and small household appliances.",
-        "instructions": "Disposal Instructions: Use designated non-burnable waste bags or follow local instructions. Wrap glass in newspaper to prevent injuries."
+        "includes": "金属製品、陶器、ガラス、小型家電など",
+        "instructions": "各自治体の指示に従ってください。ガラスの場合はケガを防ぐために、新聞紙で包んでください。"
       },
       "paper": {
-        "includes": "Includes: Newspapers, magazines, cardboard, and other paper products.",
-        "instructions": "Disposal Instructions: Bundle items with string or use designated recycling bags. Flatten cardboard boxes.",
-        "title": "Paper"
+        "includes": "新聞紙、雑誌、段ボール、その他の紙製品",
+        "instructions": "紐で束ねるか、指定のゴミ箱に入れるなどしてください。段ボールは潰して出してください。",
+        "title": "紙ゴミ"
       },
       "pet": {
-        "includes": "Includes: Plastic bottles with the PET symbol (e.g., beverage bottles).",
-        "instructions": "Disposal Instructions: Rinse and clean items, remove food residue, and place in designated plastic waste bags. Some areas require removing caps and labels from bottles.",
-        "title": "PET Bottles"
+        "includes": "ペットボトル（飲料水、清涼飲料水、お茶など）",
+        "instructions": "中身を空にしてすすいでください。自治体によってはキャップやラベルを取り外す必要があります。",
+        "title": "ペットボトル"
       },
       "plastic": {
-        "includes": "Includes: Metal items, ceramics, glass, and small household appliances.",
-        "instructions": "Preparation: Use designated non-burnable waste bags or follow local instructions. Wrap glass in newspaper to prevent injuries."
+        "includes": "袋類やリサイクマークのついたパッケージなど",
+        "instructions": "容器をすすいできれいにし、ゴミ袋に入れてください。"
       },
       "title": "ゴミの分別方法"
     },
     "title": "ゴミの分別のイロハ",
     "what": {
-      "guide1": "日本でのゴミの分別は、そのゴミの材質、大きさ、リサイクル可能かどうかによって分けられます。細かなルールは各市町村ごとに異なりますが、ゴミは大まかに以下の４つの種類に分類できます：",
+      "guide1": "日本でのゴミの分別は、そのゴミの材質、大きさ、リサイクル可能かどうかによって分けられます。細かなルールは各市町村ごとに異なりますが、ゴミは大まかに以下の4つの種類に分類できます：",
       "guide2": "それぞれのゴミの収集日は異なることが多いです。収集日に関する情報は、各市町村のホームページなどをご確認ください。",
       "guide3": "ゴミはお近くの集積場所に置いてください。集積場所にはゴミ出しのスケジュールが張られていることが多いです。参考にしてください。",
       "tips": {
@@ -180,19 +180,19 @@
       "title": "ゴミの分別って何？"
     },
     "why": {
-      "guide1": "Proper waste sorting helps protect the environment and our communities. By separating recyclable materials like paper, glass, metal, and plastics from other waste, we can:",
-      "guide2": "Sorting waste also keeps our communities cleaner and healthier by reducing litter, pests, and unpleasant odors. A small effort in sorting your trash contributes to a more sustainable future and a better living environment for everyone.",
+      "guide1": "ゴミを正しく分別することは、環境と地域社会に役出します。例えば、以下のようなメリットがあります：",
+      "guide2": "ゴミの分別は、ゴミの散乱や害虫、不快な臭いの削減につながります。常日頃の小さな努力によって、私たち全員のより良い生活環境へとつながるのです。",
       "landfills": {
-        "text": "Sorting helps prevent groundwater contamination and greenhouse gas emissions.",
-        "title": "Reduce Landfill Waste:"
+        "text": "地下汚染水のリスクや温室効果ガス削減に効果があります。",
+        "title": "埋め立てゴミの削減："
       },
       "resources": {
-        "text": "Recycling one tonne of paper saves 17 trees, 26,000 liters of water, and 4,000 kWh of electricity.",
-        "title": "Preserve Resources:"
+        "text": "1トンの紙をリサイクルすることで、木17本、水26,000リットル、電力4000kWhを節約できます。",
+        "title": "資源の節約："
       },
       "safety": {
-        "text": "Hazardous items like chemicals, batteries, and medical waste are disposed of safely, preventing harm to people, wildlife, and reducing toxic emissions.",
-        "title": "Ensure Safety:"
+        "text": "化学薬品、バッテリー、医療廃棄物などを適切に処理することで、動植物や私たち人間への気概や有毒物質の排出を防ぎます。",
+        "title": "安全の確保:"
       },
       "title": "ゴミの分別はなぜ大事？"
     }
