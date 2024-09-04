@@ -15,7 +15,7 @@
     "title": "关于这个软件"
   },
   "add": {
-    "charCount": "字数: {{count}}字 /1000字",
+    "charCount": "字数: {{count}}字/1000字",
     "insert": "现在在发生什么？",
     "title": "投稿"
   },
@@ -130,16 +130,70 @@
   },
   "guides": {
     "how": {
-      "content": "测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试",
+      "bulky": {
+        "includes": "Includes: Furniture, large appliances, and other bulky items.",
+        "instructions": "Disposal Instructions: Contact your local government to arrange a pickup. A special disposal ticket is often required, and items must be placed outside on the scheduled pickup day."
+      },
+      "burnable": {
+        "includes": "Includes: Food scraps, kitchen waste, paper, small pieces of wood, and other organic items.",
+        "instructions": "Disposal Instructions: Use designated burnable waste bags, tie them securely, and place them in the designated area on the correct day."
+      },
+      "cans": {
+        "includes": "Includes: Aluminum cans, steel cans, and glass bottles.",
+        "instructions": "Disposal Instructions: Rinse cans and bottles, remove caps, and place them in designated bins.",
+        "title": "Cans and Bottles"
+      },
+      "guide1": "Waste sorting in Japan is detailed, with guidelines that may vary by city or ward. Here's a general guide:",
+      "nonBurnable": {
+        "includes": "Includes: Metal items, ceramics, glass, and small household appliances.",
+        "instructions": "Disposal Instructions: Use designated non-burnable waste bags or follow local instructions. Wrap glass in newspaper to prevent injuries."
+      },
+      "paper": {
+        "includes": "Includes: Newspapers, magazines, cardboard, and other paper products.",
+        "instructions": "Disposal Instructions: Bundle items with string or use designated recycling bags. Flatten cardboard boxes.",
+        "title": "Paper"
+      },
+      "pet": {
+        "includes": "Includes: Plastic bottles with the PET symbol (e.g., beverage bottles).",
+        "instructions": "Disposal Instructions: Rinse and clean items, remove food residue, and place in designated plastic waste bags. Some areas require removing caps and labels from bottles.",
+        "title": "PET Bottles"
+      },
+      "plastic": {
+        "includes": "Includes: Metal items, ceramics, glass, and small household appliances.",
+        "instructions": "Preparation: Use designated non-burnable waste bags or follow local instructions. Wrap glass in newspaper to prevent injuries."
+      },
       "title": "如何进行垃圾分类？"
     },
     "title": "关于垃圾分类",
     "what": {
-      "content": "测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试",
+      "guide1": "Waste sorting in Japan involves dividing waste into specific categories based on material, size, or recyclability. Each city or ward may have its own regulations, but generally, waste is divided into four main categories:",
+      "guide2": "Each type of waste is collected on different days. Information on collection schedules can usually be found on your city's website or in a city guidebook provided during the registration process.",
+      "guide3": "If your residence does not have a collection area, waste should be taken to the nearest public collection point. Residents are usually notified of this when they move in, and schedules are often posted near collection points.",
+      "tips": {
+        "rules": "Following these guidelines is not just environmentally friendly—it's also a legal requirement in Japan.",
+        "subtip1": "Rinse cans and bottles.",
+        "subtip2": "Tie paper bundles with string.",
+        "subtitle": "Important Tips:",
+        "tips1": "Only bring out garbage in the morning on collection days to avoid attracting animals.",
+        "tips2": "Make sure waste is properly packaged. For example:"
+      },
       "title": "什么是垃圾分类？"
     },
     "why": {
-      "content": "测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试",
+      "guide1": "Proper waste sorting helps protect the environment and our communities. By separating recyclable materials like paper, glass, metal, and plastics from other waste, we can:",
+      "guide2": "Sorting waste also keeps our communities cleaner and healthier by reducing litter, pests, and unpleasant odors. A small effort in sorting your trash contributes to a more sustainable future and a better living environment for everyone.",
+      "landfills": {
+        "text": "Sorting helps prevent groundwater contamination and greenhouse gas emissions.",
+        "title": "Reduce Landfill Waste:"
+      },
+      "resources": {
+        "text": "Recycling one tonne of paper saves 17 trees, 26,000 liters of water, and 4,000 kWh of electricity.",
+        "title": "Preserve Resources:"
+      },
+      "safety": {
+        "text": "Hazardous items like chemicals, batteries, and medical waste are disposed of safely, preventing harm to people, wildlife, and reducing toxic emissions.",
+        "title": "Ensure Safety:"
+      },
       "title": "垃圾分类为什么重要？"
     }
   },
