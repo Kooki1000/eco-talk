@@ -33,14 +33,14 @@ export default function GuidesScreen() {
                 divided into four main categories:
               </Text>
 
-              <View className="mb-6">
+              <View className="my-4">
                 <Text className="font-bold">{'\u25cf'} Burnable</Text>
                 <Text className="mt-2 font-bold">{'\u25cf'} Non-burnable</Text>
                 <Text className="mt-2 font-bold">{'\u25cf'} Recyclable</Text>
                 <Text className="mt-2 font-bold">{'\u25cf'} Bulky</Text>
               </View>
 
-              <Text>
+              <Text className="mt-2">
                 Each type of waste is collected on different days. Information
                 on collection schedules can usually be found on your
                 municipality's English-language website or in a city guidebook
@@ -56,23 +56,19 @@ export default function GuidesScreen() {
 
               <Text className="my-4 text-xl font-bold">Important Tips:</Text>
 
-              <View className="mb-3">
-                <Text>
-                  {'\u25cf'} Only bring out garbage in the morning on collection
-                  days to avoid attracting animals.
-                </Text>
-                <Text className="mt-2">
-                  {'\u25cf'} Make sure waste is properly packaged. For example:
-                </Text>
+              <Text className="mt-2">
+                {'\u25cf'} Only bring out garbage in the morning on collection
+                days to avoid attracting animals.
+              </Text>
+              <Text className="mt-2">
+                {'\u25cf'} Make sure waste is properly packaged. For example:
+              </Text>
 
-                <View className="ml-4">
-                  <Text className="mt-2">
-                    {'\u25cf'} Rinse cans and bottles.
-                  </Text>
-                  <Text className="mt-2">
-                    {'\u25cf'} Tie paper bundles with string.
-                  </Text>
-                </View>
+              <View className="ml-4">
+                <Text className="mt-2">{'\u25cf'} Rinse cans and bottles.</Text>
+                <Text className="mt-2">
+                  {'\u25cf'} Tie paper bundles with string.
+                </Text>
               </View>
 
               <Text className="mt-2">
@@ -82,20 +78,48 @@ export default function GuidesScreen() {
             </View>
           </View>
 
-          <View
-            style={styles.sticker}
-            className="my-3 size-fit self-center rounded-lg bg-red-100 px-3 dark:bg-red-400"
-          >
-            <Text
-              tx="guides.why.title"
-              className="text-xl font-bold leading-7"
-              style={styles.question}
-            />
-            <Text
-              tx="guides.why.content"
-              style={styles.content}
-              className="leading-6"
-            />
+          <View className="mx-4 mb-3 mt-4 size-fit self-center rounded-lg bg-red-100 px-3 dark:bg-red-400">
+            <View className="mx-4 mb-4">
+              <Text tx="guides.why.title" className="mt-4 text-xl font-bold" />
+
+              <Text className="mt-2">
+                Proper waste sorting helps protect the environment and our
+                communities. By separating recyclable materials like paper,
+                glass, metal, and plastics from other waste, we can:
+              </Text>
+
+              <View className="my-4">
+                <Text>
+                  <Text className="font-bold">
+                    {'\u25cf'} Preserve Resources:{' '}
+                  </Text>
+                  Recycling one tonne of paper saves 17 trees, 26,000 liters of
+                  water, and 4,000 kWh of electricity.
+                </Text>
+
+                <Text className="mt-2">
+                  <Text className="font-bold">
+                    {'\u25cf'} Reduce Landfill Waste:{' '}
+                  </Text>
+                  Sorting helps prevent groundwater contamination and greenhouse
+                  gas emissions.
+                </Text>
+
+                <Text className="mt-2">
+                  <Text className="font-bold">{'\u25cf'} Ensure Safety: </Text>
+                  Hazardous items like chemicals, batteries, and medical waste
+                  are disposed of safely, preventing harm to people, wildlife,
+                  and reducing toxic emissions.
+                </Text>
+              </View>
+
+              <Text>
+                Sorting waste also keeps our communities cleaner and healthier
+                by reducing litter, pests, and unpleasant odors. A small effort
+                in sorting your trash contributes to a more sustainable future
+                and a better living environment for everyone.
+              </Text>
+            </View>
           </View>
 
           <View
