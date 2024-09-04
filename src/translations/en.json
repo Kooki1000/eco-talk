@@ -135,7 +135,7 @@
         "instructions": "Disposal Instructions: Contact your local government to arrange a pickup. A special disposal ticket is often required, and items must be placed outside on the scheduled pickup day."
       },
       "burnable": {
-        "includes": "Includes: Food scraps, kitchen waste, paper, small pieces of wood, and other organic items.",
+        "includes": "Includes: Food scraps, kitchen waste, small pieces of wood, and other burnable items.",
         "instructions": "Disposal Instructions: Use designated burnable waste bags, tie them securely, and place them in the designated area on the correct day."
       },
       "cans": {
@@ -155,7 +155,7 @@
       },
       "pet": {
         "includes": "Includes: Plastic bottles with the PET symbol (e.g., beverage bottles).",
-        "instructions": "Rinse and clean items, remove food residue, and place in designated plastic waste bags. Some areas require removing caps and labels from bottles.",
+        "instructions": "Rinse bottles, remove caps and labels, and place them in designated collection bins.",
         "title": "PET Bottles"
       },
       "plastic": {
