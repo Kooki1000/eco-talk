@@ -15,7 +15,7 @@
     "title": "关于这个软件"
   },
   "add": {
-    "charCount": "字数: {{count}}字 /1000字",
+    "charCount": "字数: {{count}}字/1000字",
     "insert": "现在在发生什么？",
     "title": "投稿"
   },
