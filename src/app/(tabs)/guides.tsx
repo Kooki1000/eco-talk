@@ -122,20 +122,119 @@ export default function GuidesScreen() {
             </View>
           </View>
 
-          <View
-            style={styles.sticker}
-            className="my-3 size-fit self-center rounded-lg bg-orange-100 px-3 dark:bg-orange-400"
-          >
-            <Text
-              tx="guides.how.title"
-              className="text-xl font-bold leading-7"
-              style={styles.question}
-            />
-            <Text
-              tx="guides.how.content"
-              style={styles.content}
-              className="leading-6"
-            />
+          <View className="mx-4 mb-3 mt-4 size-fit self-center rounded-lg bg-orange-100 px-3 dark:bg-orange-400">
+            <View className="mx-4 mb-4">
+              <Text tx="guides.how.title" className="mt-4 text-xl font-bold" />
+
+              <Text className="mt-2">
+                Waste sorting in Japan is detailed, with guidelines that may
+                vary by municipality. Here's a general guide:
+              </Text>
+
+              <View className="mt-4">
+                <Text className="mt-2 font-bold">Burnable</Text>
+                <View className="ml-2">
+                  <Text className="mt-2">
+                    {'\u25cf'} Includes: Food scraps, kitchen waste, paper,
+                    small pieces of wood, and other organic items.
+                  </Text>
+                  <Text className="mt-2">
+                    {'\u25cf'} Preparation: Use designated burnable waste bags,
+                    tie securely, and place in the designated area on the
+                    correct day.
+                  </Text>
+                </View>
+              </View>
+
+              <View className="mt-2">
+                <Text className="mt-2 font-bold">Non-burnable</Text>
+                <View className="ml-2">
+                  <Text className="mt-2">
+                    {'\u25cf'} Includes: Metal items, ceramics, glass, and small
+                    household appliances.
+                  </Text>
+                  <Text className="mt-2">
+                    {'\u25cf'} Preparation: Use designated non-burnable waste
+                    bags or follow local instructions. Wrap glass in newspaper
+                    to prevent injuries.
+                  </Text>
+                </View>
+              </View>
+
+              <View className="mt-2">
+                <Text className="mt-2 font-bold">Plastic</Text>
+                <View className="ml-2">
+                  <Text className="mt-2">
+                    {'\u25cf'} Includes: Plastic bottles, wrappers, trays, and
+                    packaging with the plastic recycling symbol (♻).
+                  </Text>
+                  <Text className="mt-2">
+                    {'\u25cf'} Preparation: Rinse and clean items, remove food
+                    residue, and place in designated plastic waste bags. Some
+                    areas require removing caps and labels from bottles.
+                  </Text>
+                </View>
+              </View>
+
+              <View className="mt-2">
+                <Text className="mt-2 font-bold">PET Bottles</Text>
+                <View className="ml-2">
+                  <Text className="mt-2">
+                    {'\u25cf'} Includes: Aluminum cans, steel cans, and glass
+                    bottles.
+                  </Text>
+                  <Text className="mt-2">
+                    {'\u25cf'} Preparation: Rinse cans and bottles, remove caps,
+                    and place them in designated bins.
+                  </Text>
+                </View>
+              </View>
+
+              <View className="mt-2">
+                <Text className="mt-2 font-bold">Cans and Bottles</Text>
+                <View className="ml-2">
+                  <Text className="mt-2">
+                    {'\u25cf'} Includes: Plastic bottles with the PET symbol
+                    (e.g., beverage bottles).
+                  </Text>
+                  <Text className="mt-2">
+                    {'\u25cf'} Preparation: Rinse bottles, remove caps and
+                    labels, and place them in designated collection bins.
+                    Separate caps and labels as needed.
+                  </Text>
+                </View>
+              </View>
+
+              <View className="mt-2">
+                <Text className="mt-2 font-bold">Paper</Text>
+                <View className="ml-2">
+                  <Text className="mt-2">
+                    {'\u25cf'} Includes: Newspapers, magazines, cardboard, and
+                    other paper products.
+                  </Text>
+                  <Text className="mt-2">
+                    {'\u25cf'} Preparation: Bundle items with string or use
+                    designated recycling bags. Flatten cardboard boxes.
+                  </Text>
+                </View>
+              </View>
+
+              <View className="mt-2">
+                <Text className="mt-2 font-bold">Bulky/Large-sized</Text>
+                <View className="ml-2">
+                  <Text className="mt-2">
+                    {'\u25cf'} Includes: Furniture, large appliances, and other
+                    bulky items.
+                  </Text>
+                  <Text className="mt-2">
+                    {'\u25cf'} Preparation: Contact your local government to
+                    arrange a pickup. A special disposal ticket is often
+                    required, and items must be placed outside on the scheduled
+                    pickup day.
+                  </Text>
+                </View>
+              </View>
+            </View>
           </View>
         </View>
       </ScrollView>
