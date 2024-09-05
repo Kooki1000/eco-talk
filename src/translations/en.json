@@ -130,17 +130,71 @@
   },
   "guides": {
     "how": {
-      "content": "   Waste sorting plays a vital role in protecting both the environment and our communities. By carefully separating recyclable materials—like paper, glass, metal, and plastics—from other waste, we can significantly reduce the strain on natural resources. Imagine this: recycling just one tonne of paper saves 17 trees, 26,000 liters of water, and 4,000 kWh of electricity. That's a huge impact from just a small change in our daily habits!\n    When we sort our waste properly, we're not only preserving resources but also cutting down on the amount of trash that ends up in landfills. This helps to prevent serious environmental issues like groundwater contamination and the release of greenhouse gases. Additionally, sorting ensures that hazardous items—such as chemicals, batteries, and medical waste—are disposed of safely. This prevents harmful exposure to people and wildlife, and reduces the release of toxic substances during incineration.\n    Proper waste sorting also makes our communities cleaner and healthier. It reduces litter, keeps pests at bay, and minimizes the unpleasant odors that come from improper waste disposal. By taking a few extra moments to sort your trash, you're contributing to a more sustainable future and helping to create a better living environment for everyone.",
-      "title": "How should waste sorting done?"
+      "bulky": {
+        "includes": "Includes: Furniture, large appliances, and other bulky items.",
+        "instructions": "Disposal Instructions: Contact your local government to arrange a pickup. A special disposal ticket is often required, and items must be placed outside on the scheduled pickup day."
+      },
+      "burnable": {
+        "includes": "Includes: Food scraps, kitchen waste, paper, small pieces of wood, and other organic items.",
+        "instructions": "Disposal Instructions: Use designated burnable waste bags, tie them securely, and place them in the designated area on the correct day."
+      },
+      "cans": {
+        "includes": "Includes: Aluminum cans, steel cans, and glass bottles.",
+        "instructions": "Disposal Instructions: Rinse cans and bottles, remove caps, and place them in designated bins.",
+        "title": "Cans and Bottles"
+      },
+      "guide1": "Waste sorting in Japan is detailed, with guidelines that may vary by city or ward. Here's a general guide:",
+      "nonBurnable": {
+        "includes": "Includes: Metal items, ceramics, glass, and small household appliances.",
+        "instructions": "Use designated non-burnable waste bags or follow local instructions. Wrap glass in newspaper to prevent injuries."
+      },
+      "paper": {
+        "includes": "Includes: Newspapers, magazines, cardboard, and other paper products.",
+        "instructions": "Bundle items with string or use designated recycling bags. Flatten cardboard boxes.",
+        "title": "Paper"
+      },
+      "pet": {
+        "includes": "Includes: Plastic bottles with the PET symbol (e.g., beverage bottles).",
+        "instructions": "Rinse and clean items, remove food residue, and place in designated plastic waste bags. Some areas require removing caps and labels from bottles.",
+        "title": "PET Bottles"
+      },
+      "plastic": {
+        "includes": "Includes: Wrappers and packaging with the plastic recycling symbol (♻).",
+        "instructions": "Rinse and clean items, remove food residue, and place in designated plastic waste bags."
+      },
+      "title": "How to Sort Waste in Japan"
     },
     "title": "General Information",
     "what": {
-      "content": "    As the name implies, the waste sorting process divides waste into categories based on material, size, or recyclability. In Japan, waste sorting regulations vary by location, determined by the city or a specific ward in large urban areas. However, as a rule of thumb, wastes should be divided into four categories: burnable, non-burnable, recyclable, and bulky. Each type of garbage is typically collected on different days and frequencies. The details regarding this information in English can usually be found on the municipality's English-language websites.\n    Usually, the municipality typically distributes a city guidebook that covers waste disposal during the initial registration process. If the residence does not have a collection area, the waste should be disposed of at the nearest public collection point. In this case, residents are usually notified when they move in, and schedules are posted near collection points.\n    Furthermore, garbage should only be brought out in the morning on collection day, as putting it out at other times will attract animals and cause problems. In addition, waste should be well packaged according to specific guidance. For example, cans and bottles should be rinsed out, and paper must be tied in bundles.\n    In Japan, effective waste sorting is not only an environmentally conscious effort but also a legal requirement, so everyone should be aware of and follow the rules.",
-      "title": "What is waste sorting?"
+      "guide1": "Waste sorting in Japan involves dividing waste into specific categories based on material, size, or recyclability. Each city or ward may have its own regulations, but generally, waste is divided into four main categories:",
+      "guide2": "Each type of waste is collected on different days. Information on collection schedules can usually be found on your city's website or in a city guidebook provided during the registration process.",
+      "guide3": "Waste should be taken to the nearest collection point. You are usually notified of the location when you move in, and schedules are often posted near the collection point.",
+      "tips": {
+        "rules": "Following these guidelines is not just environmentally friendly—it's also a legal requirement in Japan.",
+        "subtip1": "Rinse cans and bottles.",
+        "subtip2": "Tie paper bundles with string.",
+        "subtitle": "Important Tips:",
+        "tips1": "Only bring out trash in the morning on collection days to avoid attracting animals.",
+        "tips2": "Make sure waste is properly packaged. For example:"
+      },
+      "title": "What is Waste Sorting?"
     },
     "why": {
-      "content": "Waste sorting is important for a variety of environmental and social reasons. By sorting out wastes, recyclable materials, such as paper, glass, metal, and plastics, can be separated from other waste. This leads to the preservation and reduction in the consumption of natural resources such as timber, water, and minerals, which are required for the production of new products. For example, recycling one tonne of paper saves 17 trees, 26,000 liters of water, and 4,000 kWh of electricity. Furthermore, proper waste sorting reduces the amount of waste sent to landfills, lowering the environmental impact of landfills, such as groundwater contamination and greenhouse gas emissions. Proper waste sorting also ensures that hazardous substances, such as chemicals, batteries, and medical waste, are disposed of safely, which prevents harmful exposures to humans and the environment and reduces the release of toxic substances during incineration. Waste sorting is important also because it contributes to cleaner, healthier communities by reducing litter, pests, and odors associated with improper waste disposal. ",
-      "title": "Why is waste sorting important?"
+      "guide1": "Proper waste sorting helps protect the environment and our communities. By separating recyclable materials like paper, glass, metal, and plastics from other waste, we can:",
+      "guide2": "Sorting waste also keeps our communities cleaner and healthier by reducing litter, pests, and unpleasant odors. A small effort in sorting your trash contributes to a more sustainable future and a better living environment for everyone.",
+      "landfills": {
+        "text": "Sorting helps prevent groundwater contamination and greenhouse gas emissions.",
+        "title": "Reduce Landfill Waste:"
+      },
+      "resources": {
+        "text": "Recycling one tonne of paper saves 17 trees, 26,000 liters of water, and 4,000 kWh of electricity.",
+        "title": "Preserve Resources:"
+      },
+      "safety": {
+        "text": "Hazardous items like chemicals, batteries, and medical waste are disposed of safely, preventing harm to people, wildlife, and reducing toxic emissions.",
+        "title": "Ensure Safety:"
+      },
+      "title": "Why is Waste Sorting Important?"
     }
   },
   "home": {
