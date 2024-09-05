@@ -167,15 +167,15 @@
     "title": "General Information",
     "what": {
       "guide1": "Waste sorting in Japan involves dividing waste into specific categories based on material, size, or recyclability. Each city or ward may have its own regulations, but generally, waste is divided into four main categories:",
-      "guide2": "Each type of waste is collected on different days. Information on collection schedules can usually be found on your city's website or in a city guidebook provided during the registration process.",
+      "guide2": "Each type of waste is collected on different days. Information on collection schedules can usually be found on your city's website.",
       "guide3": "Waste should be taken to the nearest collection point. You are usually notified of the location when you move in, and schedules are often posted near the collection point.",
       "tips": {
         "rules": "Following these guidelines is not just environmentally friendly—it's also a legal requirement in Japan.",
         "subtip1": "Rinse cans and bottles.",
         "subtip2": "Tie paper bundles with string.",
-        "subtitle": "Important Tips:",
         "tips1": "Only bring out trash in the morning on collection days to avoid attracting animals.",
-        "tips2": "Make sure waste is properly packaged. For example:"
+        "tips2": "Make sure waste is properly packaged. For example:",
+        "subtitle": "Important Tips:"
       },
       "title": "What is Waste Sorting?"
     },
