@@ -18,6 +18,8 @@ ios/
 *.key
 *.mobileprovision
 
+.env
+
 # Metro
 .metro-health-check*
 
