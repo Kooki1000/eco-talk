@@ -135,7 +135,7 @@
         "instructions": "Disposal Instructions: Contact your local government to arrange a pickup. A special disposal ticket is often required, and items must be placed outside on the scheduled pickup day."
       },
       "burnable": {
-        "includes": "Includes: Food scraps, kitchen waste, small pieces of wood, and other burnable items.",
+        "includes": "Includes: Food scraps, kitchen waste, paper, small pieces of wood, and other burnable items.",
         "instructions": "Disposal Instructions: Use designated burnable waste bags, tie them securely, and place them in the designated area on the correct day."
       },
       "cans": {
