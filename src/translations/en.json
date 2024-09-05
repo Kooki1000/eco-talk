@@ -323,7 +323,7 @@
         "instructions": "Disposal Instructions: Contact your local government to arrange a pickup. A special disposal ticket is often required, and items must be placed outside on the scheduled pickup day."
       },
       "burnable": {
-        "includes": "Includes: Food scraps, kitchen waste, paper, small pieces of wood, and other organic items.",
+        "includes": "Includes: Food scraps, kitchen waste, paper, small pieces of wood, and other burnable items.",
         "instructions": "Disposal Instructions: Use designated burnable waste bags, tie them securely, and place them in the designated area on the correct day."
       },
       "cans": {
@@ -343,7 +343,7 @@
       },
       "pet": {
         "includes": "Includes: Plastic bottles with the PET symbol (e.g., beverage bottles).",
-        "instructions": "Rinse and clean items, remove food residue, and place in designated plastic waste bags. Some areas require removing caps and labels from bottles.",
+        "instructions": "Rinse bottles, remove caps and labels, and place them in designated collection bins.",
         "title": "PET Bottles"
       },
       "plastic": {
@@ -355,7 +355,7 @@
     "title": "General Information",
     "what": {
       "guide1": "Waste sorting in Japan involves dividing waste into specific categories based on material, size, or recyclability. Each city or ward may have its own regulations, but generally, waste is divided into four main categories:",
-      "guide2": "Each type of waste is collected on different days. Information on collection schedules can usually be found on your city's website or in a city guidebook provided during the registration process.",
+      "guide2": "Each type of waste is collected on different days. Information on collection schedules can usually be found on your city's website.",
       "guide3": "Waste should be taken to the nearest collection point. You are usually notified of the location when you move in, and schedules are often posted near the collection point.",
       "tips": {
         "rules": "Following these guidelines is not just environmentally friendly—it's also a legal requirement in Japan.",

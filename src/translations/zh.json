@@ -204,7 +204,7 @@
   },
   "add": {
     "charCount": "字数: {{count}}字/1000字",
-    "insert": "现在在发生什么？",
+    "insert": "现在正在发生什么？",
     "title": "投稿"
   },
   "address": {
@@ -290,9 +290,9 @@
     }
   },
   "auth": {
-    "description": "您了解日本垃圾分类的工具",
+    "description": "让您了解日本垃圾分类的工具",
     "logIn": "登录",
-    "signUp": "创建账户",
+    "signUp": "创建账号",
     "title": "欢迎来到EcoTalk",
     "visitor": "跳过登录直接使用"
   },
@@ -319,68 +319,68 @@
   "guides": {
     "how": {
       "bulky": {
-        "includes": "Includes: Furniture, large appliances, and other bulky items.",
-        "instructions": "Disposal Instructions: Contact your local government to arrange a pickup. A special disposal ticket is often required, and items must be placed outside on the scheduled pickup day."
+        "includes": "包括：家具、大型电器和其他大件物品。",
+        "instructions": "请联系当地政府安排回收。 通常需要提前购买特别处理票，物品必须在指定的回收日放置在指定地点。"
       },
       "burnable": {
-        "includes": "Includes: Food scraps, kitchen waste, paper, small pieces of wood, and other organic items.",
-        "instructions": "Disposal Instructions: Use designated burnable waste bags, tie them securely, and place them in the designated area on the correct day."
+        "includes": "包括：生活垃圾、纸屑、木屑和其他可燃物品。",
+        "instructions": "请使用指定的可燃垃圾袋并扎牢袋口，在正确的日期将其放到指定地点。"
       },
       "cans": {
-        "includes": "Includes: Aluminum cans, steel cans, and glass bottles.",
-        "instructions": "Disposal Instructions: Rinse cans and bottles, remove caps, and place them in designated bins.",
-        "title": "Cans and Bottles"
+        "includes": "包括：铝罐、铁罐和玻璃瓶。",
+        "instructions": "去除盖子，冲洗干净，并放入指定的垃圾桶。",
+        "title": "瓶和罐"
       },
-      "guide1": "Waste sorting in Japan is detailed, with guidelines that may vary by city or ward. Here's a general guide:",
+      "guide1": "日本对垃圾分类有详细的规定，不同城市或行政区可能有不同的分类方法。 一般规则如下：",
       "nonBurnable": {
-        "includes": "Includes: Metal items, ceramics, glass, and small household appliances.",
-        "instructions": "Disposal Instructions: Use designated non-burnable waste bags or follow local instructions. Wrap glass in newspaper to prevent injuries."
+        "includes": "包括：金属制品、陶瓷、玻璃和小型家用电器。",
+        "instructions": "使用不可燃垃圾专用的垃圾袋，或按照当地政府说明处理。用报纸包裹玻璃，以防受伤。"
       },
       "paper": {
-        "includes": "Includes: Newspapers, magazines, cardboard, and other paper products.",
-        "instructions": "Disposal Instructions: Bundle items with string or use designated recycling bags. Flatten cardboard boxes.",
-        "title": "Paper"
+        "includes": "包括：报纸、杂志、纸板和其他纸制品。",
+        "instructions": "用绳子捆好物品或使用指定的回收袋。 压平纸箱。",
+        "title": "废纸"
       },
       "pet": {
-        "includes": "Includes: Plastic bottles with the PET symbol (e.g., beverage bottles).",
-        "instructions": "Disposal Instructions: Rinse and clean items, remove food residue, and place in designated plastic waste bags. Some areas require removing caps and labels from bottles.",
-        "title": "PET Bottles"
+        "includes": "包括：带有PET标志的塑料瓶（如饮料瓶）。",
+        "instructions": "倒空并冲洗塑料瓶。 一些区域要求取下瓶盖和标签。",
+        "title": "PET塑料瓶"
       },
       "plastic": {
-        "includes": "Includes: Metal items, ceramics, glass, and small household appliances.",
-        "instructions": "Preparation: Use designated non-burnable waste bags or follow local instructions. Wrap glass in newspaper to prevent injuries."
+        "includes": "包括：带有塑料回收标志（♻）的包装。",
+        "instructions": "冲洗并清洁容器，然后放入指定的垃圾袋中。"
       },
       "title": "如何进行垃圾分类？"
     },
     "title": "关于垃圾分类",
     "what": {
-      "guide1": "Waste sorting in Japan involves dividing waste into specific categories based on material, size, or recyclability. Each city or ward may have its own regulations, but generally, waste is divided into four main categories:",
-      "guide2": "Each type of waste is collected on different days. Information on collection schedules can usually be found on your city's website or in a city guidebook provided during the registration process.",
-      "guide3": "If your residence does not have a collection area, waste should be taken to the nearest public collection point. Residents are usually notified of this when they move in, and schedules are often posted near collection points.",
+      "guide1": "在日本，垃圾会根据其材料、尺寸大小和能否被回收而进行分类。 详细的规定因地域而异，但大致可分为以下四类：",
+      "guide2": "每种垃圾的收集日期通常都不同。 有关收集日期的具体信息请查看当地政府的官网。",
+      "guide3": "请将垃圾扔到指定的收集点，您搬入时通常会收到指示。垃圾收集时间表通常会张贴在收集点。",
       "tips": {
-        "rules": "Following these guidelines is not just environmentally friendly—it's also a legal requirement in Japan.",
-        "subtip1": "Rinse cans and bottles.",
-        "subtip2": "Tie paper bundles with string.",
-        "subtitle": "Important Tips:",
-        "tips1": "Only bring out garbage in the morning on collection days to avoid attracting animals.",
-        "tips2": "Make sure waste is properly packaged. For example:"
+        "rules": "遵守这些方法不仅有利于环保，在日本也是法律要求。",
+        "subtip1": "冲洗瓶和罐。",
+        "subtip2": "用绳子把纸捆绑起来。",
+        "subtitle": "温馨提示：",
+        "tips1": "为了避免引来动物，请在指定日期的当日早晨把垃圾放到收集点。",
+        "tips2": "垃圾放到收集点前，请先处理好垃圾："
       },
       "title": "什么是垃圾分类？"
     },
     "why": {
-      "guide1": "Proper waste sorting helps protect the environment and our communities. By separating recyclable materials like paper, glass, metal, and plastics from other waste, we can:",
-      "guide2": "Sorting waste also keeps our communities cleaner and healthier by reducing litter, pests, and unpleasant odors. A small effort in sorting your trash contributes to a more sustainable future and a better living environment for everyone.",
+      "guide1": "正确的垃圾分类有助于保护环境和社区。 例如，它有以下好处：",
+      "guide2": "为垃圾分类尽绵薄之力，就能为每个人创造更可持续的未来和更好的生活环境。 每个人在日常只要为垃圾分类尽绵薄之力，就能创造更可持续的美好生活环境。",
       "landfills": {
-        "text": "Sorting helps prevent groundwater contamination and greenhouse gas emissions.",
-        "title": "Reduce Landfill Waste:"
+        "text": "有助于降低地下水污染的风险和减少温室气体的排放。",
+        "title": "减少垃圾填埋："
       },
       "resources": {
-        "text": "Recycling one tonne of paper saves 17 trees, 26,000 liters of water, and 4,000 kWh of electricity.",
-        "title": "Preserve Resources:"
+        "text": "回收利用一吨纸可节约17棵树、26000升水和4000度电。",
+        "title": "保护资源："
       },
       "safety": {
-        "text": "Hazardous items like chemicals, batteries, and medical waste are disposed of safely, preventing harm to people, wildlife, and reducing toxic emissions.",
-        "title": "Ensure Safety:"
+        "text": "化学品、电池和医疗废物等危险物品需要安全处置，防止对人类或野生动物造成伤害，并减少有毒气体的排放。",
+        "title": "确保安全："
       },
       "title": "垃圾分类为什么重要？"
     }
@@ -422,7 +422,7 @@
     "showTranslation": "隐藏翻译"
   },
   "posts": {
-    "title": "来自您的街的投稿"
+    "title": "来自您的街区的投稿"
   },
   "profile": {
     "delete": "注销账号",
@@ -435,7 +435,7 @@
     "title": "设定",
     "username": {
       "error": "更改用户名失败。",
-      "length": "用户名长度必须至少为3个字符。"
+      "length": "用户名长度至少为3个字符。"
     }
   },
   "requireAuth": {
@@ -456,8 +456,8 @@
     "invalidEmail": "电子邮件地址不正确",
     "invalidPassword": "请设置8个字符以上的密码",
     "invalidUsername": "请设置3到20个字符之间的用户名",
-    "logIn": "已有账户？登陆",
-    "terms": "I have read and agreed to the Terms of Service and Privacy Policy.",
+    "logIn": "已有账号？登陆",
+    "policy": "利用規約",
     "title": "创建账号",
     "username": "用户名"
   },
@@ -468,7 +468,7 @@
   },
   "translatedLocales": {
     "en": "英文",
-    "ja": "日语",
+    "ja": "日文",
     "zh": "中文"
   }
 }
