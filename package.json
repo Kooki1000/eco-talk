@@ -1,7 +1,8 @@
 {
-  "name": "cas-project",
+  "name": "eco-talk",
   "main": "expo-router/entry",
   "version": "1.0.0",
+  "license": "MIT",
   "scripts": {
     "start": "expo start",
     "prebuild": "expo prebuild",
