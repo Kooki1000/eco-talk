@@ -47,6 +47,7 @@ export default function SignUpScreen() {
     control,
     handleSubmit,
     setError,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm<FormType>({
     resolver: zodResolver(signUpSchema),
@@ -59,7 +60,10 @@ export default function SignUpScreen() {
     }
 
     signUp(data, {
-      onSuccess: () => router.navigate('/(tabs)'),
+      onSuccess: () => {
+        reset();
+        router.navigate('/(tabs)');
+      },
       onError: () => {
         setError('email', {
           message: translate('signUp.error'),

@@ -36,6 +36,7 @@ export default function LogInScreen() {
     control,
     handleSubmit,
     setError,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm<FormType>({
     resolver: zodResolver(logInSchema),
@@ -56,6 +57,7 @@ export default function LogInScreen() {
       return;
     }
 
+    reset();
     router.navigate('/(tabs)');
   };
 
