@@ -54,7 +54,7 @@ export const Options = forwardRef<BottomSheetModal, OptionsProps>(
       <Modal
         ref={ref}
         index={0}
-        style={{ marginTop: 32 }}
+        style={{ marginTop: 64 }}
         snapPoints={snapPoints}
         backgroundStyle={{
           backgroundColor: isDark ? colors.neutral[800] : colors.white,
@@ -66,6 +66,7 @@ export const Options = forwardRef<BottomSheetModal, OptionsProps>(
           renderItem={renderSelectItem}
           ListFooterComponent={<View style={{ height: 32 }} />}
         />
+        <View style={{ height: 64 }} />
       </Modal>
     );
   }
