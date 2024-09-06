@@ -457,7 +457,7 @@
     "invalidPassword": "请设置8个字符以上的密码",
     "invalidUsername": "请设置3到20个字符之间的用户名",
     "logIn": "已有账号？登陆",
-    "policy": "利用規約",
+    "terms": "我已阅读并同意服务条款和隐私政策",
     "title": "创建账号",
     "username": "用户名"
   },
