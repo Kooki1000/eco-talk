@@ -6,7 +6,7 @@ import { translate } from '@/i18n';
 
 const HowGuide = () => {
   return (
-    <View className="m-4 size-fit self-center rounded-lg bg-orange-100 px-3 dark:bg-orange-400">
+    <View className="my-4 size-fit self-center rounded-lg bg-orange-100 px-3 dark:bg-orange-400">
       <View className="mx-4 mb-4">
         <Text tx="guides.how.title" className="mt-4 text-xl font-bold" />
         <Text tx="guides.how.guide1" className="mt-2" />

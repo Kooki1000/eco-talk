@@ -22,9 +22,11 @@ export default function GuidesScreen() {
         <View style={{ alignItems: 'center' }} className="mb-16 mt-8">
           <Text tx="guides.title" className="text-center text-2xl font-bold" />
 
-          <WhatGuide />
-          <WhyGuide />
-          <HowGuide />
+          <View style={{ marginHorizontal: 16 }}>
+            <WhatGuide />
+            <WhyGuide />
+            <HowGuide />
+          </View>
         </View>
       </ScrollView>
     </View>
