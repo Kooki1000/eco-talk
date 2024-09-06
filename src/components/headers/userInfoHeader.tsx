@@ -26,7 +26,12 @@ const UserInfoHeader = ({ style, className }: Props) => {
               <Image
                 source={{ uri: profile.avatar_url }}
                 contentFit="cover"
-                style={{ width: 40, height: 40, borderRadius: 20 }}
+                style={{
+                  width: 40,
+                  height: 40,
+                  borderRadius: 20,
+                  borderWidth: 1,
+                }}
                 cachePolicy={'disk'}
               />
             </Link>

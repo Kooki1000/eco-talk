@@ -31,6 +31,7 @@ export default function IndexScreen() {
         source={require('@assets/images/logo.png')}
         style={styles.image}
         contentFit="contain"
+        cachePolicy={'disk'}
       />
 
       <Text tx="auth.title" className="my-5 text-center text-4xl font-bold" />
