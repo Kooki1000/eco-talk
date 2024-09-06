@@ -1,6 +1,6 @@
 {
   "name": "eco-talk",
-  "main": "eco-talk/entry",
+  "main": "expo-router/entry",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
