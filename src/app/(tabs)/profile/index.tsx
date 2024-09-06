@@ -1,6 +1,8 @@
+/* eslint-disable max-lines-per-function */
 import { router } from 'expo-router';
 import { Info, UserRound } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
+import { useEffect, useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -20,6 +22,12 @@ export default function ProfileScreen() {
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
 
+  const [currentProfile, setCurrentProfile] = useState(profile);
+
+  useEffect(() => {
+    setCurrentProfile(profile ? { ...profile } : null);
+  }, [profile]);
+
   return (
     <View
       style={{
@@ -27,8 +35,8 @@ export default function ProfileScreen() {
         paddingBottom: insets.bottom,
       }}
     >
-      {profile ? (
-        <Banner profile={profile} />
+      {currentProfile ? (
+        <Banner profile={currentProfile} />
       ) : (
         <View className="border-b-2 border-[#CBBDBD]">
           <Image
@@ -62,18 +70,18 @@ export default function ProfileScreen() {
             />
           </Pressable>
 
-          {profile?.username && (
+          {currentProfile?.username && (
             <View className="mb-6 flex flex-row items-center">
               <UserRound color={isDark ? white : black} size={28} />
               <Text className="text-lg" style={styles.infoText}>
-                {profile.username}
+                {currentProfile.username}
               </Text>
             </View>
           )}
         </View>
 
         <View className="items-center">
-          {profile ? <LogOutButton /> : <LogInButton />}
+          {currentProfile ? <LogOutButton /> : <LogInButton />}
         </View>
       </View>
     </View>
