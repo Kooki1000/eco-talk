@@ -5,7 +5,7 @@ import { translate } from '@/i18n';
 
 const WhyGuide = () => {
   return (
-    <View className="m-4 size-fit self-center rounded-lg bg-red-100 px-3 dark:bg-red-400">
+    <View className="my-4 size-fit self-center rounded-lg bg-red-100 px-3 dark:bg-red-400">
       <View className="mx-4 mb-4">
         <Text tx="guides.why.title" className="mt-4 text-xl font-bold" />
         <Text tx="guides.why.guide1" className="mt-2" />
