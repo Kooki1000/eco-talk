@@ -1,11 +1,11 @@
 import { ImageBackground } from 'expo-image';
 import { CircleUserRound } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
-import { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { StyleSheet, View, type ViewProps } from 'react-native';
 import { twMerge } from 'tailwind-merge';
 
-import type { Tables } from '@/types/database.types';
+import { useAuth } from '@/providers/auth-provider';
 
 import AvatarPicker from '../input/avatarPicker';
 import UsernameInput from '../input/usernameInput';
@@ -13,15 +13,24 @@ import { Image } from '../obytes';
 import { black, white } from '../obytes/colors';
 
 interface Props extends ViewProps {
-  profile: Tables<'profiles'>;
   className?: string;
 }
 
-const Banner = ({ profile, style, className }: Props) => {
+const Banner = ({ style, className }: Props) => {
+  const { profile } = useAuth();
+
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === 'dark';
 
+  const [currentProfile, setCurrentProfile] = useState(profile);
+
+  useEffect(() => {
+    setCurrentProfile(profile ? { ...profile } : null);
+  }, [profile]);
+
   const ViewStyle = useMemo(() => twMerge('w-full', className), [className]);
+
+  if (!currentProfile) return null;
 
   return (
     <View className={ViewStyle} style={style}>
@@ -31,9 +40,9 @@ const Banner = ({ profile, style, className }: Props) => {
       >
         <View className="flex-row border-b-2 border-[#CBBDBD]">
           <View style={styles.iconContainer} className="mb-4 ml-2">
-            {profile.avatar_url ? (
+            {currentProfile.avatar_url ? (
               <Image
-                source={{ uri: profile.avatar_url }}
+                source={{ uri: currentProfile.avatar_url }}
                 cachePolicy={'disk'}
                 style={{
                   height: 72,
@@ -50,10 +59,10 @@ const Banner = ({ profile, style, className }: Props) => {
               />
             )}
 
-            <AvatarPicker userId={profile.id} />
+            <AvatarPicker userId={currentProfile.id} />
           </View>
 
-          <UsernameInput profile={profile} />
+          <UsernameInput profile={currentProfile} />
         </View>
       </ImageBackground>
     </View>
