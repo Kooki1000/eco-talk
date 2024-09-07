@@ -204,6 +204,7 @@
   },
   "add": {
     "charCount": "Character Count: {{count}} / 1000",
+    "error": "THere was an error adding your post.",
     "insert": "What's happening?",
     "title": "Add Post"
   },
@@ -425,6 +426,9 @@
     "title": "Posts from Your City"
   },
   "profile": {
+    "avatar": {
+      "error": "There was an error updating your avatar."
+    },
     "delete": "Delete Account",
     "login": "Sign In / Sign Up",
     "logout": "Log Out",

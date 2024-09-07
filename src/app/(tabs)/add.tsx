@@ -52,8 +52,14 @@ export default function AddPostScreen() {
     setLoading(true);
 
     let imagePath = '';
-    if (image) {
-      imagePath = (await uploadPostImage(image)) || '';
+    try {
+      if (image) {
+        imagePath = (await uploadPostImage(image)) || '';
+      }
+    } catch (error) {
+      setLoading(false);
+      Alert.alert(translate('add.error'));
+      return;
     }
 
     createPost(
