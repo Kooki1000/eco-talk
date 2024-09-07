@@ -86,7 +86,12 @@ const ReplyComponent = ({ reply, variant, onReplyPress, ...props }: Props) => {
           {reply.profiles.avatar_url ? (
             <Image
               source={{ uri: reply.profiles.avatar_url }}
-              style={{ width: 24, height: 24, borderRadius: 12 }}
+              style={{
+                width: 24,
+                height: 24,
+                borderRadius: 12,
+                borderWidth: 1,
+              }}
             />
           ) : (
             <CircleUserRound

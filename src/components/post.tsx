@@ -111,7 +111,12 @@ const PostComponent = ({
           {post.profiles.avatar_url ? (
             <Image
               source={{ uri: post.profiles.avatar_url }}
-              style={{ width: 36, height: 36, borderRadius: 18 }}
+              style={{
+                width: 36,
+                height: 36,
+                borderRadius: 18,
+                borderWidth: 1,
+              }}
             />
           ) : (
             <CircleUserRound
