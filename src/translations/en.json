@@ -2,193 +2,193 @@
   "about": {
     "policy": {
       "article1": {
-        "content": "\"Personal information\" refers to \"personal information\" as defined by the Personal Information Protection Law, which means information about living individuals that can identify a specific person through details such as name, date of birth, address, phone number, contact information, and other descriptions. It also includes data related to appearance, fingerprints, voice prints, and health insurance card insurer numbers, which can individually identify a specific person (personal identification information).",
+        "content": "\"Personal information\" refers to the \"personal information\" as defined by the Personal Information Protection Law, which includes information about a living individual that can identify the individual through details such as name, date of birth, address, phone number, contact information, or other descriptions, as well as data related to appearance, fingerprints, voiceprints, or health insurance card numbers that can identify an individual on their own (personal identification information).",
         "title": "Article 1 (Personal Information)"
       },
       "article2": {
         "content": "The purposes for which we collect and use personal information are as follows:",
-        "item1": "1. To provide and operate our services",
-        "item2": "2. To respond to inquiries from users (including verifying their identity)",
-        "item3": "3. To send emails about new features, updates, campaigns, and other services offered by us",
-        "item4": "4. To contact users when necessary for maintenance, important notices, etc.",
-        "item5": "5. To identify users who violate the terms of service or attempt to use the service for unlawful purposes and deny their use",
-        "item6": "6. To allow users to view, modify, or delete their registration information and view their usage status",
+        "item1": "1. To provide and operate our Service",
+        "item2": "2. To respond to inquiries from users (including identity verification)",
+        "item3": "3. To send emails about new features, updates, campaigns, and other Service we offer",
+        "item4": "4. To contact users as needed for maintenance, important notices, etc.",
+        "item5": "5. To identify users who violate the Terms or attempt to use the Service for illegal or improper purposes and refuse their use",
+        "item6": "6. To allow users to view, modify, delete their registration information, and check their usage status",
         "item7": "7. For purposes incidental to the above purposes",
-        "title": "Article 2 (Purpose of Collecting and Using Personal Information)"
+        "title": "Article 2 (Purposes of Collecting and Using Personal Information)"
       },
       "article3": {
-        "section1": "1. We will only change the purpose of use of personal information if it is reasonably related to the purpose before the change.",
-        "section2": "2. If we change the purpose of use, we will notify users of the new purpose by our prescribed method or publish it on this app.",
-        "title": "Article 3 (Change of Purpose of Use)"
+        "section1": "1. We will only change the purpose of using personal information if the new purpose is reasonably related to the original purpose.",
+        "section2": "2. If there is a change in the purpose of Service, we will notify users of the new purpose or announce it on the app in the manner prescribed by us.",
+        "title": "Article 3 (Change of Purpose of Service)"
       },
       "article4": {
-        "section1": "1. We will not provide personal information to third parties without the user's prior consent, except as permitted by the Personal Information Protection Law or other laws.",
-        "section2": "2. Notwithstanding the preceding paragraph, the following cases are not considered provision to third parties:",
+        "section1": "1. Except in the following cases, we will not provide personal information to third parties without the user's prior consent. However, this excludes situations permitted by the Personal Information Protection Law and other applicable laws and regulations.",
+        "section2": "2. Despite the above provision, the following cases are considered not to involve third parties:",
         "subitems1": {
-          "item1": "1. When necessary to protect human life, body, or property and it is difficult to obtain consent from the person",
-          "item2": "2. When particularly necessary for the improvement of public health or the promotion of healthy development of children and it is difficult to obtain consent from the person",
-          "item3": "3. When cooperation is required for the performance of duties prescribed by laws and regulations by national or local public institutions or those entrusted by them, and obtaining consent may hinder the performance of such duties"
+          "item1": "1. When it is necessary to protect a person's life, body, or property, and it is difficult to obtain consent from the individual",
+          "item2": "2. When it is especially necessary for the improvement of public health or the promotion of sound development of children, and it is difficult to obtain consent from the individual",
+          "item3": "3. When it is necessary to cooperate with a national or local public organization or its delegated agent in performing legal duties, and obtaining consent from the individual might impede the performance of such duties"
         },
         "subitems2": {
-          "item1": "1. When outsourcing all or part of the handling of personal information within the scope necessary to achieve the purpose of use",
-          "item2": "2. When personal information is provided due to business succession such as merger"
+          "item1": "1. When we entrust all or part of the handling of personal information to achieve the purpose of Service",
+          "item2": "2. When personal information is provided due to business succession due to merger or other reasons"
         },
         "title": "Article 4 (Provision of Personal Information to Third Parties)"
       },
       "article5": {
-        "section1": "1. When requested by the person to disclose personal information, we will disclose it without delay. However, if disclosure would fall under any of the following cases, we may not disclose all or part of the information and will notify the person of the decision without delay:",
-        "section2": "2. Notwithstanding the preceding paragraph, we will not disclose information other than personal information such as historical information and characteristic information as a rule.",
+        "section1": "1. When a person requests disclosure of their personal information, we will disclose it without delay. However, if disclosing it would fall into any of the following categories, we may choose not to disclose all or part of it, and if we decide not to disclose, we will notify the individual without delay.",
+        "section2": "2. Notwithstanding the above, we will generally not disclose information other than personal information, such as historical or attribute information.",
         "subitems": {
-          "item1": "1. When there is a risk of harming the life, body, property, or other rights and interests of the person or a third party",
-          "item2": "2. When there is a risk of significantly hindering the proper execution of our business",
-          "item3": "3. When it would violate other laws and regulations"
+          "item1": "1. When there is a risk of harming the life, body, property, or other rights and interests of the individual or a third party",
+          "item2": "2. When there is a risk of significantly hindering the proper implementation of our Service",
+          "item3": "3. When it would result in a violation of other laws"
         },
         "title": "Article 5 (Disclosure of Personal Information)"
       },
       "article6": {
-        "section1": "1. If a user finds their personal information held by us to be incorrect, they can request correction, addition, or deletion (hereinafter referred to as \"correction, etc.\") through the procedures we prescribe.",
-        "section2": "2. We will promptly make corrections, etc., if we determine it is necessary based on the user's request.",
-        "section3": "3. If we make corrections, etc., or decide not to make corrections, etc., we will promptly notify the user.",
+        "section1": "1. If a user’s personal information held by us is incorrect, they can request correction, addition, or deletion (hereinafter referred to as 'correction, etc.') by following the procedures we specify.",
+        "section2": "2. If we determine that it is necessary to respond to such a request, we will make the correction, etc. without delay.",
+        "section3": "3. When we have made a correction, etc., or have decided not to make a correction, etc., we will notify the user without delay.",
         "title": "Article 6 (Correction and Deletion of Personal Information)"
       },
       "article7": {
-        "section1": "1. If a user requests the suspension or deletion (hereinafter referred to as \"suspension of use, etc.\") of their personal information because it is being handled beyond the scope of its purpose or obtained by illegal means, we will promptly conduct the necessary investigation.",
-        "section2": "2. Based on the results of the investigation in the preceding paragraph, if we determine that it is necessary to comply with the request, we will promptly suspend the use of, etc., the personal information.",
-        "section3": "3. If we suspend the use, etc., of personal information, or decide not to do so, we will promptly notify the user.",
-        "section4": "4. Notwithstanding the preceding two paragraphs, if suspending the use, etc., involves substantial costs or is otherwise difficult to do, we will take alternative measures to protect the user's rights and interests.",
-        "title": "Article 7 (Suspension of Use, etc. of Personal Information)"
+        "section1": "1. If a person requests the suspension or deletion (hereinafter referred to as 'suspension, etc.') of the use of personal information due to it being handled outside the scope of the purpose of Service or being obtained by illegal means, we will promptly conduct the necessary investigation.",
+        "section2": "2. Based on the results of the investigation, if we determine that it is necessary to respond to the request, we will suspend, etc. the use of the personal information without delay.",
+        "section3": "3. When we have suspended, etc. the use of personal information, or have decided not to suspend, etc. its use, we will notify the user without delay.",
+        "section4": "4. Notwithstanding the above, if the suspension, etc. involves significant cost or is otherwise difficult to perform, we will take alternative measures if we can protect the user's rights and interests.",
+        "title": "Article 7 (Suspension, etc. of Personal Information Service)"
       },
       "article8": {
-        "section1": "1. We may change the contents of this policy without notifying users, except for matters specified in laws and regulations or in this policy.",
-        "section2": "2. Unless otherwise specified, the changed privacy policy will take effect when it is posted on this app.",
-        "title": "Article 8 (Changes to Privacy Policy)"
+        "section1": "1. The content of this Policy may be changed without notifying users, except for matters specified by laws or this Policy.",
+        "section2": "2. Unless otherwise specified by us, the revised Policy will take effect from the time it is posted on the app.",
+        "title": "Article 8 (Change of Privacy Policy)"
       },
       "policy": "Privacy Policy",
-      "preamble": "The developer of EcoTalk (hereinafter referred to as \"we\") has established the following privacy policy (hereinafter referred to as \"this policy\") regarding the handling of users' personal information in the services provided on this app (hereinafter referred to as \"this service\")."
+      "preamble": "The developers of EcoTalk (hereinafter referred to as 'we') sets forth this privacy policy (hereinafter referred to as 'Policy') regarding the handling of user personal information in the services provided on this app (hereinafter referred to as 'Service')."
     },
     "terms": {
       "article1": {
-        "section1": "1. These terms apply to all relationships regarding the use of the Service between the User and the Company.",
-        "section2": "2. In addition to these terms, the Company may set various rules (hereinafter referred to as 'Individual Regulations') regarding the use of the Service. These Individual Regulations, regardless of their name, will form part of these terms.",
-        "section3": "3. In the event of any conflict between the content of these terms and the content of the Individual Regulations, the content of the Individual Regulations will take precedence over these terms.",
+        "section1": "1. These Terms apply to all relationships between users and us regarding the use of the Service.",
+        "section2": "2. In addition to these Terms, we may establish various rules for use (hereinafter referred to as \"Individual Provisions\") concerning the Service. These Individual Provisions, regardless of their name, shall be part of these Terms.",
+        "section3": "3. In the event of any inconsistency between the content of these Terms and the Individual Provisions, the content of the Individual Provisions shall take precedence.",
         "title": "Article 1 (Application)"
       },
-      "article10": {
-        "section1": {
-          "content": "1. The Company may change these terms without the user's individual consent under the following conditions:",
-          "item1": "1. When the change to these terms is in accordance with the general interest of the user.",
-          "item2": "2. When the change to these terms does not contradict the purpose of the Service use contract and is reasonable in light of the necessity for the change, the appropriateness of the content after the change, and other circumstances related to the change."
-        },
-        "section2": "2. The Company will notify the user in advance of the change to these terms, including the content of the changed terms and the effective date.",
-        "title": "Article 10 (Change of Terms of Service)"
-      },
-      "article11": {
-        "content": "The Company will handle personal information obtained through the use of the Service in accordance with the Company's 'Privacy Policy.'",
-        "title": "Article 11 (Handling of Personal Information)"
-      },
-      "article12": {
-        "content": "Notifications or communications between the user and the Company will be conducted in the manner prescribed by the Company. The Company will regard the currently registered contact information as valid unless the user provides a change notification in accordance with the method separately specified by the Company, and such notifications or communications will be deemed to have reached the user at the time of dispatch.",
-        "title": "Article 12 (Notification or Communication)"
-      },
-      "article13": {
-        "content": "The user may not transfer or pledge the status of the usage contract or rights or obligations based on these terms to a third party without the Company's prior written consent.",
-        "title": "Article 13 (Prohibition of Transfer of Rights and Obligations)"
-      },
-      "article14": {
-        "section1": "1. Japanese law will be the governing law for the interpretation of these terms.",
-        "section2": "2. In the event of a dispute related to the Service, the court with exclusive jurisdiction will be the court with jurisdiction over the Company's head office.",
-        "title": "Article 14 (Governing Law and Jurisdiction)"
-      },
       "article2": {
-        "section1": "1. In the Service, the use registration will be completed when the applicant applies for registration in accordance with the method specified by the Company after agreeing to these terms, and the Company approves it.",
+        "section1": "1. In using the Service, registration applicants must agree to these Terms, apply for registration according to the method specified by us, and complete the registration upon our approval.",
         "section2": {
-          "item1": "1. If the application is from a person who has previously violated these terms",
-          "item2": "2. If the application is from a person who has previously violated these terms",
-          "item3": "3. Other cases where the Company deems the use registration inappropriate",
-          "title": "2. The Company may refuse to approve the use registration if it determines that the applicant has any of the reasons listed below, and has no obligation to disclose the reason."
+          "item1": "1. If false information is provided during the registration application.",
+          "item2": "2. If the application is from someone who has previously violated these Terms.",
+          "item3": "3. Other cases where we deem the registration application inappropriate.",
+          "title": "2. We may reject a registration application if we determine that any of the following reasons apply, and we are not obligated to disclose the reasons."
         },
-        "title": "Article 2 (Use Registration)"
+        "title": "Article 2 (Registration)"
       },
       "article3": {
-        "section1": "1. The user is responsible for managing the Service's email address and password appropriately.",
-        "section2": "2. Under no circumstances may the user transfer or lend the email address and password to a third party, or share them with a third party. The Company will consider the use of the email address and password combination that matches the registered information as use by the user who registered that email address.",
-        "section3": "3. The Company will not be liable for any damage caused by the use of the email address and password by a third party, except in cases of intent or gross negligence on the part of the Company.",
-        "title": "Article 3 (Management of Email Address and Password)"
+        "section1": "1. Users must manage their email addresses and passwords properly at their own responsibility.",
+        "section2": "2. Users may not transfer, lend, or share their email addresses and passwords with third parties under any circumstances. If a login is performed with an email address and password combination that matches the registered information, it will be deemed as use by the user who registered that email address.",
+        "section3": "3. We shall not be liable for any damages arising from the use of email addresses and passwords by third parties, except in cases of intentional misconduct or gross negligence on our part.",
+        "title": "Article 3 (Management of Email Addresses and Passwords)"
       },
       "article4": {
-        "content": "Users are prohibited from engaging in the following acts when using the Service:",
-        "section1": "1. Acts that violate laws or public order and morals",
+        "content": "Users must not engage in the following actions when using the Service.",
+        "section1": "1. Acts that violate laws or public order and morals.",
+        "section2": "2. Acts related to criminal activities.",
+        "section3": "3. Acts that destroy or interfere with the functionality of our, other users', or third parties' servers or networks.",
+        "section4": "4. Acts that interfere with the operation of our Service.",
+        "section5": "5. Acts of collecting or accumulating personal information about other users.",
+        "section6": "6. Acts of unauthorized access or attempts thereof.",
+        "section7": "7. Acts of impersonating other users.",
+        "section8": "8. Acts that provide direct or indirect benefits to anti-social forces in relation to our Service.",
+        "section9": "9. Acts that infringe on the intellectual property rights, portrait rights, privacy, reputation, or other rights or interests of us, other users, or third parties.",
         "section10": {
-          "content": "10. Acts of posting or transmitting content on the Service that includes or is deemed by the Company to include the following expressions:",
-          "item1": "1. Excessively violent expressions",
-          "item2": "2. Explicit sexual expressions",
-          "item3": "3. Expressions that lead to discrimination based on race, nationality, creed, gender, social status, or family origin",
-          "item4": "4. Expressions that induce or encourage suicide, self-harm, or drug abuse",
-          "item5": "5. Other expressions containing antisocial content that cause discomfort to others"
+          "content": "10. Acts of posting or sending expressions that include or are judged by us to include the following content on the Service:",
+          "item1": "1. Excessively violent expressions.",
+          "item2": "2. Explicit sexual expressions.",
+          "item3": "3. Expressions that lead to discrimination based on race, nationality, creed, gender, social status, or family background.",
+          "item4": "4. Expressions that induce or encourage suicide, self-harm, or drug abuse.",
+          "item5": "5. Other expressions including anti-social content that cause discomfort to others."
         },
         "section11": {
-          "content": "11. Acts judged by the Company to be aimed at or have the purpose of:",
-          "item1": "1. Acts for commercial purposes, advertisement, solicitation, or other profit-making activities (excluding those approved by the Company)",
-          "item2": "2. Acts with the purpose of sexual activity or obscene acts",
-          "item3": "3. Acts aimed at meeting or engaging with unfamiliar opposite sex",
-          "item4": "4. Acts aimed at harassment or defamation of other users",
-          "item5": "5. Acts aimed at causing disadvantage, damage, or discomfort to the Company, other users of the Service, or third parties",
-          "item6": "6. Acts of using the Service for purposes other than those intended by the Service"
+          "content": "11. Acts aimed at or judged by us to be aimed at the following:",
+          "item1": "1. Acts for commercial, promotional, advertising, solicitation, or other profit-oriented purposes (except those recognized by us).",
+          "item2": "2. Acts aimed at sexual conduct or obscene behavior.",
+          "item3": "3. Acts aimed at meeting or engaging with unfamiliar opposite sex.",
+          "item4": "4. Acts aimed at harassment or defamation of other users.",
+          "item5": "5. Acts aimed at causing disadvantage, damage, or discomfort to us, other users of the Service, or third parties.",
+          "item6": "6. Acts that use the Service for purposes different from those intended by the Service."
         },
-        "section12": "12. Acts of religious activities or solicitation to religious groups",
-        "section13": "13. Other acts deemed inappropriate by the Company",
-        "section2": "2. Acts related to criminal activity",
-        "section3": "3. Acts that destroy or interfere with the functions of the Company, other users, or third parties' servers or networks",
-        "section4": "4. Acts likely to interfere with the operation of the Company's services",
-        "section5": "5. Acts of collecting or accumulating personal information about other users",
-        "section6": "6. Acts of unauthorized access or attempts to do so",
-        "section7": "7. Acts of impersonating other users",
-        "section8": "8. Acts of directly or indirectly providing benefits to antisocial forces related to the Service",
-        "section9": "9. Acts of infringing on intellectual property rights, portrait rights, privacy, honor, or other rights or interests of the Company, other users of the Service, or third parties",
-        "title": "Article 4 (Prohibited Acts)"
+        "section12": "12. Acts of religious activities or solicitation to religious organizations.",
+        "section13": "13. Any other actions deemed inappropriate by us.",
+        "title": "Article 4 (Prohibited Actions)"
       },
       "article5": {
         "section1": {
-          "content": "1. The Company may suspend or interrupt the provision of all or part of the Service without prior notice to the user under the following circumstances:",
-          "item1": "1. When conducting maintenance or updates on the computer systems related to the Service",
-          "item2": "2. When it becomes difficult to provide the Service due to force majeure such as earthquakes, lightning, fires, power outages, or natural disasters",
-          "item3": "3. When computers or communication lines are stopped due to accidents",
-          "item4": "4. Other cases where the Company deems it difficult to provide the Service"
+          "content": "1. We may suspend or interrupt all or part of the provision of the Service without prior notice to users if any of the following apply:",
+          "item1": "1. Maintenance or updates of the computer systems related to the Service.",
+          "item2": "2. Cases where the provision of the Service becomes difficult due to natural disasters such as earthquakes, lightning, fires, power outages, or other force majeure events.",
+          "item3": "3. Cases where computers or communication lines are stopped due to accidents.",
+          "item4": "4. Other cases where we determine that the provision of the Service is difficult."
         },
-        "section2": "2. The Company will not be liable for any disadvantages or damages suffered by the user or third parties due to the suspension or interruption of the Service.",
+        "section2": "2. We shall not be liable for any disadvantage or damage suffered by users or third parties due to the suspension or interruption of the Service.",
         "title": "Article 5 (Suspension of Service Provision)"
       },
       "article6": {
-        "section1": "1. Users may only use and post or upload information such as text, images, or videos for which they hold necessary intellectual property rights or have obtained permission from the rights holders.",
-        "section2": "2. Copyrights for text, images, or videos posted or uploaded by users using the Service remain with the user or other existing rights holders. However, the Company may use these materials for the improvement, quality enhancement, or correction of the Service, as well as for publicity purposes, and the user agrees not to exercise moral rights in relation to such use.",
-        "section3": "3. Except as provided in the previous paragraph, all copyrights and other intellectual property rights related to the Service and all related information belong to the Company or rights holders who have granted permission to the Company, and users may not reproduce, transfer, lend, translate, modify, reprint, publicly transmit (including making available for transmission), distribute, publish, or use them for commercial purposes without permission.",
+        "section1": "1. Users may only use and post or upload information such as text, images, and videos for which they hold the necessary intellectual property rights or have obtained the necessary permissions from rights holders.",
+        "section2": "2. The copyrights of text, images, videos, and other content posted or uploaded by users using the Service shall remain with the user or existing rights holders. However, we may use such content within the scope necessary for improving the Service, enhancing quality, correcting deficiencies, or promoting the Service, and users agree not to exercise moral rights in relation to such use.",
+        "section3": "3. Except as provided in the preceding paragraph, all copyrights and other intellectual property rights related to the Service and all information related to the Service shall belong to us or rights holders who have granted us permission to use them, and users shall not reproduce, transfer, lend, translate, modify, reprint, publicly transmit (including making it available for transmission), transmit, distribute, publish, or use them for commercial purposes without permission.",
         "title": "Article 6 (Copyright)"
       },
       "article7": {
         "section1": {
-          "content": "1. If a user falls under any of the following conditions, the Company may delete posted data, restrict the user's use of all or part of the Service, or cancel the user's registration without prior notice:",
-          "item1": "1. If the user violates any of the provisions of these terms",
-          "item2": "2. If it is found that there is false information in the registration details",
-          "item3": "3. If there is no response to communication from the Company for a certain period",
-          "item4": "4. If there has been no use of the Service for a certain period since the last use",
-          "item5": "5. Other cases where the Company deems the use of the Service inappropriate"
+          "content": "1. We may delete posted data, restrict all or part of the Service, or cancel user registration without prior notice if any of the following apply:",
+          "item1": "1. If a violation of any of these Terms occurs.",
+          "item2": "2. If it is found that there are false facts in the registered information.",
+          "item3": "3. If there is no response to our contact for a certain period.",
+          "item4": "4. If there has been no use of the Service for a certain period since the last use.",
+          "item5": "5. Other cases where we determine that the use of the Service is inappropriate."
         },
-        "section2": "3. The Company will not be liable for any damages caused to the user as a result of actions taken by the Company under this article.",
+        "section2": "3. We shall not be liable for any damage incurred by users as a result of actions taken based on this article.",
         "title": "Article 7 (Restriction of Use and Cancellation of Registration)"
       },
       "article8": {
-        "section1": "1. The Company does not explicitly or implicitly guarantee that the Service is free from defects (including defects related to safety, reliability, accuracy, completeness, effectiveness, suitability for a particular purpose, security, etc., as well as errors, bugs, and rights infringements).",
-        "section2": "2. The Company will not be liable for any damages caused to the user arising from the Service, except in cases of intent or gross negligence by the Company. However, if the contract between the Company and the user regarding the Service (including these terms) constitutes a consumer contract as defined by the Consumer Contract Act, this disclaimer does not apply.",
-        "section3": "3. Even in the case described in the previous paragraph, the Company will not be liable for damages arising from special circumstances (including those that the Company or user could foresee or could have foreseen) due to the Company's negligence (excluding gross negligence). Additionally, compensation for damages due to the Company's negligence (excluding gross negligence) will be limited to the amount of the usage fee received by the Company in the month when the damage occurred.",
-        "section4": "4. The Company will not be liable for any transactions, communications, or disputes that occur between the user and other users or third parties in relation to the Service.",
+        "section1": "1. We do not explicitly or implicitly guarantee that the Service is free from any defects (including but not limited to defects related to safety, reliability, accuracy, completeness, effectiveness, suitability for specific purposes, security, errors, bugs, or rights infringement).",
+        "section2": "2. We shall not be liable for any damages incurred by users as a result of using the Service, except in cases of intentional misconduct or gross negligence on our part. However, this disclaimer does not apply if the contract between us and users regarding the Service (including these Terms) qualifies as a consumer contract under the Consumer Contract Act.",
+        "section3": "3. Even in the case provided in the preceding paragraph, we shall not be liable for damages arising from special circumstances (including those that we or users could foresee or should have foreseen) due to our failure to perform obligations or torts, excluding gross negligence.",
+        "section4": "4. We shall not be liable for any transactions, communications, or disputes between users and other users or third parties in relation to the Service.",
         "title": "Article 8 (Disclaimer and Limitation of Liability)"
       },
       "article9": {
-        "content": "The Company may change, add to, or discontinue the content of the Service with prior notice to the user, and the user agrees to such changes.",
-        "title": "Article 9 (Change of Service Content)"
+        "content": "We may change, add, or abolish the content of the Service with prior notice to users, and users agree to this.",
+        "title": "Article 9 (Changes to Service Content)"
       },
-      "preamble": "These terms of service (hereinafter referred to as 'these terms') define the conditions for using the services provided on this app by the developer of EcoTalk (hereinafter referred to as 'the Company'). Registered users (hereinafter referred to as 'the User') must use the Service in accordance with these terms.",
-      "terms": "Terms of Service"
+      "article10": {
+        "section1": {
+          "content": "1. We may change these Terms without requiring individual consent from users in the following cases:",
+          "item1": "1. When the change of the Terms is suitable for the general benefit of users.",
+          "item2": "2. When the change is reasonable in light of the necessity for the change, appropriateness of the content after the change, and other circumstances related to the change, and does not contravene the purpose of the Service usage contract."
+        },
+        "section2": "2. We will notify users in advance of any changes to these Terms, including the details of the changes and the effective date.",
+        "title": "Article 10 (Changes to Terms and Conditions)"
+      },
+      "article11": {
+        "content": "We will handle personal information obtained through the use of the Service in accordance with our \"Privacy Policy.\"",
+        "title": "Article 11 (Handling of Personal Information)"
+      },
+      "article12": {
+        "content": "Notifications or communications between users and us shall be conducted in the manner specified by us. Unless the user notifies us of any changes through the method specified by us, we will assume that the currently registered contact information is valid and will send notifications or communications to that contact information, which will be deemed to have reached the user at the time of dispatch.",
+        "title": "Article 12 (Notifications and Communications)"
+      },
+      "article13": {
+        "content": "Users may not transfer or provide collateral for their status, rights or obligations under these Terms to any third party without our prior written consent.",
+        "title": "Article 13 (Prohibition of Transfer of Rights and Obligations)"
+      },
+      "article14": {
+        "section1": "1. Japanese law shall govern the interpretation of these Terms.",
+        "section2": "2. In the event of a dispute arising in connection with the Service, the court having jurisdiction over our location shall be the exclusive agreed jurisdiction.",
+        "title": "Article 14 (Governing Law and Jurisdiction)"
+      },
+      "preamble": "These Terms and Conditions (hereinafter referred to as \"Terms\") are the conditions for using the service (hereinafter referred to as \"Service\") provided by the developers of EcoTalk (hereinafter referred to as \"we\"). All registered users (hereinafter referred to as \"users\") are to use the Service in accordance with these Terms.",
+      "terms": "Terms and Conditions"
     },
     "title": "About"
   },
@@ -402,7 +402,7 @@
     "title": "Oops!"
   },
   "policy": {
-    "title": "Terms of Service"
+    "title": "Terms and Conditions"
   },
   "post": {
     "hideReply": "Hide Replies",
@@ -447,7 +447,7 @@
     "invalidPassword": "Password must be at least 8 characters.",
     "invalidUsername": "This must be between 3 to 20 characters.",
     "logIn": "Already have an account? Log in",
-    "terms": "I have read and agreed to the Terms of Service and Privacy Policy.",
+    "terms": "I have read and agreed to the Terms and Conditions and Privacy Policy.",
     "title": "Sign Up",
     "username": "Enter your username"
   },
