@@ -28,19 +28,23 @@ export const uploadPostImage = async (
 
   const filePath = `${randomUUID()}.${fileExtension}`;
 
-  const { data } = await supabase.storage
-    .from('post-images')
-    .upload(filePath, decode(base64), { contentType });
+  try {
+    const { data, error } = await supabase.storage
+      .from('post-images')
+      .upload(filePath, decode(base64), { contentType });
 
-  if (data) {
+    if (error) {
+      throw new Error(error.message);
+    }
+
     const { data: urlData } = supabase.storage
       .from('post-images')
       .getPublicUrl(data.path);
 
     return urlData.publicUrl;
+  } catch (error) {
+    throw error;
   }
-
-  return;
 };
 
 export const uploadAvatar = async (
@@ -66,17 +70,21 @@ export const uploadAvatar = async (
 
   const filePath = `${randomUUID()}.${fileExtension}`;
 
-  const { data } = await supabase.storage
-    .from('avatars')
-    .upload(filePath, decode(base64), { contentType });
+  try {
+    const { data, error } = await supabase.storage
+      .from('avatars')
+      .upload(filePath, decode(base64), { contentType });
 
-  if (data) {
+    if (error) {
+      throw new Error(error.message);
+    }
+
     const { data: urlData } = supabase.storage
       .from('avatars')
       .getPublicUrl(data.path);
 
     return urlData.publicUrl;
+  } catch (error) {
+    throw error;
   }
-
-  return;
 };
