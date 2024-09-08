@@ -27,6 +27,14 @@
     "plugins": ["expo-router", "expo-localization"],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "f94fddd0-21e8-43a4-9f32-267b4351fdd1"
+      }
     }
   }
 }
