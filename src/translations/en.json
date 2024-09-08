@@ -73,6 +73,32 @@
         "section3": "3. In the event of any inconsistency between the content of these Terms and the Individual Provisions, the content of the Individual Provisions shall take precedence.",
         "title": "Article 1 (Application)"
       },
+      "article10": {
+        "section1": {
+          "content": "1. We may change these Terms without requiring individual consent from users in the following cases:",
+          "item1": "1. When the change of the Terms is suitable for the general benefit of users.",
+          "item2": "2. When the change is reasonable in light of the necessity for the change, appropriateness of the content after the change, and other circumstances related to the change, and does not contravene the purpose of the Service usage contract."
+        },
+        "section2": "2. We will notify users in advance of any changes to these Terms, including the details of the changes and the effective date.",
+        "title": "Article 10 (Changes to Terms and Conditions)"
+      },
+      "article11": {
+        "content": "We will handle personal information obtained through the use of the Service in accordance with our \"Privacy Policy.\"",
+        "title": "Article 11 (Handling of Personal Information)"
+      },
+      "article12": {
+        "content": "Notifications or communications between users and us shall be conducted in the manner specified by us. Unless the user notifies us of any changes through the method specified by us, we will assume that the currently registered contact information is valid and will send notifications or communications to that contact information, which will be deemed to have reached the user at the time of dispatch.",
+        "title": "Article 12 (Notifications and Communications)"
+      },
+      "article13": {
+        "content": "Users may not transfer or provide collateral for their status, rights or obligations under these Terms to any third party without our prior written consent.",
+        "title": "Article 13 (Prohibition of Transfer of Rights and Obligations)"
+      },
+      "article14": {
+        "section1": "1. Japanese law shall govern the interpretation of these Terms.",
+        "section2": "2. In the event of a dispute arising in connection with the Service, the court having jurisdiction over our location shall be the exclusive agreed jurisdiction.",
+        "title": "Article 14 (Governing Law and Jurisdiction)"
+      },
       "article2": {
         "section1": "1. In using the Service, registration applicants must agree to these Terms, apply for registration according to the method specified by us, and complete the registration upon our approval.",
         "section2": {
@@ -92,14 +118,6 @@
       "article4": {
         "content": "Users must not engage in the following actions when using the Service.",
         "section1": "1. Acts that violate laws or public order and morals.",
-        "section2": "2. Acts related to criminal activities.",
-        "section3": "3. Acts that destroy or interfere with the functionality of our, other users', or third parties' servers or networks.",
-        "section4": "4. Acts that interfere with the operation of our Service.",
-        "section5": "5. Acts of collecting or accumulating personal information about other users.",
-        "section6": "6. Acts of unauthorized access or attempts thereof.",
-        "section7": "7. Acts of impersonating other users.",
-        "section8": "8. Acts that provide direct or indirect benefits to anti-social forces in relation to our Service.",
-        "section9": "9. Acts that infringe on the intellectual property rights, portrait rights, privacy, reputation, or other rights or interests of us, other users, or third parties.",
         "section10": {
           "content": "10. Acts of posting or sending expressions that include or are judged by us to include the following content on the Service:",
           "item1": "1. Excessively violent expressions.",
@@ -119,6 +137,14 @@
         },
         "section12": "12. Acts of religious activities or solicitation to religious organizations.",
         "section13": "13. Any other actions deemed inappropriate by us.",
+        "section2": "2. Acts related to criminal activities.",
+        "section3": "3. Acts that destroy or interfere with the functionality of our, other users', or third parties' servers or networks.",
+        "section4": "4. Acts that interfere with the operation of our Service.",
+        "section5": "5. Acts of collecting or accumulating personal information about other users.",
+        "section6": "6. Acts of unauthorized access or attempts thereof.",
+        "section7": "7. Acts of impersonating other users.",
+        "section8": "8. Acts that provide direct or indirect benefits to anti-social forces in relation to our Service.",
+        "section9": "9. Acts that infringe on the intellectual property rights, portrait rights, privacy, reputation, or other rights or interests of us, other users, or third parties.",
         "title": "Article 4 (Prohibited Actions)"
       },
       "article5": {
@@ -160,32 +186,6 @@
       "article9": {
         "content": "We may change, add, or abolish the content of the Service with prior notice to users, and users agree to this.",
         "title": "Article 9 (Changes to Service Content)"
-      },
-      "article10": {
-        "section1": {
-          "content": "1. We may change these Terms without requiring individual consent from users in the following cases:",
-          "item1": "1. When the change of the Terms is suitable for the general benefit of users.",
-          "item2": "2. When the change is reasonable in light of the necessity for the change, appropriateness of the content after the change, and other circumstances related to the change, and does not contravene the purpose of the Service usage contract."
-        },
-        "section2": "2. We will notify users in advance of any changes to these Terms, including the details of the changes and the effective date.",
-        "title": "Article 10 (Changes to Terms and Conditions)"
-      },
-      "article11": {
-        "content": "We will handle personal information obtained through the use of the Service in accordance with our \"Privacy Policy.\"",
-        "title": "Article 11 (Handling of Personal Information)"
-      },
-      "article12": {
-        "content": "Notifications or communications between users and us shall be conducted in the manner specified by us. Unless the user notifies us of any changes through the method specified by us, we will assume that the currently registered contact information is valid and will send notifications or communications to that contact information, which will be deemed to have reached the user at the time of dispatch.",
-        "title": "Article 12 (Notifications and Communications)"
-      },
-      "article13": {
-        "content": "Users may not transfer or provide collateral for their status, rights or obligations under these Terms to any third party without our prior written consent.",
-        "title": "Article 13 (Prohibition of Transfer of Rights and Obligations)"
-      },
-      "article14": {
-        "section1": "1. Japanese law shall govern the interpretation of these Terms.",
-        "section2": "2. In the event of a dispute arising in connection with the Service, the court having jurisdiction over our location shall be the exclusive agreed jurisdiction.",
-        "title": "Article 14 (Governing Law and Jurisdiction)"
       },
       "preamble": "These Terms and Conditions (hereinafter referred to as \"Terms\") are the conditions for using the service (hereinafter referred to as \"Service\") provided by the developers of EcoTalk (hereinafter referred to as \"we\"). All registered users (hereinafter referred to as \"users\") are to use the Service in accordance with these Terms.",
       "terms": "Terms and Conditions"
