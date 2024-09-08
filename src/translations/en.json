@@ -2,193 +2,192 @@
   "about": {
     "policy": {
       "article1": {
-        "content": "「個人情報」とは、個人情報保護法にいう「個人情報」を指すものとし、生存する個人に関する情報であって、当該情報に含まれる氏名、生年月日、住所、電話番号、連絡先その他の記述等により特定の個人を識別できる情報及び容貌、指紋、声紋にかかるデータ、及び健康保険証の保険者番号などの当該情報単体から特定の個人を識別できる情報（個人識別情報）を指します。",
-        "title": "第1条（個人情報）"
+        "content": "\"Personal information\" refers to \"personal information\" as defined by the Personal Information Protection Law, which means information about living individuals that can identify a specific person through details such as name, date of birth, address, phone number, contact information, and other descriptions. It also includes data related to appearance, fingerprints, voice prints, and health insurance card insurer numbers, which can individually identify a specific person (personal identification information).",
+        "title": "Article 1 (Personal Information)"
       },
       "article2": {
-        "content": "当社が個人情報を収集・利用する目的は、以下のとおりです。",
-        "item1": "1. 当社サービスの提供・運営のため",
-        "item2": "2. ユーザーからのお問い合わせに回答するため（本人確認を行うことを含む）",
-        "item3": "3. ユーザーが利用中のサービスの新機能、更新情報、キャンペーン等及び当社が提供する他のサービスの案内のメールを送付するため",
-        "item4": "4. メンテナンス、重要なお知らせなど必要に応じたご連絡のため",
-        "item5": "5. 利用規約に違反したユーザーや、不正・不当な目的でサービスを利用しようとするユーザーの特定をし、ご利用をお断りするため",
-        "item6": "6. ユーザーにご自身の登録情報の閲覧や変更、削除、ご利用状況の閲覧を行っていただくため",
-        "item7": "7. 上記の利用目的に付随する目的",
-        "title": "第2条（個人情報を収集・利用する目的）"
+        "content": "The purposes for which we collect and use personal information are as follows:",
+        "item1": "1. To provide and operate our services",
+        "item2": "2. To respond to inquiries from users (including verifying their identity)",
+        "item3": "3. To send emails about new features, updates, campaigns, and other services offered by us",
+        "item4": "4. To contact users when necessary for maintenance, important notices, etc.",
+        "item5": "5. To identify users who violate the terms of service or attempt to use the service for unlawful purposes and deny their use",
+        "item6": "6. To allow users to view, modify, or delete their registration information and view their usage status",
+        "item7": "7. For purposes incidental to the above purposes",
+        "title": "Article 2 (Purpose of Collecting and Using Personal Information)"
       },
       "article3": {
-        "section1": "1. 当社は、利用目的が変更前と関連性を有すると合理的に認められる場合に限り、個人情報の利用目的を変更するものとします。",
-        "section2": "2. 利用目的の変更を行った場合には、変更後の目的について、当社所定の方法により、ユーザーに通知し、または本アプリ上に公表するものとします。",
-        "title": "第3条（利用目的の変更）"
+        "section1": "1. We will only change the purpose of use of personal information if it is reasonably related to the purpose before the change.",
+        "section2": "2. If we change the purpose of use, we will notify users of the new purpose by our prescribed method or publish it on this app.",
+        "title": "Article 3 (Change of Purpose of Use)"
       },
       "article4": {
-        "section1": "1. 当社は、次に掲げる場合を除いて、あらかじめユーザーの同意を得ることなく、第三者に個人情報を提供することはありません。ただし、個人情報保護法その他の法令で認められる場合を除きます。",
-        "section2": "2. 前項の定めにかかわらず、次に掲げる場合には、当該情報の提供先は第三者に該当しないものとします。",
+        "section1": "1. We will not provide personal information to third parties without the user's prior consent, except as permitted by the Personal Information Protection Law or other laws.",
+        "section2": "2. Notwithstanding the preceding paragraph, the following cases are not considered provision to third parties:",
         "subitems1": {
-          "item1": "1. 人の生命、身体または財産の保護のために必要がある場合であって、本人の同意を得ることが困難であるとき",
-          "item2": "2. 公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合であって、本人の同意を得ることが困難であるとき",
-          "item3": "3. 国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって、本人の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがあるとき"
+          "item1": "1. When necessary to protect human life, body, or property and it is difficult to obtain consent from the person",
+          "item2": "2. When particularly necessary for the improvement of public health or the promotion of healthy development of children and it is difficult to obtain consent from the person",
+          "item3": "3. When cooperation is required for the performance of duties prescribed by laws and regulations by national or local public institutions or those entrusted by them, and obtaining consent may hinder the performance of such duties"
         },
         "subitems2": {
-          "item1": "1. 当社が利用目的の達成に必要な範囲内において個人情報の取扱いの全部または一部を委託する場合",
-          "item2": "2. 合併その他の事由による事業の承継に伴って個人情報が提供される場合"
+          "item1": "1. When outsourcing all or part of the handling of personal information within the scope necessary to achieve the purpose of use",
+          "item2": "2. When personal information is provided due to business succession such as merger"
         },
-        "title": "第4条（個人情報の第三者提供）"
+        "title": "Article 4 (Provision of Personal Information to Third Parties)"
       },
       "article5": {
-        "section1": "1. 当社は、本人から個人情報の開示を求められたときは、本人に対し、遅滞なくこれを開示します。ただし、開示することにより次のいずれかに該当する場合は、その全部または一部を開示しないこともあり、開示しない決定をした場合には、その旨を遅滞なく通知します。なお、個人情報の開示に際しては、1件あたり1,000円の手数料を申し受けます。",
-        "section2": "2. 前項の定めにかかわらず、履歴情報および特性情報などの個人情報以外の情報については、原則として開示いたしません。",
+        "section1": "1. When requested by the person to disclose personal information, we will disclose it without delay. However, if disclosure would fall under any of the following cases, we may not disclose all or part of the information and will notify the person of the decision without delay:",
+        "section2": "2. Notwithstanding the preceding paragraph, we will not disclose information other than personal information such as historical information and characteristic information as a rule.",
         "subitems": {
-          "item1": "1. 本人または第三者の生命，身体，財産その他の権利利益を害するおそれがある場合",
-          "item2": "2. 当社の業務の適正な実施に著しい支障を及ぼすおそれがある場合",
-          "item3": "3. その他法令に違反することとなる場合"
+          "item1": "1. When there is a risk of harming the life, body, property, or other rights and interests of the person or a third party",
+          "item2": "2. When there is a risk of significantly hindering the proper execution of our business",
+          "item3": "3. When it would violate other laws and regulations"
         },
-        "title": "第5条（個人情報の開示）"
+        "title": "Article 5 (Disclosure of Personal Information)"
       },
       "article6": {
-        "section1": "1. ユーザーは、当社の保有する自己の個人情報が誤った情報である場合には、当社が定める手続きにより、当社に対して個人情報の訂正、追加または削除（以下、「訂正等」といいます。）を請求することができます。",
-        "section2": "2. 当社は、ユーザーから前項の請求を受けてその請求に応じる必要があると判断した場合には、遅滞なく、当該個人情報の訂正等を行うものとします。",
-        "section3": "3. 当社は、前項の規定に基づき訂正等を行った場合、または訂正等を行わない旨の決定をしたときは遅滞なく、これをユーザーに通知します。",
-        "title": "第6条（個人情報の訂正および削除）"
+        "section1": "1. If a user finds their personal information held by us to be incorrect, they can request correction, addition, or deletion (hereinafter referred to as \"correction, etc.\") through the procedures we prescribe.",
+        "section2": "2. We will promptly make corrections, etc., if we determine it is necessary based on the user's request.",
+        "section3": "3. If we make corrections, etc., or decide not to make corrections, etc., we will promptly notify the user.",
+        "title": "Article 6 (Correction and Deletion of Personal Information)"
       },
       "article7": {
-        "section1": "1. 当社は、本人から、個人情報が、利用目的の範囲を超えて取り扱われているという理由、または不正の手段により取得されたものであるという理由により、その利用の停止または消去（以下、「利用停止等」といいます。）を求められた場合には、遅滞なく必要な調査を行います。",
-        "section2": "2. 前項の調査結果に基づき、その請求に応じる必要があると判断した場合には、遅滞なく、当該個人情報の利用停止等を行います。",
-        "section3": "3. 当社は、前項の規定に基づき利用停止等を行った場合、または利用停止等を行わない旨の決定をしたときは、遅滞なく、これをユーザーに通知します。",
-        "section4": "4. 前2項にかかわらず、利用停止等に多額の費用を有する場合その他利用停止等を行うことが困難な場合であって、ユーザーの権利利益を保護するために必要なこの代わりに措置を講じることができる場合は、この代わりの措置を講じるものとします。",
-        "title": "第7条（個人情報の利用停止等）"
+        "section1": "1. If a user requests the suspension or deletion (hereinafter referred to as \"suspension of use, etc.\") of their personal information because it is being handled beyond the scope of its purpose or obtained by illegal means, we will promptly conduct the necessary investigation.",
+        "section2": "2. Based on the results of the investigation in the preceding paragraph, if we determine that it is necessary to comply with the request, we will promptly suspend the use of, etc., the personal information.",
+        "section3": "3. If we suspend the use, etc., of personal information, or decide not to do so, we will promptly notify the user.",
+        "section4": "4. Notwithstanding the preceding two paragraphs, if suspending the use, etc., involves substantial costs or is otherwise difficult to do, we will take alternative measures to protect the user's rights and interests.",
+        "title": "Article 7 (Suspension of Use, etc. of Personal Information)"
       },
       "article8": {
-        "section1": "1. 本ポリシーの内容は、法令その他本ポリシーに別段の定めのある事項を除いて、ユーザーに通知することなく、変更することができるものとします。",
-        "section2": "2. 当社が別途定める場合を除いて、変更後のプライバシーポリシーは、本アプリに掲載したときから効力を生じるものとします。",
-        "title": "第8条（プライバシーポリシーの変更）"
+        "section1": "1. We may change the contents of this policy without notifying users, except for matters specified in laws and regulations or in this policy.",
+        "section2": "2. Unless otherwise specified, the changed privacy policy will take effect when it is posted on this app.",
+        "title": "Article 8 (Changes to Privacy Policy)"
       },
       "policy": "Privacy Policy",
-      "preamble": "EcoTalk（以下、「当社」といいます。）は、本アプリ上で提供するサービス（以下,「本サービス」といいます。）における、ユーザーの個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下、「本ポリシー」といいます。）を定めます。"
+      "preamble": "The developer of EcoTalk (hereinafter referred to as \"we\") has established the following privacy policy (hereinafter referred to as \"this policy\") regarding the handling of users' personal information in the services provided on this app (hereinafter referred to as \"this service\")."
     },
     "terms": {
       "article1": {
-        "section1": "1. 本規約は、ユーザーと当社との間の本サービスの利用に関わる一切の関係に適用されるものとします。",
-        "section2": "2. 当社は本サービスに関し、本規約のほか、ご利用にあたってのルール等、各種の定め（以下、「個別規定」といいます。）をすることがあります。これら個別規定はその名称のいかんに関わらず、本規約の一部を構成するものとします。",
-        "section3": "3. 本規約の内容と個別規定の内容が異なる場合、個別規定の内容が本規約の内容に優先するものとします。",
-        "title": "第1条（適用）"
+        "section1": "1. These terms apply to all relationships regarding the use of the Service between the User and the Company.",
+        "section2": "2. In addition to these terms, the Company may set various rules (hereinafter referred to as 'Individual Regulations') regarding the use of the Service. These Individual Regulations, regardless of their name, will form part of these terms.",
+        "section3": "3. In the event of any conflict between the content of these terms and the content of the Individual Regulations, the content of the Individual Regulations will take precedence over these terms.",
+        "title": "Article 1 (Application)"
       },
       "article10": {
         "section1": {
-          "content": "1. 当社は以下の場合には、ユーザーの個別の同意を要せず、本規約を変更することができるものとします。",
-          "item1": "1. 本規約の変更がユーザーの一般の利益に適合するとき。",
-          "item2": "2. 本規約の変更が本サービス利用契約の目的に反せず、かつ、変更の必要性、変更後の内容の相当性その他の変更に係る事情に照らして合理的なものであるとき。"
+          "content": "1. The Company may change these terms without the user's individual consent under the following conditions:",
+          "item1": "1. When the change to these terms is in accordance with the general interest of the user.",
+          "item2": "2. When the change to these terms does not contradict the purpose of the Service use contract and is reasonable in light of the necessity for the change, the appropriateness of the content after the change, and other circumstances related to the change."
         },
-        "section2": "2. 当社はユーザーに対し、前項による本規約の変更にあたり、事前に、本規約を変更する旨及び変更後の本規約の内容並びにその効力発生時期を通知します。",
-        "title": "第10条（利用規約の変更）"
+        "section2": "2. The Company will notify the user in advance of the change to these terms, including the content of the changed terms and the effective date.",
+        "title": "Article 10 (Change of Terms of Service)"
       },
       "article11": {
-        "content": "当社は、本サービスの利用によって取得する個人情報については、当社「プライバシーポリシー」に従い適切に取り扱うものとします。",
-        "title": "第11条（個人情報の取扱い）"
+        "content": "The Company will handle personal information obtained through the use of the Service in accordance with the Company's 'Privacy Policy.'",
+        "title": "Article 11 (Handling of Personal Information)"
       },
       "article12": {
-        "content": "ユーザーと当社との間の通知または連絡は、当社の定める方法によって行うものとします。当社は,ユーザーから,当社が別途定める方式に従った変更届け出がない限り,現在登録されている連絡先が有効なものとみなして当該連絡先へ通知または連絡を行い,これらは,発信時にユーザーへ到達したものとみなします。",
-        "title": "第12条（通知または連絡）"
+        "content": "Notifications or communications between the user and the Company will be conducted in the manner prescribed by the Company. The Company will regard the currently registered contact information as valid unless the user provides a change notification in accordance with the method separately specified by the Company, and such notifications or communications will be deemed to have reached the user at the time of dispatch.",
+        "title": "Article 12 (Notification or Communication)"
       },
       "article13": {
-        "content": "ユーザーは、当社の書面による事前の承諾なく、利用契約上の地位または本規約に基づく権利もしくは義務を第三者に譲渡し、または担保に供することはできません。",
-        "title": "第13条（権利義務の譲渡の禁止）"
+        "content": "The user may not transfer or pledge the status of the usage contract or rights or obligations based on these terms to a third party without the Company's prior written consent.",
+        "title": "Article 13 (Prohibition of Transfer of Rights and Obligations)"
       },
       "article14": {
-        "section1": "1. 本規約の解釈にあたっては、日本法を準拠法とします。",
-        "section2": "2. 本サービスに関して紛争が生じた場合には、当社の本店所在地を管轄する裁判所を専属的合意管轄とします。",
-        "title": "第14条（準拠法・裁判管轄）"
+        "section1": "1. Japanese law will be the governing law for the interpretation of these terms.",
+        "section2": "2. In the event of a dispute related to the Service, the court with exclusive jurisdiction will be the court with jurisdiction over the Company's head office.",
+        "title": "Article 14 (Governing Law and Jurisdiction)"
       },
       "article2": {
-        "section1": "1. 本サービスにおいては、登録希望者が本規約に同意の上、当社の定める方法によって利用登録を申請し、当社がこれを承認することによって、利用登録が完了するものとします。",
+        "section1": "1. In the Service, the use registration will be completed when the applicant applies for registration in accordance with the method specified by the Company after agreeing to these terms, and the Company approves it.",
         "section2": {
-          "item1": "1. 本規約に違反したことがある者からの申請である場合",
-          "item2": "2. 本規約に違反したことがある者からの申請である場合",
-          "item3": "3. その他、当社が利用登録を相当でないと判断した場合",
-          "title": "2. 当社は、利用登録の申請者に以下の事由があると判断した場合、利用登録の申請を承認しないことがあり、その理由については一切の開示義務を負わないものとします。"
+          "item1": "1. If the application is from a person who has previously violated these terms",
+          "item2": "2. If the application is from a person who has previously violated these terms",
+          "item3": "3. Other cases where the Company deems the use registration inappropriate",
+          "title": "2. The Company may refuse to approve the use registration if it determines that the applicant has any of the reasons listed below, and has no obligation to disclose the reason."
         },
-        "title": "第2条（利用登録）"
+        "title": "Article 2 (Use Registration)"
       },
       "article3": {
-        "section1": "1. ユーザーは、自己の責任において、本サービスのメールアドレスとパスワードを適切に管理するものとします。",
-        "section2": "2. ユーザーは、いかなる場合にも、メールアドレスとパスワードを第三者に譲渡または貸与し、もしくは第三者と共用することはできません。当社は、メールアドレスとパスワードの組み合わせが登録情報と一致してログインされた場合には、そのメールアドレスを登録しているユーザー自身による利用とみなします。",
-        "section3": "3. メールアドレス及びパスワードが第三者によって使用されたことによって生じた損害は、当社に故意又は重大な過失がある場合を除き、当社は一切の責任を負わないものとします。",
-        "title": "第3条（メールアドレスおよびパスワードの管理）"
+        "section1": "1. The user is responsible for managing the Service's email address and password appropriately.",
+        "section2": "2. Under no circumstances may the user transfer or lend the email address and password to a third party, or share them with a third party. The Company will consider the use of the email address and password combination that matches the registered information as use by the user who registered that email address.",
+        "section3": "3. The Company will not be liable for any damage caused by the use of the email address and password by a third party, except in cases of intent or gross negligence on the part of the Company.",
+        "title": "Article 3 (Management of Email Address and Password)"
       },
       "article4": {
-        "content": "ユーザーは、本サービスの利用にあたり、以下の行為をしてはなりません。",
-        "section1": "1. 法令または公序良俗に違反する行為",
+        "content": "Users are prohibited from engaging in the following acts when using the Service:",
+        "section1": "1. Acts that violate laws or public order and morals",
         "section10": {
-          "content": "10. 以下の表現を含み、または含むと当社が判断する内容を本サービス上に投稿し、または送信する行為",
-          "item1": "1. 過度に暴力的な表現",
-          "item2": "2. 露骨な性的表現",
-          "item3": "3. 人種、国籍、信条、性別、社会的身分、門地等による差別につながる表現",
-          "item4": "4. 自殺、自傷行為、薬物乱用を誘引または助長する表現",
-          "item5": "5. その他反社会的な内容を含み他人に不快感を与える表現"
+          "content": "10. Acts of posting or transmitting content on the Service that includes or is deemed by the Company to include the following expressions:",
+          "item1": "1. Excessively violent expressions",
+          "item2": "2. Explicit sexual expressions",
+          "item3": "3. Expressions that lead to discrimination based on race, nationality, creed, gender, social status, or family origin",
+          "item4": "4. Expressions that induce or encourage suicide, self-harm, or drug abuse",
+          "item5": "5. Other expressions containing antisocial content that cause discomfort to others"
         },
         "section11": {
-          "content": "11. 以下を目的とし、または目的とすると当社が判断する行為",
-          "item1": "1. 営業、宣伝、広告、勧誘、その他営利を目的とする行為（当社の認めたものを除きます。）",
-          "item2": "2. 性行為やわいせつな行為を目的とする行為",
-          "item3": "3. 面識のない異性との出会いや交際を目的とする行為",
-          "item4": "4. 他のユーザーに対する嫌がらせや誹謗中傷を目的とする行為",
-          "item5": "5. 当社、本サービスの他のユーザー、または第三者に不利益、損害または不快感を与えることを目的とする行為",
-          "item6": "6. その他本サービスが予定している利用目的と異なる目的で本サービスを利用する行為"
+          "content": "11. Acts judged by the Company to be aimed at or have the purpose of:",
+          "item1": "1. Acts for commercial purposes, advertisement, solicitation, or other profit-making activities (excluding those approved by the Company)",
+          "item2": "2. Acts with the purpose of sexual activity or obscene acts",
+          "item3": "3. Acts aimed at meeting or engaging with unfamiliar opposite sex",
+          "item4": "4. Acts aimed at harassment or defamation of other users",
+          "item5": "5. Acts aimed at causing disadvantage, damage, or discomfort to the Company, other users of the Service, or third parties",
+          "item6": "6. Acts of using the Service for purposes other than those intended by the Service"
         },
-        "section12": "12. 宗教活動または宗教団体への勧誘行為",
-        "section13": "13. その他、当社が不適切と判断する行為",
-        "section2": "2. 犯罪行為に関連する行為",
-        "section3": "3. 当社、本サービスの他のユーザー、または第三者のサーバーまたはネットワークの機能を破壊したり、妨害したりする行為",
-        "section4": "4. 当社のサービスの運営を妨害するおそれのある行為",
-        "section5": "5. 他のユーザーに関する個人情報等を収集または蓄積する行為",
-        "section6": "6. 不正アクセスをし、またはこれを試みる行為",
-        "section7": "7. 他のユーザーに成りすます行為",
-        "section8": "8. 当社のサービスに関連して、反社会的勢力に対して直接または間接に利益を供与する行為",
-        "section9": "9. 当社、本サービスの他のユーザーまたは第三者の知的財産権、肖像権、プライバシー、名誉その他の権利または利益を侵害する行為",
-        "title": "第4条（禁止事項）"
+        "section12": "12. Acts of religious activities or solicitation to religious groups",
+        "section13": "13. Other acts deemed inappropriate by the Company",
+        "section2": "2. Acts related to criminal activity",
+        "section3": "3. Acts that destroy or interfere with the functions of the Company, other users, or third parties' servers or networks",
+        "section4": "4. Acts likely to interfere with the operation of the Company's services",
+        "section5": "5. Acts of collecting or accumulating personal information about other users",
+        "section6": "6. Acts of unauthorized access or attempts to do so",
+        "section7": "7. Acts of impersonating other users",
+        "section8": "8. Acts of directly or indirectly providing benefits to antisocial forces related to the Service",
+        "section9": "9. Acts of infringing on intellectual property rights, portrait rights, privacy, honor, or other rights or interests of the Company, other users of the Service, or third parties",
+        "title": "Article 4 (Prohibited Acts)"
       },
       "article5": {
         "section1": {
-          "content": "1. 当社は、以下のいずれかに該当する場合、ユーザーに事前に通知することなく、本サービスの提供の全部もしくは一部を停止または中断することができるものとします。",
-          "item1": "1. 本サービスにかかるコンピューターシステムの保守点検または更新を行う場合",
-          "item2": "2. 地震、落雷、火災、停電または天災などの不可抗力により、本サービスの提供が困難となった場合",
-          "item3": "3. コンピューターまたは通信回線等が事故により停止した場合",
-          "item4": "4. その他、当社が本サービスの提供が困難と判断した場合"
+          "content": "1. The Company may suspend or interrupt the provision of all or part of the Service without prior notice to the user under the following circumstances:",
+          "item1": "1. When conducting maintenance or updates on the computer systems related to the Service",
+          "item2": "2. When it becomes difficult to provide the Service due to force majeure such as earthquakes, lightning, fires, power outages, or natural disasters",
+          "item3": "3. When computers or communication lines are stopped due to accidents",
+          "item4": "4. Other cases where the Company deems it difficult to provide the Service"
         },
-        "section2": "2. 当社は、本サービスの提供の停止または中断により、ユーザーまたは第三者が被ったいかなる不利益または損害についても、一切の責任を負わないものとします。",
-        "title": "第5条（本サービスの提供の停止等）"
+        "section2": "2. The Company will not be liable for any disadvantages or damages suffered by the user or third parties due to the suspension or interruption of the Service.",
+        "title": "Article 5 (Suspension of Service Provision)"
       },
       "article6": {
-        "section1": "1. ユーザーは、自ら著作権等の必要な知的財産権を有するか、または必要な権利者の許諾を得た文章、画像や映像等の情報に関してのみ、本サービスを利用し、投稿ないしアップロードすることができるものとします。",
-        "section2": "2. ユーザーが本サービスを利用して投稿ないしアップロードした文章、画像、映像等の著作権については、当該ユーザーその他既存の権利者に留保されるものとします。ただし、当社は、本サービスを利用して投稿ないしアップロードされた文章、画像、映像等について、本サービスの改良、品質の向上、または不備の是正等ならびに本サービスの周知宣伝等に必要な範囲で利用できるものとし、ユーザーは、この利用に関して、著作者人格権を行使しないものとします。",
-        "section3": "3. 前項本文の定めるものを除き、本サービスおよび本サービスに関連する一切の情報についての著作権およびその他の知的財産権はすべて当社または当社にその利用を許諾した権利者に帰属し、ユーザーは無断で複製、譲渡、貸与、翻訳、改変、転載、公衆送信（送信可能化を含みます。）、伝送、配布、出版、営業使用等をしてはならないものとします。",
-        "title": "第6条（著作権）"
+        "section1": "1. Users may only use and post or upload information such as text, images, or videos for which they hold necessary intellectual property rights or have obtained permission from the rights holders.",
+        "section2": "2. Copyrights for text, images, or videos posted or uploaded by users using the Service remain with the user or other existing rights holders. However, the Company may use these materials for the improvement, quality enhancement, or correction of the Service, as well as for publicity purposes, and the user agrees not to exercise moral rights in relation to such use.",
+        "section3": "3. Except as provided in the previous paragraph, all copyrights and other intellectual property rights related to the Service and all related information belong to the Company or rights holders who have granted permission to the Company, and users may not reproduce, transfer, lend, translate, modify, reprint, publicly transmit (including making available for transmission), distribute, publish, or use them for commercial purposes without permission.",
+        "title": "Article 6 (Copyright)"
       },
       "article7": {
         "section1": {
-          "content": "1. 当社は、ユーザーが以下のいずれかに該当する場合には、事前の通知なく、投稿データを削除し、ユーザーに対して本サービスの全部もしくは一部の利用を制限しまたはユーザーとしての登録を抹消することができるものとします。",
-          "item1": "1. 本規約のいずれかの条項に違反した場合",
-          "item2": "2. 登録事項に虚偽の事実があることが判明した場合",
-          "item3": "3. 当社からの連絡に対し、一定期間返答がない場合",
-          "item4": "4. 本サービスについて、最終の利用から一定期間利用がない場合",
-          "item5": "5. その他、当社が本サービスの利用を適当でないと判断した場合"
+          "content": "1. If a user falls under any of the following conditions, the Company may delete posted data, restrict the user's use of all or part of the Service, or cancel the user's registration without prior notice:",
+          "item1": "1. If the user violates any of the provisions of these terms",
+          "item2": "2. If it is found that there is false information in the registration details",
+          "item3": "3. If there is no response to communication from the Company for a certain period",
+          "item4": "4. If there has been no use of the Service for a certain period since the last use",
+          "item5": "5. Other cases where the Company deems the use of the Service inappropriate"
         },
-        "section2": "2. 前項各号のいずれかに該当した場合、ユーザーは、当然に当社に対する一切の債務について期限の利益を失い、その時点において負担する一切の債務を直ちに一括して弁済しなければなりません。",
-        "section3": "3. 当社は、本条に基づき当社が行った行為によりユーザーに生じた損害について、一切の責任を負いません。",
-        "title": " 第7条（利用制限および登録抹消）"
+        "section2": "3. The Company will not be liable for any damages caused to the user as a result of actions taken by the Company under this article.",
+        "title": "Article 7 (Restriction of Use and Cancellation of Registration)"
       },
       "article8": {
-        "section1": "1. 当社は、本サービスに事実上または法律上の瑕疵（安全性、信頼性、正確性、完全性、有効性、特定の目的への適合性、セキュリティなどに関する欠陥、エラーやバグ、権利侵害などを含みます。）がないことを明示的にも黙示的にも保証しておりません。",
-        "section2": "2. 当社は、本サービスに起因してユーザーに生じたあらゆる損害について、当社の故意又は重過失による場合を除き、一切の責任を負いません。ただし、本サービスに関する当社とユーザーとの間の契約（本規約を含みます。）が消費者契約法に定める消費者契約となる場合、この免責規定は適用されません。",
-        "section3": "3. 前項ただし書に定める場合であっても、当社は、当社の過失（重過失を除きます。）による債務不履行または不法行為によりユーザーに生じた損害のうち特別な事情から生じた損害（当社またはユーザーが損害発生につき予見し、または予見し得た場合を含みます。）について一切の責任を負いません。また、当社の過失（重過失を除きます。）による債務不履行または不法行為によりユーザーに生じた損害の賠償は、ユーザーから当該損害が発生した月に受領した利用料の額を上限とします。",
-        "section4": "4. 当社は、本サービスに関して、ユーザーと他のユーザーまたは第三者との間において生じた取引、連絡または紛争等について一切責任を負いません。",
-        "title": "第8条（保証の否認および免責事項）"
+        "section1": "1. The Company does not explicitly or implicitly guarantee that the Service is free from defects (including defects related to safety, reliability, accuracy, completeness, effectiveness, suitability for a particular purpose, security, etc., as well as errors, bugs, and rights infringements).",
+        "section2": "2. The Company will not be liable for any damages caused to the user arising from the Service, except in cases of intent or gross negligence by the Company. However, if the contract between the Company and the user regarding the Service (including these terms) constitutes a consumer contract as defined by the Consumer Contract Act, this disclaimer does not apply.",
+        "section3": "3. Even in the case described in the previous paragraph, the Company will not be liable for damages arising from special circumstances (including those that the Company or user could foresee or could have foreseen) due to the Company's negligence (excluding gross negligence). Additionally, compensation for damages due to the Company's negligence (excluding gross negligence) will be limited to the amount of the usage fee received by the Company in the month when the damage occurred.",
+        "section4": "4. The Company will not be liable for any transactions, communications, or disputes that occur between the user and other users or third parties in relation to the Service.",
+        "title": "Article 8 (Disclaimer and Limitation of Liability)"
       },
       "article9": {
-        "content": "当社は、ユーザーへの事前の告知をもって、本サービスの内容を変更、追加または廃止することがあり、ユーザーはこれを承諾するものとします。",
-        "title": "第9条（サービス内容の変更等）"
+        "content": "The Company may change, add to, or discontinue the content of the Service with prior notice to the user, and the user agrees to such changes.",
+        "title": "Article 9 (Change of Service Content)"
       },
-      "preamble": "この利用規約（以下、「本規約」といいます。）、EcoTalk（以下、「当社」といいます。）がこのアプリ上で提供するサービス（以下、「本サービス」といいます。）の利用条件を定めるものです。登録ユーザーの皆さま（以下、「ユーザー」といいます。）には、本規約に従って、本サービスをご利用いただきます。",
+      "preamble": "These terms of service (hereinafter referred to as 'these terms') define the conditions for using the services provided on this app by the developer of EcoTalk (hereinafter referred to as 'the Company'). Registered users (hereinafter referred to as 'the User') must use the Service in accordance with these terms.",
       "terms": "Terms of Service"
     },
     "title": "About"

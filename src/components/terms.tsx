@@ -129,7 +129,6 @@ const TermsOfService = ({ className }: TermsOfServiceProps) => {
         </View>
 
         <Text tx="about.terms.article7.section2" />
-        <Text tx="about.terms.article7.section3" />
       </View>
       <View className="mb-2">
         <Text
