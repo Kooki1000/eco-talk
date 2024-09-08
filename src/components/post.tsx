@@ -214,9 +214,9 @@ const styling = StyleSheet.create({
     width: 120,
   },
   image: {
-    width: 350,
-    height: 300,
-    marginVertical: 10,
+    aspectRatio: 16 / 9,
+    width: '100%',
+    marginVertical: 8,
   },
 });
 
