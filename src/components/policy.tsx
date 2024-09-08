@@ -60,22 +60,12 @@ const PrivacyPolicy = ({ className }: PrivacyPolicyProps) => {
           <Text tx="about.policy.article4.subitems1.item1" />
           <Text tx="about.policy.article4.subitems1.item2" />
           <Text tx="about.policy.article4.subitems1.item3" />
-
-          <Text tx="about.policy.article4.subitems1.item4" />
-          <View style={{ marginLeft: 16 }}>
-            <Text tx="about.policy.article4.subsubitems.item1" />
-            <Text tx="about.policy.article4.subsubitems.item2" />
-            <Text tx="about.policy.article4.subsubitems.item3" />
-            <Text tx="about.policy.article4.subsubitems.item4" />
-            <Text tx="about.policy.article4.subsubitems.item5" />
-          </View>
         </View>
 
         <Text tx="about.policy.article4.section2" />
         <View style={{ marginLeft: 16 }}>
           <Text tx="about.policy.article4.subitems2.item1" />
           <Text tx="about.policy.article4.subitems2.item2" />
-          <Text tx="about.policy.article4.subitems2.item3" />
         </View>
       </View>
 

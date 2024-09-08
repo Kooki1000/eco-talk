@@ -209,6 +209,7 @@ export default function SignUpScreen() {
             <View className="ml-2">
               <Text
                 tx="signUp.terms"
+                className="underline"
                 onPress={() => router.push('/(auth)/sign-up/policy')}
               />
             </View>
