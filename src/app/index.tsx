@@ -18,11 +18,11 @@ export default function IndexScreen() {
   }
 
   const onLogIn = () => {
-    router.navigate('/(auth)/log-in');
+    router.replace('/(auth)/log-in');
   };
 
   const onSignUp = () => {
-    router.navigate('/(auth)/sign-up');
+    router.replace('/(auth)/sign-up');
   };
 
   return (
