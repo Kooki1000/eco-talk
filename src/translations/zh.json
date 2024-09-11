@@ -407,17 +407,17 @@
   },
   "post": {
     "hideReply": "收起回复",
-    "hideTranslation": "显示翻译",
+    "hideTranslation": "隐藏翻译",
     "reply": "回复",
     "showReply": "展开回复",
-    "showTranslation": "隐藏翻译"
+    "showTranslation": "显示翻译"
   },
   "posts": {
     "title": "来自您的街区的投稿"
   },
   "profile": {
     "avatar": {
-      "error": "プロフィール画像の変更に失敗しました。"
+      "error": "更改头像失败。"
     },
     "delete": "注销账号",
     "login": "登陆・注册",
