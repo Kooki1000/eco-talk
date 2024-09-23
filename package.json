@@ -92,6 +92,6 @@
   },
   "private": true,
   "engines": {
-    "yarn": "1.22.0"
+    "yarn": "1.22.22"
   }
 }
