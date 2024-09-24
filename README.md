@@ -17,7 +17,7 @@ EcoTalk is a React Native application designed to provide information needed for
 ## Prerequisites
 
 - **Node.js:** Version 20
-- **Yarn:** Version 1.22.0
+- **Yarn:** Version 1.22.22
 - **Android Emulator** or **iOS Simulator**
 - **Docker**: Required for running Supabase backend
 - **[Supabase CLI](https://supabase.com/docs/guides/cli/getting-started)**
